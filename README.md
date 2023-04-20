@@ -4,18 +4,14 @@
 - Java
 - Maven, to install refer to : `https://phoenixnap.com/kb/install-maven-windows`
 - Java JDK installed on WSL, to install :
-```bash
-sudo apt update
-```
-```bash
-sudo apt install default-jdk
-```
+- Amazon Courette
 
 ## How to Run on WSL
-1. Open WSL terminal in the root directory
-2. Run shell file
+TBD
+
+## How to Run on Windows
 ```bash
-./run.sh
+mvn clean javafx:run
 ```
 
 ## Adding Dependencies

@@ -39,11 +39,6 @@
             <artifactId>javafx-controls</artifactId>
             <version>19</version>
         </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>19</version>
-        </dependency>
 
         <!-- Add Another Dependencies Here -->
 
@@ -59,21 +54,6 @@
                     <mainClass>com.cbr.App</mainClass>
                 </configuration>
             </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <mainClass>com.cbr.App</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-
         </plugins>
     </build>
 
