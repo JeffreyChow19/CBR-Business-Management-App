@@ -3,16 +3,19 @@
 ## Prerequisites
 - Java
 - Maven, to install refer to : `https://phoenixnap.com/kb/install-maven-windows`
-
-## How to Run
-#### Build the jar file
+- Java JDK installed on WSL, to install :
 ```bash
-mvn clean install
+sudo apt update
+```
+```bash
+sudo apt install default-jdk
 ```
 
-#### Run the jar file
+## How to Run on WSL
+1. Open WSL terminal in the root directory
+2. Run shell file
 ```bash
-java -jar target/CBR-1.0.jar
+./run.sh
 ```
 
 ## Adding Dependencies
