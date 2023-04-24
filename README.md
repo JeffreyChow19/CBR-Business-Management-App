@@ -6,10 +6,7 @@
 - Java JDK installed on WSL, to install :
 - Amazon Courette
 
-## How to Run on WSL
-TBD
-
-## How to Run on Windows
+## How to Run
 ```bash
 mvn clean javafx:run
 ```
