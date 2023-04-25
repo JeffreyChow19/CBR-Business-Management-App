@@ -1,4 +1,4 @@
-package com.cbr.view.components.header;
+package com.cbr.view.components.headermenu;
 
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;

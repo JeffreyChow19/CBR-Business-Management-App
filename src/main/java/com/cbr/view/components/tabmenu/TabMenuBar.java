@@ -1,11 +1,11 @@
-package com.cbr.view.components.header;
+package com.cbr.view.components.tabmenu;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 
-public class HeaderTabBar extends TabPane {
-    public HeaderTabBar() {
+public class TabMenuBar extends TabPane {
+    public TabMenuBar() {
         super();
 
         /* Setup Tab Menu and Home Tab */
