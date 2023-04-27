@@ -1,28 +1,39 @@
 package com.cbr.datastore;
 
 import com.cbr.models.*;
+import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.io.IOException;
 
-@Getter
 public class DataStore {
-    protected CustomerList customerList;
-    protected Inventory inventory;
-
+    @Getter protected DataList<Customer> customerList;
+    @Getter protected DataList<Product> inventory;
+    @Getter protected DataList<FixedInvoice> invoices;
+    @Getter protected DataList<TemporaryInvoice> temporaryInvoices; // for not-fixed transactions
     protected DataStorer dataStorer;
 
-    public DataStore(String mode, String folder) throws IOException {
+
+    public DataStore(String mode, String folder){
         if (mode.equals("JSON")){
             this.dataStorer = new JsonDataStore(folder);
         }
+        else if (mode.equals("XML")){
+            this.dataStorer = new XmlDataStore(folder);
+        }
+        else if (mode.equals("OBJ")){
+            this.dataStorer = new ObjDataStore(folder);
+        }
         this.customerList = this.dataStorer.loadCustomers();
         this.inventory = this.dataStorer.loadInventory();
+        this.invoices = this.dataStorer.loadInvoices();
+        this.temporaryInvoices = this.dataStorer.loadTemporaryInvoices();
     }
-    public Customer getCustomerById (Integer id){
+    public Customer getCustomerById (String id){
         return this.customerList.getById(id);
     }
-    public Product getProductById(Integer id){
+    public Product getProductById(String id){
         return this.inventory.getById(id);
     }
 
@@ -31,7 +42,7 @@ public class DataStore {
         this.dataStorer.storeCustomer(this.customerList);
     }
 
-    public void deactivateMember(Integer id){
+    public void deactivateMember(String id){
         Customer member = this.getCustomerById(id);
         if (member instanceof Member){
             Member memberObj = (Member) member;
@@ -39,7 +50,7 @@ public class DataStore {
             this.dataStorer.storeCustomer(this.customerList);
         }
     }
-    public void updateCustomerInfo(Integer id){
+    public void updateCustomerInfo(String id){
         // to implement, maybe needs to separate between Member and VIP
     }
 
@@ -48,12 +59,32 @@ public class DataStore {
         this.dataStorer.storeInventory(this.inventory);
     }
 
-    public void deactivateProduct(Integer id){
+    public void deactivateProduct(String id){
         Product product = this.getProductById(id);
         product.setStatus(false);
         this.dataStorer.storeInventory(this.inventory);
     }
     public void updateProductInfo(Integer id){
         // to implement
+    }
+
+    public void setInventory(DataList<Product> inventory){
+        this.inventory = inventory;
+        this.dataStorer.storeInventory(inventory);
+    }
+
+    public void setCustomerList(DataList<Customer> customerList){
+        this.customerList = customerList;
+        this.dataStorer.storeCustomer(customerList);
+    }
+
+    public void setTemporaryInvoices(DataList<TemporaryInvoice> temporaryInvoices){
+        this.temporaryInvoices = temporaryInvoices;
+        this.dataStorer.storeTemporaryInvoices(temporaryInvoices);
+    }
+
+    public void setInvoices(DataList<FixedInvoice> fixedInvoices){
+        this.invoices = fixedInvoices;
+        this.dataStorer.storeInvoices(fixedInvoices);
     }
 }
