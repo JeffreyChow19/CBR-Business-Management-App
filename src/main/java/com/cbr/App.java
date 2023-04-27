@@ -2,6 +2,7 @@ package com.cbr;
 
 import com.cbr.view.MainView;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -25,6 +26,10 @@ public class App extends Application{
 
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.setOnCloseRequest(t -> {
+            Platform.exit();
+            System.exit(0);
+        });
         stage.show();
     }
 }
