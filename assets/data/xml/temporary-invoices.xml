@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DataList>
+  <dataList>
+    <dataList>
+      <id>TI-1</id>
+      <productFrequencies>
+        <P-47>1</P-47>
+      </productFrequencies>
+      <customerId>5</customerId>
+      <createdAt>2023-04-27T23:53:16</createdAt>
+    </dataList>
+    <dataList>
+      <id>TI-2</id>
+      <productFrequencies>
+        <P-2>1</P-2>
+      </productFrequencies>
+      <customerId>3</customerId>
+      <createdAt>2023-04-27T23:53:16</createdAt>
+    </dataList>
+    <dataList>
+      <id>TI-3</id>
+      <productFrequencies>
+        <P-32>1</P-32>
+      </productFrequencies>
+      <customerId>5</customerId>
+      <createdAt>2023-04-27T23:53:16</createdAt>
+    </dataList>
+  </dataList>
+</DataList>

@@ -9,10 +9,12 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import lombok.Getter;
+import lombok.Setter;
 
 
 public class App extends Application{
     @Getter
+    @Setter
     private static DataStore dataStore = new DataStore("JSON", "assets/data/json");
     public static void main (String[] args) {
         System.out.println("Starting App...");
