@@ -30,14 +30,14 @@ public class JsonDataStore implements DataStorer{
         this.folder = folder;
     }
 
-    public DataList<Customer> loadCustomers(){
+    public DataList<Customer> loadClients(){
         try {
-            Path customerPath = Paths.get(this.folder, "customers.json");
+            Path customerPath = Paths.get(this.folder, "clients.json");
             String cwd = System.getProperty("user.dir");
             System.out.println("Current working directory: " + cwd);
             if (!Files.exists(customerPath)) {
                 Files.createFile(customerPath);
-                this.storeCustomer(new DataList<Customer>());
+                this.storeClients(new DataList<Customer>());
                 return new DataList<Customer>();
             } else {
                 String customerJson = new String(Files.readAllBytes(customerPath));
@@ -45,10 +45,10 @@ public class JsonDataStore implements DataStorer{
             }
         } catch (JsonProcessingException e){
             System.out.println(e.getMessage());
-            System.out.println("Failed to read the customers.json file in the folder!");
+            System.out.println("Failed to read the clients.json file in the folder!");
         } catch (IOException e){
             System.out.println(e.getMessage());
-            System.out.println("Failed to read the customers.json file in the folder!");
+            System.out.println("Failed to read the clients.json file in the folder!");
         }
         return null;
     }
@@ -111,17 +111,17 @@ public class JsonDataStore implements DataStorer{
         return null;
     }
 
-    public void storeCustomer(DataList<Customer> records){
+    public void storeClients(DataList<Customer> records){
         try {
             String jsonDataString = this.writer.writeValueAsString(records);
-            Files.write(Paths.get(this.folder, "customers.json"), jsonDataString.getBytes());
+            Files.write(Paths.get(this.folder, "clients.json"), jsonDataString.getBytes());
         }
         catch (JsonProcessingException e) {
             System.out.println("Failed to store customer");
             System.out.println(e.getMessage());
         }
         catch (IOException e) {
-            System.out.println("Failed to write to customers.json file in the folder!");
+            System.out.println("Failed to write to clients.json file in the folder!");
         }
     }
 

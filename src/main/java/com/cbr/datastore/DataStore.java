@@ -6,9 +6,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class DataStore {
-    @Getter protected DataList<Customer> customerList;
+    @Getter protected DataList<Customer> clients;
     @Getter protected DataList<Product> inventory;
     @Getter protected DataList<FixedInvoice> invoices;
     @Getter protected DataList<TemporaryInvoice> temporaryInvoices; // for not-fixed transactions
@@ -25,21 +27,21 @@ public class DataStore {
         else if (mode.equals("OBJ")){
             this.dataStorer = new ObjDataStore(folder);
         }
-        this.customerList = this.dataStorer.loadCustomers();
+        this.clients = this.dataStorer.loadClients();
         this.inventory = this.dataStorer.loadInventory();
         this.invoices = this.dataStorer.loadInvoices();
         this.temporaryInvoices = this.dataStorer.loadTemporaryInvoices();
     }
     public Customer getCustomerById (String id){
-        return this.customerList.getById(id);
+        return this.clients.getById(id);
     }
     public Product getProductById(String id){
         return this.inventory.getById(id);
     }
 
-    public void addCustomer(Customer record){
-        this.customerList.add(record);
-        this.dataStorer.storeCustomer(this.customerList);
+    public void addClient(Customer record){
+        this.clients.add(record);
+        this.dataStorer.storeClients(this.clients);
     }
 
     public void deactivateMember(String id){
@@ -47,7 +49,7 @@ public class DataStore {
         if (member instanceof Member){
             Member memberObj = (Member) member;
             memberObj.setStatus(false);
-            this.dataStorer.storeCustomer(this.customerList);
+            this.dataStorer.storeClients(this.clients);
         }
     }
     public void updateCustomerInfo(String id){
@@ -73,9 +75,9 @@ public class DataStore {
         this.dataStorer.storeInventory(inventory);
     }
 
-    public void setCustomerList(DataList<Customer> customerList){
-        this.customerList = customerList;
-        this.dataStorer.storeCustomer(customerList);
+    public void setCustomerList(DataList<Customer> clients){
+        this.clients = clients;
+        this.dataStorer.storeClients(clients);
     }
 
     public void setTemporaryInvoices(DataList<TemporaryInvoice> temporaryInvoices){
@@ -86,5 +88,24 @@ public class DataStore {
     public void setInvoices(DataList<FixedInvoice> fixedInvoices){
         this.invoices = fixedInvoices;
         this.dataStorer.storeInvoices(fixedInvoices);
+    }
+
+    public List<Member> getMembers(){
+        return this.getClients().getDataList().stream()
+                .filter(c -> "member".equals(c.getType()))
+                .map(c -> (Member) c).collect(Collectors.toList());
+    }
+
+    public List<VIP> getVips(){
+        return this.getClients().getDataList().stream()
+                .filter(c -> "VIP".equals(c.getType()))
+                .map(c -> (VIP) c)
+                .collect(Collectors.toList());
+    }
+
+    public List<Customer> getCustomers(){
+        return this.getClients().getDataList().stream()
+                .filter(c -> "customer".equals(c.getType()))
+                .collect(Collectors.toList());
     }
 }

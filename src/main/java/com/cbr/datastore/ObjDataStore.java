@@ -13,12 +13,12 @@ public class ObjDataStore implements DataStorer {
     public ObjDataStore(String folder){
         this.folder = folder;
     }
-    public DataList<Customer> loadCustomers(){
+    public DataList<Customer> loadClients(){
         try {
-            Path customerPath = Paths.get(this.folder, "customers.txt");
+            Path customerPath = Paths.get(this.folder, "clients.txt");
             if (!Files.exists(customerPath)) {
                 Files.createFile(customerPath);
-                this.storeCustomer(new DataList<Customer>());
+                this.storeClients(new DataList<Customer>());
                 return new DataList<Customer>();
             } else {
                 FileInputStream fileInputStream
@@ -31,7 +31,7 @@ public class ObjDataStore implements DataStorer {
             }
         } catch (IOException | ClassNotFoundException e){
             System.out.println(e.getMessage());
-            System.out.println("Failed to read the customers file in the folder!");
+            System.out.println("Failed to read the clients file in the folder!");
         }
         return null;
     }
@@ -101,9 +101,9 @@ public class ObjDataStore implements DataStorer {
         }
         return null;
     }
-    public void storeCustomer(DataList<Customer> records) {
+    public void storeClients(DataList<Customer> records) {
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream(Paths.get(this.folder, "customers.txt").toFile());
+            FileOutputStream fileOutputStream = new FileOutputStream(Paths.get(this.folder, "clients.txt").toFile());
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(records);
             objectOutputStream.flush();

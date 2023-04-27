@@ -25,12 +25,12 @@ public class XmlDataStore implements DataStorer {
         this.folder = folder;
     }
 
-    public DataList<Customer> loadCustomers(){
+    public DataList<Customer> loadClients(){
         try {
-            Path customerPath = Paths.get(this.folder, "customers.xml");
+            Path customerPath = Paths.get(this.folder, "clients.xml");
             if (!Files.exists(customerPath)) {
                 Files.createFile(customerPath);
-                this.storeCustomer(new DataList<Customer>());
+                this.storeClients(new DataList<Customer>());
                 return new DataList<Customer>();
             } else {
                 String customerXml = new String(Files.readAllBytes(customerPath));
@@ -38,7 +38,7 @@ public class XmlDataStore implements DataStorer {
             }
         } catch (IOException e){
             e.printStackTrace();
-            System.out.println("Failed to read the customers.xml file in the folder!");
+            System.out.println("Failed to read the clients.xml file in the folder!");
         }
         return null;
     }
@@ -93,12 +93,12 @@ public class XmlDataStore implements DataStorer {
         }
         return null;
     }
-    public void storeCustomer(DataList<Customer> records){
+    public void storeClients(DataList<Customer> records){
         try {
             String xmlDataString = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(records);
-            Files.write(Paths.get(this.folder, "customers.xml"), xmlDataString.getBytes());
+            Files.write(Paths.get(this.folder, "clients.xml"), xmlDataString.getBytes());
         } catch (IOException e) {
-            System.out.println("Failed to write to customers.xml file in the folder!");
+            System.out.println("Failed to write to clients.xml file in the folder!");
         }
     }
     public void storeInventory(DataList<Product> records){
