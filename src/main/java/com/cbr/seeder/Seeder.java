@@ -8,9 +8,9 @@ import java.util.*;
 
 public class Seeder {
     public static void main(String[] args){
-        DataStore jsonDataStore = new DataStore("JSON", "data/json");
-        DataStore xmlDataStore = new DataStore("XML", "data/xml");
-        DataStore objDataStore = new DataStore("OBJ", "data/obj");
+        DataStore jsonDataStore = new DataStore("JSON", "assets/data/json");
+        DataStore xmlDataStore = new DataStore("XML", "assets/data/xml");
+        DataStore objDataStore = new DataStore("OBJ", "assets/data/obj");
         // CUSTOMERS //
         Customer cust1 = new Customer();
         Customer cust2 = new Customer();
@@ -29,19 +29,19 @@ public class Seeder {
         customerList.add(vip2);
         customerList.add(mem3);
 
-//        jsonDataStore.setCustomerList(new DataList<Customer>(customerList));
-//        xmlDataStore.setCustomerList(new DataList<Customer>(customerList));
-//        objDataStore.setCustomerList(new DataList<Customer>(customerList));
+        jsonDataStore.setCustomerList(new DataList<Customer>(customerList));
+        xmlDataStore.setCustomerList(new DataList<Customer>(customerList));
+        objDataStore.setCustomerList(new DataList<Customer>(customerList));
 
-        for (Customer c : jsonDataStore.getCustomerList().getDataList()){
+        for (Customer c : jsonDataStore.getClients().getDataList()){
             System.out.println(c.getClass().getName());
             System.out.println(c.getId());
         }
-        for (Customer c : xmlDataStore.getCustomerList().getDataList()){
+        for (Customer c : xmlDataStore.getClients().getDataList()){
             System.out.println(c.getClass().getName());
             System.out.println(c.getId());
         }
-        for (Customer c : objDataStore.getCustomerList().getDataList()){
+        for (Customer c : objDataStore.getClients().getDataList()){
             System.out.println(c.getClass().getName());
             System.out.println(c.getId());
         }
@@ -63,9 +63,9 @@ public class Seeder {
             productList.add(product);
         }
 
-//        jsonDataStore.setInventory(new DataList<Product>(productList));
-//        xmlDataStore.setInventory(new DataList<Product>(productList));
-//        objDataStore.setInventory(new DataList<Product>(productList));
+        jsonDataStore.setInventory(new DataList<Product>(productList));
+        xmlDataStore.setInventory(new DataList<Product>(productList));
+        objDataStore.setInventory(new DataList<Product>(productList));
 
         for (Product p : jsonDataStore.getInventory().getDataList()){
             System.out.println(p.getClass().getName());
@@ -89,9 +89,9 @@ public class Seeder {
             temp.addProduct("P-"+productId.toString());
             temporaryInvoices.add(temp);
         }
-//        jsonDataStore.setTemporaryInvoices(new DataList<TemporaryInvoice>(temporaryInvoices));
-//        xmlDataStore.setTemporaryInvoices(new DataList<TemporaryInvoice>(temporaryInvoices));
-//        objDataStore.setTemporaryInvoices(new DataList<TemporaryInvoice>(temporaryInvoices));
+        jsonDataStore.setTemporaryInvoices(new DataList<TemporaryInvoice>(temporaryInvoices));
+        xmlDataStore.setTemporaryInvoices(new DataList<TemporaryInvoice>(temporaryInvoices));
+        objDataStore.setTemporaryInvoices(new DataList<TemporaryInvoice>(temporaryInvoices));
         for (TemporaryInvoice p : jsonDataStore.getTemporaryInvoices().getDataList()){
             System.out.println(p.getClass().getName());
             System.out.println(p.getCreatedAt());

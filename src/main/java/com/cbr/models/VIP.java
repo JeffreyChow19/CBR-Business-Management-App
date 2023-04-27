@@ -5,7 +5,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
-@NoArgsConstructor
 @Getter
 @Setter
 public class VIP extends Member {
@@ -13,6 +12,9 @@ public class VIP extends Member {
     private Double buyPrice;
 
     // needs to have all attributes, because it is from an already registered Customer/Member
+    public VIP(){
+        this.type = "VIP";
+    }
     public VIP(String id, List<FixedInvoice> InvoiceList, String name, String phoneNumber, Boolean status, Integer point, Double buyPrice){
         super(id, InvoiceList, name, phoneNumber);
         this.type = "VIP";
