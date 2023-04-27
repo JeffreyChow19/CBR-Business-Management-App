@@ -21,15 +21,17 @@ import java.util.List;
         @JsonSubTypes.Type(value = Member.class, name="member"),
         @JsonSubTypes.Type(value = VIP.class, name="VIP")
 })
-public class Customer implements Serializable {
-    protected Integer id;
-    protected List<Transaction> transactionList;
+public class Customer extends Identifiable implements Serializable {
+    protected String type;
+    protected List<FixedInvoice> InvoiceList;
     public static Integer customerCount = 0;
 
     public Customer(){
-        this.id = customerCount + 1;
+        this.type = "customer";
         Customer.customerCount+=1;
+        this.id = "C-"+ Customer.customerCount.toString();
     }
+
 }
 
 
