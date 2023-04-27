@@ -68,6 +68,13 @@
                 </configuration>
             </plugin>
         </plugins>
+
+        <!-- Assets Resource Path -->
+        <resources>
+            <resource>
+                <directory>src/main/assets</directory>
+            </resource>
+        </resources>
     </build>
 
 </project>
