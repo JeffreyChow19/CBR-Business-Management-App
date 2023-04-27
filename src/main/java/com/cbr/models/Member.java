@@ -1,10 +1,8 @@
 package com.cbr.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 @NoArgsConstructor
@@ -16,8 +14,10 @@ public class Member extends Customer{
     protected Boolean status;
     protected Integer point;
 
-    public Member(Integer id, List<Transaction> transactionList, String name, String phoneNumber){
-        super(id, transactionList);
+    public Member(String id, List<FixedInvoice> invoiceList, String name, String phoneNumber){
+        this.id = id;
+        this.InvoiceList = invoiceList;
+        this.type = "member";
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.status = true;

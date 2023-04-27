@@ -1,6 +1,5 @@
 package com.cbr.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,8 +13,9 @@ public class VIP extends Member {
     private Double buyPrice;
 
     // needs to have all attributes, because it is from an already registered Customer/Member
-    public VIP(Integer id, List<Transaction> transactionList, String name, String phoneNumber, Boolean status, Integer point, Double buyPrice){
-        super(id, transactionList, name, phoneNumber);
+    public VIP(String id, List<FixedInvoice> InvoiceList, String name, String phoneNumber, Boolean status, Integer point, Double buyPrice){
+        super(id, InvoiceList, name, phoneNumber);
+        this.type = "VIP";
         this.status = status;
         this.point = point;
         this.buyPrice = buyPrice;
