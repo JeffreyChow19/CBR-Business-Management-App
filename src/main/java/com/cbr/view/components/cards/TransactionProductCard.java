@@ -8,15 +8,11 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tooltip;
 import javafx.scene.layout.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
-import javafx.util.Duration;
-
-import java.io.File;
 
 public class TransactionProductCard extends StackPane {
 
@@ -30,8 +26,7 @@ public class TransactionProductCard extends StackPane {
         this.setMaxSize(width, height);
 
         // Product Image
-        // Image image = new Image(product.getImagePath());
-        Image image = new Image("file:assets/images/empty.jpg");
+        Image image = new Image(product.getImagePath());
         ImageView imageView = new ImageView(image);
         imageView.setFitWidth(width);
         imageView.setFitHeight(0.8 * height);
@@ -62,7 +57,7 @@ public class TransactionProductCard extends StackPane {
         // Add Product Button
         Button addButton = new PlusButton(0.07 * height);
         addButton.setOnMouseClicked(event -> {
-            System.out.println("hello world");
+            System.out.println(product.getProductName());
         });
 
         label_button.setPadding(new Insets(10));
