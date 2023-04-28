@@ -8,6 +8,8 @@ import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.stage.StageStyle;
+import javafx.stage.WindowEvent;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -32,11 +34,15 @@ public class App extends Application{
         Scene scene = new Scene(mainView, Theme.getScreenWidth(), Theme.getScreenHeight() * 0.98);
 
         stage.setScene(scene);
-        stage.setResizable(false);
+        stage.setMinWidth(Theme.getScreenWidth());
+        stage.setMinHeight(Theme.getScreenHeight());
+        stage.setResizable(true);
+        stage.setMaximized(true);
         stage.setOnCloseRequest(t -> {
             Platform.exit();
             System.exit(0);
         });
+
         stage.show();
     }
 }
