@@ -30,7 +30,7 @@ public class SettingsPage extends VBox {
         PageTitle pageTitle = new PageTitle("Settings");
 
         Label dataFormatLabel = new Label("Data format");
-        dataFormatLabel.setFont(Theme.getHeading1Font());
+        dataFormatLabel.setFont(Theme.getHeading2Font());
         dataFormatLabel.setTextFill(Color.WHITE);
 
         VBox formContainer = new VBox();
@@ -62,7 +62,7 @@ public class SettingsPage extends VBox {
                 objButton.setSelected(true);
         }
         Label pathLabel = new Label("Path");
-        pathLabel.setFont(Theme.getHeading1Font());
+        pathLabel.setFont(Theme.getHeading2Font());
         pathLabel.setTextFill(Color.WHITE);
 
         VBox directoryContainer = new VBox();

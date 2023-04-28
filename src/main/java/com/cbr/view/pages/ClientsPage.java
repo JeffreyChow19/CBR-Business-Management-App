@@ -76,7 +76,7 @@ public class ClientsPage extends ScrollPane {
 
         for (Toggle tb : customerTypeSelector.getToggles()){
             ToggleButton temp = (ToggleButton) tb;
-            temp.setFont(Theme.getHeading1Font());
+            temp.setFont(Theme.getHeading2Font());
             temp.setMinWidth(Theme.getScreenWidth()*0.16);
             temp.setCursor(Cursor.HAND);
 
@@ -86,7 +86,7 @@ public class ClientsPage extends ScrollPane {
             // listener for when active
             temp.selectedProperty().addListener((observable, oldValue, newValue) -> {
                 if (newValue) {
-                    temp.setFont(Theme.getHeading1Font());
+                    temp.setFont(Theme.getHeading2Font());
                     temp.setStyle("-fx-background-color: transparent; -fx-text-fill: white;-fx-border-style: solid; -fx-border-width: 0 0 5 0; -fx-border-color: white;");
                 } else {
                     temp.setFont(Theme.getBodyMediumFont());

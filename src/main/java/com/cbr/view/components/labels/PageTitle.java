@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 public class PageTitle extends Label {
     public PageTitle(String title){
         this.setText(title);
-        this.setFont(Theme.getHeading2Font());
+        this.setFont(Theme.getHeading1Font());
         this.setTextFill(Color.WHITE);
     }
 }

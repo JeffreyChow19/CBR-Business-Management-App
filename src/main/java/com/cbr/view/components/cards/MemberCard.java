@@ -31,21 +31,21 @@ public class MemberCard extends HBox{
         }
 
         Label memberId = new Label(member.getId());
-        memberId.setFont(Theme.getHeading1Font());
+        memberId.setFont(Theme.getHeading2Font());
         memberId.setTextFill(Color.WHITE);
 
         Label memberName = new Label(member.getName());
-        memberName.setFont(Theme.getHeading1Font());
+        memberName.setFont(Theme.getHeading2Font());
         memberName.setTextFill(Color.WHITE);
         memberName.setMinWidth(Theme.getScreenWidth()*0.16);
 
         Label phoneNumber = new Label(member.getPhoneNumber());
-        phoneNumber.setFont(Theme.getHeading1Font());
+        phoneNumber.setFont(Theme.getHeading2Font());
         phoneNumber.setTextFill(Color.WHITE);
         phoneNumber.setMinWidth(Theme.getScreenWidth()*0.12);
 
         Label memberPoints = new Label(member.getPoint().toString() + " Pts");
-        memberPoints.setFont(Theme.getHeading1Font());
+        memberPoints.setFont(Theme.getHeading2Font());
         memberPoints.setTextFill(Color.WHITE);
 
         Region region = new Region();

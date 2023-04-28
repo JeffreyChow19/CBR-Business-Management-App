@@ -17,7 +17,7 @@ import javafx.scene.paint.Color;
 public class CustomerCard extends HBox {
     public CustomerCard(Customer customer){
         Label customerId = new Label("Customer#"+customer.getId());
-        customerId.setFont(Theme.getHeading1Font());
+        customerId.setFont(Theme.getHeading2Font());
         customerId.setTextFill(Color.WHITE);
 
         Region region = new Region();
