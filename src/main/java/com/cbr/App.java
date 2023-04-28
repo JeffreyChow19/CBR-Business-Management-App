@@ -24,9 +24,9 @@ public class App extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Business Management Application");
-//        Image appIcon = new Image("/assets/icons/capybucks.jpg");
+        Image appIcon = new Image(App.class.getResourceAsStream("/icons/capybucks.jpg"));
         // chore: update icons
-//        stage.getIcons().add(appIcon);
+        stage.getIcons().add(appIcon);
 
         MainView mainView = new MainView();
         Scene scene = new Scene(mainView, Theme.getScreenWidth(), Theme.getScreenHeight() * 0.98);
