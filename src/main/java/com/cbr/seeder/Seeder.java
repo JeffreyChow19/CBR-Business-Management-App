@@ -50,13 +50,18 @@ public class Seeder {
         List<Product> productList = new ArrayList<>();
         Faker faker = new Faker();
 
+        List<String> categories = new ArrayList<>(Arrays.asList(
+                "Makanan", "Minuman", "Pakaian", "Gadget"
+        ));
+        Random rand = new Random();
+
         for (int i = 0; i < 50; i++) {
             String productName = faker.commerce().productName();
             Double buyPrice = faker.number().randomDouble(2, 1, 100);
             Double sellPrice = buyPrice + faker.number().randomDouble(2, 1, 50);
-            Integer imagePath = null; // change this to set a random image path if needed
+            String imagePath = "file:assets/images/products/" + (i+1) + ".jpg";
             Integer stock = faker.number().numberBetween(0, 1000);
-            String category = faker.commerce().department();
+            String category = categories.get(rand.nextInt(categories.size()));
             Boolean status = faker.bool().bool();
 
             Product product = new Product(productName, buyPrice, sellPrice, imagePath, stock, category, status);

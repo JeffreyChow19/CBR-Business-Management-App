@@ -3,26 +3,26 @@
     {
       "id" : "TI-1",
       "productFrequencies" : {
-        "P-47" : 1
+        "P-10" : 1
       },
-      "customerId" : "5",
-      "createdAt" : "2023-04-27T23:53:16"
+      "customerId" : "2",
+      "createdAt" : "2023-04-29T00:43:34"
     },
     {
       "id" : "TI-2",
       "productFrequencies" : {
-        "P-2" : 1
+        "P-8" : 1
       },
-      "customerId" : "3",
-      "createdAt" : "2023-04-27T23:53:16"
+      "customerId" : "1",
+      "createdAt" : "2023-04-29T00:43:34"
     },
     {
       "id" : "TI-3",
       "productFrequencies" : {
-        "P-32" : 1
+        "P-25" : 1
       },
-      "customerId" : "5",
-      "createdAt" : "2023-04-27T23:53:16"
+      "customerId" : "3",
+      "createdAt" : "2023-04-29T00:43:34"
     }
   ]
 }
