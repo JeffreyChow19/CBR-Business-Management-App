@@ -1,6 +1,7 @@
 package com.cbr.view.pages;
 
 import com.cbr.view.components.cards.TransactionProductCard;
+import com.cbr.view.components.dropdown.Dropdown;
 import com.cbr.view.theme.Theme;
 import com.cbr.App;
 
@@ -37,16 +38,13 @@ public class TransactionPage extends StackPane {
         container.setSpacing(10);
         container.setPadding(new Insets(10));
 
-        Label label = new Label("Transaction Page");
-
-        label.setFont(Theme.getHeading2Font());
-        label.setTextFill(Color.WHITE);
-
-        container.getChildren().add(label);
-
         Product product = new Product();
+        product.setProductName("Indomie Goreng Rendang");
         TransactionProductCard transactionProductCard = new TransactionProductCard(product);
         container.getChildren().add(transactionProductCard);
+
+        Dropdown dropdown = new Dropdown();
+        container.getChildren().add(dropdown);
 
         container.setAlignment(Pos.TOP_CENTER);
         container.prefWidthProperty().bind(this.widthProperty()); // bind the width of the HBox to the width of the ScrollPane
