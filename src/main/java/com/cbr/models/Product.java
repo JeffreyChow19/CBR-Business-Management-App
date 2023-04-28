@@ -13,13 +13,13 @@ public class Product extends Identifiable implements Serializable {
     private String productName;
     private Double buyPrice;
     private Double sellPrice;
-    private Integer imagePath;
+    private String imagePath;
     private Integer stock;
     private String category;
     private Boolean status;
     private static Integer productCount = 0;
 
-    public Product(String productName, Double buyPrice, Double sellPrice, Integer imagePath, Integer stock, String category, Boolean status){
+    public Product(String productName, Double buyPrice, Double sellPrice, String imagePath, Integer stock, String category, Boolean status){
         this.productName = productName;
         this.buyPrice = buyPrice;
         this.sellPrice = sellPrice;
