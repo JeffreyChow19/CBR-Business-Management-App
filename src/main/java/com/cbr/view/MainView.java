@@ -4,6 +4,7 @@ import com.cbr.view.components.headermenu.HeaderMenuBar;
 import com.cbr.view.components.tabmenu.TabMenuBar;
 import com.cbr.view.pages.ClientsPage;
 import com.cbr.view.pages.HomePage;
+import com.cbr.view.pages.TransactionPage;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -15,11 +16,17 @@ public class MainView extends VBox {
         /* Pages */
         HomePage homepage = new HomePage();
         ClientsPage clientsPage = new ClientsPage();
+        TransactionPage transactionPage = new TransactionPage();
         // chore: pages
 
         /* Body Setup */
         TabMenuBar pageTabs = new TabMenuBar();
         pageTabs.addTab("Home", homepage);
+
+        // For Transaction Page debugging purpose
+        pageTabs.addTab("Transaction Page", transactionPage);
+        pageTabs.switchToTab("Transaction Page");
+
         BorderPane bodyContainer = new BorderPane();
         bodyContainer.setTop(pageTabs);
 
@@ -29,7 +36,7 @@ public class MainView extends VBox {
                 clientsPage,
                 new Label("inventory"),
                 new Label("export"),
-                new Label("transaction"),
+                transactionPage,
                 new Label("settings"),
                 new Label("plugins"));
         // chore: pages
