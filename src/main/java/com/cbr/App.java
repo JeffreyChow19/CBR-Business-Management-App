@@ -29,7 +29,7 @@ public class App extends Application{
 //        stage.getIcons().add(appIcon);
 
         MainView mainView = new MainView();
-        Scene scene = new Scene(mainView, Theme.getScreenWidth(), Theme.getScreenHeight());
+        Scene scene = new Scene(mainView, Theme.getScreenWidth(), Theme.getScreenHeight() * 0.98);
 
         stage.setScene(scene);
         stage.setResizable(false);

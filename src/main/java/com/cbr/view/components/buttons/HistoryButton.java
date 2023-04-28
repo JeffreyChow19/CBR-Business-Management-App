@@ -6,14 +6,10 @@ import javafx.scene.paint.Color;
 import lombok.Getter;
 
 @Getter
-public class HistoryButton extends Button {
+public class HistoryButton extends DefaultButton{
     private String customerId;
     public HistoryButton(String customerId){
-        super("History");
+        super(Theme.getScreenWidth()*0.08, Theme.getScreenHeight()*0.05,"History");
         this.customerId = customerId;
-        this.setTextFill(Color.WHITE);
-        this.setFont(Theme.getBodyMediumFont());
-        this.setPrefSize(Theme.getScreenWidth()*0.08, Theme.getScreenHeight()*0.05);
-        this.setStyle("-fx-background-color:"+ Theme.getPrimaryLight()+"; -fx-background-radius: 8;");
     }
 }

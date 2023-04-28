@@ -4,6 +4,7 @@ import com.cbr.App;
 import com.cbr.models.*;
 import com.cbr.view.components.cardslist.CustomerCardList;
 import com.cbr.view.components.cardslist.MemberCardList;
+import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,6 +16,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+//import sun.jvm.hotspot.debugger.Page;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -37,9 +39,7 @@ public class ClientsPage extends ScrollPane {
         this.customerCardList = new CustomerCardList(customerList);
         this.vipCardList = new MemberCardList(vipList);
 
-        Label pageTitle = new Label("Clients");
-        pageTitle.setFont(Theme.getHeading2Font());
-        pageTitle.setTextFill(Color.WHITE);
+        PageTitle pageTitle = new PageTitle("Clients");
 
 //        Circle searchButtonShape = new Circle();
 //        Button searchButton = new Button();

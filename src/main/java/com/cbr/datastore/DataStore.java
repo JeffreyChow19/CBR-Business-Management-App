@@ -10,11 +10,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DataStore {
-    @Getter protected DataList<Customer> clients;
-    @Getter protected DataList<Product> inventory;
-    @Getter protected DataList<FixedInvoice> invoices;
-    @Getter protected DataList<TemporaryInvoice> temporaryInvoices; // for not-fixed transactions
-    protected DataStorer dataStorer;
+    @Getter @Setter
+    private String folder;
+    @Getter @Setter
+    private String mode;
+    @Getter private DataList<Customer> clients;
+    @Getter private DataList<Product> inventory;
+    @Getter private DataList<FixedInvoice> invoices;
+    @Getter private DataList<TemporaryInvoice> temporaryInvoices; // for not-fixed transactions
+    private DataStorer dataStorer;
 
 
     public DataStore(String mode, String folder){
@@ -27,6 +31,8 @@ public class DataStore {
         else if (mode.equals("OBJ")){
             this.dataStorer = new ObjDataStore(folder);
         }
+        this.mode = mode;
+        this.folder = folder;
         this.clients = this.dataStorer.loadClients();
         this.inventory = this.dataStorer.loadInventory();
         this.invoices = this.dataStorer.loadInvoices();
