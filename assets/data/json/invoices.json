@@ -1,0 +1,26 @@
+{
+  "dataList" : [
+    {
+      "id" : "FI-1",
+      "customerId" : "C-15",
+      "createdAt" : "2023-05-01T00:17:09",
+      "boughtProducts" : [
+        {
+          "id" : "P-1",
+          "productName" : "Gorgeous Bronze Clock",
+          "sellPrice" : 71.27
+        },
+        {
+          "id" : "P-2",
+          "productName" : "Awesome Rubber Computer",
+          "sellPrice" : 87.14
+        },
+        {
+          "id" : "P-3",
+          "productName" : "Sleek Silk Gloves",
+          "sellPrice" : 30.87
+        }
+      ]
+    }
+  ]
+}
