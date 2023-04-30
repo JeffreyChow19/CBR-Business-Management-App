@@ -6,6 +6,5 @@ import javafx.scene.control.Button;
 public class PlusButton extends CircleImageButton {
     public PlusButton(double radius) {
         super(radius, "file:assets/icons/plus.png", Theme.getPrimaryLight());
-//        this.setStyle("-fx-background-color:" + Theme.getPrimaryLight() + ";");
     }
 }
