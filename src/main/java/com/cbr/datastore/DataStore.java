@@ -15,7 +15,7 @@ public class DataStore {
     @Getter @Setter
     private String mode;
     @Getter private DataList<Customer> clients;
-    @Getter private DataList<Product> inventory;
+    @Getter private DataList<InventoryProduct> inventory;
     @Getter private DataList<FixedInvoice> invoices;
     @Getter private DataList<TemporaryInvoice> temporaryInvoices; // for not-fixed transactions
     private DataStorer dataStorer;
@@ -41,7 +41,7 @@ public class DataStore {
     public Customer getCustomerById (String id){
         return this.clients.getById(id);
     }
-    public Product getProductById(String id){
+    public InventoryProduct getProductById(String id){
         return this.inventory.getById(id);
     }
 
@@ -62,13 +62,13 @@ public class DataStore {
         // to implement, maybe needs to separate between Member and VIP
     }
 
-    public void addProduct(Product record){
+    public void addProduct(InventoryProduct record){
         this.inventory.add(record);
         this.dataStorer.storeInventory(this.inventory);
     }
 
     public void deactivateProduct(String id){
-        Product product = this.getProductById(id);
+        InventoryProduct product = this.getProductById(id);
         product.setStatus(false);
         this.dataStorer.storeInventory(this.inventory);
     }
@@ -76,7 +76,7 @@ public class DataStore {
         // to implement
     }
 
-    public void setInventory(DataList<Product> inventory){
+    public void setInventory(DataList<InventoryProduct> inventory){
         this.inventory = inventory;
         this.dataStorer.storeInventory(inventory);
     }

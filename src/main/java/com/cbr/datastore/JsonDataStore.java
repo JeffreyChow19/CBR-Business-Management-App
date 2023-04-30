@@ -53,16 +53,16 @@ public class JsonDataStore implements DataStorer{
         return null;
     }
 
-    public DataList<Product> loadInventory(){
+    public DataList<InventoryProduct> loadInventory(){
         try {
             Path inventoryPath = Paths.get(this.folder, "inventory.json");
             if (!Files.exists(inventoryPath)) {
                 Files.createFile(inventoryPath);
-                this.storeInventory(new DataList<Product>());
-                return new DataList<Product>();
+                this.storeInventory(new DataList<InventoryProduct>());
+                return new DataList<InventoryProduct>();
             } else {
                 String inventoryJson = new String(Files.readAllBytes(inventoryPath));
-                return mapper.readValue(inventoryJson, new TypeReference<DataList<Product>>() {});
+                return mapper.readValue(inventoryJson, new TypeReference<DataList<InventoryProduct>>() {});
             }
         } catch (JsonProcessingException e){
             System.out.println(e.getMessage());
@@ -125,7 +125,7 @@ public class JsonDataStore implements DataStorer{
         }
     }
 
-    public void storeInventory(DataList<Product> records){
+    public void storeInventory(DataList<InventoryProduct> records){
         try {
             String jsonDataString = writer.writeValueAsString(records);
             Files.write(Paths.get(this.folder, "inventory.json"), jsonDataString.getBytes());
