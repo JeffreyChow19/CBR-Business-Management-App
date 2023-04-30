@@ -33,8 +33,8 @@ public class TransactionPage extends StackPane {
         container.prefHeightProperty().bind(this.heightProperty()); // bind the height of the HBox to the height of the ScrollPane
         container.setStyle("-fx-background-color:" + Theme.getPrimaryDark());
 
-        // Create transactionProductCardList : LEFT HALF
-        List<Product> productList = App.getDataStore().getInventory().getDataList();
+        // Create transactionProductCardList : Left Part
+        List<InventoryProduct> productList = App.getDataStore().getInventory().getDataList();
         transactionProductCardList = new TransactionProductCardList(productList);
 
         // Create Management Container : RIGHT HALF

@@ -1,5 +1,6 @@
 package com.cbr.view.components.cards;
 
+import com.cbr.models.InventoryProduct;
 import com.cbr.models.Product;
 import com.cbr.view.components.buttons.PlusButton;
 import com.cbr.view.components.labels.ToolTipLabel;
@@ -16,7 +17,7 @@ import javafx.scene.shape.*;
 
 public class TransactionProductCard extends StackPane {
 
-    public TransactionProductCard(Product product){
+    public TransactionProductCard(InventoryProduct product){
         double width = 0.1 * Theme.getScreenWidth();
         double height = 0.2 * Theme.getScreenHeight();
 

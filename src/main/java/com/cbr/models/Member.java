@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 @Getter
 @Setter
@@ -16,9 +17,9 @@ public class Member extends Customer{
     public Member(){
         this.type = "member";
     }
-    public Member(String id, List<FixedInvoice> invoiceList, String name, String phoneNumber){
+    public Member(String id, List<String> invoiceList, String name, String phoneNumber){
         this.id = id;
-        this.InvoiceList = invoiceList;
+        this.invoiceList = invoiceList;
         this.type = "member";
         this.name = name;
         this.phoneNumber = phoneNumber;

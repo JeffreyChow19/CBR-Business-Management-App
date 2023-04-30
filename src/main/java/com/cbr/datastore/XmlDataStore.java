@@ -42,16 +42,16 @@ public class XmlDataStore implements DataStorer {
         }
         return null;
     }
-    public DataList<Product> loadInventory(){
+    public DataList<InventoryProduct> loadInventory(){
         try {
             Path inventoryPath = Paths.get(this.folder, "inventory.xml");
             if (!Files.exists(inventoryPath)) {
                 Files.createFile(inventoryPath);
-                this.storeInventory(new DataList<Product>());
-                return new DataList<Product>();
+                this.storeInventory(new DataList<InventoryProduct>());
+                return new DataList<InventoryProduct>();
             } else {
                 String inventoryXml = new String(Files.readAllBytes(inventoryPath));
-                return xmlMapper.readValue(inventoryXml, new TypeReference<DataList<Product>>() {});
+                return xmlMapper.readValue(inventoryXml, new TypeReference<DataList<InventoryProduct>>() {});
             }
         } catch (IOException e){
             e.printStackTrace();
@@ -101,7 +101,7 @@ public class XmlDataStore implements DataStorer {
             System.out.println("Failed to write to clients.xml file in the folder!");
         }
     }
-    public void storeInventory(DataList<Product> records){
+    public void storeInventory(DataList<InventoryProduct> records){
         try {
             String xmlDataString = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(records);
             Files.write(Paths.get(this.folder, "inventory.xml"), xmlDataString.getBytes());

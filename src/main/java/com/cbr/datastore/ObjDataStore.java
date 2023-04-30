@@ -35,19 +35,19 @@ public class ObjDataStore implements DataStorer {
         }
         return null;
     }
-    public DataList<Product> loadInventory(){
+    public DataList<InventoryProduct> loadInventory(){
         try {
             Path inventoryPath = Paths.get(this.folder, "inventory.txt");
             if (!Files.exists(inventoryPath)) {
                 Files.createFile(inventoryPath);
-                this.storeInventory(new DataList<Product>());
-                return new DataList<Product>();
+                this.storeInventory(new DataList<InventoryProduct>());
+                return new DataList<InventoryProduct>();
             } else {
                 FileInputStream fileInputStream
                         = new FileInputStream(inventoryPath.toFile());
                 ObjectInputStream objectInputStream
                         = new ObjectInputStream(fileInputStream);
-                DataList<Product> ret = (DataList<Product>) objectInputStream.readObject();
+                DataList<InventoryProduct> ret = (DataList<InventoryProduct>) objectInputStream.readObject();
                 objectInputStream.close();
                 return ret;
             }
@@ -113,7 +113,7 @@ public class ObjDataStore implements DataStorer {
             System.out.println("failed to store Customer");
         }
     };
-    public void storeInventory(DataList<Product> records){
+    public void storeInventory(DataList<InventoryProduct> records){
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(Paths.get(this.folder, "inventory.txt").toFile());
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);

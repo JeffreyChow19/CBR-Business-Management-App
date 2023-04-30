@@ -3,59 +3,61 @@
     {
       "id" : "C-15",
       "type" : "customer",
-      "invoiceList" : null
+      "invoiceList" : [
+        "FI-1"
+      ]
     },
     {
       "id" : "C-16",
       "type" : "customer",
-      "invoiceList" : null
+      "invoiceList" : [ ]
     },
     {
       "id" : "C-3",
       "type" : "member",
+      "invoiceList" : [ ],
       "name" : "rachel",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 0,
-      "invoiceList" : [ ]
+      "point" : 0
     },
     {
       "id" : "C-4",
       "type" : "member",
+      "invoiceList" : [ ],
       "name" : "Livia",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 0,
-      "invoiceList" : [ ]
+      "point" : 0
     },
     {
       "id" : "C-5",
       "type" : "VIP",
+      "invoiceList" : [ ],
       "name" : "Jason",
       "phoneNumber" : "08123456789",
       "status" : false,
       "point" : 100,
-      "buyPrice" : 100000.0,
-      "invoiceList" : [ ]
+      "buyPrice" : 100000.0
     },
     {
       "id" : "C-6",
       "type" : "VIP",
+      "invoiceList" : [ ],
       "name" : "Chow",
       "phoneNumber" : "08123456789",
       "status" : true,
       "point" : 100,
-      "buyPrice" : 100000.0,
-      "invoiceList" : [ ]
+      "buyPrice" : 100000.0
     },
     {
       "id" : "C-7",
       "type" : "member",
+      "invoiceList" : [ ],
       "name" : "Eugene",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 0,
-      "invoiceList" : [ ]
+      "point" : 0
     }
   ]
 }
