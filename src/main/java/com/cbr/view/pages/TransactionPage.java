@@ -1,36 +1,25 @@
 package com.cbr.view.pages;
 
 import com.cbr.App;
+import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.cards.TransactionProductCard;
 import com.cbr.view.components.cardslist.TransactionProductCardList;
 import com.cbr.view.components.dropdown.Dropdown;
+import com.cbr.view.components.dropdown.TitleDropdown;
+import com.cbr.view.components.labels.PageTitle;
+import com.cbr.view.components.spinner.NumberSpinner;
 import com.cbr.view.theme.Theme;
 import com.cbr.App;
 
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
-import javafx.scene.paint.Color;
 import com.cbr.models.*;
-import com.cbr.view.components.cardslist.CustomerCardList;
-import com.cbr.view.components.cardslist.MemberCardList;
-import com.cbr.view.theme.Theme;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Cursor;
 import javafx.scene.control.*;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
-import java.util.stream.Collectors;
+
 public class TransactionPage extends StackPane {
     private HBox container;
     private TransactionProductCardList transactionProductCardList;
@@ -44,25 +33,58 @@ public class TransactionPage extends StackPane {
         container.prefHeightProperty().bind(this.heightProperty()); // bind the height of the HBox to the height of the ScrollPane
         container.setStyle("-fx-background-color:" + Theme.getPrimaryDark());
 
-        // Create transactionProductCardList : Left Part
+        // Create transactionProductCardList : LEFT HALF
         List<Product> productList = App.getDataStore().getInventory().getDataList();
         transactionProductCardList = new TransactionProductCardList(productList);
 
-        // Create Management Container : Right Part
+        // Create Management Container : RIGHT HALF
         VBox managementContainer = new VBox();
 
         double managementContainerWidth = 0.5 * Theme.getScreenWidth();
         double managementContainerHeight = Theme.getScreenHeight();
 
+        managementContainer.setAlignment(Pos.TOP_CENTER);
         managementContainer.setMinSize(managementContainerWidth, managementContainerHeight);
         managementContainer.setPrefSize(managementContainerWidth, managementContainerHeight);
         managementContainer.setMaxSize(managementContainerWidth, managementContainerHeight);
-        managementContainer.setStyle("-fx-background-color:" + Theme.getPrimaryBase() + ";");
+        managementContainer.setPadding(new Insets(20,0,0,0));
 
-        // Create dropdown
-        Dropdown dropdown = new Dropdown();
+        // Spacer
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
 
-        managementContainer.getChildren().addAll(dropdown);
+        // DROPDOWN CONTAINER
+        HBox dropdownContainer = new HBox();
+        dropdownContainer.setMinSize(0.8 * managementContainerWidth, 0.1 * managementContainerHeight);
+        dropdownContainer.setPrefSize(0.8 * managementContainerWidth, 0.1 * managementContainerHeight);
+        dropdownContainer.setMaxSize(0.8 * managementContainerWidth, 0.1 * managementContainerHeight);
+
+        TitleDropdown transactionDropdown = new TitleDropdown(0.4 * managementContainerWidth, 0.1 * managementContainerHeight, "Transaction");
+        TitleDropdown customerDropdown = new TitleDropdown(0.4 * managementContainerWidth, 0.1 * managementContainerHeight, "Customer");
+
+        // Add all dropdownContainer children
+        dropdownContainer.getChildren().addAll(transactionDropdown, spacer, customerDropdown);
+
+        // BUTTON CONTAINER
+        HBox buttonContainer = new HBox();
+        buttonContainer.setAlignment(Pos.CENTER);
+        buttonContainer.setMinSize(0.8 * managementContainerWidth, 0.05 * managementContainerHeight);
+        buttonContainer.setPrefSize(0.8 * managementContainerWidth, 0.05 * managementContainerHeight);
+        buttonContainer.setMaxSize(0.8 * managementContainerWidth, 0.05 * managementContainerHeight);
+
+        // Button : Save Bill
+        Button saveBill = new DefaultButton(0.38 * managementContainerWidth, 0.05 * managementContainerHeight, "Save Bill");
+
+        // Button : Make Bill
+        Button makeBill = new DefaultButton(0.38 * managementContainerWidth, 0.05 * managementContainerHeight, "Make Bill");
+
+        // Add all buttonContainer children
+        buttonContainer.getChildren().addAll(saveBill, spacer, makeBill);
+
+        NumberSpinner spinner = new NumberSpinner(0);
+
+        // Add all managementContainer children
+        managementContainer.getChildren().addAll(dropdownContainer, buttonContainer, spinner);
 
         // Add all container components
         container.getChildren().addAll(transactionProductCardList, managementContainer);
