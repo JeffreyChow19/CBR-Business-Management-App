@@ -25,6 +25,7 @@ public class TransactionProductCardList extends ScrollPane {
     private double height;
 
     public TransactionProductCardList(List<Product> products){
+        super();
         // Setup ScrollPane
         this.width = 0.5 * Theme.getScreenWidth();
         this.height = Theme.getScreenHeight();
@@ -33,15 +34,17 @@ public class TransactionProductCardList extends ScrollPane {
         this.setPrefSize(this.width, this.height);
         this.setMaxSize(this.width, this.height);
         this.setBorder(null);
-        this.setStyle("-fx-border-style: none;");
+        this.setStyle("-fx-background-color:" + Theme.getPrimaryDark() + ";");
         this.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         this.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
         this.setFitToWidth(true);
 
         container = new VBox();
+        container.setMinWidth(this.width);
         container.setPrefWidth(this.width);
-        container.setStyle("-fx-background-color:" + Theme.getPrimaryDark() + "; -fx-border-width: 0;");
+        container.setMaxWidth(this.width);
+        container.setStyle("-fx-background-color:" + Theme.getPrimaryDark() + ";");
         container.setAlignment(Pos.CENTER);
         container.setPadding(new Insets(20, 0, 100, 0));
 
