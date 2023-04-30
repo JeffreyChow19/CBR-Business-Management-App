@@ -1,5 +1,12 @@
 package com.cbr.models;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Setter
+@Getter
 public class BoughtProduct extends Product {
     private Integer count;
 

@@ -34,6 +34,10 @@ public class Customer extends Identifiable implements Serializable {
         this.invoiceList = new ArrayList<>();
     }
 
+    public void buy(Product product){
+
+    }
+
 }
 
 

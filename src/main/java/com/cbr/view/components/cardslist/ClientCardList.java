@@ -1,34 +1,42 @@
 package com.cbr.view.components.cardslist;
 
 import com.cbr.models.Customer;
-import com.cbr.models.DataList;
-import com.cbr.view.components.cards.CustomerCard;
+import com.cbr.models.Member;
+import com.cbr.view.components.cards.clientcard.ClientCardBuilder;
+import com.cbr.view.components.cards.clientcard.ClientCardDirector;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import lombok.AllArgsConstructor;
 
 import java.util.List;
-public class CustomerCardList extends VBox {
-    private List<Customer> customerList;
-    public CustomerCardList(List<Customer> customers){
+public class ClientCardList<T extends Customer> extends VBox {
+    private List<T> customerList;
+    public ClientCardList(List<T> customers){
         this.customerList = customers;
         this.setAlignment(Pos.CENTER);
         this.setSpacing(10);
         this.updateChildren();
     }
 
-    public void update (List<Customer> customers) {
+    public void update (List<T> customers) {
         this.customerList = customers;
         this.updateChildren();
     }
 
     public void updateChildren(){
         this.getChildren().clear();
+        ClientCardDirector dir = new ClientCardDirector();
+        ClientCardBuilder builder = new ClientCardBuilder();
         for (Customer c : this.customerList) {
-            this.getChildren().add(new CustomerCard(c));
+            if (c.getType() == "customer"){
+                dir.createCustomersCard(builder, c);
+            }
+            else {
+                dir.createMembersCard(builder, (Member) c);
+            }
+            this.getChildren().add(builder.getCard());
         }
         if (this.customerList.isEmpty()){
             Label notFound = new Label("No match");

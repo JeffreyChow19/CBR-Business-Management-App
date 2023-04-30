@@ -2,29 +2,23 @@ package com.cbr.view.pages;
 
 import com.cbr.App;
 import com.cbr.models.*;
-import com.cbr.view.components.cardslist.CustomerCardList;
-import com.cbr.view.components.cardslist.MemberCardList;
+import com.cbr.view.components.cardslist.ClientCardList;
 import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-//import sun.jvm.hotspot.debugger.Page;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ClientsPage extends ScrollPane {
-    private CustomerCardList customerCardList;
-    private MemberCardList<Member> memberCardList;
-    private MemberCardList<VIP> vipCardList;
+    private ClientCardList<Customer> customerCardList;
+    private ClientCardList<Member> memberCardList;
+    private ClientCardList<VIP> vipCardList;
     private VBox container;
     private ToggleGroup customerTypeSelector;
     public ClientsPage() {
@@ -35,9 +29,9 @@ public class ClientsPage extends ScrollPane {
         List<Customer> customerList = App.getDataStore().getCustomers();
         List<VIP> vipList = App.getDataStore().getVips();
 
-        this.memberCardList = new MemberCardList(memberList);
-        this.customerCardList = new CustomerCardList(customerList);
-        this.vipCardList = new MemberCardList(vipList);
+        this.memberCardList = new ClientCardList(memberList);
+        this.customerCardList = new ClientCardList(customerList);
+        this.vipCardList = new ClientCardList(vipList);
 
         PageTitle pageTitle = new PageTitle("Clients");
 

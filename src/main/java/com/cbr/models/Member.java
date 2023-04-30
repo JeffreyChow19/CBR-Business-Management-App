@@ -27,6 +27,18 @@ public class Member extends Customer{
         this.point = 0;
     }
 
+    public void addPoint(Integer point){
+        this.point+=point;
+    }
+
+    public void subtractPoint(Integer point){
+        this.point-=point;
+    }
+    public void buy(Product product){
+
+    }
+
+
 }
 
 

@@ -22,4 +22,10 @@ public class VIP extends Member {
         this.point = point;
         this.buyPrice = buyPrice;
     }
+
+
+    public void buy(Product product){
+
+    }
+
 }
