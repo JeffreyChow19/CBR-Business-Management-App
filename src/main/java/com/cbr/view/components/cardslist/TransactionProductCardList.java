@@ -1,5 +1,6 @@
 package com.cbr.view.components.cardslist;
 
+import com.cbr.models.InventoryProduct;
 import com.cbr.models.Product;
 import com.cbr.view.components.cards.TransactionProductCard;
 import com.cbr.view.theme.Theme;
@@ -20,11 +21,11 @@ import java.util.stream.Collectors;
 
 public class TransactionProductCardList extends ScrollPane {
     private VBox container;
-    private Map<String, List<Product>> productMap;
+    private Map<String, List<InventoryProduct>> productMap;
     private double width;
     private double height;
 
-    public TransactionProductCardList(List<Product> products){
+    public TransactionProductCardList(List<InventoryProduct> products){
         // Setup ScrollPane
         this.width = 0.5 * Theme.getScreenWidth();
         this.height = Theme.getScreenHeight();
@@ -54,13 +55,13 @@ public class TransactionProductCardList extends ScrollPane {
         this.setContent(container);
     }
 
-    public void updateProductMap(List<Product> products){
-        List<Product> filteredProducts = products.stream().filter(p -> p.getStatus()).collect(Collectors.toList());
+    public void updateProductMap(List<InventoryProduct> products){
+        List<InventoryProduct> filteredProducts = products.stream().filter(p -> p.getStatus()).collect(Collectors.toList());
 
         this.productMap = new HashMap<>();
-        for (Product product : filteredProducts) {
+        for (InventoryProduct product : filteredProducts) {
             String category = product.getCategory();
-            List<Product> productsInCategory = this.productMap.get(category);
+            List<InventoryProduct> productsInCategory = this.productMap.get(category);
             if (productsInCategory == null) {
                 productsInCategory = new ArrayList<>();
                 this.productMap.put(category, productsInCategory);
@@ -76,9 +77,9 @@ public class TransactionProductCardList extends ScrollPane {
         content.setMaxWidth(0.95 * this.width);
         content.setSpacing(20);
 
-        for (Map.Entry<String, List<Product>> entry : this.productMap.entrySet()) {
+        for (Map.Entry<String, List<InventoryProduct>> entry : this.productMap.entrySet()) {
             String category = entry.getKey();
-            List<Product> productsInCategory = entry.getValue();
+            List<InventoryProduct> productsInCategory = entry.getValue();
 
             Label categoryLabel = new Label(category);
             categoryLabel.setFont(Theme.getHeading2Font());
@@ -93,7 +94,7 @@ public class TransactionProductCardList extends ScrollPane {
             productsPane.setVgap(0.03 * width);
             productsPane.setPadding(new Insets(0, 0 , 40, 0.03 * this.width));
 
-            for (Product product : productsInCategory) {
+            for (InventoryProduct product : productsInCategory) {
                 TransactionProductCard transactionProductCard = new TransactionProductCard(product);
                 productsPane.getChildren().add(transactionProductCard);
             }

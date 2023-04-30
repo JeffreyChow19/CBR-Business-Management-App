@@ -7,17 +7,19 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.Map;
+
 @NoArgsConstructor
 @Getter
 @Setter
 public class TemporaryInvoice extends Invoice implements Serializable {
+    protected Map<String, Integer> productFrequencies;  // <ProductId, Count>
     private static Integer invoiceCount = 0;
 
     public TemporaryInvoice(String customerId){
+        super(customerId);
         this.productFrequencies = new HashMap<String, Integer>();
         TemporaryInvoice.invoiceCount += 1;
-        this.customerId = customerId;
-        this.createdAt = LocalDateTime.now();
         this.id = "TI-" +invoiceCount.toString();
     }
 

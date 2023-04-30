@@ -45,7 +45,7 @@ public class TransactionPage extends StackPane {
         container.setStyle("-fx-background-color:" + Theme.getPrimaryDark());
 
         // Create transactionProductCardList : Left Part
-        List<Product> productList = App.getDataStore().getInventory().getDataList();
+        List<InventoryProduct> productList = App.getDataStore().getInventory().getDataList();
         transactionProductCardList = new TransactionProductCardList(productList);
 
         // Create Management Container : Right Part
