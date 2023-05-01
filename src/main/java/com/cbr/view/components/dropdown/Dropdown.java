@@ -12,7 +12,6 @@ public class Dropdown extends ComboBox<String> {
 
         this.setStyle("-fx-font: " + Theme.getBodyMediumFont().getSize() + "px " + Theme.getBodyMediumFont().getFamily() + "; -fx-border-color: white; -fx-background-color: transparent; -fx-border-radius: 10; -fx-prompt-text-fill: white;");
 
-
         // Set the cell factory to create custom cells for the options
         this.setCellFactory(lv -> new ListCell<String>() {
             @Override
