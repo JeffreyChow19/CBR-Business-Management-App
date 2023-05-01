@@ -5,11 +5,10 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 public class TitleDropdown extends VBox {
-    public TitleDropdown(double width, double height, String title) {
-        // Set the size
-        this.setMinSize(width, height);
-        this.setPrefSize(width, height);
-        this.setMaxSize(width, height);
+    public TitleDropdown(double width, String title) {
+        this.setMinWidth(width);
+        this.setPrefWidth(width);
+        this.setMaxWidth(width);
 
         Label label = new Label(title);
         label.setFont(Theme.getHeading2Font());
