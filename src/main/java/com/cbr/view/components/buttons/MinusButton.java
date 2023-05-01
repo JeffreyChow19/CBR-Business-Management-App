@@ -5,7 +5,7 @@ import com.cbr.view.theme.Theme;
 
 public class MinusButton extends CircleImageButton {
     public MinusButton(double radius) {
-        super(radius, "file:assets/icons/plus.png", Theme.getPrimaryLight());
+        super(radius, "file:assets/icons/minus.png", Theme.getPrimaryLight());
     }
 }
 
