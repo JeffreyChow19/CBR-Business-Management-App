@@ -2,7 +2,9 @@ package com.cbr.view.pages;
 
 import com.cbr.App;
 import com.cbr.view.components.buttons.DefaultButton;
+import com.cbr.view.components.cards.TransactionInvoiceCard;
 import com.cbr.view.components.cards.TransactionProductCard;
+import com.cbr.view.components.cardslist.TransactionInvoiceCardList;
 import com.cbr.view.components.cardslist.TransactionProductCardList;
 import com.cbr.view.components.dropdown.Dropdown;
 import com.cbr.view.components.dropdown.TitleDropdown;
@@ -23,6 +25,7 @@ import java.util.List;
 public class TransactionPage extends StackPane {
     private HBox container;
     private TransactionProductCardList transactionProductCardList;
+    private TemporaryInvoice temporaryInvoice;
     public TransactionPage() {
         super();
 
@@ -47,7 +50,8 @@ public class TransactionPage extends StackPane {
         managementContainer.setMinSize(managementContainerWidth, managementContainerHeight);
         managementContainer.setPrefSize(managementContainerWidth, managementContainerHeight);
         managementContainer.setMaxSize(managementContainerWidth, managementContainerHeight);
-        managementContainer.setPadding(new Insets(20,0,0,0));
+        managementContainer.setPadding(new Insets(20,0,100,0));
+        managementContainer.setSpacing(0.03 * managementContainerHeight);
 
         // Spacer
         Region spacer = new Region();
@@ -59,11 +63,15 @@ public class TransactionPage extends StackPane {
         dropdownContainer.setPrefSize(0.8 * managementContainerWidth, 0.1 * managementContainerHeight);
         dropdownContainer.setMaxSize(0.8 * managementContainerWidth, 0.1 * managementContainerHeight);
 
-        TitleDropdown transactionDropdown = new TitleDropdown(0.4 * managementContainerWidth, 0.1 * managementContainerHeight, "Transaction");
-        TitleDropdown customerDropdown = new TitleDropdown(0.4 * managementContainerWidth, 0.1 * managementContainerHeight, "Customer");
+        TitleDropdown transactionDropdown = new TitleDropdown(0.4 * managementContainerWidth,  "Transaction");
+        TitleDropdown customerDropdown = new TitleDropdown(0.4 * managementContainerWidth,  "Customer");
 
         // Add all dropdownContainer children
         dropdownContainer.getChildren().addAll(transactionDropdown, spacer, customerDropdown);
+
+        // INVOICE CARD LIST
+        TransactionInvoiceCardList transactionInvoiceCardList = new TransactionInvoiceCardList(0.8 * managementContainerWidth);
+        VBox.setVgrow(transactionInvoiceCardList, Priority.ALWAYS);
 
         // BUTTON CONTAINER
         HBox buttonContainer = new HBox();
@@ -81,10 +89,8 @@ public class TransactionPage extends StackPane {
         // Add all buttonContainer children
         buttonContainer.getChildren().addAll(saveBill, spacer, makeBill);
 
-        NumberSpinner spinner = new NumberSpinner(0);
-
         // Add all managementContainer children
-        managementContainer.getChildren().addAll(dropdownContainer, buttonContainer, spinner);
+        managementContainer.getChildren().addAll(dropdownContainer, transactionInvoiceCardList, buttonContainer);
 
         // Add all container components
         container.getChildren().addAll(transactionProductCardList, managementContainer);
