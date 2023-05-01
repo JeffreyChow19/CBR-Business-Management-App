@@ -8,8 +8,10 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import lombok.Getter;
 
 public class NumberSpinner extends HBox {
+    @Getter
     private int value;
     private Label valueLabel;
 
@@ -30,13 +32,9 @@ public class NumberSpinner extends HBox {
         incrementButton.setOnAction(event -> incrementValue());
 
         this.getChildren().addAll(decrementButton, valueLabel, incrementButton);
-        this.setSpacing(10);
+        this.setSpacing(8);
         this.setAlignment(Pos.CENTER);
         this.setPadding(new Insets(5));
-    }
-
-    public int getValue() {
-        return value;
     }
 
     private void decrementValue() {
