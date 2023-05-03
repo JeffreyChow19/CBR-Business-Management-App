@@ -1,5 +1,6 @@
 package com.cbr.view.components.cards;
 
+import com.cbr.models.Product;
 import com.cbr.view.components.spinner.NumberSpinner;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Insets;
@@ -11,20 +12,20 @@ import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 
 public class TransactionInvoiceCard extends HBox {
-    public TransactionInvoiceCard(double width, double height, String name, double price) {
+    public TransactionInvoiceCard(double width, double height, Product product) {
         this.setMinWidth(width);
         this.setPrefWidth(width);
         this.setMaxWidth(width);
         this.setAlignment(Pos.CENTER_LEFT);
 
-        Label productName = new Label(name);
+        Label productName = new Label(product.getProductName());
         productName.setFont(Theme.getBodyMediumFont());
         productName.setTextFill(Color.WHITE);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
-        Label pricePerItem = new Label("@" + String.format("%.0f", price));
+        Label pricePerItem = new Label("@" + String.format("%.0f", product.getSellPrice()));
         pricePerItem.setFont(Theme.getBodyMediumFont());
         pricePerItem.setTextFill(Color.WHITE);
         pricePerItem.setPadding(new Insets(0,20,0,20));
