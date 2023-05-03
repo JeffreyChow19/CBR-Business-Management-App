@@ -3,6 +3,7 @@ package com.cbr.view.components.cardslist;
 import com.cbr.models.InventoryProduct;
 import com.cbr.models.Product;
 import com.cbr.view.components.cards.TransactionProductCard;
+import com.cbr.view.pages.TransactionPage;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -25,7 +26,10 @@ public class TransactionProductCardList extends ScrollPane {
     private double width;
     private double height;
 
-    public TransactionProductCardList(List<InventoryProduct> products){
+    private TransactionPage parent;
+
+    public TransactionProductCardList(TransactionPage parent, List<InventoryProduct> products){
+        this.parent = parent;
         // Setup ScrollPane
         this.width = 0.5 * Theme.getScreenWidth();
         this.height = Theme.getScreenHeight();
@@ -97,7 +101,7 @@ public class TransactionProductCardList extends ScrollPane {
             productsPane.setPadding(new Insets(0, 0 , 40, 0.03 * this.width));
 
             for (InventoryProduct product : productsInCategory) {
-                TransactionProductCard transactionProductCard = new TransactionProductCard(product);
+                TransactionProductCard transactionProductCard = new TransactionProductCard(parent, product);
                 productsPane.getChildren().add(transactionProductCard);
             }
 
