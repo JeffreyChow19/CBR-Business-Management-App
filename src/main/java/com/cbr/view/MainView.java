@@ -30,6 +30,10 @@ public class MainView extends VBox {
         /* Body Setup */
         TabMenuBar pageTabs = new TabMenuBar();
         pageTabs.addTab("Home", homePage);
+
+        pageTabs.addTab("Transaction", transactionPage);
+        pageTabs.switchToTab("Transaction");
+
         BorderPane bodyContainer = new BorderPane();
         bodyContainer.setTop(pageTabs);
 
