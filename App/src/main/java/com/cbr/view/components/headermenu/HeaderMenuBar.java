@@ -5,34 +5,24 @@ import javafx.scene.Node;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import lombok.Getter;
 
 public class HeaderMenuBar extends MenuBar {
-    private final MenuItem clientsMenu;
-    private final MenuItem inventoryManagementMenu;
-    private final MenuItem exportStatementsMenu;
-    private final MenuItem transactionMenu;
-    private final MenuItem settingsMenu;
-    private final MenuItem pluginsMenu;
+    @Getter
+    private Menu navigationMenu;
+    @Getter
+    private Menu preferencesMenu;
+    @Getter
+    private TabMenuBar tabs;
 
-    public HeaderMenuBar() {
+    public HeaderMenuBar(TabMenuBar tabs) {
         super();
-
+        this.tabs = tabs;
         /* Set Menu Items : Navigation Menu */
-        Menu navigationMenu = new Menu("Menu");
-        clientsMenu = new MenuItem("Clients");
-        inventoryManagementMenu = new MenuItem("Inventory Management");
-        exportStatementsMenu = new MenuItem("Export Statements");
-        transactionMenu = new MenuItem("Transaction");
-        navigationMenu.getItems().addAll(clientsMenu,
-                inventoryManagementMenu,
-                exportStatementsMenu,
-                transactionMenu);
+        this.navigationMenu = new Menu("Menu");
 
         /* Set Menu Items : Preferences Menu */
-        Menu preferencesMenu = new Menu("Preferences");
-        settingsMenu = new MenuItem("Settings");
-        pluginsMenu = new MenuItem("Plugins");
-        preferencesMenu.getItems().addAll(settingsMenu, pluginsMenu);
+        this.preferencesMenu = new Menu("Preferences");
 
         /* Add to Self */
         this.getMenus().addAll(navigationMenu, preferencesMenu);
@@ -40,18 +30,16 @@ public class HeaderMenuBar extends MenuBar {
         // chore: link menu items to pages
     }
 
-    public void setOpenedTab(TabMenuBar targetTabMenu,
-                             Node clientsPage,
-                             Node inventoryPage,
-                             Node exportStatementsPage,
-                             Node transactionPage,
-                             Node settingsPage,
-                             Node pluginsPage) {
-        clientsMenu.setOnAction(event -> targetTabMenu.addTab("Clients", clientsPage));
-        inventoryManagementMenu.setOnAction(event -> targetTabMenu.addTab("Inventory Management", inventoryPage));
-        exportStatementsMenu.setOnAction(event -> targetTabMenu.addTab("Export Statements", exportStatementsPage));
-        transactionMenu.setOnAction(event -> targetTabMenu.addTab("Transactions", transactionPage));
-        settingsMenu.setOnAction(event -> targetTabMenu.addTab("Settings", settingsPage));
-        pluginsMenu.setOnAction(event -> targetTabMenu.addTab("Plugins", pluginsPage));
+    public void addNewNavigationMenu(String menuName, Node menuContent){
+        MenuItem newMenu = new MenuItem(menuName);
+        newMenu.setOnAction(event -> tabs.addTab(menuName, menuContent));
+        this.getNavigationMenu().getItems().add(newMenu);
     }
+
+    public void addNewPreferencesMenu(String menuName, Node menuContent){
+        MenuItem newMenu = new MenuItem(menuName);
+        newMenu.setOnAction(event -> tabs.addTab(menuName, menuContent));
+        this.getPreferencesMenu().getItems().add(newMenu);
+    }
+
 }

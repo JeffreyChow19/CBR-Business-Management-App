@@ -16,11 +16,14 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
+import lombok.Getter;
 
 
 public class SettingsPage extends VBox {
     private Label selectedFolderLabel;
     private String selectedFolder;
+    @Getter
+    private VBox formContainer;
     public SettingsPage(MainView parent){
         this.selectedFolder = App.getDataStore().getFolder();
         this.setAlignment(Pos.TOP_CENTER);
@@ -33,7 +36,7 @@ public class SettingsPage extends VBox {
         dataFormatLabel.setFont(Theme.getHeading2Font());
         dataFormatLabel.setTextFill(Color.WHITE);
 
-        VBox formContainer = new VBox();
+        formContainer = new VBox();
         formContainer.setSpacing(30);
         formContainer.setAlignment(Pos.TOP_LEFT);
 
