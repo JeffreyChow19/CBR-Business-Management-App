@@ -1,5 +1,7 @@
 package com.cbr.view.components.cardslist;
 
+import com.cbr.models.InventoryProduct;
+import com.cbr.models.Product;
 import com.cbr.view.components.cards.TransactionInvoiceCard;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Insets;
@@ -38,7 +40,10 @@ public class TransactionInvoiceCardList extends VBox{
         invoiceListContainer.setStyle("-fx-background-color:" + Theme.getPrimaryDark() + ";");
         invoiceListContainer.setAlignment(Pos.TOP_CENTER);
 
-        TransactionInvoiceCard transactionInvoiceCard = new TransactionInvoiceCard(width, 50, "Card", 50000);
+        Product product = new InventoryProduct();
+        product.setProductName("hello");
+        product.setSellPrice(2000.0);
+        TransactionInvoiceCard transactionInvoiceCard = new TransactionInvoiceCard(width, 50, product);
 
         invoiceListContainer.getChildren().addAll(transactionInvoiceCard);
 
@@ -46,27 +51,16 @@ public class TransactionInvoiceCardList extends VBox{
 
         VBox.setVgrow(invoiceListPane, Priority.ALWAYS);
 
-        // GRAND TOTAL
-        HBox grandTotalContainer = new HBox();
-        grandTotalContainer.setMinWidth(width);
-        grandTotalContainer.setPrefWidth(width);
-        grandTotalContainer.setMaxWidth(width);
-        grandTotalContainer.setStyle("-fx-border-color: white");
-        grandTotalContainer.setPadding(new Insets(15));
-
-        Label grandTotal = new Label("Grand Total");
-        grandTotal.setFont(Theme.getHeading2Font());
-        grandTotal.setTextFill(Color.WHITE);
-
-        Region spacer = new Region();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
-
-        Label totalPrice = new Label("50000");
-        totalPrice.setFont(Theme.getHeading2Font());
-        totalPrice.setTextFill(Color.WHITE);
-
-        grandTotalContainer.getChildren().addAll(grandTotal, spacer, totalPrice);
-
-        this.getChildren().addAll(invoiceListPane, grandTotalContainer);
+        this.getChildren().addAll(invoiceListPane);
     }
+
+    public void update(){
+
+    }
+
+    public void addInvoiceCard() {
+
+    }
+
+
 }
