@@ -4,22 +4,22 @@
     <dataList>
       <id>FI-1</id>
       <customerId>C-15</customerId>
-      <createdAt>2023-05-01T00:17:09</createdAt>
+      <createdAt>2023-05-04T00:20:30</createdAt>
       <boughtProducts>
         <boughtProducts>
           <id>P-1</id>
-          <productName>Gorgeous Bronze Clock</productName>
-          <sellPrice>71.27</sellPrice>
+          <productName>Mediocre Wool Knife</productName>
+          <sellPrice>45.06</sellPrice>
         </boughtProducts>
         <boughtProducts>
           <id>P-2</id>
-          <productName>Awesome Rubber Computer</productName>
-          <sellPrice>87.14</sellPrice>
+          <productName>Mediocre Paper Clock</productName>
+          <sellPrice>70.46</sellPrice>
         </boughtProducts>
         <boughtProducts>
           <id>P-3</id>
-          <productName>Sleek Silk Gloves</productName>
-          <sellPrice>30.87</sellPrice>
+          <productName>Durable Steel Clock</productName>
+          <sellPrice>48.33</sellPrice>
         </boughtProducts>
       </boughtProducts>
     </dataList>

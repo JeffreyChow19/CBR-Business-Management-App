@@ -3,22 +3,22 @@
     {
       "id" : "FI-1",
       "customerId" : "C-15",
-      "createdAt" : "2023-05-01T00:17:09",
+      "createdAt" : "2023-05-04T00:20:30",
       "boughtProducts" : [
         {
           "id" : "P-1",
-          "productName" : "Gorgeous Bronze Clock",
-          "sellPrice" : 71.27
+          "productName" : "Mediocre Wool Knife",
+          "sellPrice" : 45.06
         },
         {
           "id" : "P-2",
-          "productName" : "Awesome Rubber Computer",
-          "sellPrice" : 87.14
+          "productName" : "Mediocre Paper Clock",
+          "sellPrice" : 70.46
         },
         {
           "id" : "P-3",
-          "productName" : "Sleek Silk Gloves",
-          "sellPrice" : 30.87
+          "productName" : "Durable Steel Clock",
+          "sellPrice" : 48.33
         }
       ]
     }
