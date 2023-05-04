@@ -2,23 +2,23 @@
   "dataList" : [
     {
       "id" : "FI-1",
-      "customerId" : "C-15",
-      "createdAt" : "2023-05-04T00:20:30",
+      "customerId" : "C-21",
+      "createdAt" : "2023-05-04T14:28:43",
       "boughtProducts" : [
         {
           "id" : "P-1",
-          "productName" : "Mediocre Wool Knife",
-          "sellPrice" : 45.06
+          "productName" : "Awesome Linen Computer",
+          "sellPrice" : 85.17
         },
         {
           "id" : "P-2",
-          "productName" : "Mediocre Paper Clock",
-          "sellPrice" : 70.46
+          "productName" : "Incredible Cotton Table",
+          "sellPrice" : 69.67
         },
         {
           "id" : "P-3",
-          "productName" : "Durable Steel Clock",
-          "sellPrice" : 48.33
+          "productName" : "Lightweight Aluminum Keyboard",
+          "sellPrice" : 69.24
         }
       ]
     }

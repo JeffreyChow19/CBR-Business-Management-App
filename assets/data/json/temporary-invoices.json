@@ -2,26 +2,146 @@
   "dataList" : [
     {
       "id" : "TI-1",
-      "customerId" : "2",
-      "createdAt" : "2023-05-04T00:20:29",
+      "customerId" : "C-8",
+      "createdAt" : "2023-05-04T14:28:56",
       "productFrequencies" : {
-        "P-42" : 1
+        "P-21" : 5
       }
     },
     {
       "id" : "TI-2",
-      "customerId" : "6",
-      "createdAt" : "2023-05-04T00:20:29",
+      "customerId" : "C-13",
+      "createdAt" : "2023-05-04T14:32:27",
       "productFrequencies" : {
-        "P-25" : 1
+        "P-15" : 5
       }
     },
     {
       "id" : "TI-3",
-      "customerId" : "1",
-      "createdAt" : "2023-05-04T00:20:29",
+      "customerId" : "C-19",
+      "createdAt" : "2023-05-04T14:43:44",
       "productFrequencies" : {
-        "P-41" : 1
+        "P-49" : 9
+      }
+    },
+    {
+      "id" : "TI-4",
+      "customerId" : "C-20",
+      "createdAt" : "2023-05-04T14:49:18",
+      "productFrequencies" : {
+        "P-49" : 3
+      }
+    },
+    {
+      "id" : "TI-5",
+      "customerId" : "C-21",
+      "createdAt" : "2023-05-04T14:50:24",
+      "productFrequencies" : {
+        "P-16" : 8
+      }
+    },
+    {
+      "id" : "TI-6",
+      "customerId" : "C-22",
+      "createdAt" : "2023-05-04T14:50:31",
+      "productFrequencies" : {
+        "P-40" : 4
+      }
+    },
+    {
+      "id" : "TI-7",
+      "customerId" : "C-23",
+      "createdAt" : "2023-05-04T14:57:19",
+      "productFrequencies" : {
+        "P-21" : 3
+      }
+    },
+    {
+      "id" : "TI-8",
+      "customerId" : "C-24",
+      "createdAt" : "2023-05-04T14:58:45",
+      "productFrequencies" : {
+        "P-40" : 4
+      }
+    },
+    {
+      "id" : "TI-9",
+      "customerId" : "C-25",
+      "createdAt" : "2023-05-04T15:03:26",
+      "productFrequencies" : {
+        "P-21" : 5
+      }
+    },
+    {
+      "id" : "TI-10",
+      "customerId" : "C-22",
+      "createdAt" : "2023-05-04T15:06:42",
+      "productFrequencies" : {
+        "P-40" : 3
+      }
+    },
+    {
+      "id" : "TI-11",
+      "customerId" : "C-26",
+      "createdAt" : "2023-05-04T15:09:53",
+      "productFrequencies" : {
+        "P-40" : 4
+      }
+    },
+    {
+      "id" : "TI-12",
+      "customerId" : "C-27",
+      "createdAt" : "2023-05-04T15:10:19",
+      "productFrequencies" : {
+        "P-47" : 4
+      }
+    },
+    {
+      "id" : "TI-13",
+      "customerId" : "C-28",
+      "createdAt" : "2023-05-04T15:12:51",
+      "productFrequencies" : {
+        "P-21" : 14,
+        "P-6" : 1,
+        "P-29" : 1
+      }
+    },
+    {
+      "id" : "TI-14",
+      "customerId" : "C-29",
+      "createdAt" : "2023-05-04T15:18:58",
+      "productFrequencies" : {
+        "P-21" : 10
+      }
+    },
+    {
+      "id" : "TI-16",
+      "customerId" : "C-34",
+      "createdAt" : "2023-05-04T15:19:12",
+      "productFrequencies" : { }
+    },
+    {
+      "id" : "TI-17",
+      "customerId" : "C-32",
+      "createdAt" : "2023-05-04T15:21:26",
+      "productFrequencies" : {
+        "P-40" : 6
+      }
+    },
+    {
+      "id" : "TI-18",
+      "customerId" : "C-33",
+      "createdAt" : "2023-05-04T15:21:36",
+      "productFrequencies" : {
+        "P-49" : 5
+      }
+    },
+    {
+      "id" : "TI-20",
+      "customerId" : "C-35",
+      "createdAt" : "2023-05-04T15:21:55",
+      "productFrequencies" : {
+        "P-40" : 3
       }
     }
   ]

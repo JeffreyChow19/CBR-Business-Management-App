@@ -1,29 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <DataList>
-  <dataList>
-    <dataList>
-      <id>TI-1</id>
-      <customerId>2</customerId>
-      <createdAt>2023-05-04T00:20:29</createdAt>
-      <productFrequencies>
-        <P-42>1</P-42>
-      </productFrequencies>
-    </dataList>
-    <dataList>
-      <id>TI-2</id>
-      <customerId>6</customerId>
-      <createdAt>2023-05-04T00:20:29</createdAt>
-      <productFrequencies>
-        <P-25>1</P-25>
-      </productFrequencies>
-    </dataList>
-    <dataList>
-      <id>TI-3</id>
-      <customerId>1</customerId>
-      <createdAt>2023-05-04T00:20:29</createdAt>
-      <productFrequencies>
-        <P-41>1</P-41>
-      </productFrequencies>
-    </dataList>
-  </dataList>
+  <dataList/>
 </DataList>
