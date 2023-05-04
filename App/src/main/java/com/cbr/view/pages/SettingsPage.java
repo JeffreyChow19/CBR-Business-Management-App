@@ -2,6 +2,7 @@ package com.cbr.view.pages;
 
 import com.cbr.App;
 import com.cbr.datastore.DataStore;
+import com.cbr.utils.AppSettings;
 import com.cbr.view.MainView;
 import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.labels.PageTitle;
@@ -17,14 +18,26 @@ import javafx.scene.paint.Color;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import lombok.Getter;
+import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class SettingsPage extends VBox {
     private Label selectedFolderLabel;
     private String selectedFolder;
     @Getter
-    private VBox formContainer;
+    private List<String> errorList;
+    @Getter @Setter
+    private Map<String, String> additionalValues;
+    @Getter
+    private HBox formContainer;
     public SettingsPage(MainView parent){
+        this.additionalValues = new HashMap<>(AppSettings.getInstance().getAdditionalSettings());
+        this.errorList = new ArrayList<>();
         this.selectedFolder = App.getDataStore().getFolder();
         this.setAlignment(Pos.TOP_CENTER);
         this.setSpacing(50);
@@ -35,10 +48,11 @@ public class SettingsPage extends VBox {
         Label dataFormatLabel = new Label("Data format");
         dataFormatLabel.setFont(Theme.getHeading2Font());
         dataFormatLabel.setTextFill(Color.WHITE);
+        formContainer = new HBox();
 
-        formContainer = new VBox();
-        formContainer.setSpacing(30);
-        formContainer.setAlignment(Pos.TOP_LEFT);
+        VBox leftFormContainer = new VBox();
+        leftFormContainer.setSpacing(30);
+        leftFormContainer.setAlignment(Pos.TOP_LEFT);
 
         ToggleGroup dataFormatToggle = new ToggleGroup();
         RadioButton jsonButton = new RadioButton("JSON");
@@ -82,10 +96,9 @@ public class SettingsPage extends VBox {
             // Handle the selected folder (null if no folder was selected)
             if (selectedFolder != null) {
                 this.selectedFolder = selectedFolder.getAbsolutePath();
-                System.out.println("Selected folder: " + selectedFolder.getAbsolutePath());
             } else {
                 this.selectedFolder = "No folder chosen";
-                System.out.println("No folder selected.");
+                errorList.add("Data store folder path must be chosen");
             }
             selectedFolderLabel.setText(this.selectedFolder);
         });
@@ -98,13 +111,21 @@ public class SettingsPage extends VBox {
         directoryContainer.setAlignment(Pos.CENTER_LEFT);
         directoryContainer.getChildren().addAll(chooseFolderButton, selectedFolderLabel);
 
-        formContainer.getChildren().addAll(dataFormatLabel, dataFormatContainer, pathLabel, directoryContainer);
+        leftFormContainer.getChildren().addAll(dataFormatLabel, dataFormatContainer, pathLabel, directoryContainer);
+        Region formRegion = new Region();
+
+        formContainer.getChildren().addAll(leftFormContainer, formRegion);
+        HBox.setHgrow(formRegion, Priority.ALWAYS);
 
         DefaultButton saveSettingsButton = new DefaultButton(Theme.getScreenWidth()*0.2, Theme.getScreenHeight() * 0.06, "Save Settings");
 
         saveSettingsButton.setOnMouseClicked(event -> {
             // Create a FolderChooser
-            if (selectedFolder!= "No folder chosen") {
+            if (errorList.isEmpty()) {
+                AppSettings.getInstance().setDataStoreMode(((RadioButton)dataFormatToggle.getSelectedToggle()).getText());
+                AppSettings.getInstance().setDataStorePath(selectedFolder);
+                AppSettings.getInstance().setAdditionalSettings(additionalValues);
+                AppSettings.getInstance().updateSettings();
                 App.setDataStore(new DataStore(((RadioButton)dataFormatToggle.getSelectedToggle()).getText(), selectedFolder));
                 parent.refresh();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -118,7 +139,7 @@ public class SettingsPage extends VBox {
             else{
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
-                alert.setContentText("Folder path has to be set!");
+                alert.setContentText(String.join("\n", this.errorList));
                 alert.setOnCloseRequest(e -> {
                     alert.close();
                 });

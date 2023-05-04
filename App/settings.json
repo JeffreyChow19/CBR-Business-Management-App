@@ -1,0 +1,9 @@
+{
+  "dataStorePath" : "assets/data/json",
+  "dataStoreMode" : "JSON",
+  "plugins" : [ ],
+  "additionalSettings" : {
+    "tax" : "15.0",
+    "service charge" : "16.0"
+  }
+}
