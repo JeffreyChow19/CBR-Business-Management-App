@@ -18,9 +18,9 @@ public class Seeder {
         for (int i = 0; i < 3;i++){
             Integer customerId = faker.number().numberBetween(1,7);
             Integer productId = faker.number().numberBetween(1, 50);
-            TemporaryInvoice temp = new TemporaryInvoice(customerId.toString());
-            temp.addProduct("P-"+productId.toString());
-            temporaryInvoices.add(temp);
+//            TemporaryInvoice temp = new TemporaryInvoice(customerId.toString());
+//            temp.addProduct("P-"+productId.toString());
+//            temporaryInvoices.add(temp);
         }
         jsonDataStore.setTemporaryInvoices(new DataList<TemporaryInvoice>(temporaryInvoices));
         xmlDataStore.setTemporaryInvoices(new DataList<TemporaryInvoice>(temporaryInvoices));
