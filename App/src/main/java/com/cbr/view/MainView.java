@@ -1,16 +1,17 @@
 package com.cbr.view;
 
+import com.cbr.plugin.PluginManager;
 import com.cbr.view.components.headermenu.HeaderMenuBar;
 import com.cbr.view.components.tabmenu.TabMenuBar;
-import com.cbr.view.pages.ClientsPage;
-import com.cbr.view.pages.HomePage;
-import com.cbr.view.pages.TransactionPage;
-import com.cbr.view.pages.SettingsPage;
+import com.cbr.view.pages.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import lombok.Getter;
+
+import java.lang.reflect.InvocationTargetException;
+import java.net.MalformedURLException;
 
 public class MainView extends VBox {
     private HomePage homePage;
@@ -40,7 +41,8 @@ public class MainView extends VBox {
         homePage = new HomePage();
         clientsPage = new ClientsPage();
         transactionPage = new TransactionPage();
-        settingsPage = new SettingsPage(this);
+        settingsPage = new SettingsPage();
+        PluginsPage pluginsPage = new PluginsPage();
         // chore: pages
 
         /* Body Setup */
@@ -56,7 +58,7 @@ public class MainView extends VBox {
         headerMenuBar.addNewNavigationMenu("Export Statements", new Label("export"));
         headerMenuBar.addNewNavigationMenu("Transaction", transactionPage);
         headerMenuBar.addNewPreferencesMenu("Settings", settingsPage);
-        headerMenuBar.addNewPreferencesMenu("Plugins", new Label("plugins"));
+        headerMenuBar.addNewPreferencesMenu("Plugins", pluginsPage);
 //        headerMenuBar.setOpenedTab(tabs,
 //                clientsPage,
 //                new Label("inventory"),
@@ -73,6 +75,21 @@ public class MainView extends VBox {
 
     public void refresh(){
         // to do: close all opened tabs except home
+        try {
+            PluginManager.getInstance().loadPlugin();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (InstantiationException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        } catch (InvocationTargetException e) {
+            throw new RuntimeException(e);
+        }
         clientsPage.updateList("");
     }
 }

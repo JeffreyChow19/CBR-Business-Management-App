@@ -13,6 +13,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public class BillingPlugin implements Plugin {
+
+    public String getName(){
+        return "com.cbr.BillingPlugin";
+    }
     public void load(){
         VBox newFormContainer = new VBox();
         newFormContainer.setSpacing(30);

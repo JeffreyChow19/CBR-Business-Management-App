@@ -17,6 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
+import jdk.tools.jmod.Main;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,7 +36,7 @@ public class SettingsPage extends VBox {
     private Map<String, String> additionalValues;
     @Getter
     private HBox formContainer;
-    public SettingsPage(MainView parent){
+    public SettingsPage(){
         this.additionalValues = new HashMap<>(AppSettings.getInstance().getAdditionalSettings());
         this.errorList = new ArrayList<>();
         this.selectedFolder = App.getDataStore().getFolder();
@@ -127,7 +128,7 @@ public class SettingsPage extends VBox {
                 AppSettings.getInstance().setAdditionalSettings(additionalValues);
                 AppSettings.getInstance().updateSettings();
                 App.setDataStore(new DataStore(((RadioButton)dataFormatToggle.getSelectedToggle()).getText(), selectedFolder));
-                parent.refresh();
+                MainView.getInstance().refresh();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Success");
                 alert.setContentText("Successfully saved settings!");

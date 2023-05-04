@@ -13,6 +13,9 @@ public class BasePlugin implements Plugin {
     @Getter @Setter
     private String pageName;
 
+    public String getName(){
+        return "com.cbr.BasePlugin";
+    }
     public BasePlugin(){
         System.out.println("aaaaaaaaaa");
     }

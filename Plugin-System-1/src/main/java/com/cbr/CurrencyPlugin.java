@@ -24,7 +24,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CurrencyPlugin implements Plugin {
-
+    public String getName(){
+        return "com.cbr.CurrencyPlugin";
+    }
     public CurrencyPlugin(){
 
     }
