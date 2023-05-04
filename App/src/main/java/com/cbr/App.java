@@ -24,7 +24,6 @@ public class App extends Application{
     @Getter
     @Setter
     private static DataStore dataStore = new DataStore("JSON", "assets/data/json");
-    private List<Plugin> plugins;
     private MainView mainView;
 
     public static void main (String[] args) {
@@ -38,8 +37,8 @@ public class App extends Application{
 //        Image appIcon = new Image("/assets/icons/capybucks.jpg");
 //         chore: update icons
 //        stage.getIcons().add(appIcon);
-        PluginManager pluginManager = new PluginManager();
-        pluginManager.loadPlugin("Plugin-Base/target/Plugin-Base-1.0.jar", "com.cbr.BasePlugin.class");
+//        PluginManager pluginManager = new PluginManager();
+//        pluginManager.loadPlugin("Plugin-Base/target/Plugin-Base-1.0.jar", "com.cbr.BasePlugin.class");
 ////        for (Plugin p : pluginManager.getPlugins()){
 ////            p.load(this);
 ////        }
