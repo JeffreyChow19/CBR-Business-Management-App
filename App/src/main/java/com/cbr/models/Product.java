@@ -15,5 +15,9 @@ import java.util.List;
 @Setter
 public abstract class Product extends Identifiable implements Serializable {
     private String productName;
+    private String category;
     private Double sellPrice;
+    private Double buyPrice;
+
+//    public abstract Double getGrandTotal();
 }

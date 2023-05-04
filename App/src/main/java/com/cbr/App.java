@@ -3,6 +3,7 @@ package com.cbr;
 import com.cbr.datastore.DataStore;
 import com.cbr.plugin.Plugin;
 import com.cbr.plugin.PluginManager;
+import com.cbr.utils.AppSettings;
 import com.cbr.view.MainView;
 import com.cbr.view.components.tabmenu.TabMenuBar;
 import com.cbr.view.theme.Theme;

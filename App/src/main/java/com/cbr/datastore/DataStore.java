@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,6 +19,7 @@ public class DataStore {
     @Getter private DataList<InventoryProduct> inventory;
     @Getter private DataList<FixedInvoice> invoices;
     @Getter private DataList<TemporaryInvoice> temporaryInvoices; // for not-fixed transactions
+    @Getter @Setter private List<?> additionalData;
     private DataStorer dataStorer;
 
 

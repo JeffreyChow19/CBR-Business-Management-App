@@ -10,7 +10,9 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.Getter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.nio.file.*;
+import java.util.List;
 
 @Getter
 public class JsonDataStore implements DataStorer{
@@ -29,6 +31,7 @@ public class JsonDataStore implements DataStorer{
         this.writer = mapper.writer(prettyPrinter);
         this.folder = folder;
     }
+
 
     public DataList<Customer> loadClients(){
         try {

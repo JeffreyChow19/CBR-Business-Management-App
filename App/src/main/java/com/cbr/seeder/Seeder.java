@@ -93,7 +93,7 @@ public class Seeder {
         boughtProducts.add(new BoughtProduct(productList.get(1), 1));
         boughtProducts.add(new BoughtProduct(productList.get(2), 1));
 
-        FixedInvoice invoice1 = new FixedInvoice(boughtProducts, cust1.getId());
+        FixedInvoice invoice1 = new FixedInvoice(boughtProducts, cust1.getId(), 0.0);
         List<FixedInvoice> invoices = new ArrayList<>();
         invoices.add(invoice1);
 

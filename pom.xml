@@ -12,8 +12,25 @@
         <module>App</module>
         <module>Plugin-Base</module>
         <module>Plugin-System-1</module>
+        <module>Plugin-System-2</module>
     </modules>
     <name>CBR</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JetBrains Annotation Dependency -->
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>24.0.1</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -52,11 +69,6 @@
         </plugins>
 
         <!-- Assets Resource Path -->
-        <resources>
-            <resource>
-                <directory>app/src/main/assets</directory>
-            </resource>
-        </resources>
     </build>
 
 </project>

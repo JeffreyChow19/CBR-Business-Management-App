@@ -16,11 +16,9 @@ public class InventoryProduct extends Product {
     private static Integer productCount = 0;
 
     public InventoryProduct(String productName, Double sellPrice, Double buyPrice, String imagePath, Integer stock, String category, Boolean status){
-        super(productName, sellPrice);
-        this.buyPrice = buyPrice;
+        super(productName, category, sellPrice, buyPrice);
         this.imagePath = imagePath;
         this.stock = stock;
-        this.category = category;
         this.status = status;
         InventoryProduct.productCount++;
         this.id = "P-" + InventoryProduct.productCount.toString();
