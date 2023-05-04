@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DataList>
+  <dataList>
+    <dataList>
+      <id>FI-1</id>
+      <customerId>C-1</customerId>
+      <createdAt>2023-05-05T03:47:06</createdAt>
+      <boughtProducts>
+        <boughtProducts>
+          <id>P-1</id>
+          <productName>Incredible Wooden Clock</productName>
+          <category/>
+          <sellPrice>65.48</sellPrice>
+          <buyPrice/>
+          <count>1</count>
+        </boughtProducts>
+        <boughtProducts>
+          <id>P-2</id>
+          <productName>Rustic Leather Car</productName>
+          <category/>
+          <sellPrice>37.43</sellPrice>
+          <buyPrice/>
+          <count>1</count>
+        </boughtProducts>
+        <boughtProducts>
+          <id>P-3</id>
+          <productName>Lightweight Cotton Bag</productName>
+          <category/>
+          <sellPrice>50.51</sellPrice>
+          <buyPrice/>
+          <count>1</count>
+        </boughtProducts>
+      </boughtProducts>
+      <discount>0.0</discount>
+    </dataList>
+  </dataList>
+</DataList>

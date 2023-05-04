@@ -11,9 +11,9 @@ public class Seeder {
     public static void main(String[] args){
         Faker faker = new Faker();
 
-        DataStore jsonDataStore = new DataStore("JSON", "assets/data/json");
-        DataStore xmlDataStore = new DataStore("XML", "assets/data/xml");
-        DataStore objDataStore = new DataStore("OBJ", "assets/data/obj");// TEMPORARY INVOICES //
+        DataStore jsonDataStore = new DataStore("JSON", "App/assets/data/json");
+        DataStore xmlDataStore = new DataStore("XML", "App/assets/data/xml");
+        DataStore objDataStore = new DataStore("OBJ", "App/assets/data/obj");// TEMPORARY INVOICES //
         List<TemporaryInvoice> temporaryInvoices = new ArrayList<>();
         for (int i = 0; i < 3;i++){
             Integer customerId = faker.number().numberBetween(1,7);

@@ -1,0 +1,28 @@
+{
+  "dataList" : [
+    {
+      "id" : "TI-1",
+      "customerId" : "3",
+      "createdAt" : "2023-05-05T03:47:06",
+      "productFrequencies" : {
+        "P-21" : 1
+      }
+    },
+    {
+      "id" : "TI-2",
+      "customerId" : "3",
+      "createdAt" : "2023-05-05T03:47:06",
+      "productFrequencies" : {
+        "P-16" : 1
+      }
+    },
+    {
+      "id" : "TI-3",
+      "customerId" : "1",
+      "createdAt" : "2023-05-05T03:47:06",
+      "productFrequencies" : {
+        "P-14" : 1
+      }
+    }
+  ]
+}
