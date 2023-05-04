@@ -1,7 +1,9 @@
 package com.cbr.view.components.spinner;
 
+import com.cbr.models.Product;
 import com.cbr.view.components.buttons.MinusButton;
 import com.cbr.view.components.buttons.PlusButton;
+import com.cbr.view.pages.TransactionPage;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -9,13 +11,21 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import lombok.Getter;
+import lombok.Setter;
 
 public class NumberSpinner extends HBox {
     @Getter
+    @Setter
     private int value;
     private Label valueLabel;
 
-    public NumberSpinner(int initialValue) {
+    private TransactionPage parent;
+
+    @Setter
+    private Product product;
+
+    public NumberSpinner(TransactionPage parent, int initialValue) {
+        this.parent = parent;
         this.value = initialValue;
 
         Button decrementButton = new MinusButton(10);
@@ -38,20 +48,16 @@ public class NumberSpinner extends HBox {
     }
 
     private void decrementValue() {
-        if (value > 1) {
-            value--;
-            updateValueLabel();
-        } else {
-            // Remove this record
-        }
+        value--;
+        updateValueLabel();
+        parent.removeProduct(product);
     }
 
     private void incrementValue() {
-        value++;
-        updateValueLabel();
+        parent.addProduct(product);
     }
 
-    private void updateValueLabel() {
+    public void updateValueLabel() {
         valueLabel.setText(Integer.toString(value));
     }
 }
