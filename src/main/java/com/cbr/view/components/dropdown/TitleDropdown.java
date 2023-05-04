@@ -3,9 +3,14 @@ package com.cbr.view.components.dropdown;
 import com.cbr.view.theme.Theme;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import lombok.Getter;
+
+import java.util.List;
 
 public class TitleDropdown extends VBox {
-    public TitleDropdown(double width, String title) {
+    @Getter
+    private Dropdown dropdown;
+    public TitleDropdown(double width, String title, List<String> options) {
         this.setMinWidth(width);
         this.setPrefWidth(width);
         this.setMaxWidth(width);
@@ -14,7 +19,7 @@ public class TitleDropdown extends VBox {
         label.setFont(Theme.getHeading2Font());
         label.setStyle("-fx-text-fill: white;");
 
-        Dropdown dropdown = new Dropdown();
+        dropdown = new Dropdown(options);
 
         this.getChildren().addAll(label, dropdown);
     }
