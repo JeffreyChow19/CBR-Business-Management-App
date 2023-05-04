@@ -14,8 +14,8 @@ public class PluginManager {
     private Map<String, Plugin> loadedPlugins = new HashMap<>();
 
     public void loadPlugin(String jarFile, String className) throws ClassNotFoundException, InstantiationException, IllegalAccessException, MalformedURLException, MalformedURLException, NoSuchMethodException, InvocationTargetException {
-        URLClassLoader classLoader = new URLClassLoader(new URL[] { new URL("file:///D:/lessons/SEM 4/OOP/TUBES/backup/CBR-Business-Management-App/Plugin-System-1/target/Plugin-System-1-1.0.jar")});
-        Class<?> pluginClass = classLoader.loadClass("com.cbr.CurrencyPlugin").asSubclass(Plugin.class);
+        URLClassLoader classLoader = new URLClassLoader(new URL[] { new URL("file:///D:/lessons/SEM 4/OOP/TUBES/backup/CBR-Business-Management-App/Plugin-System-2/target/Plugin-System-2-1.0.jar")});
+        Class<?> pluginClass = classLoader.loadClass("com.cbr.BillingPlugin").asSubclass(Plugin.class);
         Plugin plugin = (Plugin) pluginClass.getDeclaredConstructor().newInstance();
         if (pluginClass != null) {
             System.out.println("Class found!");
