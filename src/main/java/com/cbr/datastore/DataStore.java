@@ -91,6 +91,25 @@ public class DataStore {
         this.dataStorer.storeTemporaryInvoices(temporaryInvoices);
     }
 
+    public void addTemporaryInvoice(TemporaryInvoice invoice) {
+        boolean invoiceExists = temporaryInvoices.getDataList().stream()
+                .anyMatch(ti -> ti.getId().equals(invoice.getId()));
+
+        if (invoiceExists) {
+            // Update the attributes of the existing TemporaryInvoice
+            TemporaryInvoice existingInvoice = temporaryInvoices.getDataList().stream()
+                    .filter(ti -> ti.getId().equals(invoice.getId()))
+                    .findFirst()
+                    .get();
+            existingInvoice.setProductFrequencies(invoice.getProductFrequencies());
+            // Update any other attributes here
+        } else {
+            // Add the new TemporaryInvoice
+            this.temporaryInvoices.add(invoice);
+        }
+        this.dataStorer.storeTemporaryInvoices(this.temporaryInvoices);
+    }
+
     public void setInvoices(DataList<FixedInvoice> fixedInvoices){
         this.invoices = fixedInvoices;
         this.dataStorer.storeInvoices(fixedInvoices);
@@ -112,6 +131,14 @@ public class DataStore {
     public List<Customer> getCustomers(){
         return this.getClients().getDataList().stream()
                 .filter(c -> "customer".equals(c.getType()))
+                .collect(Collectors.toList());
+    }
+
+    // GET MEMBERS AND VIPS THAT ARE ACTIVE
+    public List<Member> getMembersVips() {
+        return this.getClients().getDataList().stream()
+                .filter(c -> ("VIP".equals(c.getType()) || "member".equals(c.getType())) && ((c instanceof Member && ((Member) c).getStatus() == true) || (c instanceof VIP && ((VIP) c).getStatus() == true)))
+                .map(c -> (Member) c)
                 .collect(Collectors.toList());
     }
 }
