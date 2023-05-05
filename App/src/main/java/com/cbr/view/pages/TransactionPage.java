@@ -53,7 +53,7 @@ public class TransactionPage extends StackPane {
     private List<TemporaryInvoice> temporaryInvoiceList;
 
     private double managementContainerWidth;
-
+    @Getter
     private VBox discountTaxContainer;
 
     private Label discountNumber;
@@ -116,14 +116,12 @@ public class TransactionPage extends StackPane {
                 customerDropdown.addEventFilter(MouseEvent.ANY, mouseEventFilter);
                 customerDropdown.addEventFilter(KeyEvent.ANY, keyEventFilter);
 
-                Optional<TemporaryInvoice> temporaryInvoice = temporaryInvoiceList.stream()
-                        .filter(ti -> ti.getId().equals(newValue))
-                        .findFirst();
-                String customerId = temporaryInvoice.get().getCustomerId();
+                temporaryInvoice = App.getDataStore().getTemporaryInvoices().getById(newValue);
+                String customerId = temporaryInvoice.getCustomerId();
 
                 customerDropdown.getDropdown().setValue(customerId);
-
-                this.temporaryInvoice = temporaryInvoice.get();
+//
+//                this.temporaryInvoice = temporaryInvoice.get();
                 updateTemporaryInvoice();
             }
         });
@@ -168,8 +166,27 @@ public class TransactionPage extends StackPane {
 
         discountContainer.getChildren().addAll(discountLabel, spacerDiscountContainer, discountNumber);
 
-        discountTaxContainer.getChildren().add(discountContainer);
-
+        discountTaxContainer.getChildren().addAll(discountContainer);
+        for (Map.Entry<String, Double> cost : TemporaryInvoice.additionalCosts.entrySet()) {
+            HBox tempContainer = new HBox();
+            tempContainer.setMinWidth(0.8 * managementContainerWidth);
+            tempContainer.setPrefWidth(0.8 * managementContainerWidth);
+            tempContainer.setMaxWidth(0.8 * managementContainerWidth);
+            tempContainer.setPadding(new Insets(5, 15, 5, 15));
+            System.out.println(cost.getKey());
+            Label tempLabel = new Label(cost.getKey());
+            tempLabel.setFont(Theme.getBodyMediumFont());
+            tempLabel.setTextFill(Color.WHITE);
+            Region spacer = new Region();
+            HBox.setHgrow(spacer, Priority.ALWAYS);
+            Label tempValue = new Label((new Double(cost.getValue() * 100)).toString());
+//        renderGrandTotal();
+            tempValue.setFont(Theme.getBodyMediumFont());
+            tempValue.setTextFill(Color.WHITE);
+            tempContainer.getChildren().addAll(tempLabel, spacer, tempValue);
+            discountTaxContainer.getChildren().add(tempContainer);
+            System.out.println("manggil ini ga");
+        }
 
         // GRAND TOTAL
         HBox grandTotalContainer = new HBox();
@@ -333,13 +350,13 @@ public class TransactionPage extends StackPane {
 //        }
 
         temporaryInvoice.addProduct(product.getId());
-        updateGrandTotal(product.getSellPrice());
+        renderGrandTotal();
         transactionInvoiceCardList.addInvoiceCard(product);
     }
 
     public void removeProduct(Product product) {
         temporaryInvoice.removeProduct(product.getId());
-        updateGrandTotal(-product.getSellPrice());
+        renderGrandTotal();
 
         // Check if invoice need to be deleted
         if (!temporaryInvoice.getProductFrequencies().containsKey(product.getId())){
@@ -347,13 +364,10 @@ public class TransactionPage extends StackPane {
         }
     }
 
-    public void updateGrandTotal(Double changes){
-        grandTotal += changes;
-        renderGrandTotal();
-    }
-
     public void renderGrandTotal() {
-        grandTotalNumber.setText(String.format("%.2f", grandTotal));
+        System.out.println(temporaryInvoice.getProductFrequencies());
+        System.out.println("manggilll");
+        grandTotalNumber.setText(String.format("%.2f", temporaryInvoice.getGrandTotal()));
     }
 
     public void updateTemporaryInvoice(){
@@ -361,23 +375,22 @@ public class TransactionPage extends StackPane {
 
         resetInfo();
 
+//        for ()
         for (Map.Entry<String, Integer> entry : temporaryInvoice.getProductFrequencies().entrySet()) {
             String productId = entry.getKey();
 
-            Optional<InventoryProduct> inventoryProduct = productList.stream()
-                    .filter(ip -> ip.getId().equals(productId))
-                    .findFirst();
+           InventoryProduct inventoryProduct = App.getDataStore().getInventory().getById(productId);
 
-            if (inventoryProduct.isPresent()) {
-                InventoryProduct product = inventoryProduct.get();
+            if (inventoryProduct != null) {
                 int frequency = entry.getValue();
                 for (int i = 0; i < frequency; i++) {
-                    addProduct(product);
+                    transactionInvoiceCardList.addInvoiceCard(inventoryProduct);
                 }
             } else {
                 // It means the product has been removed or not for sale anymore
             }
         }
+        renderGrandTotal();
     }
 
     public void resetInfo() {

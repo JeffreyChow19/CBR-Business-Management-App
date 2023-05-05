@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
+import lombok.Getter;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -24,11 +25,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CurrencyPlugin implements Plugin {
+    @Getter
+    private Boolean status;
+
     public String getName(){
         return "com.cbr.CurrencyPlugin";
     }
-    public CurrencyPlugin(){
 
+    public CurrencyPlugin(){
+        this.status = false;
     }
     public void load(){
         Label currencyLabel = new Label("Currency");

@@ -75,21 +75,24 @@ public class MainView extends VBox {
 
     public void refresh(){
         // to do: close all opened tabs except home
-        try {
-            PluginManager.getInstance().loadPlugin();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (InstantiationException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        }
+        PluginManager.getInstance().loadPlugin();
+        transactionPage = new TransactionPage();
+        TabMenuBar tabs = new TabMenuBar();
+        tabs.addTab("Home", homePage);
+        BorderPane bodyContainer = new BorderPane();
+        bodyContainer.setTop(tabs);
+//        homePage = new HomePage();
+//        clientsPage = new ClientsPage();
+//        transactionPage = new TransactionPage();
+//        settingsPage = new SettingsPage();
+        PluginsPage pluginsPage = new PluginsPage();
+        headerMenuBar.getNavigationMenu().getItems().clear();
+        headerMenuBar.addNewNavigationMenu("Clients", clientsPage);
+        headerMenuBar.addNewNavigationMenu("Inventory Management", new Label("inventory"));
+        headerMenuBar.addNewNavigationMenu("Export Statements", new Label("export"));
+        headerMenuBar.addNewNavigationMenu("Transaction", transactionPage);
+        headerMenuBar.addNewPreferencesMenu("Settings", settingsPage);
+        headerMenuBar.addNewPreferencesMenu("Plugins", pluginsPage);
         clientsPage.updateList("");
     }
 }

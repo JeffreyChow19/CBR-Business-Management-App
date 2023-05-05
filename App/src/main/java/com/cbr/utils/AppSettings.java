@@ -92,22 +92,4 @@ public class AppSettings {
         this.getPlugins().add(pluginPath);
     }
 
-//    public static void main(String[] args) {
-//        ObjectMapper mapper = new ObjectMapper();
-//        mapper.registerModule(new JavaTimeModule());
-//        DefaultPrettyPrinter prettyPrinter = new DefaultPrettyPrinter();
-//        prettyPrinter.indentArraysWith(DefaultIndenter.SYSTEM_LINEFEED_INSTANCE);
-//        prettyPrinter.indentObjectsWith(DefaultIndenter.SYSTEM_LINEFEED_INSTANCE);
-//        mapper.setDefaultPrettyPrinter(prettyPrinter);
-//        ObjectWriter writer = mapper.writer(prettyPrinter);
-//        AppSettings defaultSettings = new AppSettings();
-//        defaultSettings.toDefault();
-//
-//        try{
-//            String jsonDataString = writer.writeValueAsString(defaultSettings);
-//            Files.write(Paths.get("app/", "settings.json"), jsonDataString.getBytes());
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
 }

@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class BasePlugin implements Plugin {
+    @Getter private Boolean status;
     @Getter @Setter
     private VBox pageContent;
     @Getter @Setter
@@ -17,7 +18,7 @@ public class BasePlugin implements Plugin {
         return "com.cbr.BasePlugin";
     }
     public BasePlugin(){
-        System.out.println("aaaaaaaaaa");
+        this.status = false;
     }
     public void load(){
         System.out.println("hello world!");

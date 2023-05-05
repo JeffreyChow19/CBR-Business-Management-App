@@ -1,6 +1,7 @@
 package com.cbr.view.pages;
 
 import com.cbr.App;
+import com.cbr.exception.PluginException;
 import com.cbr.plugin.Plugin;
 import com.cbr.plugin.PluginManager;
 import com.cbr.utils.AppSettings;
@@ -10,6 +11,7 @@ import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -46,9 +48,20 @@ public class PluginsPage extends VBox {
             if (selectedFile != null) {
                 // handle the selected file (e.g. load the plugin)
                 AppSettings.getInstance().addPlugin(selectedFile.getAbsolutePath());
+                try {
+                    PluginManager.getInstance().loadNewPlugin();
+                } catch (MalformedURLException | PluginException e) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setContentText(e.getMessage());
+                    alert.setOnCloseRequest(alertEvent -> {
+                        alert.close();
+                    });
+                    alert.show();
+                    AppSettings.getInstance().getPlugins().remove(selectedFile.getAbsolutePath());
+                }
                 this.setPluginList();
-                MainView.getInstance().refresh();
-                System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+//                System.out.println("Selected file: " + selectedFile.getAbsolutePath());
             }
         });
         this.setPluginList();

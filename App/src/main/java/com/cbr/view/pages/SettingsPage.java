@@ -2,7 +2,9 @@ package com.cbr.view.pages;
 
 import com.cbr.App;
 import com.cbr.datastore.DataStore;
+import com.cbr.plugin.PluginManager;
 import com.cbr.utils.AppSettings;
+import com.cbr.utils.SettingsUpdate;
 import com.cbr.view.MainView;
 import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.labels.PageTitle;
@@ -20,15 +22,15 @@ import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class SettingsPage extends VBox {
     private Label selectedFolderLabel;
     private String selectedFolder;
+    @Getter
+    private Set<SettingsUpdate> onSaves;
+    private ToggleGroup dataFormatToggle;
     @Getter
     private List<String> errorList;
     @Getter @Setter
@@ -36,6 +38,7 @@ public class SettingsPage extends VBox {
     @Getter
     private HBox formContainer;
     public SettingsPage(){
+        this.onSaves = new HashSet<SettingsUpdate>(){};
         this.additionalValues = new HashMap<>(AppSettings.getInstance().getAdditionalSettings());
         this.errorList = new ArrayList<>();
         this.selectedFolder = App.getDataStore().getFolder();
@@ -54,7 +57,7 @@ public class SettingsPage extends VBox {
         leftFormContainer.setSpacing(30);
         leftFormContainer.setAlignment(Pos.TOP_LEFT);
 
-        ToggleGroup dataFormatToggle = new ToggleGroup();
+        dataFormatToggle = new ToggleGroup();
         RadioButton jsonButton = new RadioButton("JSON");
         RadioButton xmlButton = new RadioButton("XML");
         RadioButton objButton = new RadioButton("OBJ");
@@ -125,6 +128,9 @@ public class SettingsPage extends VBox {
                 AppSettings.getInstance().setDataStoreMode(((RadioButton)dataFormatToggle.getSelectedToggle()).getText());
                 AppSettings.getInstance().setDataStorePath(selectedFolder);
                 AppSettings.getInstance().setAdditionalSettings(additionalValues);
+                for (SettingsUpdate u : onSaves){
+                    u.onSave();
+                }
                 AppSettings.getInstance().updateSettings();
                 App.setDataStore(new DataStore(((RadioButton)dataFormatToggle.getSelectedToggle()).getText(), selectedFolder));
                 MainView.getInstance().refresh();
@@ -152,4 +158,5 @@ public class SettingsPage extends VBox {
         this.setStyle("-fx-background-color:" + Theme.getPrimaryDark());
         this.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
     }
+
 }
