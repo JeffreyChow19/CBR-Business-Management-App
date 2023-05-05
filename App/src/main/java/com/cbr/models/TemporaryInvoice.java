@@ -47,21 +47,26 @@ public class TemporaryInvoice extends Invoice implements Serializable {
         }
     }
 
-    public Double getGrandTotal(){
+    public Double total() {
         Double total = 0.0;
+
+        // SUM ALL PRODUCTS PRICE IN BILL
         for (Map.Entry<String, Integer> entry : productFrequencies.entrySet()){
-            System.out.println(entry.getKey());
             Double basePrice = App.getDataStore().getInventory().getById(entry.getKey()).getSellPrice();
-            System.out.println(basePrice);
-            total+=(basePrice* entry.getValue());
-            System.out.println(entry.getValue());
+            total += (basePrice * entry.getValue());
         }
-        for (Double cost : additionalCosts.values()){
-            total+=(cost*total);
-            System.out.println(cost);
-        }
-        System.out.println(total);
+
         return total;
+    }
+    public Double grandTotal(){
+        Double total = total();
+        Double grandTotal = total();
+
+        for (Double cost : additionalCosts.values()){
+            grandTotal += (cost * total);
+        }
+
+        return grandTotal;
     }
 
     public static void addAdditionalCosts(String costName, Double cost){
