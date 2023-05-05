@@ -36,6 +36,8 @@ import java.util.Optional;
 
 public class TransactionPage extends StackPane {
     private HBox container;
+    @Getter
+    private HBox grandTotalContainer;
     private TransactionProductCardList transactionProductCardList;
     private TransactionInvoiceCardList transactionInvoiceCardList;
     private TemporaryInvoice temporaryInvoice;
@@ -85,6 +87,7 @@ public class TransactionPage extends StackPane {
         managementContainer.setAlignment(Pos.TOP_CENTER);
         managementContainer.setMinSize(managementContainerWidth, managementContainerHeight);
         managementContainer.setPrefSize(managementContainerWidth, managementContainerHeight);
+        managementContainer.setMaxSize(managementContainerWidth, managementContainerHeight);
         managementContainer.setMaxSize(managementContainerWidth, managementContainerHeight);
         managementContainer.setPadding(new Insets(20,0,100,0));
         managementContainer.setSpacing(0.02 * managementContainerHeight);
@@ -185,11 +188,10 @@ public class TransactionPage extends StackPane {
             tempValue.setTextFill(Color.WHITE);
             tempContainer.getChildren().addAll(tempLabel, spacer, tempValue);
             discountTaxContainer.getChildren().add(tempContainer);
-            System.out.println("manggil ini ga");
         }
 
         // GRAND TOTAL
-        HBox grandTotalContainer = new HBox();
+        grandTotalContainer = new HBox();
         grandTotalContainer.setMinWidth(0.8 * managementContainerWidth);
         grandTotalContainer.setPrefWidth(0.8 * managementContainerWidth);
         grandTotalContainer.setMaxWidth(0.8 * managementContainerWidth);
@@ -365,7 +367,6 @@ public class TransactionPage extends StackPane {
 
     public void renderGrandTotal() {
         System.out.println(temporaryInvoice.getProductFrequencies());
-        System.out.println("manggilll");
         grandTotalNumber.setText(String.format("%.2f", temporaryInvoice.getGrandTotal()));
     }
 

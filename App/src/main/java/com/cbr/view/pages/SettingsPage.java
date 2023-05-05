@@ -52,6 +52,7 @@ public class SettingsPage extends VBox {
         dataFormatLabel.setFont(Theme.getHeading2Font());
         dataFormatLabel.setTextFill(Color.WHITE);
         formContainer = new HBox();
+        formContainer.setSpacing(60);
 
         VBox leftFormContainer = new VBox();
         leftFormContainer.setSpacing(30);
@@ -117,8 +118,7 @@ public class SettingsPage extends VBox {
         leftFormContainer.getChildren().addAll(dataFormatLabel, dataFormatContainer, pathLabel, directoryContainer);
         Region formRegion = new Region();
 
-        formContainer.getChildren().addAll(leftFormContainer, formRegion);
-        HBox.setHgrow(formRegion, Priority.ALWAYS);
+        formContainer.getChildren().addAll(leftFormContainer);
 
         DefaultButton saveSettingsButton = new DefaultButton(Theme.getScreenWidth()*0.2, Theme.getScreenHeight() * 0.06, "Save Settings");
 
@@ -128,12 +128,12 @@ public class SettingsPage extends VBox {
                 AppSettings.getInstance().setDataStoreMode(((RadioButton)dataFormatToggle.getSelectedToggle()).getText());
                 AppSettings.getInstance().setDataStorePath(selectedFolder);
                 AppSettings.getInstance().setAdditionalSettings(additionalValues);
+                App.setDataStore(new DataStore(((RadioButton)dataFormatToggle.getSelectedToggle()).getText(), selectedFolder));
+                MainView.getInstance().refresh();
                 for (SettingsUpdate u : onSaves){
                     u.onSave();
                 }
                 AppSettings.getInstance().updateSettings();
-                App.setDataStore(new DataStore(((RadioButton)dataFormatToggle.getSelectedToggle()).getText(), selectedFolder));
-                MainView.getInstance().refresh();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Success");
                 alert.setContentText("Successfully saved settings!");

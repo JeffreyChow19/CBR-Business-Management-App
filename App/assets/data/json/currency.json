@@ -1,0 +1,26 @@
+[
+  {
+    "symbol" : "IDR",
+    "name" : "Indonesian Rupiah (Default)",
+    "value" : 1,
+    "exchangeRate" : 1.0
+  },
+  {
+    "symbol" : "USD",
+    "name" : "US Dollar",
+    "value" : 1,
+    "exchangeRate" : 14000.0
+  },
+  {
+    "symbol" : "AUD",
+    "name" : "Australian Dollar",
+    "value" : 1,
+    "exchangeRate" : 10000.0
+  },
+  {
+    "symbol" : "KRW",
+    "name" : "Korean Won",
+    "value" : 1,
+    "exchangeRate" : 11.0
+  }
+]

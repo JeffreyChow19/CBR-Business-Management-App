@@ -2,10 +2,15 @@ package com.cbr.datastore;
 
 
 import com.cbr.models.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ObjDataStore implements DataStorer {
     private String folder;
@@ -13,6 +18,33 @@ public class ObjDataStore implements DataStorer {
     public ObjDataStore(String folder){
         this.folder = folder;
     }
+    public<T extends  Serializable> List<T> loadAdditionalData(String dataName, Class<T> clazz){
+        try {
+            Path path = Paths.get(this.folder, dataName + ".txt");
+            if (!Files.exists(path)) {
+                Files.createFile(path);
+                this.storeAdditionalData(new ArrayList<T>(), dataName);
+                return new ArrayList<>();
+            } else {
+                FileInputStream fileInputStream
+                        = new FileInputStream(path.toFile());
+                ObjectInputStream objectInputStream
+                        = new ObjectInputStream(fileInputStream);
+                List<T> ret =  (List<T>) objectInputStream.readObject();
+                objectInputStream.close();
+                return ret;
+            }
+        } catch (JsonProcessingException e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to read data in the folder!");
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to read data in the folder!");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Failed to read data in the folder!");
+        }
+        return null;
+    };
     public DataList<Customer> loadClients(){
         try {
             Path customerPath = Paths.get(this.folder, "clients.txt");
@@ -149,4 +181,15 @@ public class ObjDataStore implements DataStorer {
             System.out.println("failed to store temporary invoices");
         }
     };
+    public<T extends Serializable> void storeAdditionalData(List<T> records, String dataName){
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(Paths.get(this.folder, dataName + ".txt").toFile());
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(records);
+            objectOutputStream.flush();
+            objectOutputStream.close();
+        } catch (IOException e) {
+            System.out.println("failed to store temporary invoices");
+        }
+    }
 }

@@ -67,12 +67,10 @@ public class AppSettings {
                 if (instance == null) {
                     Path invoicesPath = Paths.get("", "settings.json");
                     if (Files.exists(invoicesPath)) {
-                        System.out.println("existtsss");
                         try {
                             ObjectMapper mapper = new ObjectMapper();
                             String invoicesJson = new String(Files.readAllBytes(invoicesPath));
                             instance = mapper.readValue(invoicesJson, new TypeReference<AppSettings>() {});
-                            System.out.println("successss");
                             return instance;
                         } catch (IOException e) {
                             e.printStackTrace();

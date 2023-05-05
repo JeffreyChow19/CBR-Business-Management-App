@@ -1,13 +1,17 @@
 package com.cbr.datastore;
 
 import com.cbr.models.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import java.io.*;
 import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class XmlDataStore implements DataStorer {
     private XmlMapper xmlMapper;
@@ -24,6 +28,27 @@ public class XmlDataStore implements DataStorer {
         xmlMapper.configure( ToXmlGenerator.Feature.WRITE_XML_DECLARATION, true );
         this.folder = folder;
     }
+
+    public<T extends  Serializable> List<T> loadAdditionalData(String dataName, Class<T> clazz){
+        try {
+            Path path = Paths.get(this.folder, dataName + ".xml");
+            if (!Files.exists(path)) {
+                Files.createFile(path);
+                this.storeAdditionalData(new ArrayList<T>(), dataName);
+                return new ArrayList<T>();
+            } else {
+                String xml = new String(Files.readAllBytes(path));
+                return xmlMapper.readValue(xml, TypeFactory.defaultInstance().constructCollectionType(List.class, clazz));
+            }
+        } catch (JsonProcessingException e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to read data in the folder!");
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to read data in the folder!");
+        }
+        return null;
+    };
 
     public DataList<Customer> loadClients(){
         try {
@@ -123,6 +148,21 @@ public class XmlDataStore implements DataStorer {
             Files.write(Paths.get(this.folder, "temporary-invoices.xml"), xmlDataString.getBytes());
         } catch (IOException e) {
             System.out.println("Failed to write to temporary-invoices.xml file in the folder!");
+        }
+    }
+
+
+    public<T extends Serializable> void storeAdditionalData(List<T> records, String dataName){
+        try {
+            String xmlDataString = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(records);
+            Files.write(Paths.get(this.folder, dataName + ".xml"), xmlDataString.getBytes());
+        }
+        catch (JsonProcessingException e) {
+            System.out.println("Failed to store ");
+            System.out.println(e.getMessage());
+        }
+        catch (IOException e) {
+            System.out.println("Failed to write in the folder!");
         }
     }
 }
