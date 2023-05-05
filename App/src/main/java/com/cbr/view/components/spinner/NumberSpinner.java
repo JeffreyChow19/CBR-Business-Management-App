@@ -34,8 +34,7 @@ public class NumberSpinner extends HBox {
         valueLabel = new Label(Integer.toString(value));
         valueLabel.setFont(Theme.getBodyMediumFont());
         valueLabel.setStyle("-fx-text-fill: white");
-        double minWidth = com.sun.javafx.tk.Toolkit.getToolkit().getFontLoader().computeStringWidth("00", valueLabel.getFont());
-        valueLabel.setMinWidth(minWidth);
+        valueLabel.setMinWidth(20);
         valueLabel.setAlignment(Pos.CENTER);
 
         Button incrementButton = new PlusButton(10);
