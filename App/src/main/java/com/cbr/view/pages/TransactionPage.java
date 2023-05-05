@@ -327,11 +327,10 @@ public class TransactionPage extends StackPane {
         }
 
         // IF USER IS MEMBERS OR VIP, SHOW POP UP "WANT TO USE POINTS?"
+//        Double discount = 0.0;
+        FixedInvoice invoice = new FixedInvoice(products, customerId, 0.0);
+        App.getDataStore().addInvoice(invoice);
 
-
-//        FixedInvoice invoice = new FixedInvoice(products, customerId);
-//        App.getDataStore().addInvoice(invoice);
-//
 
         App.getDataStore().deleteTemporaryInvoices(this.temporaryInvoice);
 

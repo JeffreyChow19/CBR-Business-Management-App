@@ -28,6 +28,7 @@ public class CircleImageButton extends Button {
         ImageView imageView = new ImageView(image);
         imageView.setFitWidth(radius);
         imageView.setFitHeight(radius);
+        imageView.setPreserveRatio(true);
 
         // Add Image to StackPane
         StackPane stackPane = new StackPane(imageView);

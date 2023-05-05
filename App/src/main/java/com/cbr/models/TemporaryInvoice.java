@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-@NoArgsConstructor
 @Getter
 @Setter
 public class TemporaryInvoice extends Invoice implements Serializable {
@@ -18,6 +17,9 @@ public class TemporaryInvoice extends Invoice implements Serializable {
     private static Integer invoiceCount = 0;
     public static Map<String, Double> additionalCosts = new HashMap<>(); // in percentage
 
+    public TemporaryInvoice(){
+        TemporaryInvoice.invoiceCount += 1;
+    }
     public TemporaryInvoice(String customerId){
         super(customerId);
         this.productFrequencies = new HashMap<String, Integer>();
