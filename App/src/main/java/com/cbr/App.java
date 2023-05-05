@@ -24,7 +24,6 @@ public class App extends Application{
     @Getter
     @Setter
     private static DataStore dataStore = new DataStore("JSON", "assets/data/json");
-    private List<Plugin> plugins;
     private MainView mainView;
 
     public static void main (String[] args) {

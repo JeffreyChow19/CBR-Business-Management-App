@@ -1,7 +1,9 @@
 {
-  "dataStorePath" : "assets/data/json",
-  "dataStoreMode" : "JSON",
-  "plugins" : [ ],
+  "dataStorePath" : "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\App\\assets\\data\\xml",
+  "dataStoreMode" : "XML",
+  "plugins" : [
+    "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\Plugin-System-2\\target\\Plugin-System-2-1.0.jar"
+  ],
   "additionalSettings" : {
     "tax" : "15.0",
     "service charge" : "16.0"

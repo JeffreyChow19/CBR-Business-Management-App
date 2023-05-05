@@ -88,6 +88,10 @@ public class AppSettings {
         return instance;
     }
 
+    public void addPlugin(String pluginPath){
+        this.getPlugins().add(pluginPath);
+    }
+
 //    public static void main(String[] args) {
 //        ObjectMapper mapper = new ObjectMapper();
 //        mapper.registerModule(new JavaTimeModule());

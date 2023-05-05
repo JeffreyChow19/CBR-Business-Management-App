@@ -2,25 +2,35 @@
   "dataList" : [
     {
       "id" : "FI-1",
-      "customerId" : "C-15",
-      "createdAt" : "2023-05-01T00:17:09",
+      "customerId" : "C-1",
+      "createdAt" : "2023-05-05T03:47:06",
       "boughtProducts" : [
         {
           "id" : "P-1",
-          "productName" : "Gorgeous Bronze Clock",
-          "sellPrice" : 71.27
+          "productName" : "Incredible Wooden Clock",
+          "category" : null,
+          "sellPrice" : 65.48,
+          "buyPrice" : null,
+          "count" : 1
         },
         {
           "id" : "P-2",
-          "productName" : "Awesome Rubber Computer",
-          "sellPrice" : 87.14
+          "productName" : "Rustic Leather Car",
+          "category" : null,
+          "sellPrice" : 37.43,
+          "buyPrice" : null,
+          "count" : 1
         },
         {
           "id" : "P-3",
-          "productName" : "Sleek Silk Gloves",
-          "sellPrice" : 30.87
+          "productName" : "Lightweight Cotton Bag",
+          "category" : null,
+          "sellPrice" : 50.51,
+          "buyPrice" : null,
+          "count" : 1
         }
-      ]
+      ],
+      "discount" : 0.0
     }
   ]
 }
