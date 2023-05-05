@@ -1,14 +1,14 @@
 {
   "dataList" : [
     {
-      "id" : "C-1",
+      "id" : "C-15",
       "type" : "customer",
       "invoiceList" : [
         "FI-1"
       ]
     },
     {
-      "id" : "C-2",
+      "id" : "C-16",
       "type" : "customer",
       "invoiceList" : [ ]
     },
@@ -58,16 +58,6 @@
       "phoneNumber" : "08123456789",
       "status" : true,
       "point" : 0
-    },
-    {
-      "id" : "C-8",
-      "type" : "customer",
-      "invoiceList" : [ ]
-    },
-    {
-      "id" : "C-9",
-      "type" : "customer",
-      "invoiceList" : [ ]
     }
   ]
 }

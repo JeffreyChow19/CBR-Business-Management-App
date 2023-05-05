@@ -52,8 +52,9 @@ public class Seeder {
             Integer stock = faker.number().numberBetween(0, 1000);
             String category = categories.get(rand.nextInt(categories.size()));
             Boolean status = faker.bool().bool();
-
+            System.out.println(category);
             InventoryProduct product = new InventoryProduct(productName, buyPrice, sellPrice, imagePath, stock, category, status);
+            System.out.println(product.getCategory());
             productList.add(product);
         }
 
@@ -61,18 +62,18 @@ public class Seeder {
         xmlDataStore.setInventory(new DataList<InventoryProduct>(productList));
         objDataStore.setInventory(new DataList<InventoryProduct>(productList));
 
-        for (Product p : jsonDataStore.getInventory().getDataList()){
-            System.out.println(p.getClass().getName());
-            System.out.println(p.getProductName());
-        }
-        for (Product p : xmlDataStore.getInventory().getDataList()){
-            System.out.println(p.getClass().getName());
-            System.out.println(p.getProductName());
-        }
-        for (Product p : objDataStore.getInventory().getDataList()){
-            System.out.println(p.getClass().getName());
-            System.out.println(p.getProductName());
-        }
+//        for (Product p : jsonDataStore.getInventory().getDataList()){
+//            System.out.println(p.getClass().getName());
+//            System.out.println(p.getProductName());
+//        }
+//        for (Product p : xmlDataStore.getInventory().getDataList()){
+//            System.out.println(p.getClass().getName());
+//            System.out.println(p.getProductName());
+//        }
+//        for (Product p : objDataStore.getInventory().getDataList()){
+//            System.out.println(p.getClass().getName());
+//            System.out.println(p.getProductName());
+//        }
 
 
 

@@ -3,31 +3,31 @@
   <dataList>
     <dataList>
       <id>FI-1</id>
-      <customerId>C-1</customerId>
-      <createdAt>2023-05-05T03:47:06</createdAt>
+      <customerId>C-15</customerId>
+      <createdAt>2023-05-05T14:47:17</createdAt>
       <boughtProducts>
         <boughtProducts>
           <id>P-1</id>
-          <productName>Incredible Wooden Clock</productName>
-          <category/>
-          <sellPrice>65.48</sellPrice>
-          <buyPrice/>
+          <productName>Intelligent Granite Pants</productName>
+          <category>Gadget</category>
+          <sellPrice>69.62</sellPrice>
+          <buyPrice>76.07000000000001</buyPrice>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>P-2</id>
-          <productName>Rustic Leather Car</productName>
-          <category/>
-          <sellPrice>37.43</sellPrice>
-          <buyPrice/>
+          <productName>Small Aluminum Chair</productName>
+          <category>Makanan</category>
+          <sellPrice>64.21</sellPrice>
+          <buyPrice>86.69</buyPrice>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>P-3</id>
-          <productName>Lightweight Cotton Bag</productName>
-          <category/>
-          <sellPrice>50.51</sellPrice>
-          <buyPrice/>
+          <productName>Small Aluminum Gloves</productName>
+          <category>Makanan</category>
+          <sellPrice>83.85</sellPrice>
+          <buyPrice>87.27</buyPrice>
           <count>1</count>
         </boughtProducts>
       </boughtProducts>

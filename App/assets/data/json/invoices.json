@@ -2,31 +2,31 @@
   "dataList" : [
     {
       "id" : "FI-1",
-      "customerId" : "C-1",
-      "createdAt" : "2023-05-05T03:47:06",
+      "customerId" : "C-15",
+      "createdAt" : "2023-05-05T14:47:17",
       "boughtProducts" : [
         {
           "id" : "P-1",
-          "productName" : "Incredible Wooden Clock",
-          "category" : null,
-          "sellPrice" : 65.48,
-          "buyPrice" : null,
+          "productName" : "Intelligent Granite Pants",
+          "category" : "Gadget",
+          "sellPrice" : 69.62,
+          "buyPrice" : 76.07000000000001,
           "count" : 1
         },
         {
           "id" : "P-2",
-          "productName" : "Rustic Leather Car",
-          "category" : null,
-          "sellPrice" : 37.43,
-          "buyPrice" : null,
+          "productName" : "Small Aluminum Chair",
+          "category" : "Makanan",
+          "sellPrice" : 64.21,
+          "buyPrice" : 86.69,
           "count" : 1
         },
         {
           "id" : "P-3",
-          "productName" : "Lightweight Cotton Bag",
-          "category" : null,
-          "sellPrice" : 50.51,
-          "buyPrice" : null,
+          "productName" : "Small Aluminum Gloves",
+          "category" : "Makanan",
+          "sellPrice" : 83.85,
+          "buyPrice" : 87.27,
           "count" : 1
         }
       ],
