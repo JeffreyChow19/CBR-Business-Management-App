@@ -1,5 +1,6 @@
 package com.cbr.plugin;
 
+import com.cbr.exception.PluginException;
 import com.cbr.utils.AppSettings;
 import com.cbr.view.MainView;
 import lombok.Getter;
@@ -18,11 +19,11 @@ public class PluginManager {
 
     private static volatile PluginManager instance;
 
-    private PluginManager(){
+    private PluginManager() {
         this.plugins = new ArrayList<>();
     }
 
-    public static PluginManager getInstance(){
+    public static PluginManager getInstance() {
         if (instance == null) {
             synchronized (PluginManager.class) {
                 if (instance == null) {
@@ -32,32 +33,40 @@ public class PluginManager {
         }
         return instance;
     }
-    public void loadPlugin() throws ClassNotFoundException, InstantiationException, IllegalAccessException, MalformedURLException, NoSuchMethodException, InvocationTargetException {
-        for (String jarFile : AppSettings.getInstance().getPlugins()){
-            URLClassLoader classLoader = new URLClassLoader(new URL[] { new File(jarFile).toURI().toURL()}, ClassLoader.getSystemClassLoader());
+
+    public void loadNewPlugin() throws MalformedURLException, PluginException {
+        for (String jarFile : AppSettings.getInstance().getPlugins()) {
+            URLClassLoader classLoader = new URLClassLoader(new URL[]{new File(jarFile).toURI().toURL()}, ClassLoader.getSystemClassLoader());
             pluginServiceLoader = ServiceLoader.load(Plugin.class, classLoader);
-            for (Plugin p : pluginServiceLoader){
-                System.out.println("hehehe");
-                p.load();
+            for (Plugin p : pluginServiceLoader) {
+                System.out.println("masuk ke service loader");
+                boolean exists = plugins.stream()
+                        .map(Plugin::getClass)
+                        .anyMatch(c -> c.getName().equals(p.getClass().getName()));
+                for (Plugin x : plugins){
+                    System.out.println(x.getClass().getName());
+                }
+                // If an object of the same class already exists, don't add the new object
+                if (!exists) {
+                    System.out.println("masuk?");
+                    System.out.println(p.getClass().getName());
+                    plugins.add(p);
+                    p.load();
+                }
+                else{
+                    System.out.println("masuk lagi?");
+                    throw new PluginException();
+                }
             }
-//            Class<?> pluginClass = classLoader.loadClass("com.cbr.BillingPlugin").asSubclass(Plugin.class);
-//            Plugin plugin = (Plugin) pluginClass.getDeclaredConstructor().newInstance();
-//            if (pluginClass != null) {
-//                System.out.println("Class found!");
-//                plugin.load();
-//                System.out.println(pluginClass.getName());
-//            } else {
-//                System.out.println("Class not found!");
-//            }
+
         }
     }
 
-
-//    public Plugin getPlugin(String className, int instanceId) {
-//        Plugin plugin = loadedPlugins.get(className);
-//        if (plugin != null) {
-//            return plugin;
-//        }
-//        return null;
-//    }
+    public void loadPlugin(){
+        for (Plugin p : plugins){
+            p.load();
+        }
+    }
 }
+
+
