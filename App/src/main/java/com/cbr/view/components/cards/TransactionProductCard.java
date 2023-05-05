@@ -4,6 +4,7 @@ import com.cbr.models.InventoryProduct;
 import com.cbr.models.Product;
 import com.cbr.view.components.buttons.PlusButton;
 import com.cbr.view.components.labels.ToolTipLabel;
+import com.cbr.view.pages.TransactionPage;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -16,8 +17,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 
 public class TransactionProductCard extends StackPane {
+    private TransactionPage parent;
+    public TransactionProductCard(TransactionPage parent, InventoryProduct product){
+        this.parent = parent;
 
-    public TransactionProductCard(InventoryProduct product){
         double width = 0.1 * Theme.getScreenWidth();
         double height = 0.2 * Theme.getScreenHeight();
 
@@ -58,7 +61,7 @@ public class TransactionProductCard extends StackPane {
         // Add Product Button
         Button addButton = new PlusButton(0.07 * height);
         addButton.setOnMouseClicked(event -> {
-            System.out.println(product.getProductName());
+            this.parent.addProduct(product);
         });
 
         label_button.setPadding(new Insets(10));

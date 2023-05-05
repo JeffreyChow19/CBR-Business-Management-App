@@ -4,14 +4,22 @@ import com.cbr.view.theme.Theme;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListCell;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.List;
 
 public class Dropdown extends ComboBox<String> {
-    public Dropdown() {
+    @Getter @Setter
+    private List<String> options;
+
+    public Dropdown(List<String> options) {
+        this.options = options;
+
         // Add options to the dropdown
-        this.getItems().addAll("Option 1", "Option 2", "Option 3");
+        this.getItems().addAll(options);
 
         this.setStyle("-fx-font: " + Theme.getBodyMediumFont().getSize() + "px " + Theme.getBodyMediumFont().getFamily() + "; -fx-border-color: white; -fx-background-color: transparent; -fx-border-radius: 10; -fx-prompt-text-fill: white;");
-
 
         // Set the cell factory to create custom cells for the options
         this.setCellFactory(lv -> new ListCell<String>() {
