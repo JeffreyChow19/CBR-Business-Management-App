@@ -63,6 +63,11 @@
       "id" : "C-8",
       "type" : "customer",
       "invoiceList" : [ ]
+    },
+    {
+      "id" : "C-9",
+      "type" : "customer",
+      "invoiceList" : [ ]
     }
   ]
 }
