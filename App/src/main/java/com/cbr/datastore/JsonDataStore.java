@@ -42,7 +42,6 @@ public class JsonDataStore implements DataStorer{
                 return new ArrayList<>();
             } else {
                 String json = new String(Files.readAllBytes(path));
-                System.out.println("masuk sini gadsfda?");
                 return mapper.readValue(json, TypeFactory.defaultInstance().constructCollectionType(List.class, clazz));
             }
         } catch (JsonProcessingException e){

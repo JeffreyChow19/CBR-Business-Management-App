@@ -23,6 +23,24 @@ public class PluginManager {
         this.plugins = new ArrayList<>();
     }
 
+    public void init(){
+        System.out.println("huhhhh");
+        for (String jarFile : AppSettings.getInstance().getPlugins()) {
+            URLClassLoader classLoader = null;
+            try {
+                classLoader = new URLClassLoader(new URL[]{new File(jarFile).toURI().toURL()}, ClassLoader.getSystemClassLoader());
+            } catch (MalformedURLException e) {
+                throw new RuntimeException(e);
+            }
+            pluginServiceLoader = ServiceLoader.load(Plugin.class, classLoader);
+            for (Plugin p : pluginServiceLoader) {
+                System.out.println(p.getClass().getName());
+                plugins.add(p);
+                p.load();
+            }
+        }
+    }
+
     public static PluginManager getInstance() {
         if (instance == null) {
             synchronized (PluginManager.class) {
@@ -59,7 +77,6 @@ public class PluginManager {
     public void loadPlugin(){
         for (Plugin p : plugins){
             p.load();
-            System.out.println("ajskkskjsdkj");
         }
     }
 }

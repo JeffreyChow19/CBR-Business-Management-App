@@ -37,7 +37,7 @@ public class CurrencyPlugin implements Plugin {
             Currency USD = new Currency ("USD", "US Dollar", 1, 14000.0);
             Currency AUD = new Currency ("AUD", "Australian Dollar", 1, 10000.0);
             Currency KRW = new Currency ("KRW", "Korean Won", 1, 11.0);
-
+            System.out.println(MainView.getInstance().getSettingsPage());
             List<Currency> curs = new ArrayList<>(Arrays.asList(IDR, USD, AUD, KRW));
 
             DataStore dataStore = new DataStore(AppSettings.getInstance().getDataStoreMode(), AppSettings.getInstance().getDataStorePath());
@@ -79,6 +79,7 @@ public class CurrencyPlugin implements Plugin {
             MainView.getInstance().getSettingsPage().getFormContainer().getChildren().add(newFormContainer);
             MainView.getInstance().getSettingsPage().getOnSaves().add(new CurrencyUpdate());
             this.status = true;
+            System.out.println("I AM CALLEEDDD");
         }
     }
 //    public static void main(String[] args) {

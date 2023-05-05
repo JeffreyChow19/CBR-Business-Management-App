@@ -1,5 +1,6 @@
 package com.cbr.view;
 
+import com.cbr.App;
 import com.cbr.exception.PluginException;
 import com.cbr.plugin.PluginManager;
 import com.cbr.utils.AppSettings;
@@ -56,6 +57,8 @@ public class MainView extends VBox {
         BorderPane bodyContainer = new BorderPane();
         bodyContainer.setTop(tabs);
 
+        AppSettings settings = AppSettings.getInstance();
+
         /* Header Setup */
         headerMenuBar = new HeaderMenuBar(tabs);
         headerMenuBar.addNewNavigationMenu("Clients", clientsPage);
@@ -76,15 +79,6 @@ public class MainView extends VBox {
         /* Add Components to MainView */
         this.getChildren().add(headerMenuBar);
         this.getChildren().add(bodyContainer);
-        try {
-            PluginManager.getInstance().loadNewPlugin();
-            PluginManager.getInstance().loadNewPlugin();
-        } catch (MalformedURLException e) {
-            System.out.println("jkasajks");
-        } catch (PluginException e) {
-            System.out.println("ssshhh");
-        }
-
     }
 
     public void refresh() {
