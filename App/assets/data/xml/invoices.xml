@@ -2,32 +2,32 @@
 <DataList>
   <dataList>
     <dataList>
-      <id>FI-1</id>
+      <id>FI-3</id>
       <customerId>C-15</customerId>
-      <createdAt>2023-05-05T14:47:17</createdAt>
+      <createdAt>2023-05-05T21:48:20</createdAt>
       <boughtProducts>
         <boughtProducts>
           <id>P-1</id>
-          <productName>Intelligent Granite Pants</productName>
-          <category>Gadget</category>
-          <sellPrice>69.62</sellPrice>
-          <buyPrice>76.07000000000001</buyPrice>
+          <productName>Durable Leather Knife</productName>
+          <category>Minuman</category>
+          <sellPrice>16.04</sellPrice>
+          <buyPrice>38.47</buyPrice>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>P-2</id>
-          <productName>Small Aluminum Chair</productName>
-          <category>Makanan</category>
-          <sellPrice>64.21</sellPrice>
-          <buyPrice>86.69</buyPrice>
+          <productName>Enormous Paper Pants</productName>
+          <category>Pakaian</category>
+          <sellPrice>7.55</sellPrice>
+          <buyPrice>42.419999999999995</buyPrice>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>P-3</id>
-          <productName>Small Aluminum Gloves</productName>
-          <category>Makanan</category>
-          <sellPrice>83.85</sellPrice>
-          <buyPrice>87.27</buyPrice>
+          <productName>Gorgeous Plastic Hat</productName>
+          <category>Gadget</category>
+          <sellPrice>48.87</sellPrice>
+          <buyPrice>82.83</buyPrice>
           <count>1</count>
         </boughtProducts>
       </boughtProducts>

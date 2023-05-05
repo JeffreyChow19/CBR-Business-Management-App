@@ -1,36 +1,88 @@
 {
   "dataList" : [
     {
-      "id" : "FI-1",
+      "id" : "FI-3",
       "customerId" : "C-15",
-      "createdAt" : "2023-05-05T14:47:17",
+      "createdAt" : "2023-05-05T21:48:20",
       "boughtProducts" : [
         {
           "id" : "P-1",
-          "productName" : "Intelligent Granite Pants",
-          "category" : "Gadget",
-          "sellPrice" : 69.62,
-          "buyPrice" : 76.07000000000001,
+          "productName" : "Durable Leather Knife",
+          "category" : "Minuman",
+          "sellPrice" : 16.04,
+          "buyPrice" : 38.47,
           "count" : 1
         },
         {
           "id" : "P-2",
-          "productName" : "Small Aluminum Chair",
-          "category" : "Makanan",
-          "sellPrice" : 64.21,
-          "buyPrice" : 86.69,
+          "productName" : "Enormous Paper Pants",
+          "category" : "Pakaian",
+          "sellPrice" : 7.55,
+          "buyPrice" : 42.419999999999995,
           "count" : 1
         },
         {
           "id" : "P-3",
-          "productName" : "Small Aluminum Gloves",
-          "category" : "Makanan",
-          "sellPrice" : 83.85,
-          "buyPrice" : 87.27,
+          "productName" : "Gorgeous Plastic Hat",
+          "category" : "Gadget",
+          "sellPrice" : 48.87,
+          "buyPrice" : 82.83,
           "count" : 1
         }
       ],
-      "discount" : 0.0
+      "discount" : 0.0,
+      "usedPoint" : null
+    },
+    {
+      "id" : "FI-2",
+      "customerId" : "C-23",
+      "createdAt" : "2023-05-05T23:38:04",
+      "boughtProducts" : [
+        {
+          "id" : "P-37",
+          "productName" : "Heavy Duty Aluminum Coat",
+          "category" : "Gadget",
+          "sellPrice" : 69.32,
+          "buyPrice" : 89.3,
+          "count" : 3
+        }
+      ],
+      "discount" : 0.0,
+      "usedPoint" : null
+    },
+    {
+      "id" : "FI-3",
+      "customerId" : "C-25",
+      "createdAt" : "2023-05-06T01:41:26",
+      "boughtProducts" : [
+        {
+          "id" : "P-37",
+          "productName" : "Heavy Duty Aluminum Coat",
+          "category" : "Gadget",
+          "sellPrice" : 69.32,
+          "buyPrice" : 89.3,
+          "count" : 3
+        }
+      ],
+      "discount" : 0.0,
+      "usedPoint" : 0.0
+    },
+    {
+      "id" : "FI-4",
+      "customerId" : "C-6",
+      "createdAt" : "2023-05-06T01:41:34",
+      "boughtProducts" : [
+        {
+          "id" : "P-37",
+          "productName" : "Heavy Duty Aluminum Coat",
+          "category" : "Gadget",
+          "sellPrice" : 69.32,
+          "buyPrice" : 89.3,
+          "count" : 6
+        }
+      ],
+      "discount" : 41.592,
+      "usedPoint" : 0.0
     }
   ]
 }
