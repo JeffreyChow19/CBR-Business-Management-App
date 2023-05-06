@@ -75,7 +75,7 @@ public class TransactionInvoiceCardList extends VBox{
             if (node instanceof TransactionInvoiceCard) {
                 TransactionInvoiceCard card = (TransactionInvoiceCard) node;
                 if (card.getProduct().equals(product)) {
-                    card.getNumberSpinner().setValue(card.getNumberSpinner().getValue() + 1);
+                    card.getNumberSpinner().setValue(parent.getTemporaryInvoice().getProductFrequencies().get(product.getId()));
                     card.getNumberSpinner().updateValueLabel();
                     productExists = true;
                     break;

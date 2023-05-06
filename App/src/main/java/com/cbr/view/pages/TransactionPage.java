@@ -2,6 +2,7 @@ package com.cbr.view.pages;
 
 import com.cbr.App;
 import com.cbr.view.components.buttons.DefaultButton;
+import com.cbr.view.components.cards.AdditionalCostCard;
 import com.cbr.view.components.cards.TransactionInvoiceCard;
 import com.cbr.view.components.cards.TransactionProductCard;
 import com.cbr.view.components.cardslist.TransactionInvoiceCardList;
@@ -9,6 +10,8 @@ import com.cbr.view.components.cardslist.TransactionProductCardList;
 import com.cbr.view.components.dropdown.Dropdown;
 import com.cbr.view.components.dropdown.TitleDropdown;
 import com.cbr.view.components.labels.PageTitle;
+import com.cbr.view.components.popup.OkPopUp;
+import com.cbr.view.components.popup.YesNoPopUp;
 import com.cbr.view.components.spinner.NumberSpinner;
 import com.cbr.view.theme.Theme;
 import com.cbr.App;
@@ -16,6 +19,8 @@ import com.cbr.App;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -26,6 +31,7 @@ import com.cbr.models.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -40,6 +46,7 @@ public class TransactionPage extends StackPane {
     private HBox grandTotalContainer;
     private TransactionProductCardList transactionProductCardList;
     private TransactionInvoiceCardList transactionInvoiceCardList;
+    @Getter
     private TemporaryInvoice temporaryInvoice;
     @Setter
     private Double grandTotal = 0.0;
@@ -48,17 +55,14 @@ public class TransactionPage extends StackPane {
     @Getter
     private List<InventoryProduct> productList;
     private Label grandTotalNumber;
-
     private List<Member> membersVipsList;
-
-
+    private Double discount;
     private List<TemporaryInvoice> temporaryInvoiceList;
-
     private double managementContainerWidth;
     @Getter
-    private VBox discountTaxContainer;
+    private VBox additionalCostsContainer;
+    private AdditionalCostCard discountContainer;
 
-    private Label discountNumber;
     public TransactionPage() {
         super();
 
@@ -81,6 +85,7 @@ public class TransactionPage extends StackPane {
         // Create Management Container : RIGHT HALF
         VBox managementContainer = new VBox();
 
+        // DEFINE managementContainer size
         managementContainerWidth = 0.5 * Theme.getScreenWidth();
         double managementContainerHeight = Theme.getScreenHeight();
 
@@ -92,12 +97,13 @@ public class TransactionPage extends StackPane {
         managementContainer.setPadding(new Insets(20,0,100,0));
         managementContainer.setSpacing(0.02 * managementContainerHeight);
 
-        // DROPDOWN CONTAINER
+        // DROPDOWNS CONTAINER
         HBox dropdownContainer = new HBox();
         dropdownContainer.setMinSize(0.8 * managementContainerWidth, 0.1 * managementContainerHeight);
         dropdownContainer.setPrefSize(0.8 * managementContainerWidth, 0.1 * managementContainerHeight);
         dropdownContainer.setMaxSize(0.8 * managementContainerWidth, 0.1 * managementContainerHeight);
 
+        // Temporary Invoice Dropdown
         List<String> temp = new ArrayList<>();
         temporaryInvoiceDropdown = new TitleDropdown(0.4 * managementContainerWidth,  "Temporary Invoice", temp);
         updateTemporaryInvoiceDropdown();
@@ -123,8 +129,7 @@ public class TransactionPage extends StackPane {
                 String customerId = temporaryInvoice.getCustomerId();
 
                 customerDropdown.getDropdown().setValue(customerId);
-//
-//                this.temporaryInvoice = temporaryInvoice.get();
+
                 updateTemporaryInvoice();
             }
         });
@@ -133,7 +138,11 @@ public class TransactionPage extends StackPane {
         Region spacerDropdown = new Region();
         HBox.setHgrow(spacerDropdown, Priority.ALWAYS);
 
+        // Customer Dropdown
         updateCustomerDropdown();
+        customerDropdown.getDropdown().valueProperty().addListener((observable, oldValue, newValue) -> {
+            updateNumbers();
+        });
 
         // Add all dropdownContainer children
         dropdownContainer.getChildren().addAll(temporaryInvoiceDropdown, spacerDropdown, customerDropdown);
@@ -143,52 +152,18 @@ public class TransactionPage extends StackPane {
         VBox.setVgrow(transactionInvoiceCardList, Priority.ALWAYS);
 
         // DISCOUNT TAX CONTAINER
-        discountTaxContainer = new VBox();
-        discountTaxContainer.setMinWidth(0.8 * managementContainerWidth);
-        discountTaxContainer.setPrefWidth(0.8 * managementContainerWidth);
-        discountTaxContainer.setMaxWidth(0.8 * managementContainerWidth);
+        additionalCostsContainer = new VBox();
+        additionalCostsContainer.setMinWidth(0.8 * managementContainerWidth);
+        additionalCostsContainer.setPrefWidth(0.8 * managementContainerWidth);
+        additionalCostsContainer.setMaxWidth(0.8 * managementContainerWidth);
 
-        // discount container
-        HBox discountContainer = new HBox();
-        discountContainer.setMinWidth(0.8 * managementContainerWidth);
-        discountContainer.setPrefWidth(0.8 * managementContainerWidth);
-        discountContainer.setMaxWidth(0.8 * managementContainerWidth);
-        discountContainer.setPadding(new Insets(5,15,5,15));
+        // Discount container
+        discountContainer = new AdditionalCostCard(0.8 * managementContainerWidth, "Discount");
+        updateDiscount();
+        additionalCostsContainer.getChildren().addAll(discountContainer);
 
-        Label discountLabel = new Label("Discount");
-        discountLabel.setFont(Theme.getBodyMediumFont());
-        discountLabel.setTextFill(Color.WHITE);
-
-        Region spacerDiscountContainer = new Region();
-        HBox.setHgrow(spacerDiscountContainer, Priority.ALWAYS);
-
-        discountNumber = new Label("0");
-//        renderGrandTotal();
-        discountNumber.setFont(Theme.getBodyMediumFont());
-        discountNumber.setTextFill(Color.WHITE);
-
-        discountContainer.getChildren().addAll(discountLabel, spacerDiscountContainer, discountNumber);
-
-        discountTaxContainer.getChildren().addAll(discountContainer);
-        for (Map.Entry<String, Double> cost : TemporaryInvoice.additionalCosts.entrySet()) {
-            HBox tempContainer = new HBox();
-            tempContainer.setMinWidth(0.8 * managementContainerWidth);
-            tempContainer.setPrefWidth(0.8 * managementContainerWidth);
-            tempContainer.setMaxWidth(0.8 * managementContainerWidth);
-            tempContainer.setPadding(new Insets(5, 15, 5, 15));
-            System.out.println(cost.getKey());
-            Label tempLabel = new Label(cost.getKey());
-            tempLabel.setFont(Theme.getBodyMediumFont());
-            tempLabel.setTextFill(Color.WHITE);
-            Region spacer = new Region();
-            HBox.setHgrow(spacer, Priority.ALWAYS);
-            Label tempValue = new Label((new Double(cost.getValue() * 100)).toString());
-//        renderGrandTotal();
-            tempValue.setFont(Theme.getBodyMediumFont());
-            tempValue.setTextFill(Color.WHITE);
-            tempContainer.getChildren().addAll(tempLabel, spacer, tempValue);
-            discountTaxContainer.getChildren().add(tempContainer);
-        }
+        // Add all additional costs components
+        renderAdditionalCostsContainer();
 
         // GRAND TOTAL
         grandTotalContainer = new HBox();
@@ -206,7 +181,7 @@ public class TransactionPage extends StackPane {
         HBox.setHgrow(spacerGrandTotal, Priority.ALWAYS);
 
         grandTotalNumber = new Label();
-        renderGrandTotal();
+        updateGrandTotal();
         grandTotalNumber.setFont(Theme.getHeading2Font());
         grandTotalNumber.setTextFill(Color.WHITE);
 
@@ -243,7 +218,7 @@ public class TransactionPage extends StackPane {
         buttonContainer.getChildren().addAll(saveBill, spacerButtonContainer, makeBill);
 
         // Add all managementContainer children
-        managementContainer.getChildren().addAll(dropdownContainer, transactionInvoiceCardList, discountTaxContainer, grandTotalContainer, buttonContainer);
+        managementContainer.getChildren().addAll(dropdownContainer, transactionInvoiceCardList, additionalCostsContainer, grandTotalContainer, buttonContainer);
 
         // Add all container components
         container.getChildren().addAll(transactionProductCardList, managementContainer);
@@ -296,14 +271,15 @@ public class TransactionPage extends StackPane {
 
         System.out.println(customerId);
 
+        temporaryInvoice = new TemporaryInvoice("");
+
         // SAVE TO DB
         updateDatastore();
         resetInfo();
         updateTemporaryInvoiceDropdown();
-
-//        temporaryInvoice = new TemporaryInvoice("");
     }
     public void makeBill() {
+        // Check customerId
         String customerId = customerDropdown.getDropdown().getValue();
         if (customerId == null || customerId.equals("New Customer")){
             Customer newCustomer = new Customer();
@@ -311,9 +287,10 @@ public class TransactionPage extends StackPane {
             App.getDataStore().addClient(newCustomer);
         }
 
+        // Create BoughtProduct list
         List<BoughtProduct> products = new ArrayList<>();
 
-        // PARSE TEMP BILL TO FIXED BILL
+        // Parse TempBill product to products
         for (Map.Entry<String, Integer> entry : temporaryInvoice.getProductFrequencies().entrySet()) {
             String productId = entry.getKey();
 
@@ -323,41 +300,81 @@ public class TransactionPage extends StackPane {
 
             if (inventoryProduct.isPresent()) {
                 InventoryProduct product = inventoryProduct.get();
-                BoughtProduct boughtProduct = new BoughtProduct(product, entry.getValue());
-                products.add(boughtProduct);
+
+                if (entry.getValue() > product.getStock()){
+                    OkPopUp decreaseFrequency = new OkPopUp("The product stock is now " + product.getStock() + ". Your bill for " + product.getProductName() + " will be decreased from " + entry.getValue() + " to " + product.getStock());
+                    entry.setValue(product.getStock());
+                }
+
+                if (entry.getValue() > 0){
+                    BoughtProduct boughtProduct = new BoughtProduct(product, entry.getValue());
+                    products.add(boughtProduct);
+
+                    // DELETE FROM INVENTORY PRODUCT DATASTORE
+                    App.getDataStore().decreaseProductStock(boughtProduct.getId(), boughtProduct.getCount());
+                }
             }
         }
 
         // IF USER IS MEMBERS OR VIP, SHOW POP UP "WANT TO USE POINTS?"
-//        Double discount = 0.0;
-        FixedInvoice invoice = new FixedInvoice(products, customerId, 0.0);
+        Customer customer = App.getDataStore().getCustomerById(customerId);
+        Double usePoint = new Double((customer instanceof Member || customer instanceof VIP) ? ((Member)customer).getPoint() : 0.0);
+        YesNoPopUp popUpUsePoint = new YesNoPopUp("Do you want you use your " + usePoint.toString() + " points?");
+        if (customer != null && usePoint > 0){
+            popUpUsePoint.getYesButton().setOnAction(e -> {
+                popUpUsePoint.setValue(new Boolean(true));
+                popUpUsePoint.closeStage();
+            });
+            popUpUsePoint.showStage();
+        }
+
+        if (popUpUsePoint.getValue() != null && popUpUsePoint.getValue()) {
+            Double oldPoint = new Double(usePoint);
+            usePoint = new Double(oldPoint);
+            usePoint = new Double((oldPoint > grandTotal - discount) ? grandTotal - discount : oldPoint);
+        } else {
+            usePoint = new Double(0.0);
+        }
+
+        FixedInvoice invoice = new FixedInvoice(products, customerId, discount, usePoint);
         App.getDataStore().addInvoice(invoice);
 
+        Double getPoint = new Double (0.01 * (grandTotal-usePoint));
+        Double deltaPoint = new Double(getPoint - usePoint);
+        if (customer instanceof VIP || customer instanceof Member) {
+            App.getDataStore().updateClient((Member)customer, invoice.getId(), deltaPoint);
+        } else {
+            App.getDataStore().updateClient(customer, invoice.getId(), deltaPoint);
+        }
 
         App.getDataStore().deleteTemporaryInvoices(this.temporaryInvoice);
+
+        OkPopUp successMakeBill = new OkPopUp("Successfully Make Bill with id " + invoice.getId() + ", used " + usePoint + "points, get " + getPoint + "points");
+
+        if (!temporaryInvoice.getCustomerId().equals("")){
+            temporaryInvoice = new TemporaryInvoice("");
+        } else {
+            temporaryInvoice.getProductFrequencies().clear();
+        }
 
         // SAVE TO DB
         updateDatastore();
         resetInfo();
         updateTemporaryInvoiceDropdown();
-
-//        temporaryInvoice = new TemporaryInvoice("");
     }
 
     public void addProduct(Product product) {
-//        // Check if product already in invoice
-//        if (temporaryInvoice.getProductFrequencies().containsKey(product.getId())){
-//            transactionInvoiceCardList.removeInvoiceCard(product);
-//        }
-
         temporaryInvoice.addProduct(product.getId());
-        renderGrandTotal();
-        transactionInvoiceCardList.addInvoiceCard(product);
+        updateNumbers();
+        Integer productStockCount = temporaryInvoice.getProductFrequencies().get(product.getId());
+        if (productStockCount != null && productStockCount > 0 ){
+            transactionInvoiceCardList.addInvoiceCard(product);
+        }
     }
 
     public void removeProduct(Product product) {
         temporaryInvoice.removeProduct(product.getId());
-        renderGrandTotal();
+        updateNumbers();
 
         // Check if invoice need to be deleted
         if (!temporaryInvoice.getProductFrequencies().containsKey(product.getId())){
@@ -365,9 +382,37 @@ public class TransactionPage extends StackPane {
         }
     }
 
-    public void renderGrandTotal() {
-        System.out.println(temporaryInvoice.getProductFrequencies());
-        grandTotalNumber.setText(String.format("%.2f", temporaryInvoice.getGrandTotal()));
+    public void updateNumbers() {
+        updateDiscount();
+        updateGrandTotal();
+    }
+
+    public void updateDiscount() {
+        Customer customer = App.getDataStore().getCustomerById(customerDropdown.getDropdown().getValue());
+
+        if (customer != null && customer.getType().equals("VIP")) {
+            discount = new Double(temporaryInvoice.total() * 0.1);
+        } else {
+            discount = new Double(0.0);
+        }
+
+        discountContainer.getCardNumber().setText(String.format((discount == 0 ? "" : "- ") + "%.2f", discount));
+    }
+
+    public void updateGrandTotal() {
+        grandTotal = temporaryInvoice.grandTotal() - discount;
+        grandTotalNumber.setText(String.format("%.2f", grandTotal));
+    }
+
+
+
+    public void renderAdditionalCostsContainer() {
+        for (Map.Entry<String, Double> cost : TemporaryInvoice.additionalCosts.entrySet()) {
+            AdditionalCostCard additionalCostCard = new AdditionalCostCard(0.8 * managementContainerWidth, cost.getKey());
+            Double number = new Double(cost.getValue() * 100);
+            additionalCostCard.getCardNumber().setText(number.toString());
+            additionalCostsContainer.getChildren().add(additionalCostCard);
+        }
     }
 
     public void updateTemporaryInvoice(){
@@ -379,24 +424,33 @@ public class TransactionPage extends StackPane {
         for (Map.Entry<String, Integer> entry : temporaryInvoice.getProductFrequencies().entrySet()) {
             String productId = entry.getKey();
 
-           InventoryProduct inventoryProduct = App.getDataStore().getInventory().getById(productId);
+            InventoryProduct inventoryProduct = App.getDataStore().getInventory().getById(productId);
 
-            if (inventoryProduct != null) {
+            if (inventoryProduct != null && inventoryProduct.getStatus()) {
                 int frequency = entry.getValue();
+
+                if (frequency > inventoryProduct.getStock()) {
+                    OkPopUp decreaseFrequency = new OkPopUp("The product stock is now " + inventoryProduct.getStock() + ". Your bill for " + inventoryProduct.getProductName() + " will be decreased from " + frequency + " to " + inventoryProduct.getStock());
+                    frequency = inventoryProduct.getStock();
+                    entry.setValue(frequency);
+                }
+
                 for (int i = 0; i < frequency; i++) {
                     transactionInvoiceCardList.addInvoiceCard(inventoryProduct);
                 }
-            } else {
-                // It means the product has been removed or not for sale anymore
+            } else if (inventoryProduct != null) {
+                // SHOW POP UP
+                OkPopUp removeItem = new OkPopUp(inventoryProduct.getProductName() + "is currently not for sale, it will be remove from the bill");
             }
         }
-        renderGrandTotal();
+
+        updateNumbers();
     }
 
     public void resetInfo() {
         // RESET THE GRAND TOTAL
         setGrandTotal(0.0);
-        renderGrandTotal();
+        updateNumbers();
 
         // RESET THE INVOICE CARDS CONTAINER
         transactionInvoiceCardList.getInvoiceListContainer().getChildren().clear();

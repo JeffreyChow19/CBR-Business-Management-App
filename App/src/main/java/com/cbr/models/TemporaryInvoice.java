@@ -28,10 +28,16 @@ public class TemporaryInvoice extends Invoice implements Serializable {
     }
 
     public void addProduct(String productId){
+        InventoryProduct product = App.getDataStore().getProductById(productId);
+
+        // IF SUM OF PRODUCT TO ADD EXCEEDS STOCK, DONT ADD
+        int productCountToBe = 1;
         if (productFrequencies.containsKey(productId)) {
-            productFrequencies.put(productId, productFrequencies.get(productId) + 1);
-        } else {
-            productFrequencies.put(productId, 1);
+            productCountToBe = productFrequencies.get(productId) + 1;
+        }
+
+        if (product != null && productCountToBe <= product.getStock()){
+            productFrequencies.put(productId, productCountToBe);
         }
     }
 
@@ -47,21 +53,26 @@ public class TemporaryInvoice extends Invoice implements Serializable {
         }
     }
 
-    public Double getGrandTotal(){
+    public Double total() {
         Double total = 0.0;
+
+        // SUM ALL PRODUCTS PRICE IN BILL
         for (Map.Entry<String, Integer> entry : productFrequencies.entrySet()){
-            System.out.println(entry.getKey());
             Double basePrice = App.getDataStore().getInventory().getById(entry.getKey()).getSellPrice().getValue();
-            System.out.println(basePrice);
-            total+=(basePrice* entry.getValue());
-            System.out.println(entry.getValue());
+            total += (basePrice * entry.getValue());
         }
-        for (Double cost : additionalCosts.values()){
-            total+=(cost*total);
-            System.out.println(cost);
-        }
-        System.out.println(total);
+
         return total;
+    }
+    public Double grandTotal(){
+        Double total = total();
+        Double grandTotal = total();
+
+        for (Double cost : additionalCosts.values()){
+            grandTotal += (cost * total);
+        }
+
+        return grandTotal;
     }
 
     public static void addAdditionalCosts(String costName, Double cost){

@@ -4,45 +4,30 @@
     <dataList>
       <id>FI-3</id>
       <customerId>C-15</customerId>
-      <createdAt>2023-05-06T03:47:34</createdAt>
+      <createdAt>2023-05-05T21:48:20</createdAt>
       <boughtProducts>
         <boughtProducts>
           <id>P-1</id>
-          <productName>Enormous Marble Shoes</productName>
-          <category>Makanan</category>
-          <sellPrice>
-            <value>3173290.86</value>
-          </sellPrice>
-          <buyPrice>
-            <value>3304506.1799999997</value>
-          </buyPrice>
-          <additionalValues/>
+          <productName>Durable Leather Knife</productName>
+          <category>Minuman</category>
+          <sellPrice>16.04</sellPrice>
+          <buyPrice>38.47</buyPrice>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>P-2</id>
-          <productName>Heavy Duty Silk Clock</productName>
-          <category>Makanan</category>
-          <sellPrice>
-            <value>4990453.49</value>
-          </sellPrice>
-          <buyPrice>
-            <value>5670942.140000001</value>
-          </buyPrice>
-          <additionalValues/>
+          <productName>Enormous Paper Pants</productName>
+          <category>Pakaian</category>
+          <sellPrice>7.55</sellPrice>
+          <buyPrice>42.419999999999995</buyPrice>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>P-3</id>
-          <productName>Incredible Leather Table</productName>
-          <category>Pakaian</category>
-          <sellPrice>
-            <value>1869150.02</value>
-          </sellPrice>
-          <buyPrice>
-            <value>2293490.85</value>
-          </buyPrice>
-          <additionalValues/>
+          <productName>Gorgeous Plastic Hat</productName>
+          <category>Gadget</category>
+          <sellPrice>48.87</sellPrice>
+          <buyPrice>82.83</buyPrice>
           <count>1</count>
         </boughtProducts>
       </boughtProducts>
