@@ -40,9 +40,7 @@ public class MainView extends VBox {
         return instance;
     }
 
-    private MainView()  {
-        super();
-
+    public void init(){
         /* Pages */
         homePage = new HomePage();
         clientsPage = new ClientsPage();
@@ -50,14 +48,16 @@ public class MainView extends VBox {
         settingsPage = new SettingsPage();
         PluginsPage pluginsPage = new PluginsPage();
         // chore: pages
-
+        try {
+            PluginManager.getInstance().loadNewPlugin();
+        } catch (MalformedURLException e) {
+        } catch (PluginException e) {
+        }
         /* Body Setup */
         TabMenuBar tabs = new TabMenuBar();
         tabs.addTab("Home", homePage);
         BorderPane bodyContainer = new BorderPane();
         bodyContainer.setTop(tabs);
-
-        AppSettings settings = AppSettings.getInstance();
 
         /* Header Setup */
         headerMenuBar = new HeaderMenuBar(tabs);
@@ -81,9 +81,15 @@ public class MainView extends VBox {
         this.getChildren().add(bodyContainer);
     }
 
+    private MainView()  {
+        super();
+    }
+
     public void refresh() {
         // to do: close all opened tabs except home
+        System.out.println("refreseh");
         PluginManager.getInstance().loadPlugin();
+        System.out.println("after loading plugin");
         transactionPage = new TransactionPage();
         TabMenuBar tabs = new TabMenuBar();
         tabs.addTab("Home", homePage);

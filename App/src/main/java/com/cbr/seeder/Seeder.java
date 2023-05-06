@@ -59,11 +59,8 @@ public class Seeder {
         }
 
         jsonDataStore.setInventory(new DataList<InventoryProduct>(productList));
-        jsonDataStore.commit();
         xmlDataStore.setInventory(new DataList<InventoryProduct>(productList));
-        xmlDataStore.commit();
         objDataStore.setInventory(new DataList<InventoryProduct>(productList));
-        objDataStore.commit();
 
 //        for (Product p : jsonDataStore.getInventory().getDataList()){
 //            System.out.println(p.getClass().getName());

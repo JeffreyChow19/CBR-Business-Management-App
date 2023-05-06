@@ -2,11 +2,8 @@ package com.cbr.models;
 
 import com.cbr.App;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -74,4 +71,5 @@ public class TemporaryInvoice extends Invoice implements Serializable {
     public static void addAdditionalCosts(String costName, Double cost){
         TemporaryInvoice.additionalCosts.put(costName, cost);
     }
+
 }
