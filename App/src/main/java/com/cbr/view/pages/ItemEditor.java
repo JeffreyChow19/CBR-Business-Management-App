@@ -8,6 +8,7 @@ import com.cbr.view.components.form.FormArea;
 import com.cbr.view.components.form.FormLabel;
 import com.cbr.view.components.dropdown.Dropdown;
 import com.cbr.view.components.labels.PageTitle;
+import com.cbr.view.components.labels.ToolTipLabel;
 import com.cbr.view.components.spinner.NumberSpinner;
 import com.cbr.view.theme.Theme;
 import com.cbr.App;
@@ -32,9 +33,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class ItemEditor extends StackPane {
+public class ItemEditor extends ScrollPane {
     private VBox container;
-    private Label title;
+    private PageTitle title;
     @Getter
     private FormArea nameForm;
     @Getter
@@ -48,9 +49,7 @@ public class ItemEditor extends StackPane {
 
     public ItemEditor(String _title) {
         super();
-        title = new Label(_title);
-        title.setFont(Theme.getHeading1Font());
-        title.setTextFill(Color.WHITE);
+        title = new PageTitle(_title);
 
         // Setup Container
         container = new VBox();
@@ -83,6 +82,42 @@ public class ItemEditor extends StackPane {
         
         sellPriceForm = new FormArea("Sell Price", formContainerWidth, 0.2 * formContainerHeight);
         
+        // Upload Image
+        // Row Points
+        BorderPane imageContainer = new BorderPane();
+        double imageContainerWidth = formContainerWidth;
+        double imageContainerHeight = 0.2 * formContainerHeight;
+        imageContainer.setMinSize(imageContainerWidth, imageContainerHeight);
+        imageContainer.setPrefSize(imageContainerWidth, imageContainerHeight);
+        imageContainer.setMaxSize(imageContainerWidth, imageContainerHeight);
+        Label imageLabel = new FormLabel("Image", imageContainerWidth, imageContainerHeight);
+
+        HBox uploadImageContainer = new HBox();
+        double uploadImageContainerWidth = 0.48*imageContainerWidth;
+        double uploadImageContainerHeight = 0.2 * imageContainerHeight;
+        uploadImageContainer.setMinSize(uploadImageContainerWidth, uploadImageContainerHeight);
+        uploadImageContainer.setPrefSize(uploadImageContainerWidth, uploadImageContainerHeight);
+        uploadImageContainer.setMaxSize(uploadImageContainerWidth, uploadImageContainerHeight);
+
+        ToolTipLabel imageContent = new ToolTipLabel("No File Selected");
+        imageContent.setFont(Theme.getBodyMediumFont());
+        imageContent.setTextFill(Color.WHITE);
+        // imageContent.setAlignment(Pos.TOP_LEFT);
+        imageContent.setPrefWidth(0.5 * uploadImageContainerWidth);
+        imageContent.setPrefHeight(uploadImageContainerHeight);
+
+        Button uploadButton = new DefaultButton(0.5 * uploadImageContainerWidth, uploadImageContainerHeight,
+                "Upload");
+        // uploadImageContainer.setLeft(uploadButton);
+        // uploadImageContainer.setRight(imageContent);
+        uploadImageContainer.getChildren().addAll(uploadButton, imageContent);
+        uploadImageContainer.setSpacing(10);
+        uploadImageContainer.setPadding(new Insets(0,0,10,10));
+
+        imageContainer.setLeft(imageLabel);
+        imageContainer.setRight(uploadImageContainer);
+        imageContainer.setPadding(new Insets(10));
+
         // Category Dropdown
         List<String> categoryList = new ArrayList<>();
         categoryList.add("Pakaian");
@@ -125,23 +160,24 @@ public class ItemEditor extends StackPane {
         deleteContainer.setPrefSize(deleteContainerWidth, deleteContainerHeight);
         deleteContainer.setMaxSize(deleteContainerWidth, deleteContainerHeight);
 
-        Button deleteItem = new DeleteButton(0.46 * deleteContainerWidth, deleteContainerHeight, "Delete Item");
-        
-        deleteContainer.setRight(deleteItem);
-        deleteContainer.setPadding(new Insets(10));
+        if (_title == "Edit Item") {
+            Button deleteItem = new DeleteButton(0.46 * deleteContainerWidth, deleteContainerHeight, "Delete Item");
 
+            deleteContainer.setRight(deleteItem);
+            deleteContainer.setPadding(new Insets(10));
+
+        }
         // add all formContainer components
         formContainer.getChildren().addAll(nameForm, stockForm,
                 buyPriceForm, sellPriceForm, categoryContainer,
-                saveContainer, deleteContainer);
-
+                imageContainer,saveContainer, deleteContainer);
                 // add all container components
         container.getChildren().addAll(title, formContainer);
         
 
-        // Set StackPane properties
+        // Set ScrollPane properties
         this.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
-        this.getChildren().add(container);
+        this.setContent(container);
     }
 
 }
