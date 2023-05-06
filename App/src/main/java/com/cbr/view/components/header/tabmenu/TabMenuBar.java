@@ -2,7 +2,6 @@ package com.cbr.view.components.header.tabmenu;
 
 import com.cbr.plugin.Plugin;
 import com.cbr.plugin.PluginManager;
-import com.cbr.view.MainView;
 import com.cbr.view.pages.TransactionPage;
 import com.cbr.view.theme.Theme;
 import javafx.scene.Node;
