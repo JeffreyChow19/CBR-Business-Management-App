@@ -4,13 +4,12 @@ import com.cbr.view.components.buttons.PluginsButton;
 import com.cbr.view.components.buttons.SettingsButton;
 import com.cbr.view.components.buttons.TransparentButton;
 import com.cbr.view.components.clockwidget.ClockWidget;
-import com.cbr.view.components.tabmenu.TabMenuBar;
+import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TabPane;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
@@ -81,16 +80,15 @@ public class HomePage extends StackPane {
         // chore: fix styling
     }
 
-    public void setButtonActions(TabMenuBar tabs,
-                                 Node clientsTarget,
+    public void setButtonActions(Node clientsTarget,
                                  Node transactionsTarget,
                                  Node inventoryTarget,
                                  Node settingsTarget,
                                  Node pluginsTarget) {
-        this.clients.setOnAction(event -> tabs.addTab("Clients", clientsTarget));
-        this.transaction.setOnAction(event -> tabs.addTab("Transaction", transactionsTarget));
-        this.inventoryManagement.setOnAction(event -> tabs.addTab("Inventory Management", inventoryTarget));
-        this.settings.setOnAction(event -> tabs.addTab("Settings", settingsTarget));
-        this.plugins.setOnAction(event -> tabs.addTab("Plugins", pluginsTarget));
+        this.clients.setOnAction(event -> TabMenuBar.getInstance().addTab("Clients", clientsTarget));
+        this.transaction.setOnAction(event -> TabMenuBar.getInstance().addTab("Transaction", transactionsTarget));
+        this.inventoryManagement.setOnAction(event -> TabMenuBar.getInstance().addTab("Inventory Management", inventoryTarget));
+        this.settings.setOnAction(event -> TabMenuBar.getInstance().addTab("Settings", settingsTarget));
+        this.plugins.setOnAction(event -> TabMenuBar.getInstance().addTab("Plugins", pluginsTarget));
     }
 }
