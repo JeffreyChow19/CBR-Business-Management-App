@@ -28,17 +28,13 @@ public class TemporaryInvoice extends Invoice implements Serializable {
     }
 
     public void addProduct(String productId){
-        InventoryProduct product = App.getDataStore().getProductById(productId);
-
         // IF SUM OF PRODUCT TO ADD EXCEEDS STOCK, DONT ADD
         int productCountToBe = 1;
         if (productFrequencies.containsKey(productId)) {
             productCountToBe = productFrequencies.get(productId) + 1;
         }
 
-        if (product != null && productCountToBe <= product.getStock()){
-            productFrequencies.put(productId, productCountToBe);
-        }
+        productFrequencies.put(productId, productCountToBe);
     }
 
     public void removeProduct(String productId) {

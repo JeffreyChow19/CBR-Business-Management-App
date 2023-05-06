@@ -364,7 +364,16 @@ public class TransactionPage extends StackPane {
     }
 
     public void addProduct(Product product) {
-        temporaryInvoice.addProduct(product.getId());
+        InventoryProduct storeProduct = App.getDataStore().getProductById(product.getId());
+        int productCountToBe = 1;
+        if (temporaryInvoice.getProductFrequencies().containsKey(product.getId())) {
+            productCountToBe = temporaryInvoice.getProductFrequencies().get(product.getId()) + 1;
+        }
+
+        if (storeProduct != null && productCountToBe <= storeProduct.getStock()){
+            temporaryInvoice.addProduct(product.getId());
+        }
+
         updateNumbers();
         Integer productStockCount = temporaryInvoice.getProductFrequencies().get(product.getId());
         if (productStockCount != null && productStockCount > 0 ){

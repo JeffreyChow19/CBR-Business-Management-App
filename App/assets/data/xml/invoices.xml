@@ -4,34 +4,50 @@
     <dataList>
       <id>FI-3</id>
       <customerId>C-15</customerId>
-      <createdAt>2023-05-05T21:48:20</createdAt>
+      <createdAt>2023-05-06T15:09:11</createdAt>
       <boughtProducts>
         <boughtProducts>
           <id>P-1</id>
-          <productName>Durable Leather Knife</productName>
-          <category>Minuman</category>
-          <sellPrice>16.04</sellPrice>
-          <buyPrice>38.47</buyPrice>
+          <productName>Rustic Granite Bottle</productName>
+          <category>Makanan</category>
+          <sellPrice>
+            <value>1522588.92</value>
+          </sellPrice>
+          <buyPrice>
+            <value>1622515.6199999999</value>
+          </buyPrice>
+          <additionalValues/>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>P-2</id>
-          <productName>Enormous Paper Pants</productName>
-          <category>Pakaian</category>
-          <sellPrice>7.55</sellPrice>
-          <buyPrice>42.419999999999995</buyPrice>
+          <productName>Ergonomic Bronze Shoes</productName>
+          <category>Makanan</category>
+          <sellPrice>
+            <value>4668441.85</value>
+          </sellPrice>
+          <buyPrice>
+            <value>4844793.59</value>
+          </buyPrice>
+          <additionalValues/>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>P-3</id>
-          <productName>Gorgeous Plastic Hat</productName>
+          <productName>Sleek Steel Chair</productName>
           <category>Gadget</category>
-          <sellPrice>48.87</sellPrice>
-          <buyPrice>82.83</buyPrice>
+          <sellPrice>
+            <value>2942241.06</value>
+          </sellPrice>
+          <buyPrice>
+            <value>3242016.23</value>
+          </buyPrice>
+          <additionalValues/>
           <count>1</count>
         </boughtProducts>
       </boughtProducts>
       <discount>0.0</discount>
+      <usedPoint>0.0</usedPoint>
     </dataList>
   </dataList>
 </DataList>
