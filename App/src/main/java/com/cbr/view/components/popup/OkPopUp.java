@@ -21,6 +21,9 @@ public class OkPopUp extends VBox {
     private Button okButton;
     private Stage stage;
     private Scene scene;
+    @Getter @Setter
+    private VBox box = new VBox();
+
     public OkPopUp(String question) {
         this.setAlignment(Pos.CENTER);
         this.setSpacing(10);
@@ -39,15 +42,29 @@ public class OkPopUp extends VBox {
             stage.close();
         });
 
-        this.getChildren().addAll(label, okButton);
+        this.getChildren().addAll(label, box, okButton);
         this.setPadding(new Insets(20, 30, 20, 30));
         this.setStyle("-fx-background-color: " + Theme.getSecondaryBase());
+    }
 
+    public void show(){
         scene = new Scene(this);
         stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.showAndWait();
+    }
+    public void setBox(VBox box) {
+        if (this.box != null) {
+            int index = this.getChildren().indexOf(this.box);
+            this.getChildren().remove(this.box);
+            this.box = box;
+            this.getChildren().add(index, box);
+        } else {
+            this.box = box;
+            int index = this.getChildren().indexOf(okButton);
+            this.getChildren().add(index, box);
+        }
     }
 }
