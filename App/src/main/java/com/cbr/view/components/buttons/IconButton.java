@@ -22,6 +22,8 @@ public class IconButton extends Button {
         stackPane.setMouseTransparent(true);
         this.setGraphic(stackPane);
 
+        this.setStyle("-fx-border-width: 0;" + "-fx-background-radius: 0;\n" + "    -fx-background-color: transparent;");
+
         // Set the Cursor to HAND
         this.setCursor(Cursor.HAND);
     }
