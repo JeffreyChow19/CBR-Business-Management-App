@@ -6,6 +6,8 @@ import com.cbr.utils.AppSettings;
 import com.cbr.utils.SettingsUpdate;
 import com.cbr.view.MainView;
 import com.cbr.view.components.cards.AdditionalCostCard;
+import com.cbr.view.components.header.tabmenu.TabMenuBar;
+import com.cbr.view.pages.TransactionPage;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -17,7 +19,9 @@ import javafx.scene.paint.Color;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class BillingPlugin implements Plugin {
     @Setter
@@ -34,7 +38,6 @@ public class BillingPlugin implements Plugin {
     }
     public void load(){
         if (!this.status){
-            System.out.println("loadinggg");
             VBox newFormContainer = new VBox();
             newFormContainer.setSpacing(30);
             newFormContainer.setAlignment(Pos.TOP_LEFT);
@@ -74,10 +77,25 @@ public class BillingPlugin implements Plugin {
         }
         SettingsUpdate update = new BillingUpdate();
         update.onSave();
-        AdditionalCostCard serviceCard = new TaxCard(0.8 *MainView.getInstance().getTransactionPage().getManagementContainerWidth(), "Service Charge");
-        AdditionalCostCard taxCard = new ServiceCard(0.8 *MainView.getInstance().getTransactionPage().getManagementContainerWidth(), "Tax");
 
-        MainView.getInstance().getTransactionPage().getAdditionalCostsContainer().getChildren().add(serviceCard);
-        MainView.getInstance().getTransactionPage().getAdditionalCostsContainer().getChildren().add(taxCard);
+
+//        MainView.getInstance().getTransactionPage().getAdditionalCostsContainer().getChildren().add(serviceCard);
+//        MainView.getInstance().getTransactionPage().getAdditionalCostsContainer().getChildren().add(taxCard);
+        List<TransactionPage> transactionPages = TabMenuBar.getInstance().getTabs()
+                .stream()
+                .filter(tab -> tab.getContent() instanceof TransactionPage)
+                .map(tab -> (TransactionPage) tab.getContent())
+                .collect(Collectors.toList());
+
+        transactionPages.stream().forEach(transactionPage -> {
+            System.out.println("masuk ke transaction page");
+            if (transactionPage.getAdditionalCostsContainer().getChildren().isEmpty()){
+                AdditionalCostCard serviceCard = new TaxCard(transactionPage.getTemporaryInvoice(),0.8 *MainView.getInstance().getTransactionPage().getManagementContainerWidth(), "Service Charge");
+                AdditionalCostCard taxCard = new ServiceCard(transactionPage.getTemporaryInvoice(),0.8 *MainView.getInstance().getTransactionPage().getManagementContainerWidth(), "Tax");
+                transactionPage.getAdditionalCostsContainer().getChildren().add(serviceCard);
+                transactionPage.getAdditionalCostsContainer().getChildren().add(taxCard);
+            }
+        });
+        System.out.println(MainView.getInstance().getTransactionPage());
     }
 }

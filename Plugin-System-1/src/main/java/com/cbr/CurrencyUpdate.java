@@ -8,6 +8,8 @@ import com.cbr.models.Pricing.Price;
 import com.cbr.utils.AppSettings;
 import com.cbr.utils.SettingsUpdate;
 import com.cbr.view.MainView;
+import com.cbr.view.components.header.tabmenu.TabMenuBar;
+import com.cbr.view.pages.TransactionPage;
 import com.cbr.view.theme.Theme;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
@@ -15,6 +17,7 @@ import javafx.scene.paint.Color;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class CurrencyUpdate implements SettingsUpdate {
     public void onSave(){
@@ -26,7 +29,6 @@ public class CurrencyUpdate implements SettingsUpdate {
 
         for (InventoryProduct p : App.getDataStore().getInventory().getDataList()){
             Double exchange = baseCurrency.getExchangeRate();
-            System.out.println(p.getSellPrice().getValue());
             if (p.getAdditionalValues().get("currency")!=null){ // old currency in datastore
                 Currency oldCurrencyTemp = currencyList.stream()
                         .filter(obj -> obj.getSymbol().equals(p.getAdditionalValues().get("currency")))
@@ -35,7 +37,6 @@ public class CurrencyUpdate implements SettingsUpdate {
             }
             Price newPrice = new CurrencyPrice(new BasePrice(p.getSellPrice().getValue() / exchange));
             p.setSellPrice(newPrice);
-            System.out.println(newPrice.getValue());
             newPrice = new CurrencyPrice(new BasePrice(p.getBuyPrice().getValue() / exchange));
             p.setBuyPrice(newPrice);
             p.getAdditionalValues().put("currency", baseCurrency.getSymbol());
@@ -44,6 +45,19 @@ public class CurrencyUpdate implements SettingsUpdate {
         Label grandTotalLabel = new Label(currencySymbol);
         grandTotalLabel.setFont(Theme.getHeading2Font());
         grandTotalLabel.setTextFill(Color.WHITE);
-        MainView.getInstance().getTransactionPage().getGrandTotalContainer().getChildren().add(2, grandTotalLabel);
+//        MainView.getInstance().getTransactionPage().getGrandTotalContainer().getChildren().add(2, grandTotalLabel);
+        List<TransactionPage> transactionPages = TabMenuBar.getInstance().getTabs()
+                .stream()
+                .filter(tab -> tab.getContent() instanceof TransactionPage)
+                .map(tab -> (TransactionPage) tab.getContent())
+                .collect(Collectors.toList());
+        System.out.println("bangudahbang");
+        transactionPages.stream().forEach(transactionPage -> {
+            System.out.println(transactionPage.getGrandTotalContainer().getChildren().size());
+            if (transactionPage.getGrandTotalContainer().getChildren().size() == 3){
+                transactionPage.getGrandTotalContainer().getChildren().add(2, grandTotalLabel);
+            }
+        });
+
     }
 }
