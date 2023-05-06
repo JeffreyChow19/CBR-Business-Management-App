@@ -19,6 +19,7 @@ public class MainView extends VBox {
     private SettingsPage settingsPage;
     private ClientsPage clientsPage;
     private TransactionPage transactionPage;
+    private InventoryPage inventoryPage;
     @Getter
     private HeaderMenuBar headerMenuBar;
     @Getter
@@ -43,6 +44,7 @@ public class MainView extends VBox {
         transactionPage = new TransactionPage();
         settingsPage = new SettingsPage();
         PluginsPage pluginsPage = new PluginsPage();
+        inventoryPage = new InventoryPage();
         // chore: pages
 
         /* Body Setup */
@@ -54,7 +56,7 @@ public class MainView extends VBox {
         /* Header Setup */
         headerMenuBar = new HeaderMenuBar(tabs);
         headerMenuBar.addNewNavigationMenu("Clients", clientsPage);
-        headerMenuBar.addNewNavigationMenu("Inventory Management", new Label("inventory"));
+        headerMenuBar.addNewNavigationMenu("Inventory Management", inventoryPage);
         headerMenuBar.addNewNavigationMenu("Export Statements", new Label("export"));
         headerMenuBar.addNewNavigationMenu("Transaction", transactionPage);
         headerMenuBar.addNewPreferencesMenu("Settings", settingsPage);
@@ -88,7 +90,7 @@ public class MainView extends VBox {
         PluginsPage pluginsPage = new PluginsPage();
         headerMenuBar.getNavigationMenu().getItems().clear();
         headerMenuBar.addNewNavigationMenu("Clients", clientsPage);
-        headerMenuBar.addNewNavigationMenu("Inventory Management", new Label("inventory"));
+        headerMenuBar.addNewNavigationMenu("Inventory Management", inventoryPage);
         headerMenuBar.addNewNavigationMenu("Export Statements", new Label("export"));
         headerMenuBar.addNewNavigationMenu("Transaction", transactionPage);
         headerMenuBar.addNewPreferencesMenu("Settings", settingsPage);
