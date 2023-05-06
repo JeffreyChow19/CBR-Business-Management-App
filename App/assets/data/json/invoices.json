@@ -48,6 +48,29 @@
       "discount" : 0.0,
       "usedPoint" : 0.0,
       "getPoint" : 0.0
+    },
+    {
+      "id" : "FI-2",
+      "customerId" : "CS-17",
+      "createdAt" : "2023-05-06T22:55:22",
+      "boughtProducts" : [
+        {
+          "id" : "IP-37",
+          "productName" : "Fantastic Aluminum Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 736282.62
+          },
+          "buyPrice" : {
+            "value" : 1230308.17
+          },
+          "additionalValues" : null,
+          "count" : 8
+        }
+      ],
+      "discount" : 0.0,
+      "usedPoint" : 0.0,
+      "getPoint" : 58902.6096
     }
   ]
 }
