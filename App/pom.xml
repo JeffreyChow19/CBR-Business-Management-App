@@ -107,7 +107,7 @@
         <!-- Assets Resource Path -->
         <resources>
             <resource>
-                <directory>src/main/assets</directory>
+                <directory>assets</directory>
             </resource>
         </resources>
     </build>
