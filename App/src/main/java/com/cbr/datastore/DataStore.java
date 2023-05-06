@@ -60,6 +60,20 @@ public class DataStore {
         this.dataStorer.storeClients(this.clients);
     }
 
+    public void updateClient(Customer client, String bill_id, Double deltaPoint){
+        Customer toUpdate = clients.getDataList().stream()
+                .filter(c -> c.getId().equals(client.getId()))
+                .findFirst()
+                .get();
+
+        toUpdate.getInvoiceList().add(bill_id);
+        if (toUpdate instanceof Member || toUpdate instanceof VIP) {
+            ((Member) toUpdate).addPoint(deltaPoint);
+        }
+
+        this.dataStorer.storeClients(this.clients);
+    }
+
     public void deactivateMember(String id){
         Customer member = this.getCustomerById(id);
         if (member instanceof Member){
@@ -106,6 +120,13 @@ public class DataStore {
             this.temporaryInvoices.getDataList().remove(invoice);
             this.dataStorer.storeTemporaryInvoices(this.temporaryInvoices);
         }
+    }
+
+    public void decreaseProductStock(String productId, Integer toDecrease){
+        InventoryProduct product = this.getProductById(productId);
+        product.setStock(product.getStock() - toDecrease);
+        this.dataStorer.storeInventory(this.inventory);
+
     }
 
     public void deactivateProduct(String id){

@@ -15,7 +15,7 @@ public class VIP extends Member {
     public VIP(){
         this.type = "VIP";
     }
-    public VIP(String id, List<String> invoiceList, String name, String phoneNumber, Boolean status, Integer point, Double buyPrice){
+    public VIP(String id, List<String> invoiceList, String name, String phoneNumber, Boolean status, Double point, Double buyPrice){
         super(id, invoiceList, name, phoneNumber);
         this.type = "VIP";
         this.status = status;
