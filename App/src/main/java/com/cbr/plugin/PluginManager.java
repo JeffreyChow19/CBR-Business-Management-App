@@ -32,10 +32,29 @@ public class PluginManager {
         return instance;
     }
 
+    public void loadNewPlugin(String jarFile) throws PluginException, MalformedURLException {
+        URLClassLoader classLoader = new URLClassLoader(new URL[]{new File(jarFile).toURI().toURL()}, ClassLoader.getSystemClassLoader());
+        pluginServiceLoader = ServiceLoader.load(Plugin.class, classLoader);
+        for (Plugin p : pluginServiceLoader) {
+            boolean exists = plugins.stream()
+                    .map(Plugin::getClass)
+                    .anyMatch(c -> c.getName().equals(p.getClass().getName()));
+            // If an object of the same class already exists, don't add the new object
+            if (!exists) {
+                System.out.println(p.getClass().getName());
+                plugins.add(p);
+                p.load();
+            }
+            else{
+                System.out.println(p.getClass().getName());
+                throw new PluginException();
+            }
+        }
+    }
+
     public void loadNewPlugin() throws MalformedURLException, PluginException {
         System.out.println("this is load new plugin");
         int i = 0;
-//        System.out.println(i);
         for (String jarFile : AppSettings.getInstance().getPlugins()) {
             URLClassLoader classLoader = new URLClassLoader(new URL[]{new File(jarFile).toURI().toURL()}, ClassLoader.getSystemClassLoader());
             pluginServiceLoader = ServiceLoader.load(Plugin.class, classLoader);
@@ -50,10 +69,9 @@ public class PluginManager {
                     p.load();
                 }
                 else{
+                    System.out.println(p.getClass().getName());
                     throw new PluginException();
                 }
-                i++;
-                System.out.println(i);
             }
 
         }
