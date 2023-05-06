@@ -1,9 +1,7 @@
 package com.cbr.view;
 
-import com.cbr.App;
 import com.cbr.exception.PluginException;
 import com.cbr.plugin.PluginManager;
-import com.cbr.utils.AppSettings;
 import com.cbr.view.components.headermenu.HeaderMenuBar;
 import com.cbr.view.components.tabmenu.TabMenuBar;
 import com.cbr.view.pages.*;
@@ -87,11 +85,9 @@ public class MainView extends VBox {
 
     public void refresh() {
         // to do: close all opened tabs except home
-        System.out.println("refreseh");
-        PluginManager.getInstance().loadPlugin();
-        System.out.println("after loading plugin");
         transactionPage = new TransactionPage();
         TabMenuBar tabs = new TabMenuBar();
+        PluginManager.getInstance().loadPlugin();
         tabs.addTab("Home", homePage);
         BorderPane bodyContainer = new BorderPane();
         bodyContainer.setTop(tabs);
