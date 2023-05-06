@@ -31,11 +31,7 @@ public class FormArea extends BorderPane {
         this.setMaxSize(contentContainerWidth, contentContainerHeight);
         // Left Side
         content = new FormLabel(_content, contentContainerWidth, contentContainerHeight);
-        // content.setFont(Theme.getHeading2Font());
-        // content.setTextFill(Color.WHITE);
-        // content.setAlignment(Pos.TOP_LEFT);
-        // content.setPrefWidth(0.5 * contentContainerWidth);
-        // content.setPrefHeight(contentContainerHeight);
+
         // Right Side
         contentTextField = new TextField();
         contentTextField.setPromptText(_content);
@@ -44,7 +40,6 @@ public class FormArea extends BorderPane {
 
         this.setLeft(content);
         this.setRight(contentTextField);
-        // this.setSpacing(20);
         this.setPadding(new Insets(10));
     }
 
