@@ -7,6 +7,7 @@ import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.buttons.PlusButton;
 import com.cbr.view.components.cardslist.InventoryProductCardList;
 import com.cbr.view.components.dropdown.Dropdown;
+import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.theme.Theme;
 import javafx.event.Event;
@@ -67,7 +68,10 @@ public class InventoryPage extends StackPane {
                     updateFilter(newValue.toLowerCase());
                 });
 
+        AddItemPage addItemPage = new AddItemPage();
+
         Button addItem = new DefaultButton(0.1*Theme.getScreenWidth(), 24.0, "Add New Item");
+        addItem.setOnAction(event -> TabMenuBar.getInstance().addTab("Add Item", addItemPage));
         Region region = new Region();
         search_filter.setHgrow(region, Priority.ALWAYS);
 

@@ -2,10 +2,12 @@ package com.cbr.view.components.cards;
 
 import com.cbr.models.InventoryProduct;
 import com.cbr.view.components.buttons.EditButton;
+import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.components.labels.CircleLabel;
 import com.cbr.view.components.labels.DefaultLabel;
 import com.cbr.view.components.labels.ToolTipLabel;
 import com.cbr.view.pages.InventoryPage;
+import com.cbr.view.pages.ItemEditorPage;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -33,11 +35,15 @@ public class InventoryProductCard extends VBox {
         this.setPadding(new Insets(vpadding, hpadding, vpadding, hpadding));
         this.setSpacing(12);
 
+        // Edit page
+        ItemEditorPage editorPage = new ItemEditorPage(product);
+
         // Edit Button
         HBox edit_container = new HBox();
         Region edit_region = new Region();
         edit_container.setHgrow(edit_region, Priority.ALWAYS);
         Button editButton = new EditButton(hpadding);
+        editButton.setOnAction(event -> TabMenuBar.getInstance().addTab("Edit " + product.getId(), editorPage));
         edit_container.getChildren().addAll(edit_region, editButton);
         this.getChildren().add(edit_container);
 
