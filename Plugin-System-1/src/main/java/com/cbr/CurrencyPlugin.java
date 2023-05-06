@@ -69,7 +69,6 @@ public class CurrencyPlugin implements Plugin {
             newFormContainer.getChildren().addAll(currencyLabel, currencySelector);
 
             MainView.getInstance().getSettingsPage().getFormContainer().getChildren().add(newFormContainer);
-            MainView.getInstance().getSettingsPage().getOnSaves().add(new CurrencyUpdate());
             this.status = true;
         }
         SettingsUpdate update = new CurrencyUpdate();
