@@ -19,4 +19,7 @@ public class BoughtProduct extends Product {
         this.count = count;
     }
 
+    public Double total() {
+        return count * super.getSellPrice().getValue();
+    }
 }
