@@ -1,6 +1,7 @@
 package com.cbr.view.components.cardslist;
 
 import com.cbr.App;
+import com.cbr.models.Customer;
 import com.cbr.models.FixedInvoice;
 import com.cbr.view.components.cards.CustomerHistoryCard;
 import com.cbr.view.theme.Theme;
@@ -11,10 +12,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CustomerHistoryCardList extends ScrollPane {
     @Getter @Setter private List<FixedInvoice> historyList;
-
     private VBox customerHistoryContainer;
     public CustomerHistoryCardList(String customerId) {
         this.setMinWidth(Theme.getScreenWidth());
@@ -33,14 +34,14 @@ public class CustomerHistoryCardList extends ScrollPane {
         customerHistoryContainer.setStyle("-fx-background-color:" + Theme.getPrimaryDark() + ";");
         customerHistoryContainer.setAlignment(Pos.TOP_CENTER);
 
-        searchHistoryData();
+        searchHistoryData(customerId);
         renderHistoryDataList();
 
         this.setContent(customerHistoryContainer);
     }
 
-    public void searchHistoryData() {
-        historyList = App.getDataStore().getInvoices().getDataList();
+    public void searchHistoryData(String customerId) {
+        historyList = App.getDataStore().getInvoices().getDataList().stream().filter(i -> i.getCustomerId().equals(customerId)).collect(Collectors.toList());
     }
 
     public void renderHistoryDataList() {
