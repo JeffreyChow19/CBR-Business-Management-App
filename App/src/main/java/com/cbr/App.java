@@ -5,6 +5,7 @@ import com.cbr.view.MainView;
 import com.cbr.view.theme.Theme;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import lombok.Getter;
@@ -24,15 +25,17 @@ public class App extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Business Management Application");
-//        Image appIcon = new Image("/assets/icons/capybucks.jpg");
-//         chore: update icons
-//        stage.getIcons().add(appIcon);
+        Image appIcon = new Image("file:assets/icons/capybucks.jpg");
+        //chore: update icons
+        stage.getIcons().add(appIcon);
 //        PluginManager pluginManager = new PluginManager();
 //        pluginManager.loadPlugin("Plugin-Base/target/Plugin-Base-1.0.jar", "com.cbr.BasePlugin.class");
 ////        for (Plugin p : pluginManager.getPlugins()){
 ////            p.load(this);
 ////        }
         Scene scene = new Scene(MainView.getInstance(), Theme.getScreenWidth(), Theme.getScreenHeight() * 0.98);
+        scene.getStylesheets().add("file:assets/styles/stylesheet.css");
+
         MainView.getInstance().init();
         stage.setScene(scene);
         stage.setMinWidth(Theme.getScreenWidth());
