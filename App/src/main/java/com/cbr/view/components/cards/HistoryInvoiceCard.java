@@ -44,7 +44,7 @@ public class HistoryInvoiceCard extends GridPane {
         List<BoughtProduct> invoiceProducts = this.invoice.getBoughtProducts();
         for (BoughtProduct p : invoiceProducts) {
             currentRow++;
-            Label productQty = new Label(p.getCount());
+            Label productQty = new Label(String.valueOf(p.getCount()));
             Label productName = new Label(p.getProductName());
             Label productPriceEach = new Label("@" + String.valueOf(p.getSellPrice()));
             Label productSubtotal = new Label(String.valueOf(p.getSellPrice() * p.getCount()));
