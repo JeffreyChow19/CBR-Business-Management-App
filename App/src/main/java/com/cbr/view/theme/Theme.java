@@ -29,9 +29,13 @@ public class Theme {
     @Getter
     private static String secondaryLight = "#494178";
     @Getter
+    private static Font captionFont = Font.font("Ubuntu", FontWeight.NORMAL,14.0/1920 * Theme.getScreenWidth());
+    @Getter
     private static Font bodyFont = Font.font("Ubuntu", FontWeight.NORMAL,16.0/1920 * Theme.getScreenWidth());
     @Getter
     private static Font bodyMediumFont = Font.font("Ubuntu", FontWeight.MEDIUM,24.0/1920 * Theme.getScreenWidth());
+    @Getter
+    private static Font bodyBoldFont = Font.font("Ubuntu", FontWeight.BOLD,24.0/1920 * Theme.getScreenWidth());
     @Getter
     private static Font heading1Font = Font.font("Ubuntu", FontWeight.BOLD,36.0/1920 * Theme.getScreenWidth());
     @Getter
