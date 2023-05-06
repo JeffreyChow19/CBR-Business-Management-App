@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Getter
@@ -21,7 +22,7 @@ public class TemporaryInvoice extends Invoice implements Serializable {
         super(customerId);
         this.productFrequencies = new HashMap<String, Integer>();
         TemporaryInvoice.invoiceCount += 1;
-        this.id = "TI-" +invoiceCount.toString();
+        this.id = "TI-" + invoiceCount.toString();
     }
 
     public void addProduct(String productId){
@@ -72,4 +73,11 @@ public class TemporaryInvoice extends Invoice implements Serializable {
         TemporaryInvoice.additionalCosts.put(costName, cost);
     }
 
+    public void generateTemporaryInvoiceId() {
+        if (App.getDataStore().getTemporaryInvoices() != null){
+            this.id = "TI-" + App.getDataStore().getTemporaryInvoices().generateId();
+        } else {
+            this.id = "TI-1";
+        }
+    }
 }

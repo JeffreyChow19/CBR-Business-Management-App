@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lombok.Builder;
@@ -27,13 +28,20 @@ public class YesNoPopUp extends VBox {
         this.setAlignment(Pos.CENTER);
         this.setSpacing(10);
 
+        this.setMinSize(Theme.getScreenWidth() * 0.4, Theme.getScreenHeight() * 0.2);
+
         Label label = new Label(question);
+        label.setMaxWidth(Theme.getScreenWidth() * 0.28);
+        label.setMinWidth(Theme.getScreenWidth() * 0.28);
+        label.setWrapText(true);
         label.setFont(Theme.getBodyMediumFont());
-        label.setStyle("-fx-font-size: 25;");
+        label.setTextAlignment(TextAlignment.CENTER);
+        label.setStyle("-fx-font-size: 25; -fx-text-fill: white");
 
         HBox buttonContainer = new HBox();
+        buttonContainer.setAlignment(Pos.CENTER);
         buttonContainer.setSpacing(30);
-        buttonContainer.setPadding(new Insets(50, 30, 30, 30));
+        buttonContainer.setPadding(new Insets(10, 30, 0, 30));
 
         yesButton = new DefaultButton(200.0, 40.0, "Yes");
         noButton = new DefaultButton(200.0, 40.0, "No");
@@ -44,6 +52,8 @@ public class YesNoPopUp extends VBox {
         buttonContainer.getChildren().addAll(yesButton, noButton);
 
         this.getChildren().addAll(label, buttonContainer);
+        this.setPadding(new Insets(20, 30, 20, 30));
+        this.setStyle("-fx-background-color: " + Theme.getSecondaryBase());
     }
 
     public void showStage() {
@@ -51,7 +61,7 @@ public class YesNoPopUp extends VBox {
         stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
-        stage.setTitle("Custom Pop-up Window");
+        stage.setResizable(false);
         stage.showAndWait();
     }
 

@@ -1,10 +1,17 @@
 package com.cbr.view.pages;
 
+import com.cbr.view.components.buttons.PluginsButton;
+import com.cbr.view.components.buttons.SettingsButton;
+import com.cbr.view.components.buttons.TransparentButton;
 import com.cbr.view.components.clockwidget.ClockWidget;
+import com.cbr.view.components.header.tabmenu.TabMenuBar;
+import com.cbr.view.theme.Theme;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 public class HomePage extends StackPane {
     private Button clients;
@@ -15,9 +22,13 @@ public class HomePage extends StackPane {
 
     public HomePage() {
         super();
+        /* Theme */
+        this.setStyle("-fx-background-color:" + Theme.getPrimaryDark());
+        this.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
 
         /* First Layer Setup (Clock, NIM, Three Navigation Button)*/
         VBox firstLayer = new VBox();
+        firstLayer.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
         ClockWidget clockWidget = new ClockWidget();
         clockWidget.setAlignment(Pos.CENTER);
 
@@ -28,27 +39,37 @@ public class HomePage extends StackPane {
                 "13521094 - Angela Livia Arumsari\n" +
                 "13521100 - Alexander Jason");
         nim.setWrapText(true);
+        nim.setFont(Theme.getBodyMediumFont());
+        nim.setTextFill(Color.WHITE);
 
         HBox navButtonsContainer = new HBox();
         navButtonsContainer.setSpacing(10.0);
         navButtonsContainer.setAlignment(Pos.CENTER);
-        clients = new Button("Clients");
-        transaction = new Button("Transactions");
-        inventoryManagement = new Button("Inventory Management");
-        // chore: link buttons
+
+        clients = new TransparentButton("CLIENTS");
+        transaction = new TransparentButton("TRANSACTIONS");
+        inventoryManagement = new TransparentButton("INVENTORY MANAGEMENT");
         navButtonsContainer.getChildren().addAll(clients, transaction, inventoryManagement);
+        navButtonsContainer.setSpacing(Theme.getScreenWidth() * 0.04);
 
         firstLayer.setAlignment(Pos.CENTER);
         firstLayer.getChildren().addAll(clockWidget, nim, navButtonsContainer);
+        firstLayer.setSpacing(Theme.getScreenHeight() * 0.05);
 
 
         /* Second Layer Setup: "Capybucks", Settings and Plugins icons  */
         BorderPane secondLayer = new BorderPane();
-        secondLayer.setLeft(new Label("Capybucks"));
+
+        HBox capybucksContainer = new HBox();
+        Label capybucks = new Label("CAPYBUCKS");
+        capybucks.setFont(Theme.getHeading2Font());
+        capybucks.setStyle("-fx-text-fill: white");
+        capybucksContainer.getChildren().add(capybucks);
+        secondLayer.setLeft(capybucksContainer);
 
         VBox prefButtonsContainer = new VBox();
-        settings = new Button("Settings");
-        plugins = new Button("Plugins");
+        settings = new SettingsButton(50);
+        plugins = new PluginsButton(50);
         prefButtonsContainer.getChildren().addAll(settings, plugins);
         secondLayer.setRight(prefButtonsContainer);
 
@@ -57,5 +78,17 @@ public class HomePage extends StackPane {
         this.getChildren().addAll(firstLayer, secondLayer);
 
         // chore: fix styling
+    }
+
+    public void setButtonActions(Node clientsTarget,
+                                 Node transactionsTarget,
+                                 Node inventoryTarget,
+                                 Node settingsTarget,
+                                 Node pluginsTarget) {
+        this.clients.setOnAction(event -> TabMenuBar.getInstance().addTab("Clients", clientsTarget));
+        this.transaction.setOnAction(event -> TabMenuBar.getInstance().addTab("Transaction", transactionsTarget));
+        this.inventoryManagement.setOnAction(event -> TabMenuBar.getInstance().addTab("Inventory Management", inventoryTarget));
+        this.settings.setOnAction(event -> TabMenuBar.getInstance().addTab("Settings", settingsTarget));
+        this.plugins.setOnAction(event -> TabMenuBar.getInstance().addTab("Plugins", pluginsTarget));
     }
 }

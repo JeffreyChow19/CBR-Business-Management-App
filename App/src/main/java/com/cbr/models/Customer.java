@@ -1,5 +1,6 @@
 package com.cbr.models;
 
+import com.cbr.App;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.AllArgsConstructor;
@@ -30,8 +31,19 @@ public class Customer extends Identifiable implements Serializable {
     public Customer(){
         this.type = "customer";
         Customer.customerCount+=1;
-        this.id = "C-"+ Customer.customerCount.toString();
+        this.id = "CS-"+ Customer.customerCount.toString();
         this.invoiceList = new ArrayList<>();
+    }
+
+    public void generateCustomerId() {
+        System.out.println("heelo");
+        if (App.getDataStore().getClients() != null){
+            System.out.println("yiwww");
+            this.id = "CS-" + App.getDataStore().getClients().generateId();
+        } else {
+            this.id = "CS-1";
+        }
+        System.out.println(this.id);
     }
 
     public void buy(Product product){

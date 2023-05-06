@@ -2,51 +2,52 @@
   "dataList" : [
     {
       "id" : "FI-3",
-      "customerId" : "C-15",
-      "createdAt" : "2023-05-06T15:09:11",
+      "customerId" : "CS-15",
+      "createdAt" : "2023-05-06T18:38:27",
       "boughtProducts" : [
         {
-          "id" : "P-1",
-          "productName" : "Rustic Granite Bottle",
-          "category" : "Makanan",
-          "sellPrice" : {
-            "value" : 1522588.92
-          },
-          "buyPrice" : {
-            "value" : 1622515.6199999999
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "P-2",
-          "productName" : "Ergonomic Bronze Shoes",
-          "category" : "Makanan",
-          "sellPrice" : {
-            "value" : 4668441.85
-          },
-          "buyPrice" : {
-            "value" : 4844793.59
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "P-3",
-          "productName" : "Sleek Steel Chair",
+          "id" : "IP-1",
+          "productName" : "Lightweight Marble Knife",
           "category" : "Gadget",
           "sellPrice" : {
-            "value" : 2942241.06
+            "value" : 2727525.46
           },
           "buyPrice" : {
-            "value" : 3242016.23
+            "value" : 3096138.01
+          },
+          "additionalValues" : null,
+          "count" : 1
+        },
+        {
+          "id" : "IP-2",
+          "productName" : "Practical Linen Watch",
+          "category" : "Makanan",
+          "sellPrice" : {
+            "value" : 1802692.23
+          },
+          "buyPrice" : {
+            "value" : 2621341.42
+          },
+          "additionalValues" : null,
+          "count" : 1
+        },
+        {
+          "id" : "IP-3",
+          "productName" : "Fantastic Concrete Coat",
+          "category" : "Minuman",
+          "sellPrice" : {
+            "value" : 4532785.82
+          },
+          "buyPrice" : {
+            "value" : 4698358.57
           },
           "additionalValues" : null,
           "count" : 1
         }
       ],
       "discount" : 0.0,
-      "usedPoint" : 0.0
+      "usedPoint" : 0.0,
+      "getPoint" : 0.0
     }
   ]
 }

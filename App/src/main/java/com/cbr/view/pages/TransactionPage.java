@@ -263,10 +263,12 @@ public class TransactionPage extends StackPane {
         String customerId = customerDropdown.getDropdown().getValue();
         if (customerId == null || customerId.equals("New Customer")){
             Customer newCustomer = new Customer();
+            newCustomer.generateCustomerId();
             customerId = newCustomer.getId();
             App.getDataStore().addClient(newCustomer);
         }
         temporaryInvoice.setCustomerId(customerId);
+        temporaryInvoice.generateTemporaryInvoiceId();
 
         App.getDataStore().addTemporaryInvoice(temporaryInvoice);
 
@@ -284,6 +286,7 @@ public class TransactionPage extends StackPane {
         String customerId = customerDropdown.getDropdown().getValue();
         if (customerId == null || customerId.equals("New Customer")){
             Customer newCustomer = new Customer();
+            newCustomer.generateCustomerId();
             customerId = newCustomer.getId();
             App.getDataStore().addClient(newCustomer);
         }
@@ -337,11 +340,12 @@ public class TransactionPage extends StackPane {
             usePoint = new Double(0.0);
         }
 
-        FixedInvoice invoice = new FixedInvoice(products, customerId, discount, usePoint);
-        App.getDataStore().addInvoice(invoice);
-
         Double getPoint = new Double (0.01 * (grandTotal-usePoint));
         Double deltaPoint = new Double(getPoint - usePoint);
+
+        FixedInvoice invoice = new FixedInvoice(products, customerId, discount, usePoint, getPoint);
+        App.getDataStore().addInvoice(invoice);
+
         if (customer instanceof VIP || customer instanceof Member) {
             App.getDataStore().updateClient((Member)customer, invoice.getId(), deltaPoint);
         } else {
@@ -459,6 +463,9 @@ public class TransactionPage extends StackPane {
         // RESET THE GRAND TOTAL
         setGrandTotal(0.0);
         updateNumbers();
+
+        transactionProductCardList.updateProductMap(productList);
+        transactionProductCardList.renderTransactionProductCards();
 
         // RESET THE INVOICE CARDS CONTAINER
         transactionInvoiceCardList.getInvoiceListContainer().getChildren().clear();

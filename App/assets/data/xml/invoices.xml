@@ -3,44 +3,44 @@
   <dataList>
     <dataList>
       <id>FI-3</id>
-      <customerId>C-15</customerId>
-      <createdAt>2023-05-06T15:09:11</createdAt>
+      <customerId>CS-15</customerId>
+      <createdAt>2023-05-06T18:38:27</createdAt>
       <boughtProducts>
         <boughtProducts>
-          <id>P-1</id>
-          <productName>Rustic Granite Bottle</productName>
-          <category>Makanan</category>
-          <sellPrice>
-            <value>1522588.92</value>
-          </sellPrice>
-          <buyPrice>
-            <value>1622515.6199999999</value>
-          </buyPrice>
-          <additionalValues/>
-          <count>1</count>
-        </boughtProducts>
-        <boughtProducts>
-          <id>P-2</id>
-          <productName>Ergonomic Bronze Shoes</productName>
-          <category>Makanan</category>
-          <sellPrice>
-            <value>4668441.85</value>
-          </sellPrice>
-          <buyPrice>
-            <value>4844793.59</value>
-          </buyPrice>
-          <additionalValues/>
-          <count>1</count>
-        </boughtProducts>
-        <boughtProducts>
-          <id>P-3</id>
-          <productName>Sleek Steel Chair</productName>
+          <id>IP-1</id>
+          <productName>Lightweight Marble Knife</productName>
           <category>Gadget</category>
           <sellPrice>
-            <value>2942241.06</value>
+            <value>2727525.46</value>
           </sellPrice>
           <buyPrice>
-            <value>3242016.23</value>
+            <value>3096138.01</value>
+          </buyPrice>
+          <additionalValues/>
+          <count>1</count>
+        </boughtProducts>
+        <boughtProducts>
+          <id>IP-2</id>
+          <productName>Practical Linen Watch</productName>
+          <category>Makanan</category>
+          <sellPrice>
+            <value>1802692.23</value>
+          </sellPrice>
+          <buyPrice>
+            <value>2621341.42</value>
+          </buyPrice>
+          <additionalValues/>
+          <count>1</count>
+        </boughtProducts>
+        <boughtProducts>
+          <id>IP-3</id>
+          <productName>Fantastic Concrete Coat</productName>
+          <category>Minuman</category>
+          <sellPrice>
+            <value>4532785.82</value>
+          </sellPrice>
+          <buyPrice>
+            <value>4698358.57</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
@@ -48,6 +48,7 @@
       </boughtProducts>
       <discount>0.0</discount>
       <usedPoint>0.0</usedPoint>
+      <getPoint>0.0</getPoint>
     </dataList>
   </dataList>
 </DataList>

@@ -77,6 +77,8 @@ public class TransactionProductCardList extends ScrollPane {
     }
 
     public void renderTransactionProductCards() {
+        this.container.getChildren().clear();
+
         VBox content = new VBox();
         content.setMinWidth(0.95 * this.width);
         content.setPrefWidth(0.95 * this.width);

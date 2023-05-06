@@ -1,5 +1,6 @@
 package com.cbr.models;
 
+import com.cbr.App;
 import com.cbr.models.Pricing.BasePrice;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,7 +31,7 @@ public class InventoryProduct extends Product implements Cloneable{
         this.stock = stock;
         this.status = status;
         InventoryProduct.productCount++;
-        this.id = "P-" + InventoryProduct.productCount.toString();
+        this.id = "IP-" + InventoryProduct.productCount.toString();
         this.additionalValues = new HashMap<>();
         System.out.println("from inventory product");
     }
@@ -46,6 +47,14 @@ public class InventoryProduct extends Product implements Cloneable{
         newProduct.setAdditionalValues(this.additionalValues);
         newProduct.setBuyPrice(new BasePrice(this.getBuyPrice().getValue()));
         return newProduct;
+    }
+
+    public void generateInventoryProductId() {
+        if (App.getDataStore().getInventory() != null){
+            this.id = "IP-" + App.getDataStore().getInventory().generateId();
+        } else {
+            this.id = "IP-1";
+        }
     }
 
 }

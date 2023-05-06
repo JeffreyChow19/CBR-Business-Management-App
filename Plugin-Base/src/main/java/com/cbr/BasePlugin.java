@@ -2,6 +2,7 @@ package com.cbr;
 
 import com.cbr.plugin.Plugin;
 import com.cbr.view.MainView;
+import com.cbr.view.components.header.headermenu.HeaderMenuBar;
 import com.cbr.view.theme.Theme;
 import javafx.scene.layout.VBox;
 import lombok.Getter;
@@ -26,6 +27,6 @@ public class BasePlugin implements Plugin {
         pageContent.setStyle("-fx-background-color:" + Theme.getPrimaryDark());
         pageContent.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
         pageName = "Empty Page";
-        MainView.getInstance().getHeaderMenuBar().addNewNavigationMenu(pageName, pageContent);
+        HeaderMenuBar.getInstance().addNewNavigationMenu(pageName, pageContent);
     }
 }
