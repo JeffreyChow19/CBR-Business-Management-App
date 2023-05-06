@@ -9,6 +9,6 @@ public interface IClientCardBuilder {
     void setCustomerId(String customerId);
     void setName(String customerName);
     void setPhoneNumber(String phoneNumber);
-    void setPoints(Integer points);
+    void setPoints(Double points);
     void setButtons(List<Button> buttons);
 }

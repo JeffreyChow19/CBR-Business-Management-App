@@ -2,753 +2,753 @@
   "dataList" : [
     {
       "id" : "P-1",
-      "productName" : "Enormous Marble Shoes",
+      "productName" : "Rustic Granite Bottle",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 3173290.86
+        "value" : 1522588.92
       },
       "buyPrice" : {
-        "value" : 3304506.1799999997
+        "value" : 1622515.6199999999
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/1.jpg",
-      "stock" : 565,
+      "stock" : 467,
       "status" : false
     },
     {
       "id" : "P-2",
-      "productName" : "Heavy Duty Silk Clock",
+      "productName" : "Ergonomic Bronze Shoes",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 4990453.49
+        "value" : 4668441.85
       },
       "buyPrice" : {
-        "value" : 5670942.140000001
+        "value" : 4844793.59
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/2.jpg",
-      "stock" : 568,
-      "status" : false
-    },
-    {
-      "id" : "P-3",
-      "productName" : "Incredible Leather Table",
-      "category" : "Pakaian",
-      "sellPrice" : {
-        "value" : 1869150.02
-      },
-      "buyPrice" : {
-        "value" : 2293490.85
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/3.jpg",
-      "stock" : 299,
-      "status" : false
-    },
-    {
-      "id" : "P-4",
-      "productName" : "Practical Paper Bottle",
-      "category" : "Gadget",
-      "sellPrice" : {
-        "value" : 4354712.3
-      },
-      "buyPrice" : {
-        "value" : 4612766.45
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/4.jpg",
-      "stock" : 64,
-      "status" : true
-    },
-    {
-      "id" : "P-5",
-      "productName" : "Gorgeous Cotton Pants",
-      "category" : "Minuman",
-      "sellPrice" : {
-        "value" : 3008053.02
-      },
-      "buyPrice" : {
-        "value" : 3467779.18
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/5.jpg",
-      "stock" : 155,
-      "status" : true
-    },
-    {
-      "id" : "P-6",
-      "productName" : "Synergistic Paper Shirt",
-      "category" : "Pakaian",
-      "sellPrice" : {
-        "value" : 3258832.39
-      },
-      "buyPrice" : {
-        "value" : 3645742.21
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/6.jpg",
-      "stock" : 491,
-      "status" : true
-    },
-    {
-      "id" : "P-7",
-      "productName" : "Durable Concrete Bench",
-      "category" : "Pakaian",
-      "sellPrice" : {
-        "value" : 3982015.68
-      },
-      "buyPrice" : {
-        "value" : 3994723.1100000003
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/7.jpg",
-      "stock" : 338,
-      "status" : true
-    },
-    {
-      "id" : "P-8",
-      "productName" : "Heavy Duty Plastic Hat",
-      "category" : "Makanan",
-      "sellPrice" : {
-        "value" : 3084620.55
-      },
-      "buyPrice" : {
-        "value" : 3382091.08
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/8.jpg",
-      "stock" : 890,
-      "status" : false
-    },
-    {
-      "id" : "P-9",
-      "productName" : "Intelligent Steel Wallet",
-      "category" : "Gadget",
-      "sellPrice" : {
-        "value" : 3408262.56
-      },
-      "buyPrice" : {
-        "value" : 3453481.38
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/9.jpg",
-      "stock" : 616,
-      "status" : true
-    },
-    {
-      "id" : "P-10",
-      "productName" : "Durable Cotton Bench",
-      "category" : "Minuman",
-      "sellPrice" : {
-        "value" : 1800412.72
-      },
-      "buyPrice" : {
-        "value" : 2062208.45
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/10.jpg",
-      "stock" : 443,
-      "status" : true
-    },
-    {
-      "id" : "P-11",
-      "productName" : "Lightweight Plastic Car",
-      "category" : "Pakaian",
-      "sellPrice" : {
-        "value" : 1082176.46
-      },
-      "buyPrice" : {
-        "value" : 2043543.01
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/11.jpg",
-      "stock" : 882,
-      "status" : true
-    },
-    {
-      "id" : "P-12",
-      "productName" : "Awesome Marble Plate",
-      "category" : "Pakaian",
-      "sellPrice" : {
-        "value" : 2616589.14
-      },
-      "buyPrice" : {
-        "value" : 3474290.8200000003
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/12.jpg",
-      "stock" : 239,
-      "status" : false
-    },
-    {
-      "id" : "P-13",
-      "productName" : "Practical Paper Lamp",
-      "category" : "Gadget",
-      "sellPrice" : {
-        "value" : 4230143.64
-      },
-      "buyPrice" : {
-        "value" : 4573626.84
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/13.jpg",
-      "stock" : 514,
-      "status" : true
-    },
-    {
-      "id" : "P-14",
-      "productName" : "Synergistic Leather Wallet",
-      "category" : "Makanan",
-      "sellPrice" : {
-        "value" : 1196167.63
-      },
-      "buyPrice" : {
-        "value" : 1500868.2899999998
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/14.jpg",
-      "stock" : 80,
-      "status" : false
-    },
-    {
-      "id" : "P-15",
-      "productName" : "Rustic Paper Clock",
-      "category" : "Minuman",
-      "sellPrice" : {
-        "value" : 1465806.42
-      },
-      "buyPrice" : {
-        "value" : 1766923.72
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/15.jpg",
-      "stock" : 550,
-      "status" : true
-    },
-    {
-      "id" : "P-16",
-      "productName" : "Incredible Leather Shirt",
-      "category" : "Minuman",
-      "sellPrice" : {
-        "value" : 2741497.55
-      },
-      "buyPrice" : {
-        "value" : 3211373.61
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/16.jpg",
       "stock" : 766,
       "status" : false
     },
     {
-      "id" : "P-17",
-      "productName" : "Synergistic Plastic Shoes",
+      "id" : "P-3",
+      "productName" : "Sleek Steel Chair",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 4950555.86
+        "value" : 2942241.06
       },
       "buyPrice" : {
-        "value" : 5938127.29
+        "value" : 3242016.23
       },
       "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/17.jpg",
-      "stock" : 350,
+      "imagePath" : "file:assets/images/products/3.jpg",
+      "stock" : 231,
+      "status" : true
+    },
+    {
+      "id" : "P-4",
+      "productName" : "Ergonomic Steel Wallet",
+      "category" : "Minuman",
+      "sellPrice" : {
+        "value" : 3915336.79
+      },
+      "buyPrice" : {
+        "value" : 4079004.15
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/4.jpg",
+      "stock" : 315,
       "status" : false
     },
     {
-      "id" : "P-18",
-      "productName" : "Aerodynamic Wooden Coat",
+      "id" : "P-5",
+      "productName" : "Gorgeous Paper Wallet",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 3530142.92
+        "value" : 2587153.23
       },
       "buyPrice" : {
-        "value" : 4525852.93
+        "value" : 2839656.59
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/5.jpg",
+      "stock" : 77,
+      "status" : true
+    },
+    {
+      "id" : "P-6",
+      "productName" : "Rustic Cotton Car",
+      "category" : "Makanan",
+      "sellPrice" : {
+        "value" : 1359282.16
+      },
+      "buyPrice" : {
+        "value" : 1669065.16
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/6.jpg",
+      "stock" : 973,
+      "status" : true
+    },
+    {
+      "id" : "P-7",
+      "productName" : "Ergonomic Plastic Wallet",
+      "category" : "Makanan",
+      "sellPrice" : {
+        "value" : 3063018.98
+      },
+      "buyPrice" : {
+        "value" : 3262359.45
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/7.jpg",
+      "stock" : 0,
+      "status" : true
+    },
+    {
+      "id" : "P-8",
+      "productName" : "Fantastic Marble Hat",
+      "category" : "Makanan",
+      "sellPrice" : {
+        "value" : 1847312.26
+      },
+      "buyPrice" : {
+        "value" : 2698469.0700000003
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/8.jpg",
+      "stock" : 349,
+      "status" : true
+    },
+    {
+      "id" : "P-9",
+      "productName" : "Synergistic Wooden Chair",
+      "category" : "Gadget",
+      "sellPrice" : {
+        "value" : 4107833.39
+      },
+      "buyPrice" : {
+        "value" : 5087065.87
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/9.jpg",
+      "stock" : 446,
+      "status" : false
+    },
+    {
+      "id" : "P-10",
+      "productName" : "Sleek Linen Lamp",
+      "category" : "Minuman",
+      "sellPrice" : {
+        "value" : 2980016.35
+      },
+      "buyPrice" : {
+        "value" : 3139279.37
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/10.jpg",
+      "stock" : 406,
+      "status" : false
+    },
+    {
+      "id" : "P-11",
+      "productName" : "Fantastic Plastic Bottle",
+      "category" : "Gadget",
+      "sellPrice" : {
+        "value" : 1999716.47
+      },
+      "buyPrice" : {
+        "value" : 2723164.89
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/11.jpg",
+      "stock" : 681,
+      "status" : true
+    },
+    {
+      "id" : "P-12",
+      "productName" : "Mediocre Granite Watch",
+      "category" : "Minuman",
+      "sellPrice" : {
+        "value" : 3787705.85
+      },
+      "buyPrice" : {
+        "value" : 4468974.45
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/12.jpg",
+      "stock" : 872,
+      "status" : false
+    },
+    {
+      "id" : "P-13",
+      "productName" : "Synergistic Bronze Knife",
+      "category" : "Makanan",
+      "sellPrice" : {
+        "value" : 2876729.93
+      },
+      "buyPrice" : {
+        "value" : 3588686.97
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/13.jpg",
+      "stock" : 46,
+      "status" : true
+    },
+    {
+      "id" : "P-14",
+      "productName" : "Enormous Wool Watch",
+      "category" : "Makanan",
+      "sellPrice" : {
+        "value" : 3233567.08
+      },
+      "buyPrice" : {
+        "value" : 4121943.48
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/14.jpg",
+      "stock" : 818,
+      "status" : false
+    },
+    {
+      "id" : "P-15",
+      "productName" : "Synergistic Cotton Wallet",
+      "category" : "Gadget",
+      "sellPrice" : {
+        "value" : 2008441.44
+      },
+      "buyPrice" : {
+        "value" : 2607227.85
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/15.jpg",
+      "stock" : 660,
+      "status" : true
+    },
+    {
+      "id" : "P-16",
+      "productName" : "Small Plastic Car",
+      "category" : "Gadget",
+      "sellPrice" : {
+        "value" : 655761.89
+      },
+      "buyPrice" : {
+        "value" : 1313928.04
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/16.jpg",
+      "stock" : 965,
+      "status" : true
+    },
+    {
+      "id" : "P-17",
+      "productName" : "Durable Concrete Keyboard",
+      "category" : "Gadget",
+      "sellPrice" : {
+        "value" : 2441939.81
+      },
+      "buyPrice" : {
+        "value" : 3244153.95
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/17.jpg",
+      "stock" : 172,
+      "status" : true
+    },
+    {
+      "id" : "P-18",
+      "productName" : "Enormous Silk Bag",
+      "category" : "Makanan",
+      "sellPrice" : {
+        "value" : 2369531.1
+      },
+      "buyPrice" : {
+        "value" : 2625887.23
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/18.jpg",
-      "stock" : 375,
+      "stock" : 506,
       "status" : false
     },
     {
       "id" : "P-19",
-      "productName" : "Enormous Concrete Coat",
+      "productName" : "Aerodynamic Silk Knife",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 1354577.8
+        "value" : 4395287.45
       },
       "buyPrice" : {
-        "value" : 1900988.3900000001
+        "value" : 4543583.69
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/19.jpg",
-      "stock" : 650,
+      "stock" : 439,
       "status" : true
     },
     {
       "id" : "P-20",
-      "productName" : "Intelligent Silk Coat",
-      "category" : "Makanan",
+      "productName" : "Enormous Bronze Plate",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 4013949.24
+        "value" : 2337901.27
       },
       "buyPrice" : {
-        "value" : 4247189.66
+        "value" : 3231208.67
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/20.jpg",
-      "stock" : 634,
-      "status" : true
-    },
-    {
-      "id" : "P-21",
-      "productName" : "Rustic Paper Bench",
-      "category" : "Minuman",
-      "sellPrice" : {
-        "value" : 2387155.62
-      },
-      "buyPrice" : {
-        "value" : 3105473.7600000002
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/21.jpg",
-      "stock" : 478,
+      "stock" : 534,
       "status" : false
     },
     {
-      "id" : "P-22",
-      "productName" : "Mediocre Silk Car",
-      "category" : "Gadget",
+      "id" : "P-21",
+      "productName" : "Heavy Duty Linen Table",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 2204903.39
+        "value" : 406499.91
       },
       "buyPrice" : {
-        "value" : 2725344.16
+        "value" : 739470.96
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/21.jpg",
+      "stock" : 838,
+      "status" : true
+    },
+    {
+      "id" : "P-22",
+      "productName" : "Small Linen Knife",
+      "category" : "Pakaian",
+      "sellPrice" : {
+        "value" : 4810509.21
+      },
+      "buyPrice" : {
+        "value" : 5388901.43
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/22.jpg",
-      "stock" : 304,
+      "stock" : 121,
       "status" : true
     },
     {
       "id" : "P-23",
-      "productName" : "Enormous Concrete Bottle",
-      "category" : "Minuman",
+      "productName" : "Gorgeous Wooden Plate",
+      "category" : "Makanan",
       "sellPrice" : {
-        "value" : 1465237.8
+        "value" : 3203486.41
       },
       "buyPrice" : {
-        "value" : 2357766.85
+        "value" : 4010324.0900000003
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/23.jpg",
-      "stock" : 394,
+      "stock" : 401,
       "status" : true
     },
     {
       "id" : "P-24",
-      "productName" : "Fantastic Copper Computer",
-      "category" : "Makanan",
+      "productName" : "Gorgeous Bronze Wallet",
+      "category" : "Minuman",
       "sellPrice" : {
-        "value" : 3152554.31
+        "value" : 1986629.21
       },
       "buyPrice" : {
-        "value" : 3320732.37
+        "value" : 2788122.49
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/24.jpg",
-      "stock" : 869,
-      "status" : true
-    },
-    {
-      "id" : "P-25",
-      "productName" : "Awesome Linen Chair",
-      "category" : "Pakaian",
-      "sellPrice" : {
-        "value" : 4622700.28
-      },
-      "buyPrice" : {
-        "value" : 5614325.88
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/25.jpg",
-      "stock" : 562,
-      "status" : false
-    },
-    {
-      "id" : "P-26",
-      "productName" : "Aerodynamic Plastic Pants",
-      "category" : "Minuman",
-      "sellPrice" : {
-        "value" : 196937.36
-      },
-      "buyPrice" : {
-        "value" : 317295.44
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/26.jpg",
-      "stock" : 18,
-      "status" : true
-    },
-    {
-      "id" : "P-27",
-      "productName" : "Heavy Duty Granite Pants",
-      "category" : "Gadget",
-      "sellPrice" : {
-        "value" : 4071171.52
-      },
-      "buyPrice" : {
-        "value" : 4984214.52
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/27.jpg",
-      "stock" : 926,
-      "status" : false
-    },
-    {
-      "id" : "P-28",
-      "productName" : "Mediocre Rubber Gloves",
-      "category" : "Minuman",
-      "sellPrice" : {
-        "value" : 2240931.1
-      },
-      "buyPrice" : {
-        "value" : 2840068.54
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/28.jpg",
-      "stock" : 709,
-      "status" : true
-    },
-    {
-      "id" : "P-29",
-      "productName" : "Fantastic Silk Shoes",
-      "category" : "Gadget",
-      "sellPrice" : {
-        "value" : 4533643.38
-      },
-      "buyPrice" : {
-        "value" : 4767754.09
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/29.jpg",
-      "stock" : 730,
-      "status" : false
-    },
-    {
-      "id" : "P-30",
-      "productName" : "Lightweight Plastic Wallet",
-      "category" : "Gadget",
-      "sellPrice" : {
-        "value" : 4572950.27
-      },
-      "buyPrice" : {
-        "value" : 5065383.89
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/30.jpg",
-      "stock" : 481,
-      "status" : true
-    },
-    {
-      "id" : "P-31",
-      "productName" : "Aerodynamic Steel Shirt",
-      "category" : "Makanan",
-      "sellPrice" : {
-        "value" : 305773.86
-      },
-      "buyPrice" : {
-        "value" : 686817.88
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/31.jpg",
-      "stock" : 775,
-      "status" : true
-    },
-    {
-      "id" : "P-32",
-      "productName" : "Fantastic Steel Pants",
-      "category" : "Makanan",
-      "sellPrice" : {
-        "value" : 1582858.85
-      },
-      "buyPrice" : {
-        "value" : 1878999.26
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/32.jpg",
-      "stock" : 53,
-      "status" : true
-    },
-    {
-      "id" : "P-33",
-      "productName" : "Practical Aluminum Car",
-      "category" : "Makanan",
-      "sellPrice" : {
-        "value" : 86747.89
-      },
-      "buyPrice" : {
-        "value" : 1038996.38
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/33.jpg",
-      "stock" : 219,
-      "status" : true
-    },
-    {
-      "id" : "P-34",
-      "productName" : "Rustic Paper Plate",
-      "category" : "Pakaian",
-      "sellPrice" : {
-        "value" : 2379623.0
-      },
-      "buyPrice" : {
-        "value" : 3190467.62
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/34.jpg",
-      "stock" : 178,
-      "status" : true
-    },
-    {
-      "id" : "P-35",
-      "productName" : "Aerodynamic Leather Pants",
-      "category" : "Gadget",
-      "sellPrice" : {
-        "value" : 2457492.64
-      },
-      "buyPrice" : {
-        "value" : 2498332.95
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/35.jpg",
-      "stock" : 721,
-      "status" : true
-    },
-    {
-      "id" : "P-36",
-      "productName" : "Incredible Rubber Bag",
-      "category" : "Makanan",
-      "sellPrice" : {
-        "value" : 1968609.18
-      },
-      "buyPrice" : {
-        "value" : 2417764.76
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/36.jpg",
-      "stock" : 227,
-      "status" : true
-    },
-    {
-      "id" : "P-37",
-      "productName" : "Fantastic Granite Watch",
-      "category" : "Gadget",
-      "sellPrice" : {
-        "value" : 3478300.61
-      },
-      "buyPrice" : {
-        "value" : 4294797.2
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/37.jpg",
       "stock" : 43,
       "status" : true
     },
     {
-      "id" : "P-38",
-      "productName" : "Gorgeous Concrete Watch",
-      "category" : "Gadget",
+      "id" : "P-25",
+      "productName" : "Awesome Steel Coat",
+      "category" : "Minuman",
       "sellPrice" : {
-        "value" : 4264957.54
+        "value" : 380278.24
       },
       "buyPrice" : {
-        "value" : 5060530.68
+        "value" : 982166.29
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/25.jpg",
+      "stock" : 932,
+      "status" : false
+    },
+    {
+      "id" : "P-26",
+      "productName" : "Sleek Paper Computer",
+      "category" : "Makanan",
+      "sellPrice" : {
+        "value" : 2177691.79
+      },
+      "buyPrice" : {
+        "value" : 2318234.62
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/26.jpg",
+      "stock" : 394,
+      "status" : false
+    },
+    {
+      "id" : "P-27",
+      "productName" : "Gorgeous Wooden Plate",
+      "category" : "Pakaian",
+      "sellPrice" : {
+        "value" : 2872873.7
+      },
+      "buyPrice" : {
+        "value" : 3161879.5
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/27.jpg",
+      "stock" : 627,
+      "status" : true
+    },
+    {
+      "id" : "P-28",
+      "productName" : "Awesome Wool Shirt",
+      "category" : "Minuman",
+      "sellPrice" : {
+        "value" : 142270.45
+      },
+      "buyPrice" : {
+        "value" : 295124.58
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/28.jpg",
+      "stock" : 402,
+      "status" : false
+    },
+    {
+      "id" : "P-29",
+      "productName" : "Small Steel Bottle",
+      "category" : "Makanan",
+      "sellPrice" : {
+        "value" : 2279292.07
+      },
+      "buyPrice" : {
+        "value" : 2522285.21
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/29.jpg",
+      "stock" : 798,
+      "status" : true
+    },
+    {
+      "id" : "P-30",
+      "productName" : "Enormous Copper Shoes",
+      "category" : "Minuman",
+      "sellPrice" : {
+        "value" : 4746997.99
+      },
+      "buyPrice" : {
+        "value" : 5186172.5200000005
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/30.jpg",
+      "stock" : 302,
+      "status" : true
+    },
+    {
+      "id" : "P-31",
+      "productName" : "Heavy Duty Cotton Knife",
+      "category" : "Makanan",
+      "sellPrice" : {
+        "value" : 2899138.01
+      },
+      "buyPrice" : {
+        "value" : 2927515.05
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/31.jpg",
+      "stock" : 573,
+      "status" : false
+    },
+    {
+      "id" : "P-32",
+      "productName" : "Synergistic Paper Clock",
+      "category" : "Gadget",
+      "sellPrice" : {
+        "value" : 2051618.51
+      },
+      "buyPrice" : {
+        "value" : 2122974.07
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/32.jpg",
+      "stock" : 593,
+      "status" : true
+    },
+    {
+      "id" : "P-33",
+      "productName" : "Fantastic Cotton Wallet",
+      "category" : "Minuman",
+      "sellPrice" : {
+        "value" : 4848009.81
+      },
+      "buyPrice" : {
+        "value" : 5285787.9799999995
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/33.jpg",
+      "stock" : 386,
+      "status" : true
+    },
+    {
+      "id" : "P-34",
+      "productName" : "Sleek Linen Computer",
+      "category" : "Gadget",
+      "sellPrice" : {
+        "value" : 4132590.21
+      },
+      "buyPrice" : {
+        "value" : 4978590.13
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/34.jpg",
+      "stock" : 319,
+      "status" : true
+    },
+    {
+      "id" : "P-35",
+      "productName" : "Mediocre Linen Clock",
+      "category" : "Pakaian",
+      "sellPrice" : {
+        "value" : 3329997.7
+      },
+      "buyPrice" : {
+        "value" : 3920588.56
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/35.jpg",
+      "stock" : 446,
+      "status" : true
+    },
+    {
+      "id" : "P-36",
+      "productName" : "Intelligent Leather Knife",
+      "category" : "Gadget",
+      "sellPrice" : {
+        "value" : 1711405.86
+      },
+      "buyPrice" : {
+        "value" : 2677412.59
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/36.jpg",
+      "stock" : 299,
+      "status" : true
+    },
+    {
+      "id" : "P-37",
+      "productName" : "Mediocre Plastic Pants",
+      "category" : "Pakaian",
+      "sellPrice" : {
+        "value" : 2007397.52
+      },
+      "buyPrice" : {
+        "value" : 2997966.48
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/37.jpg",
+      "stock" : 773,
+      "status" : false
+    },
+    {
+      "id" : "P-38",
+      "productName" : "Intelligent Concrete Plate",
+      "category" : "Minuman",
+      "sellPrice" : {
+        "value" : 1883228.95
+      },
+      "buyPrice" : {
+        "value" : 2084690.5999999999
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/38.jpg",
-      "stock" : 968,
-      "status" : true
+      "stock" : 502,
+      "status" : false
     },
     {
       "id" : "P-39",
-      "productName" : "Synergistic Plastic Gloves",
+      "productName" : "Ergonomic Silk Car",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 3738710.46
+        "value" : 2942315.38
       },
       "buyPrice" : {
-        "value" : 4035107.52
+        "value" : 3464687.23
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/39.jpg",
-      "stock" : 559,
-      "status" : false
-    },
-    {
-      "id" : "P-40",
-      "productName" : "Ergonomic Wool Watch",
-      "category" : "Makanan",
-      "sellPrice" : {
-        "value" : 2313514.85
-      },
-      "buyPrice" : {
-        "value" : 2823207.92
-      },
-      "additionalValues" : { },
-      "imagePath" : "file:assets/images/products/40.jpg",
-      "stock" : 882,
+      "stock" : 113,
       "status" : true
     },
     {
-      "id" : "P-41",
-      "productName" : "Intelligent Leather Gloves",
-      "category" : "Gadget",
+      "id" : "P-40",
+      "productName" : "Enormous Iron Hat",
+      "category" : "Minuman",
       "sellPrice" : {
-        "value" : 3084653.5
+        "value" : 3284792.51
       },
       "buyPrice" : {
-        "value" : 3917241.34
+        "value" : 3312300.4699999997
+      },
+      "additionalValues" : { },
+      "imagePath" : "file:assets/images/products/40.jpg",
+      "stock" : 956,
+      "status" : false
+    },
+    {
+      "id" : "P-41",
+      "productName" : "Gorgeous Aluminum Knife",
+      "category" : "Pakaian",
+      "sellPrice" : {
+        "value" : 2142050.92
+      },
+      "buyPrice" : {
+        "value" : 2839566.03
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/41.jpg",
-      "stock" : 33,
-      "status" : false
+      "stock" : 874,
+      "status" : true
     },
     {
       "id" : "P-42",
-      "productName" : "Synergistic Marble Keyboard",
-      "category" : "Gadget",
+      "productName" : "Awesome Copper Lamp",
+      "category" : "Makanan",
       "sellPrice" : {
-        "value" : 2657010.5
+        "value" : 3598867.43
       },
       "buyPrice" : {
-        "value" : 3327896.24
+        "value" : 4045961.74
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/42.jpg",
-      "stock" : 980,
-      "status" : false
+      "stock" : 621,
+      "status" : true
     },
     {
       "id" : "P-43",
-      "productName" : "Small Granite Car",
+      "productName" : "Lightweight Bronze Shirt",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 1488168.89
+        "value" : 1162149.09
       },
       "buyPrice" : {
-        "value" : 1673755.95
+        "value" : 1263262.6700000002
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/43.jpg",
-      "stock" : 408,
-      "status" : false
+      "stock" : 547,
+      "status" : true
     },
     {
       "id" : "P-44",
-      "productName" : "Incredible Steel Pants",
-      "category" : "Makanan",
+      "productName" : "Sleek Leather Shoes",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 2826979.85
+        "value" : 4085946.04
       },
       "buyPrice" : {
-        "value" : 3212622.72
+        "value" : 4356927.28
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/44.jpg",
-      "stock" : 22,
-      "status" : false
+      "stock" : 432,
+      "status" : true
     },
     {
       "id" : "P-45",
-      "productName" : "Enormous Wool Watch",
-      "category" : "Gadget",
+      "productName" : "Small Silk Keyboard",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 2534888.74
+        "value" : 4884996.21
       },
       "buyPrice" : {
-        "value" : 2726073.49
+        "value" : 5272365.91
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/45.jpg",
-      "stock" : 889,
-      "status" : false
+      "stock" : 180,
+      "status" : true
     },
     {
       "id" : "P-46",
-      "productName" : "Rustic Silk Table",
+      "productName" : "Fantastic Leather Shoes",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 4355598.46
+        "value" : 4706115.57
       },
       "buyPrice" : {
-        "value" : 5055795.72
+        "value" : 5188499.23
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/46.jpg",
-      "stock" : 483,
+      "stock" : 229,
       "status" : true
     },
     {
       "id" : "P-47",
-      "productName" : "Fantastic Cotton Watch",
-      "category" : "Makanan",
+      "productName" : "Enormous Steel Wallet",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 4980433.32
+        "value" : 1917919.49
       },
       "buyPrice" : {
-        "value" : 5617549.180000001
+        "value" : 2461508.16
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/47.jpg",
-      "stock" : 719,
+      "stock" : 164,
       "status" : false
     },
     {
       "id" : "P-48",
-      "productName" : "Synergistic Cotton Plate",
-      "category" : "Minuman",
+      "productName" : "Gorgeous Plastic Gloves",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 4236593.95
+        "value" : 1092847.33
       },
       "buyPrice" : {
-        "value" : 4321808.01
+        "value" : 1189942.81
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/48.jpg",
-      "stock" : 272,
+      "stock" : 325,
       "status" : true
     },
     {
       "id" : "P-49",
-      "productName" : "Mediocre Bronze Lamp",
-      "category" : "Makanan",
+      "productName" : "Aerodynamic Iron Table",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 3253369.41
+        "value" : 4539323.3
       },
       "buyPrice" : {
-        "value" : 3748908.79
+        "value" : 5468199.649999999
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/49.jpg",
-      "stock" : 953,
+      "stock" : 137,
       "status" : true
     },
     {
       "id" : "P-50",
-      "productName" : "Sleek Steel Chair",
-      "category" : "Makanan",
+      "productName" : "Awesome Granite Computer",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 785056.58
+        "value" : 257342.93
       },
       "buyPrice" : {
-        "value" : 1560964.26
+        "value" : 435054.13
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/50.jpg",
-      "stock" : 676,
-      "status" : false
+      "stock" : 69,
+      "status" : true
     }
   ]
 }

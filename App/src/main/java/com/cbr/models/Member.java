@@ -12,7 +12,7 @@ public class Member extends Customer{
     protected String name;
     protected String phoneNumber;
     protected Boolean status;
-    protected Integer point;
+    protected Double point;
 
     public Member(){
         this.type = "member";
@@ -24,10 +24,10 @@ public class Member extends Customer{
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.status = true;
-        this.point = 0;
+        this.point = 0.0;
     }
 
-    public void addPoint(Integer point){
+    public void addPoint(Double point){
         this.point+=point;
     }
 
