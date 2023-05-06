@@ -21,11 +21,7 @@ public class MainView extends VBox {
     private TransactionPage transactionPage;
     private InventoryPage inventoryPage;
     @Getter
-    private ItemEditor editItem;
-    @Getter
     private ProfileEditor editProfile;
-    @Getter
-    private ItemEditor addItem;
     private static volatile MainView instance;
 
     public static MainView getInstance() {
@@ -42,8 +38,6 @@ public class MainView extends VBox {
     public void init() {
         /* Pages */
         homePage = new HomePage();
-        editItem = new ItemEditor("Edit Item");
-        addItem = new ItemEditor("Add Item");
         editProfile = new ProfileEditor("Edit Profile");
         clientsPage = new ClientsPage();
         transactionPage = new TransactionPage();
