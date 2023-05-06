@@ -91,7 +91,7 @@ public class HistoryInvoiceCard extends GridPane {
         // Grand total line
         currentRow++;
         Label grandTotalLabel = new Label("Grand total");
-        grandTotalLabel.setFont(Theme.getMediumBodyFont());
+        grandTotalLabel.setFont(Theme.getBodyMediumFont());
         grandTotalLabel.setTextFill(Color.WHITE);
         this.add(grandTotalLabel, 0, currentRow, 1, 1);
         GridPane.setHalignment(grandTotalLabel, HPos.LEFT);
@@ -100,7 +100,7 @@ public class HistoryInvoiceCard extends GridPane {
         // Points line
         currentRow++;
         Label pointsLabel = new Label("Points");
-        pointsLabel.setFont(Theme.getMediumBodyFont());
+        pointsLabel.setFont(Theme.getBodyMediumFont());
         pointsLabel.setTextFill(Color.WHITE);
         this.add(pointsLabel, 0, currentRow, 1, 1);
         GridPane.setHalignment(pointsLabel, HPos.LEFT);
