@@ -339,11 +339,12 @@ public class TransactionPage extends StackPane {
             usePoint = new Double(0.0);
         }
 
-        FixedInvoice invoice = new FixedInvoice(products, customerId, discount, usePoint);
-        App.getDataStore().addInvoice(invoice);
-
         Double getPoint = new Double (0.01 * (grandTotal-usePoint));
         Double deltaPoint = new Double(getPoint - usePoint);
+
+        FixedInvoice invoice = new FixedInvoice(products, customerId, discount, usePoint, getPoint);
+        App.getDataStore().addInvoice(invoice);
+
         if (customer instanceof VIP || customer instanceof Member) {
             App.getDataStore().updateClient((Member)customer, invoice.getId(), deltaPoint);
         } else {
