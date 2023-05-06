@@ -64,10 +64,6 @@ public class TransactionInvoiceCardList extends VBox{
         this.getChildren().addAll(invoiceListPane);
     }
 
-    public void update(){
-
-    }
-
     public void addInvoiceCard(Product product) {
         // Check if the product is already in the invoiceListContainer
         boolean productExists = false;
@@ -75,7 +71,7 @@ public class TransactionInvoiceCardList extends VBox{
             if (node instanceof TransactionInvoiceCard) {
                 TransactionInvoiceCard card = (TransactionInvoiceCard) node;
                 if (card.getProduct().equals(product)) {
-                    card.getNumberSpinner().setValue(card.getNumberSpinner().getValue() + 1);
+                    card.getNumberSpinner().setValue(parent.getTemporaryInvoice().getProductFrequencies().get(product.getId()));
                     card.getNumberSpinner().updateValueLabel();
                     productExists = true;
                     break;

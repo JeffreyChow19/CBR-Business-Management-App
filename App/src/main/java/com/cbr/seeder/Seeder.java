@@ -19,7 +19,7 @@ public class Seeder {
             Integer customerId = faker.number().numberBetween(1,7);
             Integer productId = faker.number().numberBetween(1, 50);
             TemporaryInvoice temp = new TemporaryInvoice(customerId.toString());
-            temp.addProduct("P-"+productId.toString());
+            temp.addProduct("IP-"+productId.toString());
             temporaryInvoices.add(temp);
         }
         jsonDataStore.setTemporaryInvoices(new DataList<TemporaryInvoice>(temporaryInvoices));
@@ -59,11 +59,8 @@ public class Seeder {
         }
 
         jsonDataStore.setInventory(new DataList<InventoryProduct>(productList));
-        jsonDataStore.commit();
         xmlDataStore.setInventory(new DataList<InventoryProduct>(productList));
-        xmlDataStore.commit();
         objDataStore.setInventory(new DataList<InventoryProduct>(productList));
-        objDataStore.commit();
 
 //        for (Product p : jsonDataStore.getInventory().getDataList()){
 //            System.out.println(p.getClass().getName());
@@ -83,11 +80,11 @@ public class Seeder {
         // CUSTOMERS //
         Customer cust1 = new Customer();
         Customer cust2 = new Customer();
-        Member mem1 = new Member("C-3", new ArrayList<>(), "rachel", "08123456789");
-        Member mem2 = new Member("C-4", new ArrayList<>(), "Livia", "08123456789");
-        VIP vip1 = new VIP("C-5", new ArrayList<>(), "Jason", "08123456789", false, 100, 100000.0);
-        VIP vip2 = new VIP("C-6", new ArrayList<>(), "Chow", "08123456789", true, 100, 100000.0);
-        Member mem3 = new Member("C-7", new ArrayList<>(), "Eugene", "08123456789");
+        Member mem1 = new Member("CS-3", new ArrayList<>(), "rachel", "08123456789");
+        Member mem2 = new Member("CS-4", new ArrayList<>(), "Livia", "08123456789");
+        VIP vip1 = new VIP("CS-5", new ArrayList<>(), "Jason", "08123456789", false, 100.0, 100000.0);
+        VIP vip2 = new VIP("CS-6", new ArrayList<>(), "Chow", "08123456789", true, 100.0, 100000.0);
+        Member mem3 = new Member("CS-7", new ArrayList<>(), "Eugene", "08123456789");
 
         List<Customer> customerList = new ArrayList<Customer>();
 
@@ -97,7 +94,7 @@ public class Seeder {
         boughtProducts.add(new BoughtProduct(productList.get(1), 1));
         boughtProducts.add(new BoughtProduct(productList.get(2), 1));
 
-        FixedInvoice invoice1 = new FixedInvoice(boughtProducts, cust1.getId(), 0.0);
+        FixedInvoice invoice1 = new FixedInvoice(boughtProducts, cust1.getId(), 0.0, 0.0, 0.0);
         List<FixedInvoice> invoices = new ArrayList<>();
         invoices.add(invoice1);
 

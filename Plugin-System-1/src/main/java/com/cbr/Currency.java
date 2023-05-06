@@ -27,6 +27,5 @@ import java.util.List;
 public class Currency implements Serializable {
     private String symbol;
     private String name;
-    private Integer value;
     private Double exchangeRate; // relative to USD
 }

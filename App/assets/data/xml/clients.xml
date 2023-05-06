@@ -2,63 +2,63 @@
 <DataList>
   <dataList>
     <dataList>
-      <id>C-15</id>
+      <id>CS-15</id>
       <type>customer</type>
       <invoiceList>
         <invoiceList>FI-3</invoiceList>
       </invoiceList>
     </dataList>
     <dataList>
-      <id>C-16</id>
+      <id>CS-16</id>
       <type>customer</type>
       <invoiceList/>
     </dataList>
     <dataList>
-      <id>C-3</id>
+      <id>CS-3</id>
       <type>member</type>
       <invoiceList/>
       <name>rachel</name>
       <phoneNumber>08123456789</phoneNumber>
       <status>true</status>
-      <point>0</point>
+      <point>0.0</point>
     </dataList>
     <dataList>
-      <id>C-4</id>
+      <id>CS-4</id>
       <type>member</type>
       <invoiceList/>
       <name>Livia</name>
       <phoneNumber>08123456789</phoneNumber>
       <status>true</status>
-      <point>0</point>
+      <point>0.0</point>
     </dataList>
     <dataList>
-      <id>C-5</id>
+      <id>CS-5</id>
       <type>VIP</type>
       <invoiceList/>
       <name>Jason</name>
       <phoneNumber>08123456789</phoneNumber>
       <status>false</status>
-      <point>100</point>
+      <point>100.0</point>
       <buyPrice>100000.0</buyPrice>
     </dataList>
     <dataList>
-      <id>C-6</id>
+      <id>CS-6</id>
       <type>VIP</type>
       <invoiceList/>
       <name>Chow</name>
       <phoneNumber>08123456789</phoneNumber>
       <status>true</status>
-      <point>100</point>
+      <point>100.0</point>
       <buyPrice>100000.0</buyPrice>
     </dataList>
     <dataList>
-      <id>C-7</id>
+      <id>CS-7</id>
       <type>member</type>
       <invoiceList/>
       <name>Eugene</name>
       <phoneNumber>08123456789</phoneNumber>
       <status>true</status>
-      <point>0</point>
+      <point>0.0</point>
     </dataList>
   </dataList>
 </DataList>

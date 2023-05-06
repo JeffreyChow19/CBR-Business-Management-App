@@ -1,22 +1,13 @@
 package com.cbr.utils;
 
-import com.cbr.App;
-import com.cbr.exception.PluginException;
-import com.cbr.models.DataList;
-import com.cbr.models.FixedInvoice;
-import com.cbr.plugin.PluginManager;
-import com.cbr.view.MainView;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.IOException;
@@ -73,7 +64,6 @@ public class AppSettings {
                             ObjectMapper mapper = new ObjectMapper();
                             String invoicesJson = new String(Files.readAllBytes(invoicesPath));
                             instance = mapper.readValue(invoicesJson, new TypeReference<AppSettings>() {});
-                            PluginManager.getInstance().init();
                             return instance;
                         } catch (IOException e) {
                             e.printStackTrace();

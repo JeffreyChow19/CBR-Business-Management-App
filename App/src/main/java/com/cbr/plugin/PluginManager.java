@@ -2,11 +2,9 @@ package com.cbr.plugin;
 
 import com.cbr.exception.PluginException;
 import com.cbr.utils.AppSettings;
-import com.cbr.view.MainView;
 import lombok.Getter;
 
 import java.io.File;
-import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -23,24 +21,6 @@ public class PluginManager {
         this.plugins = new ArrayList<>();
     }
 
-    public void init(){
-        System.out.println("huhhhh");
-        for (String jarFile : AppSettings.getInstance().getPlugins()) {
-            URLClassLoader classLoader = null;
-            try {
-                classLoader = new URLClassLoader(new URL[]{new File(jarFile).toURI().toURL()}, ClassLoader.getSystemClassLoader());
-            } catch (MalformedURLException e) {
-                throw new RuntimeException(e);
-            }
-            pluginServiceLoader = ServiceLoader.load(Plugin.class, classLoader);
-            for (Plugin p : pluginServiceLoader) {
-                System.out.println(p.getClass().getName());
-                plugins.add(p);
-                p.load();
-            }
-        }
-    }
-
     public static PluginManager getInstance() {
         if (instance == null) {
             synchronized (PluginManager.class) {
@@ -53,6 +33,9 @@ public class PluginManager {
     }
 
     public void loadNewPlugin() throws MalformedURLException, PluginException {
+        System.out.println("this is load new plugin");
+        int i = 0;
+//        System.out.println(i);
         for (String jarFile : AppSettings.getInstance().getPlugins()) {
             URLClassLoader classLoader = new URLClassLoader(new URL[]{new File(jarFile).toURI().toURL()}, ClassLoader.getSystemClassLoader());
             pluginServiceLoader = ServiceLoader.load(Plugin.class, classLoader);
@@ -69,6 +52,8 @@ public class PluginManager {
                 else{
                     throw new PluginException();
                 }
+                i++;
+                System.out.println(i);
             }
 
         }
@@ -76,6 +61,7 @@ public class PluginManager {
 
     public void loadPlugin(){
         for (Plugin p : plugins){
+            System.out.println("loading pluginnn!!!");
             p.load();
         }
     }
