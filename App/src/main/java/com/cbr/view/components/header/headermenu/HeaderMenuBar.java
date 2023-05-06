@@ -1,6 +1,6 @@
-package com.cbr.view.components.headermenu;
+package com.cbr.view.components.header.headermenu;
 
-import com.cbr.view.components.tabmenu.TabMenuBar;
+import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.theme.Theme;
 import javafx.scene.Node;
 import javafx.scene.control.Menu;
@@ -9,12 +9,11 @@ import javafx.scene.control.MenuItem;
 import lombok.Getter;
 
 public class HeaderMenuBar extends MenuBar {
+    private static HeaderMenuBar instance;
     @Getter
     private Menu navigationMenu;
     @Getter
     private Menu preferencesMenu;
-    @Getter
-    private TabMenuBar tabs;
 
     private class HeaderMenu extends Menu {
         public HeaderMenu(String menuName) {
@@ -27,10 +26,16 @@ public class HeaderMenuBar extends MenuBar {
         }
     }
 
-    public HeaderMenuBar(TabMenuBar tabs) {
+    public static HeaderMenuBar getInstance() {
+        if (instance == null) {
+            instance = new HeaderMenuBar();
+        }
+        return instance;
+    }
+
+    private HeaderMenuBar() {
         super();
         this.setStyle("-fx-background-color: " + Theme.getSecondaryBase() + ";-fx-text-fill: white;");
-        this.tabs = tabs;
         /* Set Menu Items : Navigation Menu */
         this.navigationMenu = new HeaderMenu("Menu");
 
@@ -49,7 +54,7 @@ public class HeaderMenuBar extends MenuBar {
                 "-fx-font-size: " + 24.0 / 1920 * Theme.getScreenWidth() +
                 ";-fx-font-family: Ubuntu"
         );
-        newMenu.setOnAction(event -> tabs.addTab(menuName, menuContent));
+        newMenu.setOnAction(event -> TabMenuBar.getInstance().addTab(menuName, menuContent));
         this.getNavigationMenu().getItems().add(newMenu);
     }
 
@@ -59,7 +64,7 @@ public class HeaderMenuBar extends MenuBar {
                 "-fx-font-size: " + 24.0 / 1920 * Theme.getScreenWidth() +
                 ";-fx-font-family: Ubuntu"
         );
-        newMenu.setOnAction(event -> tabs.addTab(menuName, menuContent));
+        newMenu.setOnAction(event -> TabMenuBar.getInstance().addTab(menuName, menuContent));
         this.getPreferencesMenu().getItems().add(newMenu);
     }
 
