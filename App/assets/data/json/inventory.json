@@ -197,7 +197,7 @@
       "sellPrice" : 76.75,
       "buyPrice" : 90.43,
       "imagePath" : "file:assets/images/products/20.jpg",
-      "stock" : 796,
+      "stock" : 769,
       "status" : true
     },
     {
@@ -217,7 +217,7 @@
       "sellPrice" : 6.13,
       "buyPrice" : 26.93,
       "imagePath" : "file:assets/images/products/22.jpg",
-      "stock" : 585,
+      "stock" : 559,
       "status" : true
     },
     {
@@ -247,7 +247,7 @@
       "sellPrice" : 49.83,
       "buyPrice" : 52.78,
       "imagePath" : "file:assets/images/products/25.jpg",
-      "stock" : 940,
+      "stock" : 914,
       "status" : true
     },
     {
@@ -257,7 +257,7 @@
       "sellPrice" : 75.98,
       "buyPrice" : 110.42,
       "imagePath" : "file:assets/images/products/26.jpg",
-      "stock" : 859,
+      "stock" : 0,
       "status" : true
     },
     {
@@ -287,7 +287,7 @@
       "sellPrice" : 50.17,
       "buyPrice" : 84.99000000000001,
       "imagePath" : "file:assets/images/products/29.jpg",
-      "stock" : 613,
+      "stock" : 606,
       "status" : true
     },
     {
@@ -367,7 +367,7 @@
       "sellPrice" : 69.32,
       "buyPrice" : 89.3,
       "imagePath" : "file:assets/images/products/37.jpg",
-      "stock" : 886,
+      "stock" : 790,
       "status" : true
     },
     {
@@ -407,7 +407,7 @@
       "sellPrice" : 4.98,
       "buyPrice" : 48.97,
       "imagePath" : "file:assets/images/products/41.jpg",
-      "stock" : 826,
+      "stock" : 825,
       "status" : true
     },
     {
@@ -497,7 +497,7 @@
       "sellPrice" : 31.23,
       "buyPrice" : 51.760000000000005,
       "imagePath" : "file:assets/images/products/50.jpg",
-      "stock" : 312,
+      "stock" : 279,
       "status" : true
     }
   ]
