@@ -58,6 +58,7 @@ public class TransactionPage extends StackPane {
     private List<Member> membersVipsList;
     private Double discount;
     private List<TemporaryInvoice> temporaryInvoiceList;
+    @Getter
     private double managementContainerWidth;
     @Getter
     private VBox additionalCostsContainer;
@@ -160,7 +161,7 @@ public class TransactionPage extends StackPane {
         // Discount container
         discountContainer = new AdditionalCostCard(0.8 * managementContainerWidth, "Discount");
         updateDiscount();
-        additionalCostsContainer.getChildren().addAll(discountContainer);
+//        additionalCostsContainer.getChildren().addAll(discountContainer);
 
         // Add all additional costs components
         renderAdditionalCostsContainer();
@@ -218,7 +219,7 @@ public class TransactionPage extends StackPane {
         buttonContainer.getChildren().addAll(saveBill, spacerButtonContainer, makeBill);
 
         // Add all managementContainer children
-        managementContainer.getChildren().addAll(dropdownContainer, transactionInvoiceCardList, additionalCostsContainer, grandTotalContainer, buttonContainer);
+        managementContainer.getChildren().addAll(dropdownContainer, transactionInvoiceCardList, additionalCostsContainer, discountContainer, grandTotalContainer, buttonContainer);
 
         // Add all container components
         container.getChildren().addAll(transactionProductCardList, managementContainer);
@@ -397,6 +398,7 @@ public class TransactionPage extends StackPane {
 
     public void updateNumbers() {
         updateDiscount();
+        renderAdditionalCostsContainer();
         updateGrandTotal();
     }
 
@@ -420,11 +422,8 @@ public class TransactionPage extends StackPane {
 
 
     public void renderAdditionalCostsContainer() {
-        for (Map.Entry<String, Double> cost : TemporaryInvoice.additionalCosts.entrySet()) {
-            AdditionalCostCard additionalCostCard = new AdditionalCostCard(0.8 * managementContainerWidth, cost.getKey());
-            Double number = new Double(cost.getValue() * 100);
-            additionalCostCard.getCardNumber().setText(number.toString());
-            additionalCostsContainer.getChildren().add(additionalCostCard);
+        for (Node c : this.getAdditionalCostsContainer().getChildren()) {
+            ((AdditionalCostCard) c).render();
         }
     }
 

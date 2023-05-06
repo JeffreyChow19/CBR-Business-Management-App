@@ -2,11 +2,15 @@
   "dataStorePath" : "assets/data/json",
   "dataStoreMode" : "JSON",
   "plugins" : [
-    "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\Plugin-System-1\\target\\Plugin-System-1-1.0.jar"
+    "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\Plugin-System-1\\target\\Plugin-System-1-1.0.jar",
+    "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\Plugin-Base\\target\\Plugin-Base-1.0.jar",
+    "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\Plugin-System-2\\target\\Plugin-System-2-1.0.jar"
   ],
   "additionalSettings" : {
     "tax" : "10.0",
-    "currency" : "USD",
-    "service charge" : "10.0"
+    "currency" : "IDR",
+    "Tax" : "10.0",
+    "service charge" : "10.0",
+    "Service Charge" : "14.0"
   }
 }

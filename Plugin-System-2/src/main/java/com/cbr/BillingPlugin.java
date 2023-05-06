@@ -1,9 +1,11 @@
 package com.cbr;
 
+import com.cbr.models.TemporaryInvoice;
 import com.cbr.plugin.Plugin;
 import com.cbr.utils.AppSettings;
 import com.cbr.utils.SettingsUpdate;
 import com.cbr.view.MainView;
+import com.cbr.view.components.cards.AdditionalCostCard;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -14,6 +16,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Map;
 
 public class BillingPlugin implements Plugin {
     @Setter
@@ -38,30 +42,42 @@ public class BillingPlugin implements Plugin {
             taxLabel.setFont(Theme.getHeading2Font());
             taxLabel.setTextFill(Color.WHITE);
             taxSpinner = new Spinner<>();
-            Double defaultTaxValue = Double.parseDouble(AppSettings.getInstance().getAdditionalSettings().getOrDefault("tax", "10.0"));
+
+            Double defaultTaxValue = Double.parseDouble(AppSettings.getInstance().getAdditionalSettings().getOrDefault("Tax", "10.0"));
             SpinnerValueFactory<Double> taxValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 20, defaultTaxValue);
             taxSpinner.setValueFactory(taxValueFactory);
             taxSpinner.valueProperty().addListener((observable, oldValue, newValue) -> {
-                MainView.getInstance().getSettingsPage().getAdditionalValues().put("tax", newValue.toString());
+                MainView.getInstance().getSettingsPage().getAdditionalValues().put("Tax", newValue.toString());
             });
 
             Label serviceLabel = new Label("Service Charge (%)");
             serviceLabel.setFont(Theme.getHeading2Font());
             serviceLabel.setTextFill(Color.WHITE);
             serviceSpinner = new Spinner<>();
-            Double defaultServiceValue = Double.parseDouble(AppSettings.getInstance().getAdditionalSettings().getOrDefault("tax", "10.0"));
+
+            Double defaultServiceValue = Double.parseDouble(AppSettings.getInstance().getAdditionalSettings().getOrDefault("Service Charge", "10.0"));
             SpinnerValueFactory<Double> serviceValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 20, defaultServiceValue);
             serviceSpinner.setValueFactory(serviceValueFactory);
             serviceSpinner.valueProperty().addListener((observable, oldValue, newValue) -> {
-                MainView.getInstance().getSettingsPage().getAdditionalValues().put("service charge", newValue.toString());
+                MainView.getInstance().getSettingsPage().getAdditionalValues().put("Service Charge", newValue.toString());
             });
+
             newFormContainer.getChildren().addAll(taxLabel, taxSpinner, serviceLabel, serviceSpinner);
 
-            MainView.getInstance().getSettingsPage().getAdditionalValues().put("tax", defaultTaxValue.toString());
-            MainView.getInstance().getSettingsPage().getAdditionalValues().put("service charge", defaultServiceValue.toString());
+            MainView.getInstance().getSettingsPage().getAdditionalValues().put("Tax", defaultTaxValue.toString());
+            MainView.getInstance().getSettingsPage().getAdditionalValues().put("Service Charge", defaultServiceValue.toString());
+            TemporaryInvoice.addAdditionalCosts("Tax", defaultTaxValue/100);
+            TemporaryInvoice.addAdditionalCosts("Service Charge", defaultServiceValue/100);
+
             MainView.getInstance().getSettingsPage().getFormContainer().getChildren().addAll(newFormContainer);
-            MainView.getInstance().getSettingsPage().getOnSaves().add(new BillingUpdate());
             this.status = true;
         }
+        SettingsUpdate update = new BillingUpdate();
+        update.onSave();
+        AdditionalCostCard serviceCard = new TaxCard(0.8 *MainView.getInstance().getTransactionPage().getManagementContainerWidth(), "Service Charge");
+        AdditionalCostCard taxCard = new ServiceCard(0.8 *MainView.getInstance().getTransactionPage().getManagementContainerWidth(), "Tax");
+
+        MainView.getInstance().getTransactionPage().getAdditionalCostsContainer().getChildren().add(serviceCard);
+        MainView.getInstance().getTransactionPage().getAdditionalCostsContainer().getChildren().add(taxCard);
     }
 }

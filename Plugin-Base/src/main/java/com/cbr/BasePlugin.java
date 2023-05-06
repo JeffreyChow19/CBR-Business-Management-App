@@ -9,7 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class BasePlugin implements Plugin {
-    @Getter private Boolean status;
+    @Getter @Setter private Boolean status;
     @Getter @Setter
     private VBox pageContent;
     @Getter @Setter

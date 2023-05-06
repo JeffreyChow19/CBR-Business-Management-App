@@ -11,7 +11,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class AdditionalCostCard extends HBox {
-    @Getter
+    @Getter @Setter
     Label cardNumber;
     public AdditionalCostCard(Double width, String label) {
         this.setMinWidth(width);
@@ -31,5 +31,9 @@ public class AdditionalCostCard extends HBox {
         cardNumber.setTextFill(Color.WHITE);
 
         this.getChildren().addAll(cardLabel, spacer, cardNumber);
+    }
+
+    public void render(){
+        System.out.println("akjasjksajk");
     }
 }

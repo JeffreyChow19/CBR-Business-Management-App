@@ -2,6 +2,7 @@ package com.cbr.view.pages;
 
 import com.cbr.App;
 import com.cbr.datastore.DataStore;
+import com.cbr.plugin.Plugin;
 import com.cbr.plugin.PluginManager;
 import com.cbr.utils.AppSettings;
 import com.cbr.utils.SettingsUpdate;
@@ -100,6 +101,7 @@ public class SettingsPage extends VBox {
             // Handle the selected folder (null if no folder was selected)
             if (selectedFolder != null) {
                 this.selectedFolder = selectedFolder.getAbsolutePath();
+                errorList.remove("Data store folder path must be chosen");
             } else {
                 this.selectedFolder = "No folder chosen";
                 errorList.add("Data store folder path must be chosen");
@@ -130,9 +132,9 @@ public class SettingsPage extends VBox {
                 AppSettings.getInstance().setAdditionalSettings(additionalValues);
                 App.setDataStore(new DataStore(((RadioButton)dataFormatToggle.getSelectedToggle()).getText(), selectedFolder));
                 MainView.getInstance().refresh();
-                for (SettingsUpdate u : onSaves){
-                    u.onSave();
-                }
+//                for (SettingsUpdate u : onSaves){
+//                    u.onSave();
+//                }
                 AppSettings.getInstance().updateSettings();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Success");
