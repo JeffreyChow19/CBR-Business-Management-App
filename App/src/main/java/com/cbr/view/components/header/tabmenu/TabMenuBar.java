@@ -45,7 +45,8 @@ public class TabMenuBar extends TabPane {
         } else {
             Tab newTab;
             if (tabName.equals("Transaction")) {
-                newTab = new Tab(tabName + String.format("#%d", transactionCounter), new TransactionPage());
+                tabName = tabName + String.format("#%d", transactionCounter);
+                newTab = new Tab(tabName, new TransactionPage());
                 transactionCounter++;
             } else {
                 newTab = new Tab(tabName, targetNode);
