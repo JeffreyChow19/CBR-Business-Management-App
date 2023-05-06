@@ -49,8 +49,6 @@ public class MainView extends VBox {
         editProfile = new ProfileEditor("Edit Profile");
         clientsPage = new ClientsPage();
         transactionPage = new TransactionPage();
-        Label inventoryPage = new Label("");    // chore: inventoryPage
-
         settingsPage = new SettingsPage();
         PluginsPage pluginsPage = new PluginsPage();
         inventoryPage = new InventoryPage();
