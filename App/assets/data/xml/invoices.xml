@@ -3,44 +3,44 @@
   <dataList>
     <dataList>
       <id>FI-3</id>
-      <customerId>CS-16</customerId>
-      <createdAt>2023-05-06T17:27:49</createdAt>
+      <customerId>CS-15</customerId>
+      <createdAt>2023-05-06T18:38:27</createdAt>
       <boughtProducts>
         <boughtProducts>
           <id>IP-1</id>
-          <productName>Mediocre Silk Lamp</productName>
-          <category>Makanan</category>
+          <productName>Lightweight Marble Knife</productName>
+          <category>Gadget</category>
           <sellPrice>
-            <value>218374.98</value>
+            <value>2727525.46</value>
           </sellPrice>
           <buyPrice>
-            <value>386568.01</value>
+            <value>3096138.01</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>IP-2</id>
-          <productName>Incredible Silk Pants</productName>
-          <category>Gadget</category>
+          <productName>Practical Linen Watch</productName>
+          <category>Makanan</category>
           <sellPrice>
-            <value>4041775.02</value>
+            <value>1802692.23</value>
           </sellPrice>
           <buyPrice>
-            <value>4195700.87</value>
+            <value>2621341.42</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>IP-3</id>
-          <productName>Synergistic Bronze Computer</productName>
+          <productName>Fantastic Concrete Coat</productName>
           <category>Minuman</category>
           <sellPrice>
-            <value>1261410.24</value>
+            <value>4532785.82</value>
           </sellPrice>
           <buyPrice>
-            <value>1704124.17</value>
+            <value>4698358.57</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
@@ -48,6 +48,7 @@
       </boughtProducts>
       <discount>0.0</discount>
       <usedPoint>0.0</usedPoint>
+      <getPoint>0.0</getPoint>
     </dataList>
   </dataList>
 </DataList>
