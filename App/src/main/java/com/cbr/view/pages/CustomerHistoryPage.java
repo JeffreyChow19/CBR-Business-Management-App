@@ -13,6 +13,6 @@ public class CustomerHistoryPage extends VBox{
         CustomerHistoryCardList customerHistoryCardList = new CustomerHistoryCardList(customerId);
         VBox.setVgrow(customerHistoryCardList, Priority.ALWAYS);
 
-        this.getChildren().addAll(title);
+        this.getChildren().addAll(title, customerHistoryCardList);
     }
 }

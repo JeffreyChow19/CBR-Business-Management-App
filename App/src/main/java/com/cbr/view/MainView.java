@@ -1,19 +1,16 @@
 package com.cbr.view;
 
-import com.cbr.App;
 import com.cbr.exception.PluginException;
 import com.cbr.plugin.PluginManager;
 import com.cbr.utils.AppSettings;
-import com.cbr.view.components.headermenu.HeaderMenuBar;
-import com.cbr.view.components.tabmenu.TabMenuBar;
+import com.cbr.view.components.header.headermenu.HeaderMenuBar;
+import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.pages.*;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import lombok.Getter;
 
-import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 
 public class MainView extends VBox {
@@ -30,9 +27,6 @@ public class MainView extends VBox {
     private ProfileEditor editProfile;
     @Getter
     private ItemEditor addItem;
-    @Getter
-    private HeaderMenuBar headerMenuBar;
-    private TabMenuBar tabs;
     @Getter
     private static volatile MainView instance;
 
@@ -55,8 +49,6 @@ public class MainView extends VBox {
         editProfile = new ProfileEditor("Edit Profile");
         clientsPage = new ClientsPage();
         transactionPage = new TransactionPage();
-        Label inventoryPage = new Label("");    // chore: inventoryPage
-
         settingsPage = new SettingsPage();
         PluginsPage pluginsPage = new PluginsPage();
         inventoryPage = new InventoryPage();
@@ -67,24 +59,22 @@ public class MainView extends VBox {
         } catch (PluginException e) {
         }
         /* Body Setup */
-        TabMenuBar tabs = new TabMenuBar();
-        tabs.addTab("Home", homePage);
+        TabMenuBar.getInstance().addTab("Home", homePage);
         BorderPane bodyContainer = new BorderPane();
-        bodyContainer.setTop(tabs);
+        bodyContainer.setTop(TabMenuBar.getInstance());
 
-        homePage.setButtonActions(tabs, clientsPage, transactionPage, inventoryPage, settingsPage, pluginsPage);
+        homePage.setButtonActions(clientsPage, transactionPage, inventoryPage, settingsPage, pluginsPage);
 
         AppSettings settings = AppSettings.getInstance();
 
         /* Header Setup */
-        headerMenuBar = new HeaderMenuBar(tabs);
-        headerMenuBar.addNewNavigationMenu("Clients", clientsPage);
-        headerMenuBar.addNewNavigationMenu("Inventory Management", inventoryPage);
-        headerMenuBar.addNewNavigationMenu("Export Statements", new Label("export"));
-        headerMenuBar.addNewNavigationMenu("Transaction", transactionPage);
-        headerMenuBar.addNewPreferencesMenu("Settings", settingsPage);
-        headerMenuBar.addNewPreferencesMenu("Plugins", pluginsPage);
-        // headerMenuBar.setOpenedTab(tabs,
+        HeaderMenuBar.getInstance().addNewNavigationMenu("Clients", clientsPage);
+        HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", new Label("inventory"));
+        HeaderMenuBar.getInstance().addNewNavigationMenu("Export Statements", new Label("export"));
+        HeaderMenuBar.getInstance().addNewNavigationMenu("Transaction", transactionPage);
+        HeaderMenuBar.getInstance().addNewPreferencesMenu("Settings", settingsPage);
+        HeaderMenuBar.getInstance().addNewPreferencesMenu("Plugins", pluginsPage);
+        // HeaderMenuBar.getInstance().setOpenedTab(tabs,
         // clientsPage,
         // new Label("inventory"),
         // new Label("export"),
@@ -94,7 +84,7 @@ public class MainView extends VBox {
         // chore: pages
 
         /* Add Components to MainView */
-        this.getChildren().add(headerMenuBar);
+        this.getChildren().add(HeaderMenuBar.getInstance());
         this.getChildren().add(bodyContainer);
     }
 
@@ -108,22 +98,22 @@ public class MainView extends VBox {
         PluginManager.getInstance().loadPlugin();
         System.out.println("after loading plugin");
         transactionPage = new TransactionPage();
-        TabMenuBar tabs = new TabMenuBar();
-        tabs.addTab("Home", homePage);
+        TabMenuBar.getInstance().addTab("Home", homePage);
         BorderPane bodyContainer = new BorderPane();
-        bodyContainer.setTop(tabs);
+        bodyContainer.setTop(TabMenuBar.getInstance());
         // homePage = new HomePage();
         // clientsPage = new ClientsPage();
         // transactionPage = new TransactionPage();
         // settingsPage = new SettingsPage();
         PluginsPage pluginsPage = new PluginsPage();
-        headerMenuBar.getNavigationMenu().getItems().clear();
-        headerMenuBar.addNewNavigationMenu("Clients", clientsPage);
-        headerMenuBar.addNewNavigationMenu("Inventory Management", inventoryPage);
-        headerMenuBar.addNewNavigationMenu("Export Statements", new Label("export"));
-        headerMenuBar.addNewNavigationMenu("Transaction", transactionPage);
-        headerMenuBar.addNewPreferencesMenu("Settings", settingsPage);
-        headerMenuBar.addNewPreferencesMenu("Plugins", pluginsPage);
+
+        HeaderMenuBar.getInstance().getNavigationMenu().getItems().clear();
+        HeaderMenuBar.getInstance().addNewNavigationMenu("Clients", clientsPage);
+        HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", new Label("inventory"));
+        HeaderMenuBar.getInstance().addNewNavigationMenu("Export Statements", new Label("export"));
+        HeaderMenuBar.getInstance().addNewNavigationMenu("Transaction", transactionPage);
+        HeaderMenuBar.getInstance().addNewPreferencesMenu("Settings", settingsPage);
+        HeaderMenuBar.getInstance().addNewPreferencesMenu("Plugins", pluginsPage);
         clientsPage.updateList("");
     }
 }
