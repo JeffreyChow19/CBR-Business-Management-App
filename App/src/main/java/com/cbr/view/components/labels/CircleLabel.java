@@ -1,6 +1,7 @@
 package com.cbr.view.components.labels;
 
 import com.cbr.view.theme.Theme;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -18,6 +19,7 @@ public class CircleLabel extends Label {
         this.setFont(Theme.getBodyMediumFont());
         this.setTextFill(Color.WHITE);
 
+        this.setAlignment(Pos.CENTER);
         this.setStyle("-fx-background-color:" + backgroundColor);
     }
 }
