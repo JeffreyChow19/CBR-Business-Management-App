@@ -64,10 +64,6 @@ public class TransactionInvoiceCardList extends VBox{
         this.getChildren().addAll(invoiceListPane);
     }
 
-    public void update(){
-
-    }
-
     public void addInvoiceCard(Product product) {
         // Check if the product is already in the invoiceListContainer
         boolean productExists = false;
