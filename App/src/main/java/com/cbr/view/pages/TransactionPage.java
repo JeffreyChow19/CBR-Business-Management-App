@@ -461,6 +461,9 @@ public class TransactionPage extends StackPane {
         setGrandTotal(0.0);
         updateNumbers();
 
+        transactionProductCardList.updateProductMap(productList);
+        transactionProductCardList.renderTransactionProductCards();
+
         // RESET THE INVOICE CARDS CONTAINER
         transactionInvoiceCardList.getInvoiceListContainer().getChildren().clear();
     }

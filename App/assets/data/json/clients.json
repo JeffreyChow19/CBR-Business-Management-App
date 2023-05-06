@@ -58,6 +58,18 @@
       "phoneNumber" : "08123456789",
       "status" : true,
       "point" : 0.0
+    },
+    {
+      "id" : "C-8",
+      "type" : "customer",
+      "invoiceList" : [ ]
+    },
+    {
+      "id" : "C-9",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-2"
+      ]
     }
   ]
 }

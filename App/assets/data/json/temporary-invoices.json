@@ -24,6 +24,14 @@
       "productFrequencies" : {
         "P-3" : 1
       }
+    },
+    {
+      "id" : "TI-4",
+      "customerId" : "C-8",
+      "createdAt" : "2023-05-06T15:12:49",
+      "productFrequencies" : {
+        "P-23" : 1
+      }
     }
   ]
 }

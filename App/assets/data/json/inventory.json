@@ -102,7 +102,7 @@
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/7.jpg",
-      "stock" : 323,
+      "stock" : 0,
       "status" : true
     },
     {
@@ -342,7 +342,7 @@
       },
       "additionalValues" : { },
       "imagePath" : "file:assets/images/products/23.jpg",
-      "stock" : 402,
+      "stock" : 401,
       "status" : true
     },
     {

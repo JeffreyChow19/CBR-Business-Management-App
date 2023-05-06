@@ -47,6 +47,41 @@
       ],
       "discount" : 0.0,
       "usedPoint" : 0.0
+    },
+    {
+      "id" : "FI-2",
+      "customerId" : "C-9",
+      "createdAt" : "2023-05-06T15:22:30",
+      "boughtProducts" : [
+        {
+          "id" : "P-23",
+          "productName" : "Gorgeous Wooden Plate",
+          "category" : "Makanan",
+          "sellPrice" : {
+            "value" : 3203486.41
+          },
+          "buyPrice" : {
+            "value" : 4010324.0900000003
+          },
+          "additionalValues" : null,
+          "count" : 1
+        },
+        {
+          "id" : "P-7",
+          "productName" : "Ergonomic Plastic Wallet",
+          "category" : "Makanan",
+          "sellPrice" : {
+            "value" : 3063018.98
+          },
+          "buyPrice" : {
+            "value" : 3262359.45
+          },
+          "additionalValues" : null,
+          "count" : 1
+        }
+      ],
+      "discount" : 0.0,
+      "usedPoint" : 0.0
     }
   ]
 }
