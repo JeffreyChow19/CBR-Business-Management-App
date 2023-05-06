@@ -48,8 +48,7 @@ public class MainView extends VBox {
         addItem = new ItemEditor("Add Item");
         editProfile = new ProfileEditor("Edit Profile");
         clientsPage = new ClientsPage();
-        transactionPage = new TransactionPage();
-        Label inventoryPage = new Label("");    // chore: inventoryPage
+        transactionPage = new TransactionPage();   // chore: inventoryPage
 
         settingsPage = new SettingsPage();
         PluginsPage pluginsPage = new PluginsPage();
@@ -71,7 +70,7 @@ public class MainView extends VBox {
 
         /* Header Setup */
         HeaderMenuBar.getInstance().addNewNavigationMenu("Clients", clientsPage);
-        HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", new Label("inventory"));
+        HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", inventoryPage);
         HeaderMenuBar.getInstance().addNewNavigationMenu("Export Statements", new Label("export"));
         HeaderMenuBar.getInstance().addNewNavigationMenu("Transaction", transactionPage);
         HeaderMenuBar.getInstance().addNewPreferencesMenu("Settings", settingsPage);
