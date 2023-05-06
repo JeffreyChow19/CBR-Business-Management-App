@@ -26,4 +26,19 @@ public class DataList<T extends Identifiable> implements Serializable {
     public DataList(){
         this.dataList = new ArrayList<T>();
     }
+
+    public int generateId(){
+        int maxId = Integer.MIN_VALUE;
+        for (Identifiable t : this.dataList) {
+            String idString = t.getId();
+            System.out.println(idString);
+            int id = Integer.parseInt(idString.substring(3));
+            if (id > maxId) {
+                maxId = id;
+            }
+        }
+
+        maxId++;
+        return maxId;
+    }
 }

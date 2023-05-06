@@ -1,36 +1,53 @@
 {
   "dataList" : [
     {
-      "id" : "FI-1",
-      "customerId" : "C-15",
-      "createdAt" : "2023-05-05T14:47:17",
+      "id" : "FI-3",
+      "customerId" : "CS-15",
+      "createdAt" : "2023-05-06T18:38:27",
       "boughtProducts" : [
         {
-          "id" : "P-1",
-          "productName" : "Intelligent Granite Pants",
+          "id" : "IP-1",
+          "productName" : "Lightweight Marble Knife",
           "category" : "Gadget",
-          "sellPrice" : 69.62,
-          "buyPrice" : 76.07000000000001,
+          "sellPrice" : {
+            "value" : 2727525.46
+          },
+          "buyPrice" : {
+            "value" : 3096138.01
+          },
+          "additionalValues" : null,
           "count" : 1
         },
         {
-          "id" : "P-2",
-          "productName" : "Small Aluminum Chair",
+          "id" : "IP-2",
+          "productName" : "Practical Linen Watch",
           "category" : "Makanan",
-          "sellPrice" : 64.21,
-          "buyPrice" : 86.69,
+          "sellPrice" : {
+            "value" : 1802692.23
+          },
+          "buyPrice" : {
+            "value" : 2621341.42
+          },
+          "additionalValues" : null,
           "count" : 1
         },
         {
-          "id" : "P-3",
-          "productName" : "Small Aluminum Gloves",
-          "category" : "Makanan",
-          "sellPrice" : 83.85,
-          "buyPrice" : 87.27,
+          "id" : "IP-3",
+          "productName" : "Fantastic Concrete Coat",
+          "category" : "Minuman",
+          "sellPrice" : {
+            "value" : 4532785.82
+          },
+          "buyPrice" : {
+            "value" : 4698358.57
+          },
+          "additionalValues" : null,
           "count" : 1
         }
       ],
-      "discount" : 0.0
+      "discount" : 0.0,
+      "usedPoint" : 0.0,
+      "getPoint" : 0.0
     }
   ]
 }

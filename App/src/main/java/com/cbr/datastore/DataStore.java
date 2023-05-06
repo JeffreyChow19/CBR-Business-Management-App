@@ -1,12 +1,11 @@
 package com.cbr.datastore;
 
 import com.cbr.models.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,7 +18,7 @@ public class DataStore {
     @Getter private DataList<InventoryProduct> inventory;
     @Getter private DataList<FixedInvoice> invoices;
     @Getter private DataList<TemporaryInvoice> temporaryInvoices; // for not-fixed transactions
-    @Getter @Setter private List<?> additionalData;
+    @Getter @Setter private List<? extends Serializable> additionalData;
     private DataStorer dataStorer;
 
 
@@ -47,8 +46,31 @@ public class DataStore {
         return this.inventory.getById(id);
     }
 
+    public<T extends Serializable> List <T> getAdditionalData(String dataName, Class<T> clazz){
+        this.additionalData = dataStorer.loadAdditionalData(dataName, clazz);
+        return (List <T>) this.additionalData;
+    }
+
+    public<T extends Serializable> void setAdditionalData(List<T> additionalData, String dataName){
+        dataStorer.storeAdditionalData(additionalData, dataName);
+    }
+
     public void addClient(Customer record){
         this.clients.add(record);
+        this.dataStorer.storeClients(this.clients);
+    }
+
+    public void updateClient(Customer client, String bill_id, Double deltaPoint){
+        Customer toUpdate = clients.getDataList().stream()
+                .filter(c -> c.getId().equals(client.getId()))
+                .findFirst()
+                .get();
+
+        toUpdate.getInvoiceList().add(bill_id);
+        if (toUpdate instanceof Member || toUpdate instanceof VIP) {
+            ((Member) toUpdate).addPoint(deltaPoint);
+        }
+
         this.dataStorer.storeClients(this.clients);
     }
 
@@ -100,6 +122,13 @@ public class DataStore {
         }
     }
 
+    public void decreaseProductStock(String productId, Integer toDecrease){
+        InventoryProduct product = this.getProductById(productId);
+        product.setStock(product.getStock() - toDecrease);
+        this.dataStorer.storeInventory(this.inventory);
+
+    }
+
     public void deactivateProduct(String id){
         InventoryProduct product = this.getProductById(id);
         product.setStatus(false);
@@ -111,7 +140,12 @@ public class DataStore {
 
     public void setInventory(DataList<InventoryProduct> inventory){
         this.inventory = inventory;
-        this.dataStorer.storeInventory(inventory);
+        List<InventoryProduct> newInventory = new ArrayList<InventoryProduct>();
+        for (InventoryProduct p : inventory.getDataList()){
+            InventoryProduct newProduct = p.clone();
+            newInventory.add(newProduct);
+        }
+        this.dataStorer.storeInventory(new DataList<>(newInventory));
     }
 
     public void setCustomerList(DataList<Customer> clients){
@@ -148,6 +182,7 @@ public class DataStore {
                 .collect(Collectors.toList());
     }
 
+
     // GET MEMBERS AND VIPS THAT ARE ACTIVE
     public List<Member> getMembersVips() {
         return this.getClients().getDataList().stream()
@@ -155,4 +190,16 @@ public class DataStore {
                 .map(c -> (Member) c)
                 .collect(Collectors.toList());
     }
+
+//    public void commit(){
+//        for (InventoryProduct p : this.inventory.getDataList()){
+//            if (p.getSellPrice().getClass().equals(PriceDecorator.class)){
+//                p.setSellPrice(((PriceDecorator) p.getSellPrice()).getPrice());
+//            }
+//            if (p.getBuyPrice().getClass().equals(PriceDecorator.class)){
+//                p.setBuyPrice(((PriceDecorator) p.getBuyPrice()).getPrice());
+//            }
+//        }
+//        this.dataStorer.storeInventory(this.inventory);
+//    }
 }

@@ -2,36 +2,53 @@
 <DataList>
   <dataList>
     <dataList>
-      <id>FI-1</id>
-      <customerId>C-15</customerId>
-      <createdAt>2023-05-05T14:47:17</createdAt>
+      <id>FI-3</id>
+      <customerId>CS-15</customerId>
+      <createdAt>2023-05-06T18:38:27</createdAt>
       <boughtProducts>
         <boughtProducts>
-          <id>P-1</id>
-          <productName>Intelligent Granite Pants</productName>
+          <id>IP-1</id>
+          <productName>Lightweight Marble Knife</productName>
           <category>Gadget</category>
-          <sellPrice>69.62</sellPrice>
-          <buyPrice>76.07000000000001</buyPrice>
+          <sellPrice>
+            <value>2727525.46</value>
+          </sellPrice>
+          <buyPrice>
+            <value>3096138.01</value>
+          </buyPrice>
+          <additionalValues/>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
-          <id>P-2</id>
-          <productName>Small Aluminum Chair</productName>
+          <id>IP-2</id>
+          <productName>Practical Linen Watch</productName>
           <category>Makanan</category>
-          <sellPrice>64.21</sellPrice>
-          <buyPrice>86.69</buyPrice>
+          <sellPrice>
+            <value>1802692.23</value>
+          </sellPrice>
+          <buyPrice>
+            <value>2621341.42</value>
+          </buyPrice>
+          <additionalValues/>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
-          <id>P-3</id>
-          <productName>Small Aluminum Gloves</productName>
-          <category>Makanan</category>
-          <sellPrice>83.85</sellPrice>
-          <buyPrice>87.27</buyPrice>
+          <id>IP-3</id>
+          <productName>Fantastic Concrete Coat</productName>
+          <category>Minuman</category>
+          <sellPrice>
+            <value>4532785.82</value>
+          </sellPrice>
+          <buyPrice>
+            <value>4698358.57</value>
+          </buyPrice>
+          <additionalValues/>
           <count>1</count>
         </boughtProducts>
       </boughtProducts>
       <discount>0.0</discount>
+      <usedPoint>0.0</usedPoint>
+      <getPoint>0.0</getPoint>
     </dataList>
   </dataList>
 </DataList>

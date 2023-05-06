@@ -1,63 +1,63 @@
 {
   "dataList" : [
     {
-      "id" : "C-15",
+      "id" : "CS-15",
       "type" : "customer",
       "invoiceList" : [
-        "FI-1"
+        "FI-3"
       ]
     },
     {
-      "id" : "C-16",
+      "id" : "CS-16",
       "type" : "customer",
       "invoiceList" : [ ]
     },
     {
-      "id" : "C-3",
+      "id" : "CS-3",
       "type" : "member",
       "invoiceList" : [ ],
       "name" : "rachel",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 0
+      "point" : 0.0
     },
     {
-      "id" : "C-4",
+      "id" : "CS-4",
       "type" : "member",
       "invoiceList" : [ ],
       "name" : "Livia",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 0
+      "point" : 0.0
     },
     {
-      "id" : "C-5",
+      "id" : "CS-5",
       "type" : "VIP",
       "invoiceList" : [ ],
       "name" : "Jason",
       "phoneNumber" : "08123456789",
       "status" : false,
-      "point" : 100,
+      "point" : 100.0,
       "buyPrice" : 100000.0
     },
     {
-      "id" : "C-6",
+      "id" : "CS-6",
       "type" : "VIP",
       "invoiceList" : [ ],
       "name" : "Chow",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 100,
+      "point" : 100.0,
       "buyPrice" : 100000.0
     },
     {
-      "id" : "C-7",
+      "id" : "CS-7",
       "type" : "member",
       "invoiceList" : [ ],
       "name" : "Eugene",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 0
+      "point" : 0.0
     }
   ]
 }

@@ -19,9 +19,10 @@ public class BillingPlugin implements Plugin {
     @Setter
     @Getter
     private Boolean status;
+    private Spinner<Double> taxSpinner;
+    private Spinner<Double> serviceSpinner;
 
     public BillingPlugin(){
-        System.out.println("dipanggil inii");
         this.status = false;
     }
     public String getName(){
@@ -29,13 +30,14 @@ public class BillingPlugin implements Plugin {
     }
     public void load(){
         if (!this.status){
+            System.out.println("loadinggg");
             VBox newFormContainer = new VBox();
             newFormContainer.setSpacing(30);
             newFormContainer.setAlignment(Pos.TOP_LEFT);
             Label taxLabel = new Label("Tax (%)");
             taxLabel.setFont(Theme.getHeading2Font());
             taxLabel.setTextFill(Color.WHITE);
-            Spinner<Double> taxSpinner = new Spinner<>();
+            taxSpinner = new Spinner<>();
             Double defaultTaxValue = Double.parseDouble(AppSettings.getInstance().getAdditionalSettings().getOrDefault("tax", "10.0"));
             SpinnerValueFactory<Double> taxValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 20, defaultTaxValue);
             taxSpinner.setValueFactory(taxValueFactory);
@@ -46,7 +48,7 @@ public class BillingPlugin implements Plugin {
             Label serviceLabel = new Label("Service Charge (%)");
             serviceLabel.setFont(Theme.getHeading2Font());
             serviceLabel.setTextFill(Color.WHITE);
-            Spinner<Double> serviceSpinner = new Spinner<>();
+            serviceSpinner = new Spinner<>();
             Double defaultServiceValue = Double.parseDouble(AppSettings.getInstance().getAdditionalSettings().getOrDefault("tax", "10.0"));
             SpinnerValueFactory<Double> serviceValueFactory = new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 20, defaultServiceValue);
             serviceSpinner.setValueFactory(serviceValueFactory);
@@ -55,9 +57,11 @@ public class BillingPlugin implements Plugin {
             });
             newFormContainer.getChildren().addAll(taxLabel, taxSpinner, serviceLabel, serviceSpinner);
 
+            MainView.getInstance().getSettingsPage().getAdditionalValues().put("tax", defaultTaxValue.toString());
+            MainView.getInstance().getSettingsPage().getAdditionalValues().put("service charge", defaultServiceValue.toString());
             MainView.getInstance().getSettingsPage().getFormContainer().getChildren().addAll(newFormContainer);
             MainView.getInstance().getSettingsPage().getOnSaves().add(new BillingUpdate());
+            this.status = true;
         }
-        this.status = true;
     }
 }

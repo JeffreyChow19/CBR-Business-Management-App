@@ -62,7 +62,7 @@ public class TransactionProductCardList extends ScrollPane {
     }
 
     public void updateProductMap(List<InventoryProduct> products){
-        List<InventoryProduct> filteredProducts = products.stream().filter(p -> p.getStatus()).collect(Collectors.toList());
+        List<InventoryProduct> filteredProducts = products.stream().filter(p -> p.getStatus() && p.getStock() > 0).collect(Collectors.toList());
 
         this.productMap = new HashMap<>();
         for (InventoryProduct product : filteredProducts) {
@@ -77,6 +77,8 @@ public class TransactionProductCardList extends ScrollPane {
     }
 
     public void renderTransactionProductCards() {
+        this.container.getChildren().clear();
+
         VBox content = new VBox();
         content.setMinWidth(0.95 * this.width);
         content.setPrefWidth(0.95 * this.width);

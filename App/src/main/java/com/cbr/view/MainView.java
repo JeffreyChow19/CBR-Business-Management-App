@@ -1,6 +1,9 @@
 package com.cbr.view;
 
+import com.cbr.App;
+import com.cbr.exception.PluginException;
 import com.cbr.plugin.PluginManager;
+import com.cbr.utils.AppSettings;
 import com.cbr.view.components.headermenu.HeaderMenuBar;
 import com.cbr.view.components.tabmenu.TabMenuBar;
 import com.cbr.view.pages.*;
@@ -18,12 +21,21 @@ public class MainView extends VBox {
     @Getter
     private SettingsPage settingsPage;
     private ClientsPage clientsPage;
+    @Getter
     private TransactionPage transactionPage;
     private InventoryPage inventoryPage;
     @Getter
+    private ItemEditor editItem;
+    @Getter
+    private ProfileEditor editProfile;
+    @Getter
+    private ItemEditor addItem;
+    @Getter
     private HeaderMenuBar headerMenuBar;
+    private TabMenuBar tabs;
     @Getter
     private static volatile MainView instance;
+
     public static MainView getInstance() {
         if (instance == null) {
             synchronized (MainView.class) {
@@ -35,23 +47,34 @@ public class MainView extends VBox {
         return instance;
     }
 
-    private MainView() {
-        super();
-
+    public void init(){
         /* Pages */
         homePage = new HomePage();
+        editItem = new ItemEditor("Edit Item");
+        addItem = new ItemEditor("Add Item");
+        editProfile = new ProfileEditor("Edit Profile");
         clientsPage = new ClientsPage();
         transactionPage = new TransactionPage();
+        Label inventoryPage = new Label("");    // chore: inventoryPage
+
         settingsPage = new SettingsPage();
         PluginsPage pluginsPage = new PluginsPage();
         inventoryPage = new InventoryPage();
         // chore: pages
-
+        try {
+            PluginManager.getInstance().loadNewPlugin();
+        } catch (MalformedURLException e) {
+        } catch (PluginException e) {
+        }
         /* Body Setup */
         TabMenuBar tabs = new TabMenuBar();
         tabs.addTab("Home", homePage);
         BorderPane bodyContainer = new BorderPane();
         bodyContainer.setTop(tabs);
+
+        homePage.setButtonActions(tabs, clientsPage, transactionPage, inventoryPage, settingsPage, pluginsPage);
+
+        AppSettings settings = AppSettings.getInstance();
 
         /* Header Setup */
         headerMenuBar = new HeaderMenuBar(tabs);
@@ -61,13 +84,13 @@ public class MainView extends VBox {
         headerMenuBar.addNewNavigationMenu("Transaction", transactionPage);
         headerMenuBar.addNewPreferencesMenu("Settings", settingsPage);
         headerMenuBar.addNewPreferencesMenu("Plugins", pluginsPage);
-//        headerMenuBar.setOpenedTab(tabs,
-//                clientsPage,
-//                new Label("inventory"),
-//                new Label("export"),
-//                transactionPage,
-//                settingsPage,
-//                new Label("plugins"));
+        // headerMenuBar.setOpenedTab(tabs,
+        // clientsPage,
+        // new Label("inventory"),
+        // new Label("export"),
+        // transactionPage,
+        // settingsPage,
+        // new Label("plugins"));
         // chore: pages
 
         /* Add Components to MainView */
@@ -75,18 +98,24 @@ public class MainView extends VBox {
         this.getChildren().add(bodyContainer);
     }
 
-    public void refresh(){
+    private MainView()  {
+        super();
+    }
+
+    public void refresh() {
         // to do: close all opened tabs except home
+        System.out.println("refreseh");
         PluginManager.getInstance().loadPlugin();
+        System.out.println("after loading plugin");
         transactionPage = new TransactionPage();
         TabMenuBar tabs = new TabMenuBar();
         tabs.addTab("Home", homePage);
         BorderPane bodyContainer = new BorderPane();
         bodyContainer.setTop(tabs);
-//        homePage = new HomePage();
-//        clientsPage = new ClientsPage();
-//        transactionPage = new TransactionPage();
-//        settingsPage = new SettingsPage();
+        // homePage = new HomePage();
+        // clientsPage = new ClientsPage();
+        // transactionPage = new TransactionPage();
+        // settingsPage = new SettingsPage();
         PluginsPage pluginsPage = new PluginsPage();
         headerMenuBar.getNavigationMenu().getItems().clear();
         headerMenuBar.addNewNavigationMenu("Clients", clientsPage);
