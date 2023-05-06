@@ -69,7 +69,7 @@ public class MainView extends VBox {
 
         /* Header Setup */
         HeaderMenuBar.getInstance().addNewNavigationMenu("Clients", clientsPage);
-        HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", new Label("inventory"));
+        HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", inventoryPage);
         HeaderMenuBar.getInstance().addNewNavigationMenu("Export Statements", new Label("export"));
         HeaderMenuBar.getInstance().addNewNavigationMenu("Transaction", transactionPage);
         HeaderMenuBar.getInstance().addNewPreferencesMenu("Settings", settingsPage);
@@ -109,7 +109,7 @@ public class MainView extends VBox {
 
         HeaderMenuBar.getInstance().getNavigationMenu().getItems().clear();
         HeaderMenuBar.getInstance().addNewNavigationMenu("Clients", clientsPage);
-        HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", new Label("inventory"));
+        HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", inventoryPage);
         HeaderMenuBar.getInstance().addNewNavigationMenu("Export Statements", new Label("export"));
         HeaderMenuBar.getInstance().addNewNavigationMenu("Transaction", transactionPage);
         HeaderMenuBar.getInstance().addNewPreferencesMenu("Settings", settingsPage);
