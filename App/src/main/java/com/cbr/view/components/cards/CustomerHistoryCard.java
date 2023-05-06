@@ -54,7 +54,7 @@ public class CustomerHistoryCard extends VBox {
             Region spacer = new Region();
             HBox.setHgrow(spacer, Priority.ALWAYS);
 
-            Label sellPrice = new Label(String.format("@%.2f", bp.getSellPrice()));
+            Label sellPrice = new Label(String.format("@%.2f", bp.getSellPrice().getValue()));
             sellPrice.setFont(Theme.getBodyFont());
             sellPrice.setTextFill(Color.WHITE);
 
