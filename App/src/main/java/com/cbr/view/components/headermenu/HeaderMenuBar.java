@@ -22,10 +22,8 @@ public class HeaderMenuBar extends MenuBar {
             this.getStyleClass().add("header-menu");
             this.setStyle(
                     "-fx-font-size: " + 24.0 / 1920 * Theme.getScreenWidth() +
-                    ";-fx-font-family: Ubuntu" +
-                    "; -fx-text-fill: white;"
+                    ";-fx-font-family: Ubuntu"
             );
-
         }
     }
 
@@ -49,8 +47,7 @@ public class HeaderMenuBar extends MenuBar {
         MenuItem newMenu = new MenuItem(menuName);
         newMenu.setStyle(
                 "-fx-font-size: " + 24.0 / 1920 * Theme.getScreenWidth() +
-                ";-fx-font-family: Ubuntu" +
-                "; -fx-text-fill: white;"
+                ";-fx-font-family: Ubuntu"
         );
         newMenu.setOnAction(event -> tabs.addTab(menuName, menuContent));
         this.getNavigationMenu().getItems().add(newMenu);
@@ -60,8 +57,7 @@ public class HeaderMenuBar extends MenuBar {
         MenuItem newMenu = new MenuItem(menuName);
         newMenu.setStyle(
                 "-fx-font-size: " + 24.0 / 1920 * Theme.getScreenWidth() +
-                ";-fx-font-family: Ubuntu" +
-                "; -fx-text-fill: white;"
+                ";-fx-font-family: Ubuntu"
         );
         newMenu.setOnAction(event -> tabs.addTab(menuName, menuContent));
         this.getPreferencesMenu().getItems().add(newMenu);

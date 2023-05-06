@@ -34,6 +34,8 @@ public class App extends Application{
 ////            p.load(this);
 ////        }
         Scene scene = new Scene(MainView.getInstance(), Theme.getScreenWidth(), Theme.getScreenHeight() * 0.98);
+        scene.getStylesheets().add("file:assets/styles/stylesheet.css");
+
         MainView.getInstance().init();
         stage.setScene(scene);
         stage.setMinWidth(Theme.getScreenWidth());

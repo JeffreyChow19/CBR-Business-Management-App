@@ -108,6 +108,9 @@
         <resources>
             <resource>
                 <directory>assets</directory>
+                <includes>
+                    <include>**/*.css</include>
+                </includes>
             </resource>
         </resources>
     </build>
