@@ -17,23 +17,21 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class InventoryProductCard extends StackPane {
-    private InventoryPage parent;
+public class InventoryProductCard extends VBox {
 
-    public InventoryProductCard(InventoryPage parent, InventoryProduct product){
-        this.parent = parent;
-
-        double width = 0.2 * Theme.getScreenWidth();
+    public InventoryProductCard(InventoryProduct product){
+        double width = 0.18 * Theme.getScreenWidth();
         double height = 0.5 * Theme.getScreenHeight();
 
         double vpadding = 0.036 * height;
-        double hpadding = 0.088 * width;
+        double hpadding = 0.075 * width;
 
         // Set Card Size
         this.setMinSize(width, height);
         this.setPrefSize(width, height);
         this.setMaxSize(width, height);
         this.setPadding(new Insets(vpadding, hpadding, vpadding, hpadding));
+        this.setSpacing(12);
 
         // Edit Button
         HBox edit_container = new HBox();
@@ -56,12 +54,13 @@ public class InventoryProductCard extends StackPane {
         HBox name_stock = new HBox();
         // Product Name
         Label productLabel = new ToolTipLabel(product.getProductName());
-        productLabel.setFont(Theme.getHeading2Font());
+        productLabel.setFont(Theme.getBodyBoldFont());
         productLabel.setTextFill(Color.WHITE);
         // Stock
         Region region = new Region();
         name_stock.setHgrow(region, Priority.ALWAYS);
         Label stockLabel = new CircleLabel(hpadding, product.getStock().toString(), Theme.getAccentBlue());
+        name_stock.setAlignment(Pos.CENTER);
         name_stock.getChildren().addAll(productLabel, region, stockLabel);
         this.getChildren().add(name_stock);
 
@@ -78,10 +77,12 @@ public class InventoryProductCard extends StackPane {
         price_labels.getChildren().addAll(hargaBeliLabel, hargaJualLabel);
         // Price Number VBox
         VBox price_number = new VBox();
-        Label hargaBeliNumber = new Label(product.getBuyPrice().toString());
+        Label hargaBeliNumber = new Label();
+        hargaBeliNumber.setText(String.format("%.2f",product.getBuyPrice()));
         hargaBeliNumber.setFont(Theme.getBodyFont());
         hargaBeliNumber.setTextFill(Color.WHITE);
-        Label hargaJualNumber = new Label(product.getSellPrice().toString());
+        Label hargaJualNumber = new Label();
+        hargaJualNumber.setText(String.format("%.2f",product.getSellPrice()));
         hargaJualNumber.setFont(Theme.getBodyFont());
         hargaJualNumber.setTextFill(Color.WHITE);
         price_number.getChildren().addAll(hargaBeliNumber, hargaJualNumber);
@@ -94,15 +95,16 @@ public class InventoryProductCard extends StackPane {
         // Labels HBox
         HBox product_labels = new HBox();
         // Category Label
-        Label categoryLabel = new DefaultLabel(product.getCategory(), Theme.getAccentBlue());
+        Label categoryLabel = new DefaultLabel(0.4 * width,product.getCategory(), Theme.getAccentBlue());
         // Status Label
         Label statusLabel;
         if (product.getStatus()) {
-        statusLabel = new DefaultLabel("Active", Theme.getAccentGreen());
+        statusLabel = new DefaultLabel(0.4 * width,"Active", Theme.getAccentGreen());
         }
         else {
-            statusLabel = new DefaultLabel("Inactive", Theme.getAccentRed());
+            statusLabel = new DefaultLabel(0.4 * width,"Inactive", Theme.getAccentRed());
         }
+        product_labels.setSpacing(8);
         product_labels.getChildren().addAll(categoryLabel, statusLabel);
         this.getChildren().add(product_labels);
 
