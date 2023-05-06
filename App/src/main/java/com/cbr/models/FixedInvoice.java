@@ -1,5 +1,6 @@
 package com.cbr.models;
 
+import com.cbr.App;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -27,6 +28,14 @@ public class FixedInvoice extends Invoice {
         this.id = "FI-" + FixedInvoice.invoiceCount.toString();
         this.discount = discount;
         this.usedPoint = usedPoint;
+    }
+
+    public void generateFixedInvoiceId() {
+        if (App.getDataStore().getInvoices() != null){
+            this.id = "FI-" + App.getDataStore().getInvoices().generateId();
+        } else {
+            this.id = "FI-1";
+        }
     }
 
     public void print(){

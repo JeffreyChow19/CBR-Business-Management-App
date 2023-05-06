@@ -262,10 +262,12 @@ public class TransactionPage extends StackPane {
         String customerId = customerDropdown.getDropdown().getValue();
         if (customerId == null || customerId.equals("New Customer")){
             Customer newCustomer = new Customer();
+            newCustomer.generateCustomerId();
             customerId = newCustomer.getId();
             App.getDataStore().addClient(newCustomer);
         }
         temporaryInvoice.setCustomerId(customerId);
+        temporaryInvoice.generateTemporaryInvoiceId();
 
         App.getDataStore().addTemporaryInvoice(temporaryInvoice);
 
@@ -283,6 +285,7 @@ public class TransactionPage extends StackPane {
         String customerId = customerDropdown.getDropdown().getValue();
         if (customerId == null || customerId.equals("New Customer")){
             Customer newCustomer = new Customer();
+            newCustomer.generateCustomerId();
             customerId = newCustomer.getId();
             App.getDataStore().addClient(newCustomer);
         }
