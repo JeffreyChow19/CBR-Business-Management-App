@@ -1,5 +1,6 @@
 package com.cbr.view.components.tabmenu;
 
+import com.cbr.view.theme.Theme;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
@@ -13,7 +14,7 @@ public class TabMenuBar extends TabPane {
         Tab homeTab = new Tab("Home", new Label("This is Home"));
         homeTab.setClosable(false);
         this.getTabs().add(homeTab);
-
+        this.setStyle("-fx-background-color: " + Theme.getSecondaryBase() + ";-fx-font-family: Ubuntu");
     }
 
     public void switchToTab(String tabName) {
@@ -28,7 +29,9 @@ public class TabMenuBar extends TabPane {
         if (foundTab != null) {
             foundTab.setContent(targetNode);
         } else {
-            this.getTabs().add(new Tab(tabName, targetNode));
+            Tab newTab = new Tab(tabName, targetNode);
+            newTab.setStyle("-fx-font-family: Ubuntu;" );
+            this.getTabs().add(newTab);
         }
         this.switchToTab(tabName);
     }

@@ -45,6 +45,8 @@ public class MainView extends VBox {
         homePage = new HomePage();
         clientsPage = new ClientsPage();
         transactionPage = new TransactionPage();
+        Label inventoryPage = new Label("");    // chore: inventoryPage
+
         settingsPage = new SettingsPage();
         PluginsPage pluginsPage = new PluginsPage();
         // chore: pages
@@ -58,6 +60,10 @@ public class MainView extends VBox {
         tabs.addTab("Home", homePage);
         BorderPane bodyContainer = new BorderPane();
         bodyContainer.setTop(tabs);
+
+        homePage.setButtonActions(tabs, clientsPage, transactionPage, inventoryPage, settingsPage, pluginsPage);
+
+        AppSettings settings = AppSettings.getInstance();
 
         /* Header Setup */
         headerMenuBar = new HeaderMenuBar(tabs);
