@@ -1,19 +1,19 @@
 {
   "dataList" : [
     {
-      "id" : "C-15",
+      "id" : "CS-16",
       "type" : "customer",
       "invoiceList" : [
         "FI-3"
       ]
     },
     {
-      "id" : "C-16",
+      "id" : "CS-17",
       "type" : "customer",
       "invoiceList" : [ ]
     },
     {
-      "id" : "C-3",
+      "id" : "CS-3",
       "type" : "member",
       "invoiceList" : [ ],
       "name" : "rachel",
@@ -22,7 +22,7 @@
       "point" : 0.0
     },
     {
-      "id" : "C-4",
+      "id" : "CS-4",
       "type" : "member",
       "invoiceList" : [ ],
       "name" : "Livia",
@@ -31,7 +31,7 @@
       "point" : 0.0
     },
     {
-      "id" : "C-5",
+      "id" : "CS-5",
       "type" : "VIP",
       "invoiceList" : [ ],
       "name" : "Jason",
@@ -41,7 +41,7 @@
       "buyPrice" : 100000.0
     },
     {
-      "id" : "C-6",
+      "id" : "CS-6",
       "type" : "VIP",
       "invoiceList" : [ ],
       "name" : "Chow",
@@ -51,7 +51,7 @@
       "buyPrice" : 100000.0
     },
     {
-      "id" : "C-7",
+      "id" : "CS-7",
       "type" : "member",
       "invoiceList" : [ ],
       "name" : "Eugene",
@@ -60,12 +60,12 @@
       "point" : 0.0
     },
     {
-      "id" : "C-8",
+      "id" : "CS-18",
       "type" : "customer",
       "invoiceList" : [ ]
     },
     {
-      "id" : "C-9",
+      "id" : "CS-19",
       "type" : "customer",
       "invoiceList" : [
         "FI-2"
