@@ -12,14 +12,16 @@ import lombok.Setter;
 
 public class AdditionalCostCard extends HBox {
     @Getter @Setter
-    Label cardNumber;
+    private Label cardNumber;
+    @Getter
+    private Label cardLabel;
     public AdditionalCostCard(Double width, String label) {
         this.setMinWidth(width);
         this.setPrefWidth(width);
         this.setMaxWidth(width);
         this.setPadding(new Insets(5,15,5,15));
 
-        Label cardLabel = new Label(label);
+        cardLabel = new Label(label);
         cardLabel.setFont(Theme.getBodyMediumFont());
         cardLabel.setTextFill(Color.WHITE);
 
