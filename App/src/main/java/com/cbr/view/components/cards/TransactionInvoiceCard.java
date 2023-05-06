@@ -34,7 +34,7 @@ public class TransactionInvoiceCard extends HBox {
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
-        Label pricePerItem = new Label("@" + String.format("%.2f", product.getSellPrice()));
+        Label pricePerItem = new Label("@ " + product.getSellPrice().toString());
         pricePerItem.setFont(Theme.getBodyMediumFont());
         pricePerItem.setTextFill(Color.WHITE);
         pricePerItem.setPadding(new Insets(0,20,0,20));

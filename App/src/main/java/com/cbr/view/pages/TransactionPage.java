@@ -42,6 +42,8 @@ import java.util.Optional;
 
 public class TransactionPage extends StackPane {
     private HBox container;
+    @Getter
+    private HBox grandTotalContainer;
     private TransactionProductCardList transactionProductCardList;
     private TransactionInvoiceCardList transactionInvoiceCardList;
     @Getter
@@ -90,6 +92,7 @@ public class TransactionPage extends StackPane {
         managementContainer.setAlignment(Pos.TOP_CENTER);
         managementContainer.setMinSize(managementContainerWidth, managementContainerHeight);
         managementContainer.setPrefSize(managementContainerWidth, managementContainerHeight);
+        managementContainer.setMaxSize(managementContainerWidth, managementContainerHeight);
         managementContainer.setMaxSize(managementContainerWidth, managementContainerHeight);
         managementContainer.setPadding(new Insets(20,0,100,0));
         managementContainer.setSpacing(0.02 * managementContainerHeight);
@@ -163,7 +166,7 @@ public class TransactionPage extends StackPane {
         renderAdditionalCostsContainer();
 
         // GRAND TOTAL
-        HBox grandTotalContainer = new HBox();
+        grandTotalContainer = new HBox();
         grandTotalContainer.setMinWidth(0.8 * managementContainerWidth);
         grandTotalContainer.setPrefWidth(0.8 * managementContainerWidth);
         grandTotalContainer.setMaxWidth(0.8 * managementContainerWidth);

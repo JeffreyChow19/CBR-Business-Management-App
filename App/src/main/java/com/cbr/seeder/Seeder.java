@@ -2,9 +2,9 @@ package com.cbr.seeder;
 
 import com.cbr.datastore.DataStore;
 import com.cbr.models.*;
+import com.cbr.models.Pricing.BasePrice;
 import com.github.javafaker.Faker;
 
-import java.lang.reflect.Field;
 import java.util.*;
 
 public class Seeder {
@@ -46,21 +46,24 @@ public class Seeder {
         Random rand = new Random();
         for (int i = 0; i < 50; i++) {
             String productName = faker.commerce().productName();
-            Double buyPrice = faker.number().randomDouble(2, 1, 100);
-            Double sellPrice = buyPrice + faker.number().randomDouble(2, 1, 50);
+            Double buyPrice = faker.number().randomDouble(2, 20000, 5000000);
+            Double sellPrice = buyPrice + faker.number().randomDouble(2, 10000, 1000000);
             String imagePath = "file:assets/images/products/" + (i+1) + ".jpg";
             Integer stock = faker.number().numberBetween(0, 1000);
             String category = categories.get(rand.nextInt(categories.size()));
             Boolean status = faker.bool().bool();
             System.out.println(category);
-            InventoryProduct product = new InventoryProduct(productName, buyPrice, sellPrice, imagePath, stock, category, status);
+            InventoryProduct product = new InventoryProduct(productName, new BasePrice(buyPrice), new BasePrice(sellPrice), imagePath, stock, category, status);
             System.out.println(product.getCategory());
             productList.add(product);
         }
 
         jsonDataStore.setInventory(new DataList<InventoryProduct>(productList));
+        jsonDataStore.commit();
         xmlDataStore.setInventory(new DataList<InventoryProduct>(productList));
+        xmlDataStore.commit();
         objDataStore.setInventory(new DataList<InventoryProduct>(productList));
+        objDataStore.commit();
 
 //        for (Product p : jsonDataStore.getInventory().getDataList()){
 //            System.out.println(p.getClass().getName());

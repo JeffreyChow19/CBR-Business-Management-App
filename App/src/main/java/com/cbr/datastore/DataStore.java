@@ -1,6 +1,7 @@
 package com.cbr.datastore;
 
 import com.cbr.models.*;
+import com.cbr.models.Pricing.PriceDecorator;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +20,7 @@ public class DataStore {
     @Getter private DataList<InventoryProduct> inventory;
     @Getter private DataList<FixedInvoice> invoices;
     @Getter private DataList<TemporaryInvoice> temporaryInvoices; // for not-fixed transactions
-    @Getter @Setter private List<?> additionalData;
+    @Getter @Setter private List<? extends Serializable> additionalData;
     private DataStorer dataStorer;
 
 
@@ -45,6 +46,15 @@ public class DataStore {
     }
     public InventoryProduct getProductById(String id){
         return this.inventory.getById(id);
+    }
+
+    public<T extends Serializable> List <T> getAdditionalData(String dataName, Class<T> clazz){
+        this.additionalData = dataStorer.loadAdditionalData(dataName, clazz);
+        return (List <T>) this.additionalData;
+    }
+
+    public<T extends Serializable> void setAdditionalData(List<T> additionalData, String dataName){
+        dataStorer.storeAdditionalData(additionalData, dataName);
     }
 
     public void addClient(Customer record){
@@ -132,7 +142,8 @@ public class DataStore {
 
     public void setInventory(DataList<InventoryProduct> inventory){
         this.inventory = inventory;
-        this.dataStorer.storeInventory(inventory);
+
+//        this.dataStorer.storeInventory(inventory);
     }
 
     public void setCustomerList(DataList<Customer> clients){
@@ -169,11 +180,24 @@ public class DataStore {
                 .collect(Collectors.toList());
     }
 
+
     // GET MEMBERS AND VIPS THAT ARE ACTIVE
     public List<Member> getMembersVips() {
         return this.getClients().getDataList().stream()
                 .filter(c -> ("VIP".equals(c.getType()) || "member".equals(c.getType())) && ((c instanceof Member && ((Member) c).getStatus() == true) || (c instanceof VIP && ((VIP) c).getStatus() == true)))
                 .map(c -> (Member) c)
                 .collect(Collectors.toList());
+    }
+
+    public void commit(){
+        for (InventoryProduct p : this.inventory.getDataList()){
+            if (p.getSellPrice().getClass().equals(PriceDecorator.class)){
+                p.setSellPrice(((PriceDecorator) p.getSellPrice()).getPrice());
+            }
+            if (p.getBuyPrice().getClass().equals(PriceDecorator.class)){
+                p.setBuyPrice(((PriceDecorator) p.getBuyPrice()).getPrice());
+            }
+        }
+        this.dataStorer.storeInventory(this.inventory);
     }
 }

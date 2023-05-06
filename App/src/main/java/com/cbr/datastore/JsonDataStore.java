@@ -7,11 +7,13 @@ import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.Getter;
 import java.io.IOException;
 import java.io.Serializable;
 import java.nio.file.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -31,6 +33,26 @@ public class JsonDataStore implements DataStorer{
         this.writer = mapper.writer(prettyPrinter);
         this.folder = folder;
     }
+    public<T extends  Serializable> List<T> loadAdditionalData(String dataName, Class<T> clazz){
+        try {
+            Path path = Paths.get(this.folder, dataName + ".json");
+            if (!Files.exists(path)) {
+                Files.createFile(path);
+                this.storeAdditionalData(new ArrayList<T>(), dataName);
+                return new ArrayList<>();
+            } else {
+                String json = new String(Files.readAllBytes(path));
+                return mapper.readValue(json, TypeFactory.defaultInstance().constructCollectionType(List.class, clazz));
+            }
+        } catch (JsonProcessingException e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to read data in the folder!");
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to read data in the folder!");
+        }
+        return null;
+    };
 
 
     public DataList<Customer> loadClients(){
@@ -167,6 +189,20 @@ public class JsonDataStore implements DataStorer{
         }
         catch (IOException e) {
             System.out.println("Failed to write to inventory.json file in the folder!");
+        }
+    }
+
+    public<T extends Serializable> void storeAdditionalData(List<T> records, String dataName){
+        try {
+            String jsonDataString = writer.writeValueAsString(records);
+            Files.write(Paths.get(this.folder, dataName + ".json"), jsonDataString.getBytes());
+        }
+        catch (JsonProcessingException e) {
+            System.out.println("Failed to store ");
+            System.out.println(e.getMessage());
+        }
+        catch (IOException e) {
+            System.out.println("Failed to write in the folder!");
         }
     }
 }

@@ -58,7 +58,7 @@ public class TemporaryInvoice extends Invoice implements Serializable {
 
         // SUM ALL PRODUCTS PRICE IN BILL
         for (Map.Entry<String, Integer> entry : productFrequencies.entrySet()){
-            Double basePrice = App.getDataStore().getInventory().getById(entry.getKey()).getSellPrice();
+            Double basePrice = App.getDataStore().getInventory().getById(entry.getKey()).getSellPrice().getValue();
             total += (basePrice * entry.getValue());
         }
 

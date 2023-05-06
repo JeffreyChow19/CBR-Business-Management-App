@@ -1,24 +1,39 @@
 package com.cbr.models;
 
-import lombok.AllArgsConstructor;
+import com.cbr.models.Pricing.BasePrice;
+import com.cbr.models.Pricing.Price;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-@NoArgsConstructor
-@Getter
-@Setter
+
 public abstract class Product extends Identifiable implements Serializable {
+    @Getter
+    @Setter
     protected String productName;
+    @Getter
+    @Setter
     protected String category;
-    protected Double sellPrice;
-    protected Double buyPrice;
+    @Getter
+    @Setter
+    protected Price sellPrice;
+    @Getter
+    @Setter
+    protected Price buyPrice;
+    @Getter
+    protected Map<String, String> additionalValues;
 
-    public Product(String productName, String category, Double sellPrice, Double buyPrice){
+    public Product(){
+        this.additionalValues = new HashMap<>();
+    }
+
+    public Product(String productName, String category, BasePrice sellPrice, BasePrice buyPrice){
         this.productName = productName;
         this.category = category;
         this.sellPrice = sellPrice;

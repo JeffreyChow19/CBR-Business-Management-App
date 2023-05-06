@@ -23,6 +23,24 @@ public class PluginManager {
         this.plugins = new ArrayList<>();
     }
 
+    public void init(){
+        System.out.println("huhhhh");
+        for (String jarFile : AppSettings.getInstance().getPlugins()) {
+            URLClassLoader classLoader = null;
+            try {
+                classLoader = new URLClassLoader(new URL[]{new File(jarFile).toURI().toURL()}, ClassLoader.getSystemClassLoader());
+            } catch (MalformedURLException e) {
+                throw new RuntimeException(e);
+            }
+            pluginServiceLoader = ServiceLoader.load(Plugin.class, classLoader);
+            for (Plugin p : pluginServiceLoader) {
+                System.out.println(p.getClass().getName());
+                plugins.add(p);
+                p.load();
+            }
+        }
+    }
+
     public static PluginManager getInstance() {
         if (instance == null) {
             synchronized (PluginManager.class) {
@@ -39,22 +57,16 @@ public class PluginManager {
             URLClassLoader classLoader = new URLClassLoader(new URL[]{new File(jarFile).toURI().toURL()}, ClassLoader.getSystemClassLoader());
             pluginServiceLoader = ServiceLoader.load(Plugin.class, classLoader);
             for (Plugin p : pluginServiceLoader) {
-                System.out.println("masuk ke service loader");
                 boolean exists = plugins.stream()
                         .map(Plugin::getClass)
                         .anyMatch(c -> c.getName().equals(p.getClass().getName()));
-                for (Plugin x : plugins){
-                    System.out.println(x.getClass().getName());
-                }
                 // If an object of the same class already exists, don't add the new object
                 if (!exists) {
-                    System.out.println("masuk?");
                     System.out.println(p.getClass().getName());
                     plugins.add(p);
                     p.load();
                 }
                 else{
-                    System.out.println("masuk lagi?");
                     throw new PluginException();
                 }
             }
