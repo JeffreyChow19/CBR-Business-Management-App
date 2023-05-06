@@ -46,8 +46,8 @@ public class HistoryInvoiceCard extends GridPane {
             currentRow++;
             Label productQty = new Label(String.valueOf(p.getCount()));
             Label productName = new Label(p.getProductName());
-            Label productPriceEach = new Label("@" + String.valueOf(p.getSellPrice()));
-            Label productSubtotal = new Label(String.valueOf(p.getSellPrice() * p.getCount()));
+            Label productPriceEach = new Label("@" + String.valueOf(p.getSellPrice().getValue()));
+            Label productSubtotal = new Label(String.valueOf(p.getSellPrice().getValue() * p.getCount()));
             productQty.setFont(Theme.getBodyFont());
             productQty.setTextFill(Color.WHITE);
             productName.setFont(Theme.getBodyFont());

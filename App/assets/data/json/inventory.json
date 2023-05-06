@@ -5,12 +5,14 @@
       "productName" : "Lightweight Marble Knife",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 2727525.46
+        "value" : 2727525.4599999995
       },
       "buyPrice" : {
-        "value" : 3096138.01
+        "value" : 3096138.0099999993
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/1.jpg",
       "stock" : 239,
       "status" : true
@@ -20,12 +22,14 @@
       "productName" : "Practical Linen Watch",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 1802692.23
+        "value" : 1802692.2299999997
       },
       "buyPrice" : {
         "value" : 2621341.42
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/2.jpg",
       "stock" : 618,
       "status" : false
@@ -35,12 +39,14 @@
       "productName" : "Fantastic Concrete Coat",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 4532785.82
+        "value" : 4532785.819999999
       },
       "buyPrice" : {
         "value" : 4698358.57
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/3.jpg",
       "stock" : 477,
       "status" : false
@@ -50,12 +56,14 @@
       "productName" : "Lightweight Bronze Table",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 3817444.41
+        "value" : 3817444.4099999997
       },
       "buyPrice" : {
         "value" : 4682461.34
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/4.jpg",
       "stock" : 486,
       "status" : true
@@ -65,12 +73,14 @@
       "productName" : "Lightweight Concrete Bench",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 1219881.91
+        "value" : 1219881.9099999997
       },
       "buyPrice" : {
-        "value" : 1921888.19
+        "value" : 1921888.1899999997
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/5.jpg",
       "stock" : 928,
       "status" : true
@@ -83,9 +93,11 @@
         "value" : 48231.03
       },
       "buyPrice" : {
-        "value" : 657185.0700000001
+        "value" : 657185.07
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/6.jpg",
       "stock" : 567,
       "status" : true
@@ -100,7 +112,9 @@
       "buyPrice" : {
         "value" : 5383310.46
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/7.jpg",
       "stock" : 538,
       "status" : true
@@ -110,12 +124,14 @@
       "productName" : "Practical Wool Wallet",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 2536959.76
+        "value" : 2536959.7599999993
       },
       "buyPrice" : {
         "value" : 3013868.57
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/8.jpg",
       "stock" : 17,
       "status" : true
@@ -130,7 +146,9 @@
       "buyPrice" : {
         "value" : 1347370.88
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/9.jpg",
       "stock" : 188,
       "status" : true
@@ -143,9 +161,11 @@
         "value" : 1026096.63
       },
       "buyPrice" : {
-        "value" : 1910843.7
+        "value" : 1910843.6999999997
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/10.jpg",
       "stock" : 477,
       "status" : false
@@ -155,12 +175,14 @@
       "productName" : "Small Wool Wallet",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 1949326.42
+        "value" : 1949326.4199999997
       },
       "buyPrice" : {
         "value" : 2690717.27
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/11.jpg",
       "stock" : 628,
       "status" : true
@@ -170,12 +192,14 @@
       "productName" : "Mediocre Granite Computer",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 3748092.0
+        "value" : 3748091.9999999995
       },
       "buyPrice" : {
-        "value" : 3908312.02
+        "value" : 3908312.0199999996
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/12.jpg",
       "stock" : 334,
       "status" : true
@@ -190,7 +214,9 @@
       "buyPrice" : {
         "value" : 2726352.37
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/13.jpg",
       "stock" : 409,
       "status" : false
@@ -200,12 +226,14 @@
       "productName" : "Heavy Duty Copper Shirt",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 3685626.43
+        "value" : 3685626.4299999997
       },
       "buyPrice" : {
         "value" : 4285566.600000001
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/14.jpg",
       "stock" : 747,
       "status" : false
@@ -220,7 +248,9 @@
       "buyPrice" : {
         "value" : 2163978.42
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/15.jpg",
       "stock" : 323,
       "status" : true
@@ -233,9 +263,11 @@
         "value" : 869739.5
       },
       "buyPrice" : {
-        "value" : 1609539.26
+        "value" : 1609539.2599999998
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/16.jpg",
       "stock" : 443,
       "status" : true
@@ -250,7 +282,9 @@
       "buyPrice" : {
         "value" : 940202.2799999999
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/17.jpg",
       "stock" : 56,
       "status" : false
@@ -260,12 +294,14 @@
       "productName" : "Incredible Wooden Wallet",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 3162462.68
+        "value" : 3162462.6799999997
       },
       "buyPrice" : {
-        "value" : 3464477.5900000003
+        "value" : 3464477.59
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/18.jpg",
       "stock" : 647,
       "status" : false
@@ -280,7 +316,9 @@
       "buyPrice" : {
         "value" : 3453775.2199999997
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/19.jpg",
       "stock" : 843,
       "status" : true
@@ -293,9 +331,11 @@
         "value" : 2844931.05
       },
       "buyPrice" : {
-        "value" : 2894743.4899999998
+        "value" : 2894743.4899999993
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/20.jpg",
       "stock" : 162,
       "status" : true
@@ -310,7 +350,9 @@
       "buyPrice" : {
         "value" : 4744438.24
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/21.jpg",
       "stock" : 973,
       "status" : true
@@ -320,12 +362,14 @@
       "productName" : "Durable Marble Lamp",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 2572035.56
+        "value" : 2572035.5599999996
       },
       "buyPrice" : {
-        "value" : 3100252.1100000003
+        "value" : 3100252.11
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/22.jpg",
       "stock" : 682,
       "status" : false
@@ -335,12 +379,14 @@
       "productName" : "Heavy Duty Copper Shoes",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 3259346.63
+        "value" : 3259346.6299999994
       },
       "buyPrice" : {
-        "value" : 3720424.58
+        "value" : 3720424.5799999996
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/23.jpg",
       "stock" : 798,
       "status" : false
@@ -353,9 +399,11 @@
         "value" : 2732094.89
       },
       "buyPrice" : {
-        "value" : 3613532.81
+        "value" : 3613532.8099999996
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/24.jpg",
       "stock" : 42,
       "status" : true
@@ -365,12 +413,14 @@
       "productName" : "Lightweight Iron Lamp",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 2571472.81
+        "value" : 2571472.8099999996
       },
       "buyPrice" : {
         "value" : 3345208.55
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/25.jpg",
       "stock" : 256,
       "status" : false
@@ -380,12 +430,14 @@
       "productName" : "Practical Leather Lamp",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 4795156.04
+        "value" : 4795156.039999999
       },
       "buyPrice" : {
-        "value" : 5132470.99
+        "value" : 5132470.989999999
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/26.jpg",
       "stock" : 599,
       "status" : false
@@ -398,9 +450,11 @@
         "value" : 4906974.95
       },
       "buyPrice" : {
-        "value" : 5565896.65
+        "value" : 5565896.649999999
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/27.jpg",
       "stock" : 37,
       "status" : true
@@ -410,12 +464,14 @@
       "productName" : "Lightweight Silk Gloves",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 2664651.88
+        "value" : 2664651.8799999994
       },
       "buyPrice" : {
         "value" : 3402127.03
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/28.jpg",
       "stock" : 369,
       "status" : false
@@ -428,9 +484,11 @@
         "value" : 2995033.75
       },
       "buyPrice" : {
-        "value" : 3971865.18
+        "value" : 3971865.1799999997
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/29.jpg",
       "stock" : 262,
       "status" : true
@@ -440,12 +498,14 @@
       "productName" : "Ergonomic Concrete Bench",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 3871406.53
+        "value" : 3871406.5299999993
       },
       "buyPrice" : {
         "value" : 4503885.39
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/30.jpg",
       "stock" : 336,
       "status" : true
@@ -455,12 +515,14 @@
       "productName" : "Aerodynamic Rubber Pants",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 1096009.53
+        "value" : 1096009.5299999998
       },
       "buyPrice" : {
-        "value" : 1795448.05
+        "value" : 1795448.0499999998
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/31.jpg",
       "stock" : 377,
       "status" : false
@@ -473,9 +535,11 @@
         "value" : 528216.74
       },
       "buyPrice" : {
-        "value" : 1427122.54
+        "value" : 1427122.5399999998
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/32.jpg",
       "stock" : 52,
       "status" : true
@@ -485,12 +549,14 @@
       "productName" : "Small Wooden Shirt",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 2816868.81
+        "value" : 2816868.8099999996
       },
       "buyPrice" : {
-        "value" : 3340974.72
+        "value" : 3340974.7199999997
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/33.jpg",
       "stock" : 280,
       "status" : true
@@ -505,7 +571,9 @@
       "buyPrice" : {
         "value" : 2104445.53
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/34.jpg",
       "stock" : 44,
       "status" : true
@@ -518,9 +586,11 @@
         "value" : 4813383.15
       },
       "buyPrice" : {
-        "value" : 5638841.45
+        "value" : 5638841.449999999
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/35.jpg",
       "stock" : 868,
       "status" : false
@@ -535,7 +605,9 @@
       "buyPrice" : {
         "value" : 3479737.1399999997
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/36.jpg",
       "stock" : 833,
       "status" : true
@@ -550,7 +622,9 @@
       "buyPrice" : {
         "value" : 1230308.17
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/37.jpg",
       "stock" : 729,
       "status" : true
@@ -560,12 +634,14 @@
       "productName" : "Awesome Rubber Lamp",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 4106147.56
+        "value" : 4106147.5599999996
       },
       "buyPrice" : {
-        "value" : 4739231.25
+        "value" : 4739231.249999999
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/38.jpg",
       "stock" : 417,
       "status" : true
@@ -580,7 +656,9 @@
       "buyPrice" : {
         "value" : 4918437.5200000005
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/39.jpg",
       "stock" : 306,
       "status" : false
@@ -590,12 +668,14 @@
       "productName" : "Durable Granite Clock",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 3596059.6
+        "value" : 3596059.5999999996
       },
       "buyPrice" : {
-        "value" : 3609716.68
+        "value" : 3609716.6799999997
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/40.jpg",
       "stock" : 560,
       "status" : true
@@ -608,9 +688,11 @@
         "value" : 3919115.61
       },
       "buyPrice" : {
-        "value" : 4784475.01
+        "value" : 4784475.009999999
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/41.jpg",
       "stock" : 953,
       "status" : true
@@ -620,12 +702,14 @@
       "productName" : "Gorgeous Bronze Table",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 1577993.24
+        "value" : 1577993.2399999998
       },
       "buyPrice" : {
         "value" : 2250752.83
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/42.jpg",
       "stock" : 579,
       "status" : true
@@ -640,7 +724,9 @@
       "buyPrice" : {
         "value" : 2793292.4299999997
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/43.jpg",
       "stock" : 198,
       "status" : false
@@ -655,7 +741,9 @@
       "buyPrice" : {
         "value" : 4476207.03
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/44.jpg",
       "stock" : 130,
       "status" : true
@@ -670,7 +758,9 @@
       "buyPrice" : {
         "value" : 4268163.66
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/45.jpg",
       "stock" : 274,
       "status" : true
@@ -680,12 +770,14 @@
       "productName" : "Durable Leather Clock",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 277495.31
+        "value" : 277495.30999999994
       },
       "buyPrice" : {
-        "value" : 332572.76
+        "value" : 332572.75999999995
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/46.jpg",
       "stock" : 205,
       "status" : false
@@ -698,9 +790,11 @@
         "value" : 4645234.35
       },
       "buyPrice" : {
-        "value" : 5266338.3
+        "value" : 5266338.299999999
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/47.jpg",
       "stock" : 683,
       "status" : true
@@ -713,9 +807,11 @@
         "value" : 3742993.51
       },
       "buyPrice" : {
-        "value" : 4170245.6399999997
+        "value" : 4170245.639999999
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/48.jpg",
       "stock" : 69,
       "status" : false
@@ -725,12 +821,14 @@
       "productName" : "Incredible Wool Bench",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 4542812.35
+        "value" : 4542812.349999999
       },
       "buyPrice" : {
         "value" : 5517859.779999999
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/49.jpg",
       "stock" : 354,
       "status" : false
@@ -740,12 +838,14 @@
       "productName" : "Practical Steel Car",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 3993602.97
+        "value" : 3993602.9699999997
       },
       "buyPrice" : {
         "value" : 4939862.8
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "IDR"
+      },
       "imagePath" : "file:assets/images/products/50.jpg",
       "stock" : 670,
       "status" : true

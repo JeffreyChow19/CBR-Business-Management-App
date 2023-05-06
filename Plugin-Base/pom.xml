@@ -11,13 +11,6 @@
 
     <artifactId>Plugin-Base</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.cbr</groupId>
-            <artifactId>app</artifactId>
-            <version>1.0</version>
-        </dependency>
-    </dependencies>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

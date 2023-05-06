@@ -2,11 +2,9 @@ package com.cbr.view;
 
 import com.cbr.exception.PluginException;
 import com.cbr.plugin.PluginManager;
-import com.cbr.utils.AppSettings;
 import com.cbr.view.components.header.headermenu.HeaderMenuBar;
 import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.pages.*;
-import com.cbr.utils.AppSettings;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -95,8 +93,6 @@ public class MainView extends VBox {
         transactionPage = new TransactionPage();
         PluginManager.getInstance().loadPlugin();
         TabMenuBar.getInstance().addTab("Home", homePage);
-        BorderPane bodyContainer = new BorderPane();
-        bodyContainer.setTop(TabMenuBar.getInstance());
         PluginsPage pluginsPage = new PluginsPage();
 
         HeaderMenuBar.getInstance().getNavigationMenu().getItems().clear();

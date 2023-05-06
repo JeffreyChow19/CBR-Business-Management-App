@@ -9,12 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Plugin-System-3</artifactId>
+    <artifactId>Plugin-Chart-2</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.cbr</groupId>
-            <artifactId>app</artifactId>
+            <artifactId>Plugin-Base</artifactId>
             <version>1.0</version>
         </dependency>
     </dependencies>
