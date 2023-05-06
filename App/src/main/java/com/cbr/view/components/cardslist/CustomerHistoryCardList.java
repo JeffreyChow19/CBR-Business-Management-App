@@ -3,12 +3,9 @@ package com.cbr.view.components.cardslist;
 import com.cbr.App;
 import com.cbr.models.FixedInvoice;
 import com.cbr.view.components.cards.CustomerHistoryCard;
-import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Pos;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import lombok.Getter;
 import lombok.Setter;
@@ -37,6 +34,7 @@ public class CustomerHistoryCardList extends ScrollPane {
         customerHistoryContainer.setAlignment(Pos.TOP_CENTER);
 
         searchHistoryData();
+        renderHistoryDataList();
 
         this.setContent(customerHistoryContainer);
     }

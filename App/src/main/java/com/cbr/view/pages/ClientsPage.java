@@ -107,7 +107,7 @@ public class ClientsPage extends ScrollPane {
         HBox toggleContainer = new HBox();
         toggleContainer.getChildren().addAll(customersButton, membersButton, vipButton);
         toggleContainer.setMaxWidth(Theme.getScreenWidth()*0.5);
-        toggleContainer.setAlignment(Pos.CENTER); // set alignment to cente
+        toggleContainer.setAlignment(Pos.CENTER); // set alignment to center
 
         container.getChildren().addAll(pageTitle, searchBar, toggleContainer, this.customerCardList);
         container.setAlignment(Pos.TOP_CENTER);

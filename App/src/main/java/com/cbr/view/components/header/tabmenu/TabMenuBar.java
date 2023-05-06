@@ -1,4 +1,4 @@
-package com.cbr.view.components.tabmenu;
+package com.cbr.view.components.header.tabmenu;
 
 import com.cbr.view.pages.TransactionPage;
 import com.cbr.view.theme.Theme;
@@ -8,8 +8,17 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 
 public class TabMenuBar extends TabPane {
+    public static TabMenuBar instance;
     private int transactionCounter;
-    public TabMenuBar() {
+
+    public static TabMenuBar getInstance() {
+        if (instance == null) {
+            instance = new TabMenuBar();
+        }
+        return instance;
+    }
+
+    private TabMenuBar() {
         super();
         transactionCounter = 1;
 
