@@ -29,11 +29,16 @@ public class CustomerHistoryCard extends VBox {
         transactionId.setFont(Theme.getHeading2Font());
         transactionId.setTextFill(Color.WHITE);
 
+        Region titleSpacer = new Region();
+        HBox.setHgrow(titleSpacer, Priority.ALWAYS);
+
         Label transactionDate = new Label(invoice.getCreatedAt().toString().replace("T", " "));
         transactionDate.setFont(Theme.getBodyMediumFont());
         transactionDate.setTextFill(Color.WHITE);
 
-        historyCardTitle.getChildren().addAll(transactionId, transactionDate);
+        historyCardTitle.getChildren().addAll(transactionId, titleSpacer, transactionDate);
+
+        this.getChildren().add(historyCardTitle);
 
         // LIST OF PRODUCTS
         for (BoughtProduct bp : invoice.getBoughtProducts()){
@@ -51,8 +56,8 @@ public class CustomerHistoryCard extends VBox {
             itemName.setFont(Theme.getBodyFont());
             itemName.setTextFill(Color.WHITE);
 
-            Region spacer = new Region();
-            HBox.setHgrow(spacer, Priority.ALWAYS);
+            Region itemInfosSpacer = new Region();
+            HBox.setHgrow(itemInfosSpacer, Priority.ALWAYS);
 
             Label sellPrice = new Label(String.format("@%.2f", bp.getSellPrice().getValue()));
             sellPrice.setFont(Theme.getBodyFont());
@@ -62,7 +67,7 @@ public class CustomerHistoryCard extends VBox {
             total.setFont(Theme.getBodyFont());
             total.setTextFill(Color.WHITE);
 
-            itemInfos.getChildren().addAll(itemCount, itemName, spacer, sellPrice, total);
+            itemInfos.getChildren().addAll(itemCount, itemName, itemInfosSpacer, sellPrice, total);
 
             this.getChildren().add(itemInfos);
         }
