@@ -24,6 +24,12 @@ public class MainView extends VBox {
     @Getter
     private TransactionPage transactionPage;
     @Getter
+    private ItemEditor editItem;
+    @Getter
+    private ProfileEditor editProfile;
+    @Getter
+    private ItemEditor addItem;
+    @Getter
     private HeaderMenuBar headerMenuBar;
     private TabMenuBar tabs;
     @Getter
@@ -43,6 +49,9 @@ public class MainView extends VBox {
     public void init(){
         /* Pages */
         homePage = new HomePage();
+        editItem = new ItemEditor("Edit Item");
+        addItem = new ItemEditor("Add Item");
+        editProfile = new ProfileEditor("Edit Profile");
         clientsPage = new ClientsPage();
         transactionPage = new TransactionPage();
         Label inventoryPage = new Label("");    // chore: inventoryPage
