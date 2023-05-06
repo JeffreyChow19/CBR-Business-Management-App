@@ -3,6 +3,7 @@ package com.cbr.view.pages;
 import com.cbr.App;
 import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.cards.AdditionalCostCard;
+import com.cbr.view.components.cards.CustomerHistoryCard;
 import com.cbr.view.components.cards.TransactionInvoiceCard;
 import com.cbr.view.components.cards.TransactionProductCard;
 import com.cbr.view.components.cardslist.TransactionInvoiceCardList;
@@ -268,11 +269,15 @@ public class TransactionPage extends StackPane {
             App.getDataStore().addClient(newCustomer);
         }
         temporaryInvoice.setCustomerId(customerId);
-        temporaryInvoice.generateTemporaryInvoiceId();
+
+        if (temporaryInvoice.getCustomerId().equals("")){
+            temporaryInvoice.generateTemporaryInvoiceId();
+        }
 
         App.getDataStore().addTemporaryInvoice(temporaryInvoice);
 
-        System.out.println(customerId);
+        OkPopUp successSaveBill = new OkPopUp("Successfully saved bill with id " + temporaryInvoice.getId() + " on customer " + customerId);
+        successSaveBill.show();
 
         temporaryInvoice = new TemporaryInvoice("");
 
@@ -280,6 +285,8 @@ public class TransactionPage extends StackPane {
         updateDatastore();
         resetInfo();
         updateTemporaryInvoiceDropdown();
+
+
     }
     public void makeBill() {
         // Check customerId
@@ -307,6 +314,7 @@ public class TransactionPage extends StackPane {
 
                 if (entry.getValue() > product.getStock()){
                     OkPopUp decreaseFrequency = new OkPopUp("The product stock is now " + product.getStock() + ". Your bill for " + product.getProductName() + " will be decreased from " + entry.getValue() + " to " + product.getStock());
+                    decreaseFrequency.show();
                     entry.setValue(product.getStock());
                 }
 
@@ -354,7 +362,9 @@ public class TransactionPage extends StackPane {
 
         App.getDataStore().deleteTemporaryInvoices(this.temporaryInvoice);
 
-        OkPopUp successMakeBill = new OkPopUp("Successfully Make Bill with id " + invoice.getId() + ", used " + usePoint + "points, get " + getPoint + "points");
+        OkPopUp successMakeBill = new OkPopUp("Successfully Make Bill with id " + invoice.getId() + ", used " + usePoint + " points, get " + getPoint + "points");
+        successMakeBill.setBox(new CustomerHistoryCard(invoice));
+        successMakeBill.show();
 
         if (!temporaryInvoice.getCustomerId().equals("")){
             temporaryInvoice = new TemporaryInvoice("");
@@ -443,6 +453,7 @@ public class TransactionPage extends StackPane {
 
                 if (frequency > inventoryProduct.getStock()) {
                     OkPopUp decreaseFrequency = new OkPopUp("The product stock is now " + inventoryProduct.getStock() + ". Your bill for " + inventoryProduct.getProductName() + " will be decreased from " + frequency + " to " + inventoryProduct.getStock());
+                    decreaseFrequency.show();
                     frequency = inventoryProduct.getStock();
                     entry.setValue(frequency);
                 }
@@ -453,6 +464,7 @@ public class TransactionPage extends StackPane {
             } else if (inventoryProduct != null) {
                 // SHOW POP UP
                 OkPopUp removeItem = new OkPopUp(inventoryProduct.getProductName() + "is currently not for sale, it will be remove from the bill");
+                removeItem.show();
             }
         }
 

@@ -322,6 +322,121 @@
       "discount" : 3714649.6070000003,
       "usedPoint" : 0.0,
       "getPoint" : 334318.46463
+    },
+    {
+      "id" : "FI-6",
+      "customerId" : "CS-18",
+      "createdAt" : "2023-05-07T02:31:41",
+      "boughtProducts" : [
+        {
+          "id" : "IP-37",
+          "productName" : "Fantastic Aluminum Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 736282.62
+          },
+          "buyPrice" : {
+            "value" : 1230308.17
+          },
+          "additionalValues" : null,
+          "count" : 6
+        }
+      ],
+      "discount" : 0.0,
+      "usedPoint" : 0.0,
+      "getPoint" : 44176.9572
+    },
+    {
+      "id" : "FI-7",
+      "customerId" : "CS-21",
+      "createdAt" : "2023-05-07T02:35:56",
+      "boughtProducts" : [
+        {
+          "id" : "IP-27",
+          "productName" : "Gorgeous Plastic Coat",
+          "category" : "Pakaian",
+          "sellPrice" : {
+            "value" : 4906974.95
+          },
+          "buyPrice" : {
+            "value" : 5565896.649999999
+          },
+          "additionalValues" : null,
+          "count" : 3
+        }
+      ],
+      "discount" : 0.0,
+      "usedPoint" : 0.0,
+      "getPoint" : 147209.24850000002
+    },
+    {
+      "id" : "FI-8",
+      "customerId" : "CS-22",
+      "createdAt" : "2023-05-07T02:43:27",
+      "boughtProducts" : [
+        {
+          "id" : "IP-37",
+          "productName" : "Fantastic Aluminum Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 736282.62
+          },
+          "buyPrice" : {
+            "value" : 1230308.17
+          },
+          "additionalValues" : null,
+          "count" : 4
+        }
+      ],
+      "discount" : 0.0,
+      "usedPoint" : 0.0,
+      "getPoint" : 29451.3048
+    },
+    {
+      "id" : "FI-9",
+      "customerId" : "CS-23",
+      "createdAt" : "2023-05-07T02:46:43",
+      "boughtProducts" : [
+        {
+          "id" : "IP-9",
+          "productName" : "Sleek Leather Car",
+          "category" : "Pakaian",
+          "sellPrice" : {
+            "value" : 668082.22
+          },
+          "buyPrice" : {
+            "value" : 1347370.88
+          },
+          "additionalValues" : null,
+          "count" : 5
+        }
+      ],
+      "discount" : 0.0,
+      "usedPoint" : 0.0,
+      "getPoint" : 33404.111
+    },
+    {
+      "id" : "FI-10",
+      "customerId" : "CS-24",
+      "createdAt" : "2023-05-07T02:48:05",
+      "boughtProducts" : [
+        {
+          "id" : "IP-9",
+          "productName" : "Sleek Leather Car",
+          "category" : "Pakaian",
+          "sellPrice" : {
+            "value" : 668082.22
+          },
+          "buyPrice" : {
+            "value" : 1347370.88
+          },
+          "additionalValues" : null,
+          "count" : 4
+        }
+      ],
+      "discount" : 0.0,
+      "usedPoint" : 0.0,
+      "getPoint" : 26723.2888
     }
   ]
 }
