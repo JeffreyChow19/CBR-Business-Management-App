@@ -20,6 +20,7 @@ public class MainView extends VBox {
     private ClientsPage clientsPage;
     @Getter
     private TransactionPage transactionPage;
+    private InventoryPage inventoryPage;
     @Getter
     private ItemEditor editItem;
     @Getter
@@ -52,6 +53,7 @@ public class MainView extends VBox {
 
         settingsPage = new SettingsPage();
         PluginsPage pluginsPage = new PluginsPage();
+        inventoryPage = new InventoryPage();
         // chore: pages
         try {
             PluginManager.getInstance().loadNewPlugin();
@@ -106,6 +108,7 @@ public class MainView extends VBox {
         // transactionPage = new TransactionPage();
         // settingsPage = new SettingsPage();
         PluginsPage pluginsPage = new PluginsPage();
+
         HeaderMenuBar.getInstance().getNavigationMenu().getItems().clear();
         HeaderMenuBar.getInstance().addNewNavigationMenu("Clients", clientsPage);
         HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", new Label("inventory"));
