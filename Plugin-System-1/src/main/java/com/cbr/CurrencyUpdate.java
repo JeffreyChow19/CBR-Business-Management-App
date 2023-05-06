@@ -24,8 +24,6 @@ public class CurrencyUpdate implements SettingsUpdate {
                 .filter(obj -> obj.getSymbol().equals(currencySymbol))
                 .findFirst().get(); // get app currency
 
-
-        List<InventoryProduct> updatedCurrencyInventory = App.getDataStore().getInventory().getDataList();
         for (InventoryProduct p : App.getDataStore().getInventory().getDataList()){
             Double exchange = baseCurrency.getExchangeRate();
             System.out.println(p.getSellPrice().getValue());
@@ -33,11 +31,7 @@ public class CurrencyUpdate implements SettingsUpdate {
                 Currency oldCurrencyTemp = currencyList.stream()
                         .filter(obj -> obj.getSymbol().equals(p.getAdditionalValues().get("currency")))
                         .findFirst().get();
-                System.out.println("old currency");
-                System.out.println(oldCurrencyTemp.getSymbol());
-                System.out.println(oldCurrencyTemp.getExchangeRate());
                 exchange = exchange / oldCurrencyTemp.getExchangeRate();
-                System.out.println(exchange);
             }
             Price newPrice = new CurrencyPrice(new BasePrice(p.getSellPrice().getValue() / exchange));
             p.setSellPrice(newPrice);

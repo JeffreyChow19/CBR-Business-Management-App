@@ -14,13 +14,14 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class CurrencyPlugin implements Plugin {
-    @Getter
+    @Getter @Setter
     private Boolean status;
     private Dropdown currencySelector;
     public String getName(){
@@ -31,19 +32,17 @@ public class CurrencyPlugin implements Plugin {
         this.status = false;
     }
     public void load(){
+        Currency IDR = new Currency("IDR", "Indonesian Rupiah (Default)", 1.0);
+        Currency USD = new Currency ("USD", "US Dollar", 14000.0);
+        Currency AUD = new Currency ("AUD", "Australian Dollar",  10000.0);
+        Currency KRW = new Currency ("KRW", "Korean Won", 11.0);
+        List<Currency> curs = new ArrayList<>(Arrays.asList(IDR, USD, AUD, KRW));
+
+        if (App.getDataStore().<Currency>getAdditionalData("currency", Currency.class).isEmpty()){
+            App.getDataStore().setAdditionalData(curs, "currency");
+        }
         if(!this.status) {
             // seed to db
-            Currency IDR = new Currency("IDR", "Indonesian Rupiah (Default)", 1.0);
-            Currency USD = new Currency ("USD", "US Dollar", 14000.0);
-            Currency AUD = new Currency ("AUD", "Australian Dollar",  10000.0);
-            Currency KRW = new Currency ("KRW", "Korean Won", 11.0);
-            System.out.println(MainView.getInstance().getSettingsPage());
-            List<Currency> curs = new ArrayList<>(Arrays.asList(IDR, USD, AUD, KRW));
-
-            DataStore dataStore = new DataStore(AppSettings.getInstance().getDataStoreMode(), AppSettings.getInstance().getDataStorePath());
-            if (dataStore.<Currency>getAdditionalData("currency", Currency.class).isEmpty()){
-                dataStore.setAdditionalData(curs, "currency");
-            }
 
             VBox newFormContainer = new VBox();
             newFormContainer.setSpacing(30);
@@ -72,15 +71,8 @@ public class CurrencyPlugin implements Plugin {
             MainView.getInstance().getSettingsPage().getFormContainer().getChildren().add(newFormContainer);
             MainView.getInstance().getSettingsPage().getOnSaves().add(new CurrencyUpdate());
             this.status = true;
-            System.out.println("I AM CALLEEDDD");
         }
         SettingsUpdate update = new CurrencyUpdate();
         update.onSave();
     }
-//    public static void main(String[] args) {
-//        DataStore dataStore = new DataStore("JSON", "D:/lessons/SEM 4/OOP/TUBES/CBR-Business-Management-App/App/assets/data/json");
-//        List <Currency>  curs = dataStore.<Currency>getAdditionalData("currency", Currency.class);
-//        System.out.println(curs);
-//    }
-
 }
