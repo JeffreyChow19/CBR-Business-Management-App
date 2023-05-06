@@ -134,8 +134,16 @@ public class DataStore {
         product.setStatus(false);
         this.dataStorer.storeInventory(this.inventory);
     }
-    public void updateProductInfo(Integer id){
-        // to implement
+    public void updateProductInfo(InventoryProduct updatedProduct){
+        InventoryProduct product = this.getProductById(updatedProduct.getId());
+        product.setProductName(updatedProduct.getProductName());
+        product.setStock(updatedProduct.getStock());
+        product.setBuyPrice(updatedProduct.getBuyPrice());
+        product.setSellPrice(updatedProduct.getSellPrice());
+        product.setImagePath(updatedProduct.getImagePath());
+        product.setCategory(updatedProduct.getCategory());
+        product.setStatus(updatedProduct.getStatus());
+        this.dataStorer.storeInventory(this.inventory);
     }
 
     public void setInventory(DataList<InventoryProduct> inventory){

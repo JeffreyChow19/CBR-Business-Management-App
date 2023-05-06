@@ -37,6 +37,7 @@ public class FormArea extends BorderPane {
         contentTextField.setPromptText(_content);
         contentTextField.setPrefWidth(0.5 * contentContainerWidth);
         contentTextField.setPrefHeight(contentContainerHeight);
+        contentTextField.setStyle("-fx-background-radius: 8;");
 
         this.setLeft(content);
         this.setRight(contentTextField);
