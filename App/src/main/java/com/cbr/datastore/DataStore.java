@@ -1,13 +1,11 @@
 package com.cbr.datastore;
 
 import com.cbr.models.*;
-import com.cbr.models.Pricing.PriceDecorator;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -121,8 +119,12 @@ public class DataStore {
 
     public void setInventory(DataList<InventoryProduct> inventory){
         this.inventory = inventory;
-
-//        this.dataStorer.storeInventory(inventory);
+        List<InventoryProduct> newInventory = new ArrayList<InventoryProduct>();
+        for (InventoryProduct p : inventory.getDataList()){
+            InventoryProduct newProduct = p.clone();
+            newInventory.add(newProduct);
+        }
+        this.dataStorer.storeInventory(new DataList<>(newInventory));
     }
 
     public void setCustomerList(DataList<Customer> clients){
@@ -168,15 +170,15 @@ public class DataStore {
                 .collect(Collectors.toList());
     }
 
-    public void commit(){
-        for (InventoryProduct p : this.inventory.getDataList()){
-            if (p.getSellPrice().getClass().equals(PriceDecorator.class)){
-                p.setSellPrice(((PriceDecorator) p.getSellPrice()).getPrice());
-            }
-            if (p.getBuyPrice().getClass().equals(PriceDecorator.class)){
-                p.setBuyPrice(((PriceDecorator) p.getBuyPrice()).getPrice());
-            }
-        }
-        this.dataStorer.storeInventory(this.inventory);
-    }
+//    public void commit(){
+//        for (InventoryProduct p : this.inventory.getDataList()){
+//            if (p.getSellPrice().getClass().equals(PriceDecorator.class)){
+//                p.setSellPrice(((PriceDecorator) p.getSellPrice()).getPrice());
+//            }
+//            if (p.getBuyPrice().getClass().equals(PriceDecorator.class)){
+//                p.setBuyPrice(((PriceDecorator) p.getBuyPrice()).getPrice());
+//            }
+//        }
+//        this.dataStorer.storeInventory(this.inventory);
+//    }
 }

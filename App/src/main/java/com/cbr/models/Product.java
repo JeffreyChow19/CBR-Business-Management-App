@@ -26,7 +26,7 @@ public abstract class Product extends Identifiable implements Serializable {
     @Getter
     @Setter
     protected Price buyPrice;
-    @Getter
+    @Getter @Setter
     protected Map<String, String> additionalValues;
 
     public Product(){
@@ -39,6 +39,7 @@ public abstract class Product extends Identifiable implements Serializable {
         this.sellPrice = sellPrice;
         this.buyPrice = buyPrice;
     }
+
 
 //    public abstract Double getGrandTotal();
 }
