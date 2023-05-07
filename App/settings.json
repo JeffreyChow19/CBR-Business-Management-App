@@ -1,14 +1,8 @@
 {
-  "dataStorePath" : "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\App\\assets\\data\\obj",
+  "dataStorePath" : "assets/data/json",
   "dataStoreMode" : "JSON",
   "plugins" : [
-    
   ],
   "additionalSettings" : {
-    "tax" : "10.0",
-    "currency" : "AUD",
-    "Tax" : "10.0",
-    "service charge" : "10.0",
-    "Service Charge" : "14.0"
   }
 }

@@ -62,12 +62,17 @@ public class InventoryPage extends StackPane {
             categorySet.add(product.getCategory());
         }
         List<String> categoryList = new ArrayList<>(categorySet);
+        categoryList.add("All");
 
         Dropdown filterDropdown = new Dropdown(categoryList);
         filterDropdown.setPromptText("Select a category");
 
         filterDropdown.valueProperty().addListener((observable, oldValue, newValue) -> {
-            categoryFilter = newValue;
+            if(newValue.equalsIgnoreCase("all")){
+                categoryFilter = "";
+            }else{
+                categoryFilter = newValue;
+            }
         });
 
         AddItemPage addItemPage = new AddItemPage();
@@ -99,8 +104,8 @@ public class InventoryPage extends StackPane {
         Thread task = new Thread(() -> {
             while (true) {
                 List<InventoryProduct> filteredProduct = App.getDataStore().getInventory().getDataList().stream()
-                        .filter(prod -> prod.getProductName().toLowerCase().contains(searchQuery)
-                                && prod.getCategory().toLowerCase().contains(categoryFilter))
+                        .filter(prod -> prod.getProductName().toLowerCase().contains(searchQuery.toLowerCase())
+                                && prod.getCategory().toLowerCase().contains(categoryFilter.toLowerCase()))
                         .collect(Collectors.toList());
 
                 Platform.runLater(() -> {
@@ -116,16 +121,16 @@ public class InventoryPage extends StackPane {
         task.start();
     }
 
-    public void updateList(String search) {
-        List<InventoryProduct> filteredProduct = App.getDataStore().getInventory().getDataList().stream()
-                .filter(prod -> prod.getProductName().toLowerCase().contains(search)).collect(Collectors.toList());
-        this.productCardList.updateList(filteredProduct);
-    }
-
-    public void updateFilter(String category) {
-        List<InventoryProduct> filteredProduct = App.getDataStore().getInventory().getDataList().stream()
-                .filter(prod -> prod.getCategory().toLowerCase().contains(category)).collect(Collectors.toList());
-        this.productCardList.updateList(filteredProduct);
-    }
+//    public void updateList(String search) {
+//        List<InventoryProduct> filteredProduct = App.getDataStore().getInventory().getDataList().stream()
+//                .filter(prod -> prod.getProductName().toLowerCase().contains(search)).collect(Collectors.toList());
+//        this.productCardList.updateList(filteredProduct);
+//    }
+//
+//    public void updateFilter(String category) {
+//        List<InventoryProduct> filteredProduct = App.getDataStore().getInventory().getDataList().stream()
+//                .filter(prod -> prod.getCategory().toLowerCase().contains(category)).collect(Collectors.toList());
+//        this.productCardList.updateList(filteredProduct);
+//    }
 
 }

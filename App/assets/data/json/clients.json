@@ -18,7 +18,7 @@
       ],
       "name" : "rachel",
       "phoneNumber" : "08123456789",
-      "status" : true,
+      "status" : false,
       "point" : {
         "value" : 5148.835316363637
       },
@@ -28,16 +28,18 @@
     },
     {
       "id" : "CS-4",
-      "type" : "member",
-      "invoiceList" : [ ],
+      "type" : "VIP",
+      "invoiceList" : [
+        "FI-54"
+      ],
       "name" : "Livia",
       "phoneNumber" : "08123456789",
       "status" : true,
       "point" : {
-        "value" : 0.0
+        "value" : 66044.12388
       },
       "additionalValue" : {
-        "currency" : "KRW"
+        "currency" : "IDR"
       }
     },
     {
@@ -62,16 +64,17 @@
         "FI-38",
         "FI-25",
         "FI-39",
-        "FI-31"
+        "FI-31",
+        "FI-33"
       ],
       "name" : "Chow",
       "phoneNumber" : "08123456789",
       "status" : true,
       "point" : {
-        "value" : 16427.949827493772
+        "value" : 172345.6234564875
       },
       "additionalValue" : {
-        "currency" : "KRW"
+        "currency" : "IDR"
       }
     },
     {
@@ -85,7 +88,7 @@
         "value" : 0.0
       },
       "additionalValue" : {
-        "currency" : "KRW"
+        "currency" : "IDR"
       }
     },
     {
@@ -152,6 +155,13 @@
       "type" : "customer",
       "invoiceList" : [
         "FI-15"
+      ]
+    },
+    {
+      "id" : "CS-20",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-35"
       ]
     }
   ]

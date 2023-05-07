@@ -2,11 +2,9 @@
 .idea/
 *.iml
 out/
-target/
 
 # Maven
 log/
-target/
 
 # Java
 *.class

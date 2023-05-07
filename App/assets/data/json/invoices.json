@@ -661,6 +661,180 @@
       "grandTotal" : {
         "value" : 1642794.9827493774
       }
+    },
+    {
+      "id" : "FI-33",
+      "customerId" : "CS-6",
+      "createdAt" : "2023-05-08T01:23:57",
+      "boughtProducts" : [
+        {
+          "id" : "IP-14",
+          "productName" : "Sleek Copper Shoes",
+          "category" : "Pakaian",
+          "sellPrice" : {
+            "value" : 314.710243
+          },
+          "buyPrice" : {
+            "value" : 220.92367000000002
+          },
+          "additionalValues" : {
+            "currency" : "AUD"
+          },
+          "count" : 1
+        },
+        {
+          "id" : "IP-18",
+          "productName" : "Rustic Steel Knife",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 376.978453
+          },
+          "buyPrice" : {
+            "value" : 311.124477
+          },
+          "additionalValues" : {
+            "currency" : "AUD"
+          },
+          "count" : 1
+        }
+      ],
+      "discount" : {
+        "value" : 69.1688696
+      },
+      "usedPoint" : {
+        "value" : 760.8575655999999
+      },
+      "getPoint" : {
+        "value" : 0.6916886959999999
+      },
+      "additionalCosts" : {
+        "Tax" : "+0.00",
+        "Service Charge" : "+0.00"
+      },
+      "grandTotal" : {
+        "value" : 69.1688696
+      }
+    },
+    {
+      "id" : "FI-35",
+      "customerId" : "CS-20",
+      "createdAt" : "2023-05-08T01:33:24",
+      "boughtProducts" : [
+        {
+          "id" : "IP-13",
+          "productName" : "Practical Marble Pants",
+          "category" : "Pakaian",
+          "sellPrice" : {
+            "value" : 866946.2299999999
+          },
+          "buyPrice" : {
+            "value" : 271465.55
+          },
+          "additionalValues" : {
+            "currency" : "IDR"
+          },
+          "count" : 1
+        },
+        {
+          "id" : "IP-18",
+          "productName" : "Rustic Steel Knife",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 3769784.53
+          },
+          "buyPrice" : {
+            "value" : 3111244.77
+          },
+          "additionalValues" : {
+            "currency" : "IDR"
+          },
+          "count" : 1
+        },
+        {
+          "id" : "IP-10",
+          "productName" : "Fantastic Concrete Watch",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 3358702.2199999997
+          },
+          "buyPrice" : {
+            "value" : 3267052.1599999997
+          },
+          "additionalValues" : {
+            "currency" : "IDR"
+          },
+          "count" : 1
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 103940.62874
+      },
+      "additionalCosts" : {
+        "Tax" : "+799,543.30",
+        "Service Charge" : "+1,599,086.60"
+      },
+      "grandTotal" : {
+        "value" : 1.0394062874E7
+      }
+    },
+    {
+      "id" : "FI-54",
+      "customerId" : "CS-4",
+      "createdAt" : "2023-05-08T01:34:06",
+      "boughtProducts" : [
+        {
+          "id" : "IP-18",
+          "productName" : "Rustic Steel Knife",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 3769784.53
+          },
+          "buyPrice" : {
+            "value" : 3111244.77
+          },
+          "additionalValues" : {
+            "currency" : "IDR"
+          },
+          "count" : 1
+        },
+        {
+          "id" : "IP-13",
+          "productName" : "Practical Marble Pants",
+          "category" : "Pakaian",
+          "sellPrice" : {
+            "value" : 866946.2299999999
+          },
+          "buyPrice" : {
+            "value" : 271465.55
+          },
+          "additionalValues" : {
+            "currency" : "IDR"
+          },
+          "count" : 2
+        }
+      ],
+      "discount" : {
+        "value" : 550367.6989999999
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 66044.12388
+      },
+      "additionalCosts" : {
+        "Tax" : "+550,367.70",
+        "Service Charge" : "+1,100,735.40"
+      },
+      "grandTotal" : {
+        "value" : 6604412.387999999
+      }
     }
   ]
 }
