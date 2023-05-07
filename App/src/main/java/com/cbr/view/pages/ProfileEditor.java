@@ -30,10 +30,7 @@ import javafx.stage.Window;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class ProfileEditor<T extends Customer> extends StackPane {
     private VBox container;
@@ -165,11 +162,11 @@ public class ProfileEditor<T extends Customer> extends StackPane {
                     Customer newCustomer;
                     if (membershipDropdown.getValue() == "Member") {
                         newCustomer = new Member(customer.getId(), customer.getInvoiceList(),
-                                nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText());
+                                nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText(), new HashMap<>());
                     } else {
                         newCustomer = new VIP(customer.getId(), customer.getInvoiceList(),
                                 nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText(),
-                                true, new BasePrice(0.0), 0.0);
+                                true, new BasePrice(0.0), 0.0, new HashMap<>());
                     }
                     App.getDataStore().updateCustomerInfo(newCustomer);
                     showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(),

@@ -19,11 +19,15 @@ import com.cbr.view.theme.Theme;
 import com.cbr.App;
 
 import com.fasterxml.jackson.databind.ser.Serializers;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -39,6 +43,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class TransactionPage extends StackPane {
     private HBox container;
@@ -161,7 +166,6 @@ public class TransactionPage extends StackPane {
         // Discount container
         discountContainer = new AdditionalCostCard(0.8 * managementContainerWidth, "Discount");
         updateDiscount();
-//        additionalCostsContainer.getChildren().addAll(discountContainer);
 
         // Add all additional costs components
         renderAdditionalCostsContainer();
