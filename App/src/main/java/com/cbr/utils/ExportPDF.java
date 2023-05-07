@@ -70,6 +70,14 @@ public class ExportPDF
         Paragraph customer = new Paragraph("Customer: " + invoice.getCustomerId());
         doc.add(customer);
 
+        ExportPDF.exportInvoice(invoice, table);
+
+        doc.add(table);
+        doc.close();
+    }
+
+    public static void exportInvoice(FixedInvoice invoice, Table table) throws Exception {
+        PdfFont bold = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
         // List of product
         List<BoughtProduct> productList = invoice.getBoughtProducts();
         boolean isEvenRow = false;
@@ -122,13 +130,76 @@ public class ExportPDF
         table.addCell(totalLabel);
         Cell total = new Cell().add(new Paragraph(invoice.getGrandTotal().getValue().toString())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setTextAlignment(TextAlignment.RIGHT).setFont(bold);
         table.addCell(total);
-        Cell getPointLabel = new Cell(1, 3).add(new Paragraph("Grand Total")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setFont(bold);
+        Cell getPointLabel = new Cell(1, 3).add(new Paragraph("Get Points")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setFont(bold);
         table.addCell(getPointLabel);
         Cell getPoint = new Cell().add(new Paragraph(invoice.getGetPoint().toString())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setTextAlignment(TextAlignment.RIGHT).setFont(bold);
         table.addCell(getPoint);
+    }
+    public static void exportPDF(String dest, List<FixedInvoice> invoices) throws Exception{
+        Map<LocalDate, List<FixedInvoice>> invoiceMap = new HashMap<>();
+        for (FixedInvoice invoice : invoices) {
+            LocalDate date = invoice.getCreatedAt().toLocalDate();
+            if (invoiceMap.containsKey(date)) {
+                invoiceMap.get(date).add(invoice);
+            } else {
+                List<FixedInvoice> invoiceList = new ArrayList<>();
+                invoiceList.add(invoice);
+                invoiceMap.put(date, invoiceList);
+            }
+        }
+
+        Map<LocalDate, Integer> rowSpan = new HashMap<>();
+        for (List<FixedInvoice> invoiceList : invoiceMap.values()) {
+            LocalDate date = invoiceList.get(0).getCreatedAt().toLocalDate();
+            int row = 0;
+            for (FixedInvoice invoice : invoiceList) {
+                row += 5;
+                row += invoice.getAdditionalCosts().size();
+                row += invoice.getBoughtProducts().size();
+            }
+            rowSpan.put(date, row + 2);
+        }
+
+        PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
+        Document doc = new Document(pdfDoc, PageSize.LETTER);
+        doc.setMargins(24, 24, 24, 24);
+
+        Table table = new Table(5).useAllAvailableWidth().setBorder(Border.NO_BORDER);
+        table.setHorizontalAlignment(HorizontalAlignment.CENTER);
+
+        PdfFont bold = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
+
+        // Title
+        Paragraph title = new Paragraph("Financial Statement").setFont(bold);
+        doc.add(title);
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+        // Iterate date
+        for (Map.Entry<LocalDate, List<FixedInvoice>> entry : invoiceMap.entrySet()) {
+            LocalDate date = entry.getKey();
+            List<FixedInvoice> invoicesPerDate = entry.getValue();
+
+            Cell dateLabel = new Cell(rowSpan.get(date), 1).add(new Paragraph(date.format(formatter))).setFont(bold).setBorder(Border.NO_BORDER);
+            table.addCell(dateLabel);
+
+            for (FixedInvoice invoice : invoicesPerDate) {
+                Cell totalLabel = new Cell(1, 4).add(new Paragraph("Transaction " + invoice.getId())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE);
+                table.addCell(totalLabel);
+                ExportPDF.exportInvoice(invoice, table);
+            }
+
+            // Total income and revenue
+            Cell totalLabel = new Cell(1, 3).add(new Paragraph("Total Income")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE);
+            table.addCell(totalLabel);
+            Cell total = new Cell().add(new Paragraph("INCOME HEREE")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE).setTextAlignment(TextAlignment.RIGHT);
+            table.addCell(total);
+            Cell getPointLabel = new Cell(1, 3).add(new Paragraph("Total Revenue")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE);
+            table.addCell(getPointLabel);
+            Cell getPoint = new Cell().add(new Paragraph("REVENUE HEREE")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE).setTextAlignment(TextAlignment.RIGHT);
+            table.addCell(getPoint);
+        }
 
         doc.add(table);
         doc.close();
     }
-
 }
