@@ -1,6 +1,6 @@
 package com.cbr;
 
-giimport com.cbr.models.BoughtProduct;
+import com.cbr.models.BoughtProduct;
 import com.cbr.models.FixedInvoice;
 import com.cbr.models.InventoryProduct;
 import com.cbr.models.Pricing.BasePrice;
