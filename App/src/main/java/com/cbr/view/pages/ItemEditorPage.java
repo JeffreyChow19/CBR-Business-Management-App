@@ -7,6 +7,7 @@ import com.cbr.view.components.buttons.DeleteButton;
 import com.cbr.view.components.form.FormArea;
 import com.cbr.view.components.form.FormLabel;
 import com.cbr.view.components.dropdown.Dropdown;
+import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.components.labels.ToolTipLabel;
 import com.cbr.view.components.spinner.NumberSpinner;
@@ -85,6 +86,7 @@ public class ItemEditorPage extends AddItemPage {
             product.setStatus(false);
             showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(), "Delete Item Successful!",
                     "Item " + nameForm.getContentTextField().getText() + " successfully deleted!");
+            TabMenuBar.getInstance().closeTab(this.title.getText(), "Inventory Management");
         });
         deleteContainer.setRight(deleteItem);
         deleteContainer.setPadding(new Insets(10));

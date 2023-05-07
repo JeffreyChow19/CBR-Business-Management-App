@@ -2,11 +2,11 @@ package com.cbr;
 
 import com.cbr.models.Pricing.BasePrice;
 import com.cbr.models.TemporaryInvoice;
-import com.cbr.view.MainView;
 import com.cbr.view.components.cards.AdditionalCostCard;
-import com.fasterxml.jackson.databind.ser.Serializers;
+import lombok.Setter;
 
 public class TaxCard extends AdditionalCostCard {
+    @Setter
     private TemporaryInvoice temporaryInvoice;
     public TaxCard(TemporaryInvoice temporaryInvoice, Double width, String label) {
         super (width, label);

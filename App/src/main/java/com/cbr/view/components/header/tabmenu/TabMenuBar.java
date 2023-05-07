@@ -1,7 +1,5 @@
 package com.cbr.view.components.header.tabmenu;
 
-import com.cbr.plugin.Plugin;
-import com.cbr.plugin.PluginManager;
 import com.cbr.view.pages.TransactionPage;
 import com.cbr.view.theme.Theme;
 import javafx.scene.Node;
@@ -57,10 +55,6 @@ public class TabMenuBar extends TabPane {
             this.getTabs().add(newTab);
         }
         this.switchToTab(tabName);
-        for (Plugin p : PluginManager.getInstance().getPlugins()){
-            System.out.println("masuk sini");
-            p.load();
-        }
     }
 
     public Tab getTab(String tabName) {
@@ -72,5 +66,13 @@ public class TabMenuBar extends TabPane {
             }
         }
         return foundTab;
+    }
+
+    public void closeTab(String tabName, String redirectTarget) {
+        this.getTabs().remove(this.getTab(tabName));
+        System.out.println("Close " + tabName);
+        if (!redirectTarget.equals("")) {
+            this.switchToTab(redirectTarget);
+        }
     }
 }

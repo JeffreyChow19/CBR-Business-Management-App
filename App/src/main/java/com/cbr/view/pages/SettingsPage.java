@@ -2,11 +2,7 @@ package com.cbr.view.pages;
 
 import com.cbr.App;
 import com.cbr.datastore.DataStore;
-import com.cbr.plugin.Plugin;
-import com.cbr.plugin.PluginManager;
 import com.cbr.utils.AppSettings;
-import com.cbr.utils.SettingsUpdate;
-import com.cbr.view.MainView;
 import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.theme.Theme;
@@ -29,8 +25,6 @@ import java.util.*;
 public class SettingsPage extends VBox {
     private Label selectedFolderLabel;
     private String selectedFolder;
-    @Getter
-    private Set<SettingsUpdate> onSaves;
     private ToggleGroup dataFormatToggle;
     @Getter
     private List<String> errorList;
@@ -39,7 +33,6 @@ public class SettingsPage extends VBox {
     @Getter
     private HBox formContainer;
     public SettingsPage(){
-        this.onSaves = new HashSet<SettingsUpdate>(){};
         this.additionalValues = new HashMap<>(AppSettings.getInstance().getAdditionalSettings());
         this.errorList = new ArrayList<>();
         this.selectedFolder = App.getDataStore().getFolder();
@@ -131,10 +124,6 @@ public class SettingsPage extends VBox {
                 AppSettings.getInstance().setDataStorePath(selectedFolder);
                 AppSettings.getInstance().setAdditionalSettings(additionalValues);
                 App.setDataStore(new DataStore(((RadioButton)dataFormatToggle.getSelectedToggle()).getText(), selectedFolder));
-                MainView.getInstance().refresh();
-//                for (SettingsUpdate u : onSaves){
-//                    u.onSave();
-//                }
                 AppSettings.getInstance().updateSettings();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Success");
@@ -160,5 +149,4 @@ public class SettingsPage extends VBox {
         this.setStyle("-fx-background-color:" + Theme.getPrimaryDark());
         this.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
     }
-
 }
