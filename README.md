@@ -74,7 +74,7 @@ This project is built to meet the following [guidelines](https://docs.google.com
 - Java
 - Maven, to install refer to : `https://phoenixnap.com/kb/install-maven-windows`
 - Java JDK installed on WSL, to install :
-- Amazon Courette
+- Amazon Coretto 8
 
 ## How to Run
 1. Clone this repository.
