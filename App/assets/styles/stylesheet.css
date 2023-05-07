@@ -40,6 +40,11 @@
     -fx-border-color: transparent !important;
 }
 
+.tab-menu-bar {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
 
 
 
