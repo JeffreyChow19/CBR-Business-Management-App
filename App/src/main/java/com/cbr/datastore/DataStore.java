@@ -1,5 +1,6 @@
 package com.cbr.datastore;
 
+import com.cbr.App;
 import com.cbr.models.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,10 +20,6 @@ public class DataStore {
     private String mode;
     @Getter
     private DataList<Customer> clients;
-    @Getter
-    private DataList<Member> members;
-    @Getter
-    private DataList<VIP> vipMembers;
     @Getter
     private DataList<InventoryProduct> inventory;
     @Getter
@@ -69,7 +66,7 @@ public class DataStore {
 
     public void addClient(Customer record) {
         this.clients.add(record);
-        this.dataStorer.storeClients(this.clients);
+        this.saveClients();
     }
 
     public void updateClient(Customer client, String bill_id, Double deltaPoint) {
@@ -83,7 +80,15 @@ public class DataStore {
             ((Member) toUpdate).addPoint(deltaPoint);
         }
 
-        this.dataStorer.storeClients(this.clients);
+        this.saveClients();
+    }
+
+    public void saveClients(){
+        List<Customer> newClients = new ArrayList<>();
+        for (Customer c:this.clients.getDataList()){
+            newClients.add(c.clone());
+        }
+        this.dataStorer.storeClients(new DataList<>(newClients));
     }
 
     public void deactivateMember(String id) {
@@ -113,21 +118,15 @@ public class DataStore {
         if (customerOptional.isPresent()) {
             Customer customer = customerOptional.get();
             int index = clients.getDataList().indexOf(customer);
-
-            if (updatedCustomer instanceof Member) {
-                clients.getDataList().set(index, (Member) updatedCustomer);
-            } else if (updatedCustomer instanceof VIP) {
-                clients.getDataList().set(index, (VIP) updatedCustomer);
-            } else {
-                clients.getDataList().set(index, updatedCustomer);
-            }
+            clients.getDataList().set(index, updatedCustomer);
+            
         }
         this.dataStorer.storeClients(this.clients);
     }
 
     public void addProduct(InventoryProduct record) {
         this.inventory.add(record);
-        this.dataStorer.storeInventory(this.inventory);
+        this.saveInventory();
     }
 
     public void addTemporaryInvoice(TemporaryInvoice invoice) {
@@ -151,7 +150,11 @@ public class DataStore {
 
     public void addInvoice(FixedInvoice invoice) {
         this.invoices.add(invoice);
-        this.dataStorer.storeInvoices(this.invoices);
+        List<FixedInvoice> newFixedInvoice = new ArrayList<>();
+        for(FixedInvoice in : this.invoices.getDataList()){
+            newFixedInvoice.add(in.clone());
+        }
+        this.dataStorer.storeInvoices(new DataList<>(newFixedInvoice));
     }
 
     public void deleteTemporaryInvoices(TemporaryInvoice invoice) {
@@ -165,7 +168,7 @@ public class DataStore {
     public void decreaseProductStock(String productId, Integer toDecrease) {
         InventoryProduct product = this.getProductById(productId);
         product.setStock(product.getStock() - toDecrease);
-        this.dataStorer.storeInventory(this.inventory);
+        this.saveInventory();
     }
 
     public void deactivateProduct(String id) {
@@ -188,6 +191,10 @@ public class DataStore {
 
     public void setInventory(DataList<InventoryProduct> inventory) {
         this.inventory = inventory;
+        this.saveInventory();
+    }
+
+    public void saveInventory(){
         List<InventoryProduct> newInventory = new ArrayList<InventoryProduct>();
         for (InventoryProduct p : inventory.getDataList()) {
             InventoryProduct newProduct = p.clone();
@@ -239,16 +246,4 @@ public class DataStore {
                 .map(c -> (Member) c)
                 .collect(Collectors.toList());
     }
-
-    // public void commit(){
-    // for (InventoryProduct p : this.inventory.getDataList()){
-    // if (p.getSellPrice().getClass().equals(PriceDecorator.class)){
-    // p.setSellPrice(((PriceDecorator) p.getSellPrice()).getPrice());
-    // }
-    // if (p.getBuyPrice().getClass().equals(PriceDecorator.class)){
-    // p.setBuyPrice(((PriceDecorator) p.getBuyPrice()).getPrice());
-    // }
-    // }
-    // this.dataStorer.storeInventory(this.inventory);
-    // }
 }

@@ -70,7 +70,6 @@ public class TabMenuBar extends TabPane {
 
     public void closeTab(String tabName, String redirectTarget) {
         this.getTabs().remove(this.getTab(tabName));
-        System.out.println("Close " + tabName);
         if (!redirectTarget.equals("")) {
             this.switchToTab(redirectTarget);
         }

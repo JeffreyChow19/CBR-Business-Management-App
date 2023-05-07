@@ -8,17 +8,15 @@ import com.cbr.view.components.buttons.ActivateButton;
 
 import com.cbr.view.components.form.FormArea;
 import com.cbr.view.components.form.FormLabel;
+import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.components.dropdown.Dropdown;
 import com.cbr.view.components.labels.PageTitle;
-import com.cbr.view.components.spinner.NumberSpinner;
 import com.cbr.view.theme.Theme;
 import com.cbr.App;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 
 import javafx.geometry.Pos;
@@ -34,7 +32,7 @@ import java.util.*;
 
 public class ProfileEditor<T extends Customer> extends StackPane {
     private VBox container;
-    private Label title;
+    private PageTitle title;
     @Getter
     private FormArea nameForm;
     @Getter
@@ -44,9 +42,7 @@ public class ProfileEditor<T extends Customer> extends StackPane {
 
     public ProfileEditor(T customer) {
         super();
-        title = new Label("Edit Profile #" + customer.getId());
-        title.setFont(Theme.getHeading1Font());
-        title.setTextFill(Color.WHITE);
+        title = new PageTitle("Edit Profile #" + customer.getId());
 
         // Setup Container
         container = new VBox();
@@ -103,8 +99,7 @@ public class ProfileEditor<T extends Customer> extends StackPane {
 
         // Category Dropdown
         List<String> membershipList = new ArrayList<>();
-        membershipList.add("Member");
-        membershipList.add("VIP");
+        
         BorderPane membershipContainer = new BorderPane();
         double membershipContainerWidth = formContainerWidth;
         double membershipContainerHeight = 0.2 * formContainerHeight;
@@ -114,6 +109,15 @@ public class ProfileEditor<T extends Customer> extends StackPane {
         membershipContainer.setMaxSize(membershipContainerWidth, membershipContainerHeight);
 
         Label membership = new FormLabel("Membership", membershipContainerWidth, membershipContainerHeight);
+        Label membershipContent;
+        membershipList.add("member");
+        if(customer instanceof Member){
+            membershipContent = new FormLabel("VIP", pointsContainerWidth, pointsContainerHeight);
+            membershipList.add("VIP"); 
+        } else if(customer instanceof VIP) {
+            membershipContent = new FormLabel("member", pointsContainerWidth, pointsContainerHeight);
+            membershipList.add("VIP");
+        }
 
         Dropdown membershipDropdown = new Dropdown(membershipList);
         membershipDropdown.setPrefWidth(0.5 * membershipContainerWidth);
@@ -147,35 +151,32 @@ public class ProfileEditor<T extends Customer> extends StackPane {
                     errMsg += "Phone can\'t be empty!\n";
                     error = true;
                 }
-                if (membershipDropdown.getValue() == null) {
-                    errMsg += "Membership can\'t be empty!\n";
-                    error = true;
-                }
 
                 try {
-                    Integer phoneNumber = Integer.parseInt(phoneForm.getContentTextField().getText());
+                    Long phoneNumber = Long.parseLong(phoneForm.getContentTextField().getText());
                     if (error) {
                         showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Upgrade Profile Error!",
                                 errMsg);
                         return;
                     }
                     Customer newCustomer;
-                    if (membershipDropdown.getValue() == "Member") {
+                    if (membershipDropdown.getValue().equals("member")) {
                         newCustomer = new Member(customer.getId(), customer.getInvoiceList(),
                                 nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText(), new HashMap<>());
                     } else {
+                        Member temp = (Member) customer;
                         newCustomer = new VIP(customer.getId(), customer.getInvoiceList(),
                                 nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText(),
-                                true, new BasePrice(0.0), 0.0, new HashMap<>());
+                                true, new BasePrice(0.0), temp.getAdditionalValue());
                     }
                     App.getDataStore().updateCustomerInfo(newCustomer);
                     showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(),
-                            "Upgrade Profile Successful!",
-                            "User " + nameForm.getContentTextField().getText() + "  membership successfully upgraded!");
-
+                            "Edit Profile Successful!",
+                            "User " + nameForm.getContentTextField().getText() + "  profile successfully upgraded!");
+                    TabMenuBar.getInstance().closeTab(title.getText(), "Clients");
                 } catch (NumberFormatException e) {
                     errMsg += "Phone must be a number!";
-                    showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Upgrade Profile Error!",
+                    showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Edit Profile Error!",
                             errMsg);
                 }
 
@@ -197,7 +198,6 @@ public class ProfileEditor<T extends Customer> extends StackPane {
             pointsContent.setText(temp.getPoint().toString());
             membershipDropdown.setPromptText(temp.getType());
             membershipDropdown.setValue(temp.getType());
-
             if (temp.getStatus()) {
                 Button deactivate = new DeleteButton(0.46 * buttonMembershipContainerWidth,
                         buttonMembershipContainerHeight,

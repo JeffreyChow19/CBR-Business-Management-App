@@ -5,6 +5,7 @@ import com.cbr.models.Pricing.Price;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,6 +16,7 @@ import java.util.Map;
 @Setter
 public class Member extends Customer {
     @Getter
+    @NotNull
     protected String name;
     @Getter
     protected String phoneNumber;
@@ -44,8 +46,18 @@ public class Member extends Customer {
         this.point = new BasePrice(this.point.getValue() + point);
     }
 
-    public void buy(Product product){
-
+    @Override
+    public Member clone(){
+        Member newMember = new Member();
+        newMember.setType(this.type);
+        newMember.setId(this.id);
+        newMember.setInvoiceList(this.invoiceList);
+        newMember.setPoint(new BasePrice(this.getPoint().getValue()));
+        newMember.setName(this.name);
+        newMember.setAdditionalValue(this.additionalValue);
+        newMember.setPhoneNumber(this.phoneNumber);
+        newMember.setStatus(this.status);
+        return newMember;
     }
 
 

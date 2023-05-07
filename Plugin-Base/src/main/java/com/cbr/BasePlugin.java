@@ -9,15 +9,18 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class BasePlugin implements Plugin {
-    @Getter @Setter
+    @Getter
+    @Setter
     private VBox pageContent;
-    @Getter @Setter
+    @Getter
+    @Setter
     private String pageName;
 
-    public String getName(){
+    public String getName() {
         return "com.cbr.BasePlugin";
     }
-    public BasePlugin(){
+
+    public BasePlugin() {
         pageContent = new VBox();
         pageContent.setStyle("-fx-background-color:" + Theme.getPrimaryDark());
         pageContent.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
@@ -25,8 +28,9 @@ public class BasePlugin implements Plugin {
         pageContent.setSpacing(50);
         pageName = "Empty Page";
     }
-    public void load(){
-        System.out.println(pageName);
+
+    public void load() {
+        // // system.out.println(pageName);
         HeaderMenuBar.getInstance().addNewNavigationMenu(pageName, pageContent);
     }
 }

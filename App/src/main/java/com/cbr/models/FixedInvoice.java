@@ -6,25 +6,24 @@ import com.cbr.models.Pricing.Price;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Setter
 @Getter
 public class FixedInvoice extends Invoice {
-    private List<BoughtProduct> boughtProducts;
+    @NotNull private List<BoughtProduct> boughtProducts;
     private Price discount;
     private Price usedPoint;
     private static Integer invoiceCount = 0;
     private Price getPoint;
-    private Map<String, String> additionalCosts;
+    @NotNull private Map<String, String> additionalCosts;
     private Price grandTotal;
     public FixedInvoice(){
         FixedInvoice.invoiceCount += 1;
+        this.boughtProducts = new ArrayList<>();
         this.additionalCosts = new HashMap<>();
         this.discount = new BasePrice(0.0);
         this.usedPoint = new BasePrice(0.0);
@@ -56,5 +55,30 @@ public class FixedInvoice extends Invoice {
             total += bp.total().getValue();
         }
         return total;
+    }
+
+
+    public Double revenue() {
+        double revenue = 0.0;
+        for (BoughtProduct product: this.boughtProducts) {
+            revenue += (product.getCount() * (product.getSellPrice().getValue() - product.getBuyPrice().getValue()));
+        }
+        return revenue;
+    }
+
+    public FixedInvoice clone(){
+        FixedInvoice newInvoice = new FixedInvoice();
+        newInvoice.setCreatedAt(this.createdAt);
+        newInvoice.setCustomerId(this.customerId);
+        newInvoice.setGrandTotal(new BasePrice(this.getGrandTotal().getValue()));
+        newInvoice.setDiscount(this.getDiscount());
+        newInvoice.setAdditionalCosts(this.additionalCosts);
+        newInvoice.setGetPoint(new BasePrice(this.getPoint.getValue()));
+        newInvoice.setUsedPoint(this.usedPoint);
+        newInvoice.setId(this.id);
+        for (BoughtProduct product : this.boughtProducts){
+            newInvoice.boughtProducts.add(product.clone());
+        }
+        return  newInvoice;
     }
 }
