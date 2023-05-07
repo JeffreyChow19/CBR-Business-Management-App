@@ -84,22 +84,4 @@ public class MainView extends VBox {
         super();
     }
 
-    public void refresh() {
-        // to do: close all opened tabs except home
-//        transactionPage = new TransactionPage();
-        PluginManager.getInstance().loadPlugin();
-//        TabMenuBar.getInstance().addTab("Home", homePage);
-//        PluginsPage pluginsPage = new PluginsPage();
-//        System.out.println("from refresh");
-//        System.out.println(MainView.getInstance().getTransactionPage());
-//        System.out.println(transactionPage);
-//        HeaderMenuBar.getInstance().getNavigationMenu().getItems().clear();
-//        HeaderMenuBar.getInstance().addNewNavigationMenu("Clients", clientsPage);
-//        HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", new Label("inventory"));
-//        HeaderMenuBar.getInstance().addNewNavigationMenu("Export Statements", new Label("export"));
-//        HeaderMenuBar.getInstance().addNewNavigationMenu("Transaction", transactionPage);
-//        HeaderMenuBar.getInstance().addNewPreferencesMenu("Settings", settingsPage);
-//        HeaderMenuBar.getInstance().addNewPreferencesMenu("Plugins", pluginsPage);
-        clientsPage.updateList("");
-    }
 }
