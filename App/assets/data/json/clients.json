@@ -44,14 +44,13 @@
       "id" : "CS-6",
       "type" : "VIP",
       "invoiceList" : [
-        "FI-3",
-        "FI-4",
-        "FI-5"
+        "FI-2",
+        "FI-3"
       ],
       "name" : "Chow",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 358104.3728068,
+      "point" : 127.89225338638427,
       "buyPrice" : 100000.0
     },
     {
@@ -74,7 +73,7 @@
       "id" : "CS-18",
       "type" : "customer",
       "invoiceList" : [
-        "FI-6"
+        "FI-1"
       ]
     },
     {
@@ -90,30 +89,7 @@
     {
       "id" : "CS-21",
       "type" : "customer",
-      "invoiceList" : [
-        "FI-7"
-      ]
-    },
-    {
-      "id" : "CS-22",
-      "type" : "customer",
-      "invoiceList" : [
-        "FI-8"
-      ]
-    },
-    {
-      "id" : "CS-23",
-      "type" : "customer",
-      "invoiceList" : [
-        "FI-9"
-      ]
-    },
-    {
-      "id" : "CS-24",
-      "type" : "customer",
-      "invoiceList" : [
-        "FI-10"
-      ]
+      "invoiceList" : [ ]
     }
   ]
 }

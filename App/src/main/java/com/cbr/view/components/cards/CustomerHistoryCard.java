@@ -16,6 +16,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
 
 public class CustomerHistoryCard extends VBox {
     public CustomerHistoryCard(FixedInvoice invoice) {
@@ -72,12 +73,12 @@ public class CustomerHistoryCard extends VBox {
             Region itemInfosSpacer = new Region();
             HBox.setHgrow(itemInfosSpacer, Priority.ALWAYS);
 
-            Label sellPrice = new Label(String.format("@%.2f", bp.getSellPrice().getValue()));
+            Label sellPrice = new Label("@" + bp.getSellPrice().toString());
             sellPrice.setFont(Theme.getBodyMediumFont());
             sellPrice.setTextFill(Color.WHITE);
             sellPrice.setMinWidth(0.15 * contentWidth);
 
-            Label total = new Label(String.format("%.2f", bp.total()));
+            Label total = new Label(bp.total().toString());
             total.setFont(Theme.getBodyMediumFont());
             total.setTextFill(Color.WHITE);
             total.setMinWidth(0.15 * contentWidth);
@@ -93,18 +94,26 @@ public class CustomerHistoryCard extends VBox {
         rectangle.setHeight(1);
         rectangle.setFill(Color.WHITE);
 
+        this.getChildren().add(rectangle);
+
+        for (Map.Entry<String, String> entry : invoice.getAdditionalCosts().entrySet()) {
+            AdditionalCostCard additionalEntry = new AdditionalCostCard(contentWidth, entry.getKey());
+            additionalEntry.getCardNumber().setText(entry.getValue());
+            this.getChildren().add(additionalEntry);
+        }
+
         AdditionalCostCard discount = new AdditionalCostCard(contentWidth, "Discount");
-        discount.getCardNumber().setText(String.format("%.2f", invoice.getDiscount()));
+        discount.getCardNumber().setText(invoice.getDiscount().toString());
 
         AdditionalCostCard pointsUsed = new AdditionalCostCard(contentWidth, "Points Used");
-        pointsUsed.getCardNumber().setText(String.format("%.2f", invoice.getUsedPoint()));
+        pointsUsed.getCardNumber().setText(invoice.getUsedPoint().toString());
 
         AdditionalCostCard grandTotal = new AdditionalCostCard(contentWidth, "Grand Total");
-        grandTotal.getCardNumber().setText(String.format("%.2f", invoice.total() - invoice.getDiscount() - invoice.getUsedPoint()));
+        grandTotal.getCardNumber().setText(invoice.getGrandTotal().toString());
         grandTotal.getCardLabel().setFont(Theme.getHeading2Font());
 
         AdditionalCostCard pointsGot = new AdditionalCostCard(contentWidth, "Points");
-        pointsGot.getCardNumber().setText(String.format("+%.2f", invoice.getGetPoint()));
+        pointsGot.getCardNumber().setText(invoice.getGetPoint().toString());
         pointsGot.getCardLabel().setFont(Theme.getHeading2Font());
 
         HBox exportContainer = new HBox();
@@ -118,6 +127,6 @@ public class CustomerHistoryCard extends VBox {
 
         exportContainer.getChildren().add(exportPdf);
 
-        this.getChildren().addAll(rectangle, discount, pointsUsed, grandTotal, pointsGot, exportContainer);
+        this.getChildren().addAll(discount, pointsUsed, grandTotal, pointsGot, exportContainer);
     }
 }

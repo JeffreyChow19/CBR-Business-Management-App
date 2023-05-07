@@ -4,51 +4,61 @@
     <dataList>
       <id>FI-3</id>
       <customerId>CS-15</customerId>
-      <createdAt>2023-05-06T18:38:27</createdAt>
+      <createdAt>2023-05-07T17:05:26</createdAt>
       <boughtProducts>
         <boughtProducts>
           <id>IP-1</id>
-          <productName>Lightweight Marble Knife</productName>
+          <productName>Aerodynamic Linen Wallet</productName>
           <category>Gadget</category>
           <sellPrice>
-            <value>2727525.46</value>
+            <value>1950470.26</value>
           </sellPrice>
           <buyPrice>
-            <value>3096138.01</value>
+            <value>2271930.81</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>IP-2</id>
-          <productName>Practical Linen Watch</productName>
-          <category>Makanan</category>
+          <productName>Mediocre Granite Plate</productName>
+          <category>Gadget</category>
           <sellPrice>
-            <value>1802692.23</value>
+            <value>4246299.64</value>
           </sellPrice>
           <buyPrice>
-            <value>2621341.42</value>
+            <value>4497050.54</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>IP-3</id>
-          <productName>Fantastic Concrete Coat</productName>
+          <productName>Durable Concrete Coat</productName>
           <category>Minuman</category>
           <sellPrice>
-            <value>4532785.82</value>
+            <value>1196187.6</value>
           </sellPrice>
           <buyPrice>
-            <value>4698358.57</value>
+            <value>1611137.05</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
         </boughtProducts>
       </boughtProducts>
-      <discount>0.0</discount>
-      <usedPoint>0.0</usedPoint>
-      <getPoint>0.0</getPoint>
+      <discount>
+        <value>0.0</value>
+      </discount>
+      <usedPoint>
+        <value>0.0</value>
+      </usedPoint>
+      <getPoint>
+        <value>0.0</value>
+      </getPoint>
+      <additionalCosts/>
+      <grandTotal>
+        <value>0.0</value>
+      </grandTotal>
     </dataList>
   </dataList>
 </DataList>

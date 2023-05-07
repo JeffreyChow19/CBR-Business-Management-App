@@ -1,442 +1,190 @@
 {
   "dataList" : [
     {
-      "id" : "FI-3",
-      "customerId" : "CS-15",
-      "createdAt" : "2023-05-06T18:38:27",
+      "id" : "FI-1",
+      "customerId" : "CS-18",
+      "createdAt" : "2023-05-07T17:17:22",
       "boughtProducts" : [
         {
-          "id" : "IP-1",
-          "productName" : "Lightweight Marble Knife",
-          "category" : "Gadget",
+          "id" : "IP-35",
+          "productName" : "Mediocre Iron Bench",
+          "category" : "Pakaian",
           "sellPrice" : {
-            "value" : 2727525.46
+            "value" : 95.65814714285715
           },
           "buyPrice" : {
-            "value" : 3096138.01
+            "value" : 149.5381757142857
           },
-          "additionalValues" : null,
+          "additionalValues" : { },
+          "count" : 3
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 3.5584830737142856
+      },
+      "additionalCosts" : {
+        "Tax" : "+40.18",
+        "Service Charge" : "+28.70"
+      },
+      "grandTotal" : {
+        "value" : 355.8483073714286
+      }
+    },
+    {
+      "id" : "FI-2",
+      "customerId" : "CS-6",
+      "createdAt" : "2023-05-07T17:28:02",
+      "boughtProducts" : [
+        {
+          "id" : "IP-8",
+          "productName" : "Lightweight Paper Car",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 289.9015435714286
+          },
+          "buyPrice" : {
+            "value" : 339.66252000000003
+          },
+          "additionalValues" : { },
+          "count" : 1
+        },
+        {
+          "id" : "IP-47",
+          "productName" : "Small Wool Table",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 96.80799785714285
+          },
+          "buyPrice" : {
+            "value" : 99.83403142857142
+          },
+          "additionalValues" : { },
+          "count" : 1
+        },
+        {
+          "id" : "IP-13",
+          "productName" : "Rustic Iron Shirt",
+          "category" : "Pakaian",
+          "sellPrice" : {
+            "value" : 349.0303678571429
+          },
+          "buyPrice" : {
+            "value" : 410.5252621428571
+          },
+          "additionalValues" : { },
+          "count" : 1
+        },
+        {
+          "id" : "IP-43",
+          "productName" : "Mediocre Rubber Shirt",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 178.03361142857142
+          },
+          "buyPrice" : {
+            "value" : 190.2293535714286
+          },
+          "additionalValues" : { },
           "count" : 1
         },
         {
           "id" : "IP-2",
-          "productName" : "Practical Linen Watch",
-          "category" : "Makanan",
+          "productName" : "Mediocre Granite Plate",
+          "category" : "Gadget",
           "sellPrice" : {
-            "value" : 1802692.23
+            "value" : 303.3071171428571
           },
           "buyPrice" : {
-            "value" : 2621341.42
+            "value" : 321.2178957142857
           },
-          "additionalValues" : null,
+          "additionalValues" : { },
           "count" : 1
         },
         {
-          "id" : "IP-3",
-          "productName" : "Fantastic Concrete Coat",
-          "category" : "Minuman",
+          "id" : "IP-12",
+          "productName" : "Sleek Concrete Shoes",
+          "category" : "Gadget",
           "sellPrice" : {
-            "value" : 4532785.82
+            "value" : 53.138850000000005
           },
           "buyPrice" : {
-            "value" : 4698358.57
+            "value" : 97.41558928571429
           },
-          "additionalValues" : null,
+          "additionalValues" : { },
           "count" : 1
         }
       ],
-      "discount" : 0.0,
-      "usedPoint" : 0.0,
-      "getPoint" : 0.0
-    },
-    {
-      "id" : "FI-2",
-      "customerId" : "CS-17",
-      "createdAt" : "2023-05-06T22:55:22",
-      "boughtProducts" : [
-        {
-          "id" : "IP-37",
-          "productName" : "Fantastic Aluminum Chair",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 736282.62
-          },
-          "buyPrice" : {
-            "value" : 1230308.17
-          },
-          "additionalValues" : null,
-          "count" : 8
-        }
-      ],
-      "discount" : 0.0,
-      "usedPoint" : 0.0,
-      "getPoint" : 58902.6096
+      "discount" : {
+        "value" : 127.0219487857143
+      },
+      "usedPoint" : {
+        "value" : 100.0
+      },
+      "getPoint" : {
+        "value" : 13.480502161571431
+      },
+      "additionalCosts" : {
+        "Tax" : "+177.83",
+        "Service Charge" : "+127.02"
+      },
+      "grandTotal" : {
+        "value" : 1348.050216157143
+      }
     },
     {
       "id" : "FI-3",
       "customerId" : "CS-6",
-      "createdAt" : "2023-05-07T00:40:14",
+      "createdAt" : "2023-05-07T17:41:54",
       "boughtProducts" : [
-        {
-          "id" : "IP-37",
-          "productName" : "Fantastic Aluminum Chair",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 736282.62
-          },
-          "buyPrice" : {
-            "value" : 1230308.17
-          },
-          "additionalValues" : null,
-          "count" : 4
-        }
-      ],
-      "discount" : 294513.048,
-      "usedPoint" : 100.0,
-      "getPoint" : 26505.174320000002
-    },
-    {
-      "id" : "FI-4",
-      "customerId" : "CS-6",
-      "createdAt" : "2023-05-07T00:40:20",
-      "boughtProducts" : [
-        {
-          "id" : "IP-9",
-          "productName" : "Sleek Leather Car",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 668082.22
-          },
-          "buyPrice" : {
-            "value" : 1347370.88
-          },
-          "additionalValues" : null,
-          "count" : 4
-        }
-      ],
-      "discount" : 267232.888,
-      "usedPoint" : 26505.174320000002,
-      "getPoint" : 23785.9081768
-    },
-    {
-      "id" : "FI-5",
-      "customerId" : "CS-6",
-      "createdAt" : "2023-05-07T01:15:45",
-      "boughtProducts" : [
-        {
-          "id" : "IP-27",
-          "productName" : "Gorgeous Plastic Coat",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 4906974.95
-          },
-          "buyPrice" : {
-            "value" : 5565896.649999999
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-37",
-          "productName" : "Fantastic Aluminum Chair",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 736282.62
-          },
-          "buyPrice" : {
-            "value" : 1230308.17
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-15",
-          "productName" : "Synergistic Leather Watch",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 1307054.98
-          },
-          "buyPrice" : {
-            "value" : 2163978.42
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-1",
-          "productName" : "Lightweight Marble Knife",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 2727525.4599999995
-          },
-          "buyPrice" : {
-            "value" : 3096138.0099999993
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-30",
-          "productName" : "Ergonomic Concrete Bench",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 3871406.5299999993
-          },
-          "buyPrice" : {
-            "value" : 4503885.39
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-41",
-          "productName" : "Rustic Silk Knife",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 3919115.61
-          },
-          "buyPrice" : {
-            "value" : 4784475.009999999
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-40",
-          "productName" : "Durable Granite Clock",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 3596059.5999999996
-          },
-          "buyPrice" : {
-            "value" : 3609716.6799999997
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-4",
-          "productName" : "Lightweight Bronze Table",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 3817444.4099999997
-          },
-          "buyPrice" : {
-            "value" : 4682461.34
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-21",
-          "productName" : "Incredible Wooden Shoes",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 4546733.16
-          },
-          "buyPrice" : {
-            "value" : 4744438.24
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-5",
-          "productName" : "Lightweight Concrete Bench",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 1219881.9099999997
-          },
-          "buyPrice" : {
-            "value" : 1921888.1899999997
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-34",
-          "productName" : "Practical Plastic Bottle",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 1295417.41
-          },
-          "buyPrice" : {
-            "value" : 2104445.53
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-11",
-          "productName" : "Small Wool Wallet",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 1949326.4199999997
-          },
-          "buyPrice" : {
-            "value" : 2690717.27
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
         {
           "id" : "IP-8",
-          "productName" : "Practical Wool Wallet",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 2536959.7599999993
-          },
-          "buyPrice" : {
-            "value" : 3013868.57
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-9",
-          "productName" : "Sleek Leather Car",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 668082.22
-          },
-          "buyPrice" : {
-            "value" : 1347370.88
-          },
-          "additionalValues" : null,
-          "count" : 1
-        },
-        {
-          "id" : "IP-6",
-          "productName" : "Sleek Wooden Bottle",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 48231.03
-          },
-          "buyPrice" : {
-            "value" : 657185.07
-          },
-          "additionalValues" : null,
-          "count" : 1
-        }
-      ],
-      "discount" : 3714649.6070000003,
-      "usedPoint" : 0.0,
-      "getPoint" : 334318.46463
-    },
-    {
-      "id" : "FI-6",
-      "customerId" : "CS-18",
-      "createdAt" : "2023-05-07T02:31:41",
-      "boughtProducts" : [
-        {
-          "id" : "IP-37",
-          "productName" : "Fantastic Aluminum Chair",
+          "productName" : "Lightweight Paper Car",
           "category" : "Gadget",
           "sellPrice" : {
-            "value" : 736282.62
+            "value" : 289.9015435714286
           },
           "buyPrice" : {
-            "value" : 1230308.17
+            "value" : 339.66252000000003
           },
-          "additionalValues" : null,
-          "count" : 6
-        }
-      ],
-      "discount" : 0.0,
-      "usedPoint" : 0.0,
-      "getPoint" : 44176.9572
-    },
-    {
-      "id" : "FI-7",
-      "customerId" : "CS-21",
-      "createdAt" : "2023-05-07T02:35:56",
-      "boughtProducts" : [
+          "additionalValues" : { },
+          "count" : 24
+        },
         {
-          "id" : "IP-27",
-          "productName" : "Gorgeous Plastic Coat",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 4906974.95
-          },
-          "buyPrice" : {
-            "value" : 5565896.649999999
-          },
-          "additionalValues" : null,
-          "count" : 3
-        }
-      ],
-      "discount" : 0.0,
-      "usedPoint" : 0.0,
-      "getPoint" : 147209.24850000002
-    },
-    {
-      "id" : "FI-8",
-      "customerId" : "CS-22",
-      "createdAt" : "2023-05-07T02:43:27",
-      "boughtProducts" : [
-        {
-          "id" : "IP-37",
-          "productName" : "Fantastic Aluminum Chair",
+          "id" : "IP-43",
+          "productName" : "Mediocre Rubber Shirt",
           "category" : "Gadget",
           "sellPrice" : {
-            "value" : 736282.62
+            "value" : 178.03361142857142
           },
           "buyPrice" : {
-            "value" : 1230308.17
+            "value" : 190.2293535714286
           },
-          "additionalValues" : null,
-          "count" : 4
+          "additionalValues" : { },
+          "count" : 24
         }
       ],
-      "discount" : 0.0,
-      "usedPoint" : 0.0,
-      "getPoint" : 29451.3048
-    },
-    {
-      "id" : "FI-9",
-      "customerId" : "CS-23",
-      "createdAt" : "2023-05-07T02:46:43",
-      "boughtProducts" : [
-        {
-          "id" : "IP-9",
-          "productName" : "Sleek Leather Car",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 668082.22
-          },
-          "buyPrice" : {
-            "value" : 1347370.88
-          },
-          "additionalValues" : null,
-          "count" : 5
-        }
-      ],
-      "discount" : 0.0,
-      "usedPoint" : 0.0,
-      "getPoint" : 33404.111
-    },
-    {
-      "id" : "FI-10",
-      "customerId" : "CS-24",
-      "createdAt" : "2023-05-07T02:48:05",
-      "boughtProducts" : [
-        {
-          "id" : "IP-9",
-          "productName" : "Sleek Leather Car",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 668082.22
-          },
-          "buyPrice" : {
-            "value" : 1347370.88
-          },
-          "additionalValues" : null,
-          "count" : 4
-        }
-      ],
-      "discount" : 0.0,
-      "usedPoint" : 0.0,
-      "getPoint" : 26723.2888
+      "discount" : {
+        "value" : 1123.044372
+      },
+      "usedPoint" : {
+        "value" : 13.480502161571437
+      },
+      "getPoint" : {
+        "value" : 127.89225338638427
+      },
+      "additionalCosts" : {
+        "Tax" : "+1,572.26",
+        "Service Charge" : "+1,123.04"
+      },
+      "grandTotal" : {
+        "value" : 12789.225338638427
+      }
     }
   ]
 }

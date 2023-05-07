@@ -20,8 +20,8 @@ public class MainView extends VBox {
     @Getter
     private TransactionPage transactionPage;
     private InventoryPage inventoryPage;
-    @Getter
-    private ProfileEditor editProfile;
+//    @Getter
+//    private ProfileEditor editProfile;
     private static volatile MainView instance;
 
     public static MainView getInstance() {
@@ -38,7 +38,7 @@ public class MainView extends VBox {
     public void init() {
         /* Pages */
         homePage = new HomePage();
-        editProfile = new ProfileEditor("Edit Profile");
+//        editProfile = new ProfileEditor("Edit Profile");
         clientsPage = new ClientsPage();
         transactionPage = new TransactionPage();
         settingsPage = new SettingsPage();
@@ -84,22 +84,4 @@ public class MainView extends VBox {
         super();
     }
 
-    public void refresh() {
-        // to do: close all opened tabs except home
-//        transactionPage = new TransactionPage();
-        PluginManager.getInstance().loadPlugin();
-//        TabMenuBar.getInstance().addTab("Home", homePage);
-//        PluginsPage pluginsPage = new PluginsPage();
-//        System.out.println("from refresh");
-//        System.out.println(MainView.getInstance().getTransactionPage());
-//        System.out.println(transactionPage);
-//        HeaderMenuBar.getInstance().getNavigationMenu().getItems().clear();
-//        HeaderMenuBar.getInstance().addNewNavigationMenu("Clients", clientsPage);
-//        HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", new Label("inventory"));
-//        HeaderMenuBar.getInstance().addNewNavigationMenu("Export Statements", new Label("export"));
-//        HeaderMenuBar.getInstance().addNewNavigationMenu("Transaction", transactionPage);
-//        HeaderMenuBar.getInstance().addNewPreferencesMenu("Settings", settingsPage);
-//        HeaderMenuBar.getInstance().addNewPreferencesMenu("Plugins", pluginsPage);
-        clientsPage.updateList("");
-    }
 }
