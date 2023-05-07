@@ -96,27 +96,39 @@ public class HistoryInvoiceCard extends GridPane {
         Label pointsUsedLabel = new Label("Points used");
         pointsUsedLabel.setFont(Theme.getBodyMediumFont());
         pointsUsedLabel.setTextFill(Color.WHITE);
+        Label pointsUsedQty = new Label(this.invoice.getUsedPoint().toString());
+        pointsUsedQty.setFont(Theme.getBodyMediumFont());
+        pointsUsedQty.setTextFill(Color.WHITE);
         this.add(pointsUsedLabel, 0, currentRow, 2, 1);
+        this.add(pointsUsedQty, 2, currentRow, 2, 1);
         GridPane.setHalignment(pointsUsedLabel, HPos.LEFT);
-        // Where to get points used in the transaction? TBD
+        GridPane.setHalignment(pointsUsedQty, HPos.RIGHT);
 
         // Grand total line
         currentRow++;
         Label grandTotalLabel = new Label("Grand total");
         grandTotalLabel.setFont(Theme.getHeading2Font());
         grandTotalLabel.setTextFill(Color.WHITE);
+        Label grandTotalQty = new Label(this.invoice.getGrandTotal().toString());
+        grandTotalQty.setFont(Theme.getHeading2Font());
+        grandTotalQty.setTextFill(Color.WHITE);
         this.add(grandTotalLabel, 0, currentRow, 2, 1);
+        this.add(grandTotalQty, 2, currentRow, 2, 1);
         GridPane.setHalignment(grandTotalLabel, HPos.LEFT);
-        // Where to get grand total value? TBD
+        GridPane.setHalignment(grandTotalQty, HPos.RIGHT);
 
         // Points line
         currentRow++;
         Label pointsLabel = new Label("Points");
         pointsLabel.setFont(Theme.getHeading2Font());
         pointsLabel.setTextFill(Color.WHITE);
+        Label pointsQty = new Label(this.invoice.getGetPoint().toString());
+        pointsQty.setFont(Theme.getHeading2Font());
+        pointsQty.setTextFill(Color.WHITE);
         this.add(pointsLabel, 0, currentRow, 2, 1);
+        this.add(pointsQty, 2, currentRow, 2, 1);
         GridPane.setHalignment(pointsLabel, HPos.LEFT);
-        // Where to get points? TBD
+        GridPane.setHalignment(pointsQty, HPos.RIGHT);
 
         // Button to export to PDF
         currentRow++;
