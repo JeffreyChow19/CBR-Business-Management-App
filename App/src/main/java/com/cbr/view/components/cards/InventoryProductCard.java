@@ -43,7 +43,7 @@ public class InventoryProductCard extends VBox {
         Region edit_region = new Region();
         edit_container.setHgrow(edit_region, Priority.ALWAYS);
         Button editButton = new EditButton(hpadding);
-        editButton.setOnAction(event -> TabMenuBar.getInstance().addTab("Edit " + product.getId(), editorPage));
+        editButton.setOnAction(event -> TabMenuBar.getInstance().addTab("Edit Item #" + product.getId(), editorPage));
         edit_container.getChildren().addAll(edit_region, editButton);
         this.getChildren().add(edit_container);
 

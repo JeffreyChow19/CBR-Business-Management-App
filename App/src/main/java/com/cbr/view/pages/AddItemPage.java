@@ -7,6 +7,7 @@ import com.cbr.view.components.buttons.DeleteButton;
 import com.cbr.view.components.form.FormArea;
 import com.cbr.view.components.form.FormLabel;
 import com.cbr.view.components.dropdown.Dropdown;
+import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.components.labels.ToolTipLabel;
 import com.cbr.view.components.spinner.NumberSpinner;
@@ -255,6 +256,7 @@ public class AddItemPage extends ScrollPane {
                     App.getDataStore().addProduct(newItem);
                     showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(), "Add Item Successful!",
                             "Item " + nameForm.getContentTextField().getText() + " successfully added!");
+                    TabMenuBar.getInstance().closeTab(title.getText(), "Inventory Management");
                 } catch (NumberFormatException e) {
                     errMsg += "Price/Stock must be a number!";
                     showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Add Item Error!", errMsg);
