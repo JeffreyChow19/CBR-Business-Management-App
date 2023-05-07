@@ -10,7 +10,7 @@
   ],
   "additionalSettings" : {
     "tax" : "10.0",
-    "currency" : "USD",
+    "currency" : "KRW",
     "Tax" : "10.0",
     "service charge" : "10.0",
     "Service Charge" : "14.0"

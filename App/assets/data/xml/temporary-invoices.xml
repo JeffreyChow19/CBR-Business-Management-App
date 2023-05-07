@@ -2,27 +2,27 @@
 <DataList>
   <dataList>
     <dataList>
-      <id>TI-1</id>
-      <customerId>CS-6</customerId>
-      <createdAt>2023-05-07T21:36:22</createdAt>
+      <id>TI-4</id>
+      <customerId>CS-3</customerId>
+      <createdAt>2023-05-07T22:05:15</createdAt>
       <productFrequencies>
         <IP-48>1</IP-48>
       </productFrequencies>
     </dataList>
     <dataList>
-      <id>TI-2</id>
+      <id>TI-5</id>
       <customerId>CS-6</customerId>
-      <createdAt>2023-05-07T21:36:22</createdAt>
+      <createdAt>2023-05-07T22:05:15</createdAt>
       <productFrequencies>
-        <IP-1>1</IP-1>
+        <IP-34>1</IP-34>
       </productFrequencies>
     </dataList>
     <dataList>
-      <id>TI-3</id>
-      <customerId>CS-3</customerId>
-      <createdAt>2023-05-07T21:36:22</createdAt>
+      <id>TI-6</id>
+      <customerId>CS-6</customerId>
+      <createdAt>2023-05-07T22:05:15</createdAt>
       <productFrequencies>
-        <IP-24>1</IP-24>
+        <IP-37>1</IP-37>
       </productFrequencies>
     </dataList>
   </dataList>
