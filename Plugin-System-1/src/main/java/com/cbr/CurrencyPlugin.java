@@ -53,6 +53,7 @@ public class CurrencyPlugin implements Plugin {
         currencyLabel.setFont(Theme.getHeading2Font());
         currencyLabel.setTextFill(Color.WHITE);
         String defaultCurrency = AppSettings.getInstance().getAdditionalSettings().getOrDefault("currency", "IDR");
+        AppSettings.getInstance().getAdditionalSettings().put("currency", defaultCurrency);
 
         currencySelector = new Dropdown(new ArrayList<>());
         for (Currency c : curs) {
