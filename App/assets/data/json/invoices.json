@@ -531,6 +531,136 @@
       "grandTotal" : {
         "value" : 2139955.5340909087
       }
+    },
+    {
+      "id" : "FI-15",
+      "customerId" : "CS-19",
+      "createdAt" : "2023-05-07T23:00:34",
+      "boughtProducts" : [
+        {
+          "id" : "IP-46",
+          "productName" : "Gorgeous Wool Pants",
+          "category" : "Pakaian",
+          "sellPrice" : {
+            "value" : 443371.50909090904
+          },
+          "buyPrice" : {
+            "value" : 466507.20454545453
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 1
+        },
+        {
+          "id" : "IP-28",
+          "productName" : "Ergonomic Silk Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 375430.79545454547
+          },
+          "buyPrice" : {
+            "value" : 426224.1354545455
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 1
+        },
+        {
+          "id" : "IP-21",
+          "productName" : "Mediocre Marble Pants",
+          "category" : "Minuman",
+          "sellPrice" : {
+            "value" : 449606.47818181815
+          },
+          "buyPrice" : {
+            "value" : 517776.3772727272
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 1
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 12684.087827272728
+      },
+      "additionalCosts" : { },
+      "grandTotal" : {
+        "value" : 1268408.7827272727
+      }
+    },
+    {
+      "id" : "FI-31",
+      "customerId" : "CS-6",
+      "createdAt" : "2023-05-07T23:00:50",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Ergonomic Silk Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 375430.79545454547
+          },
+          "buyPrice" : {
+            "value" : 426224.1354545455
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 4
+        },
+        {
+          "id" : "IP-38",
+          "productName" : "Durable Aluminum Shoes",
+          "category" : "Minuman",
+          "sellPrice" : {
+            "value" : 90324.91272727273
+          },
+          "buyPrice" : {
+            "value" : 179948.0690909091
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 1
+        },
+        {
+          "id" : "IP-49",
+          "productName" : "Intelligent Cotton Knife",
+          "category" : "Minuman",
+          "sellPrice" : {
+            "value" : 275271.29818181816
+          },
+          "buyPrice" : {
+            "value" : 301603.17636363633
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 1
+        }
+      ],
+      "discount" : {
+        "value" : 186731.9392727273
+      },
+      "usedPoint" : {
+        "value" : 37792.47070516818
+      },
+      "getPoint" : {
+        "value" : 16427.949827493772
+      },
+      "additionalCosts" : { },
+      "grandTotal" : {
+        "value" : 1642794.9827493774
+      }
     }
   ]
 }

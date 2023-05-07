@@ -1,14 +1,6 @@
 {
   "dataList" : [
     {
-      "id" : "TI-5",
-      "customerId" : "CS-6",
-      "createdAt" : "2023-05-07T22:05:15",
-      "productFrequencies" : {
-        "IP-28" : 4
-      }
-    },
-    {
       "id" : "TI-6",
       "customerId" : "CS-6",
       "createdAt" : "2023-05-07T22:05:15",
