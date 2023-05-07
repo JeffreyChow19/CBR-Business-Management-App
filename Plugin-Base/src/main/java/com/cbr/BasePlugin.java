@@ -1,7 +1,6 @@
 package com.cbr;
 
 import com.cbr.plugin.Plugin;
-import com.cbr.view.MainView;
 import com.cbr.view.components.header.headermenu.HeaderMenuBar;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Pos;
