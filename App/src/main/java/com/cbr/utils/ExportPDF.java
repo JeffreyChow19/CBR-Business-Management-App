@@ -195,8 +195,16 @@ public class ExportPDF
                 }
             }
 
+            Map<LocalDate, List<FixedInvoice>> sortedInvoiceMap = new TreeMap<>(new Comparator<LocalDate>() {
+                @Override
+                public int compare(LocalDate d1, LocalDate d2) {
+                    return d1.compareTo(d2);
+                }
+            });
+            sortedInvoiceMap.putAll(invoiceMap);
+
             Map<LocalDate, Integer> rowSpan = new HashMap<>();
-            for (List<FixedInvoice> invoiceList : invoiceMap.values()) {
+            for (List<FixedInvoice> invoiceList : sortedInvoiceMap.values()) {
                 LocalDate date = invoiceList.get(0).getCreatedAt().toLocalDate();
                 int row = 0;
                 for (FixedInvoice invoice : invoiceList) {
@@ -209,7 +217,7 @@ public class ExportPDF
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
             // Iterate date
-            for (Map.Entry<LocalDate, List<FixedInvoice>> entry : invoiceMap.entrySet()) {
+            for (Map.Entry<LocalDate, List<FixedInvoice>> entry : sortedInvoiceMap.entrySet()) {
                 LocalDate date = entry.getKey();
                 List<FixedInvoice> invoicesPerDate = entry.getValue();
 
@@ -222,7 +230,7 @@ public class ExportPDF
                     Cell totalLabel = new Cell(1, 4).add(new Paragraph("Transaction " + invoice.getId())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE);
                     table.addCell(totalLabel);
                     income += invoice.getGrandTotal().getValue();
-                    revenue += invoice.getRevenue();
+                    revenue += invoice.revenue();
                     ExportPDF.exportInvoice(invoice, table);
                 }
 

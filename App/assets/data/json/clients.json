@@ -61,13 +61,14 @@
         "FI-27",
         "FI-38",
         "FI-25",
-        "FI-39"
+        "FI-39",
+        "FI-31"
       ],
       "name" : "Chow",
       "phoneNumber" : "08123456789",
       "status" : true,
       "point" : {
-        "value" : 37792.47070516818
+        "value" : 16427.949827493772
       },
       "additionalValue" : {
         "currency" : "KRW"
@@ -144,6 +145,13 @@
       "type" : "customer",
       "invoiceList" : [
         "FI-12"
+      ]
+    },
+    {
+      "id" : "CS-19",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-15"
       ]
     }
   ]

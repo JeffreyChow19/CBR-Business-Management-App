@@ -354,7 +354,7 @@
         "currency" : "KRW"
       },
       "imagePath" : "file:assets/images/products/21.jpg",
-      "stock" : 941,
+      "stock" : 940,
       "status" : true
     },
     {
@@ -473,7 +473,7 @@
         "currency" : "KRW"
       },
       "imagePath" : "file:assets/images/products/28.jpg",
-      "stock" : 204,
+      "stock" : 199,
       "status" : true
     },
     {
@@ -643,7 +643,7 @@
         "currency" : "KRW"
       },
       "imagePath" : "file:assets/images/products/38.jpg",
-      "stock" : 602,
+      "stock" : 601,
       "status" : true
     },
     {
@@ -779,7 +779,7 @@
         "currency" : "KRW"
       },
       "imagePath" : "file:assets/images/products/46.jpg",
-      "stock" : 144,
+      "stock" : 143,
       "status" : true
     },
     {
@@ -830,7 +830,7 @@
         "currency" : "KRW"
       },
       "imagePath" : "file:assets/images/products/49.jpg",
-      "stock" : 653,
+      "stock" : 652,
       "status" : true
     },
     {
