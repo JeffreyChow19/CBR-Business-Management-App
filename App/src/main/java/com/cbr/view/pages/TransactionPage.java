@@ -316,7 +316,7 @@ public class TransactionPage extends StackPane {
                 }
 
                 if (entry.getValue() > 0){
-                    BoughtProduct boughtProduct = new BoughtProduct(product, entry.getValue(), new HashMap<>());
+                    BoughtProduct boughtProduct = new BoughtProduct(product, entry.getValue(), product.getAdditionalValues());
                     products.add(boughtProduct);
 
                     // DELETE FROM INVENTORY PRODUCT DATASTORE
