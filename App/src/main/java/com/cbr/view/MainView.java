@@ -20,8 +20,8 @@ public class MainView extends VBox {
     @Getter
     private TransactionPage transactionPage;
     private InventoryPage inventoryPage;
-    @Getter
-    private ProfileEditor editProfile;
+//    @Getter
+//    private ProfileEditor editProfile;
     private static volatile MainView instance;
 
     public static MainView getInstance() {
