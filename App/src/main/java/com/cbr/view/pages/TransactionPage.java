@@ -18,11 +18,16 @@ import com.cbr.view.components.spinner.NumberSpinner;
 import com.cbr.view.theme.Theme;
 import com.cbr.App;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -38,6 +43,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class TransactionPage extends StackPane {
     private HBox container;
@@ -160,7 +166,6 @@ public class TransactionPage extends StackPane {
         // Discount container
         discountContainer = new AdditionalCostCard(0.8 * managementContainerWidth, "Discount");
         updateDiscount();
-//        additionalCostsContainer.getChildren().addAll(discountContainer);
 
         // Add all additional costs components
         renderAdditionalCostsContainer();
@@ -283,8 +288,6 @@ public class TransactionPage extends StackPane {
         updateDatastore();
         resetInfo();
         updateTemporaryInvoiceDropdown();
-
-
     }
     public void makeBill() {
         // Check customerId
@@ -317,7 +320,7 @@ public class TransactionPage extends StackPane {
                 }
 
                 if (entry.getValue() > 0){
-                    BoughtProduct boughtProduct = new BoughtProduct(product, entry.getValue(), new HashMap<>());
+                    BoughtProduct boughtProduct = new BoughtProduct(product, entry.getValue(), product.getAdditionalValues());
                     products.add(boughtProduct);
 
                     // DELETE FROM INVENTORY PRODUCT DATASTORE
@@ -328,7 +331,7 @@ public class TransactionPage extends StackPane {
 
         // IF USER IS MEMBERS OR VIP, SHOW POP UP "WANT TO USE POINTS?"
         Customer customer = App.getDataStore().getCustomerById(customerId);
-        Double usePoint = new Double((customer instanceof Member || customer instanceof VIP) ? ((Member)customer).getPoint() : 0.0);
+        Double usePoint = new Double((customer instanceof Member || customer instanceof VIP) ? ((Member)customer).getPoint().getValue() : 0.0);
         YesNoPopUp popUpUsePoint = new YesNoPopUp("Do you want you use your " + usePoint.toString() + " points?");
         if (customer != null && usePoint > 0){
             popUpUsePoint.getYesButton().setOnAction(e -> {
@@ -354,7 +357,7 @@ public class TransactionPage extends StackPane {
             additionalCosts.put(((AdditionalCostCard)n).getCardLabel().getText(), ((AdditionalCostCard)n).getCardNumber().getText());
         }
 
-        FixedInvoice invoice = new FixedInvoice(products, customerId, discount, usePoint, getPoint, additionalCosts, new BasePrice(grandTotal - usePoint));
+        FixedInvoice invoice = new FixedInvoice(products, customerId, new BasePrice(discount), new BasePrice(usePoint), new BasePrice(getPoint), additionalCosts, new BasePrice(grandTotal - usePoint));
         App.getDataStore().addInvoice(invoice);
 
         if (customer instanceof VIP || customer instanceof Member) {
@@ -424,12 +427,12 @@ public class TransactionPage extends StackPane {
             discount = new Double(0.0);
         }
 
-        discountContainer.getCardNumber().setText(String.format((discount == 0 ? "" : "- ") + "%.2f", discount));
+        discountContainer.getCardNumber().setText(String.format((discount == 0 ? "" : "- ") + (new BasePrice(discount)).toString()));
     }
 
     public void updateGrandTotal() {
         grandTotal = temporaryInvoice.grandTotal(discount);
-        grandTotalNumber.setText(String.format("%.2f", grandTotal));
+        grandTotalNumber.setText((new BasePrice(grandTotal)).toString());
     }
 
     public void renderAdditionalCostsContainer() {

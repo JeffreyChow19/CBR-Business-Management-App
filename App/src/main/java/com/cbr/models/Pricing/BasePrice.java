@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.text.DecimalFormat;
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -14,6 +16,10 @@ public class BasePrice implements Price {
         this.value = value;
     }
     public String toString(){
-        return String.format("%.2f", value);
+        if (value == 0){
+            return "0.00";
+        }
+        DecimalFormat formatter = new DecimalFormat("#,###.00");
+        return formatter.format(value);
     }
 }

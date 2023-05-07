@@ -1,14 +1,12 @@
 {
   "dataList" : [
     {
-      "id" : "CS-16",
+      "id" : "CS-15",
       "type" : "customer",
-      "invoiceList" : [
-        "FI-7"
-      ]
+      "invoiceList" : [ ]
     },
     {
-      "id" : "CS-17",
+      "id" : "CS-16",
       "type" : "customer",
       "invoiceList" : [ ]
     },
@@ -19,7 +17,10 @@
       "name" : "rachel",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 0.0
+      "point" : {
+        "value" : 0.0
+      },
+      "additionalValue" : { }
     },
     {
       "id" : "CS-4",
@@ -28,7 +29,10 @@
       "name" : "Livia",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 0.0
+      "point" : {
+        "value" : 0.0
+      },
+      "additionalValue" : { }
     },
     {
       "id" : "CS-5",
@@ -37,7 +41,10 @@
       "name" : "Jason",
       "phoneNumber" : "08123456789",
       "status" : false,
-      "point" : 100.0,
+      "point" : {
+        "value" : 100.0
+      },
+      "additionalValue" : { },
       "buyPrice" : 100000.0
     },
     {
@@ -47,7 +54,10 @@
       "name" : "Chow",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 100.0,
+      "point" : {
+        "value" : 100.0
+      },
+      "additionalValue" : { },
       "buyPrice" : 100000.0
     },
     {
@@ -57,12 +67,10 @@
       "name" : "Eugene",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 0.0
-    },
-    {
-      "id" : "CS-18",
-      "type" : "customer",
-      "invoiceList" : [ ]
+      "point" : {
+        "value" : 0.0
+      },
+      "additionalValue" : { }
     }
   ]
 }

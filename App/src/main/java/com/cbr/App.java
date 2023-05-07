@@ -25,7 +25,7 @@ public class App extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Business Management Application");
-        Image appIcon = new Image("file:assets/icons/capybucks.jpg");
+        Image appIcon = new Image("file:assets/icons/capybucks.png");
         //chore: update icons
         stage.getIcons().add(appIcon);
 //        PluginManager pluginManager = new PluginManager();

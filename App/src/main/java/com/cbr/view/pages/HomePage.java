@@ -5,6 +5,7 @@ import com.cbr.view.components.buttons.SettingsButton;
 import com.cbr.view.components.buttons.TransparentButton;
 import com.cbr.view.components.clockwidget.ClockWidget;
 import com.cbr.view.components.header.tabmenu.TabMenuBar;
+import com.cbr.view.components.logo.Logo;
 import com.cbr.view.theme.Theme;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -60,12 +61,8 @@ public class HomePage extends StackPane {
         /* Second Layer Setup: "Capybucks", Settings and Plugins icons  */
         BorderPane secondLayer = new BorderPane();
 
-        HBox capybucksContainer = new HBox();
-        Label capybucks = new Label("CAPYBUCKS");
-        capybucks.setFont(Theme.getHeading2Font());
-        capybucks.setStyle("-fx-text-fill: white");
-        capybucksContainer.getChildren().add(capybucks);
-        secondLayer.setLeft(capybucksContainer);
+        Logo capybucks = new Logo();
+        secondLayer.setLeft(capybucks);
 
         VBox prefButtonsContainer = new VBox();
         settings = new SettingsButton(50);

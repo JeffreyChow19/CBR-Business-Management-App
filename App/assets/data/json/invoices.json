@@ -1,56 +1,189 @@
 {
   "dataList" : [
     {
-      "id" : "FI-7",
-      "customerId" : "CS-16",
-      "createdAt" : "2023-05-07T14:03:47",
+      "id" : "FI-1",
+      "customerId" : "CS-18",
+      "createdAt" : "2023-05-07T17:17:22",
       "boughtProducts" : [
         {
-          "id" : "IP-1",
-          "productName" : "Mediocre Rubber Clock",
+          "id" : "IP-35",
+          "productName" : "Mediocre Iron Bench",
           "category" : "Pakaian",
           "sellPrice" : {
-            "value" : 2114582.32
+            "value" : 95.65814714285715
           },
           "buyPrice" : {
-            "value" : 3015824.86
+            "value" : 149.5381757142857
+          },
+          "additionalValues" : { },
+          "count" : 3
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 3.5584830737142856
+      },
+      "additionalCosts" : {
+        "Tax" : "+40.18",
+        "Service Charge" : "+28.70"
+      },
+      "grandTotal" : {
+        "value" : 355.8483073714286
+      }
+    },
+    {
+      "id" : "FI-2",
+      "customerId" : "CS-6",
+      "createdAt" : "2023-05-07T17:28:02",
+      "boughtProducts" : [
+        {
+          "id" : "IP-8",
+          "productName" : "Lightweight Paper Car",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 289.9015435714286
+          },
+          "buyPrice" : {
+            "value" : 339.66252000000003
+          },
+          "additionalValues" : { },
+          "count" : 1
+        },
+        {
+          "id" : "IP-47",
+          "productName" : "Small Wool Table",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 96.80799785714285
+          },
+          "buyPrice" : {
+            "value" : 99.83403142857142
+          },
+          "additionalValues" : { },
+          "count" : 1
+        },
+        {
+          "id" : "IP-13",
+          "productName" : "Rustic Iron Shirt",
+          "category" : "Pakaian",
+          "sellPrice" : {
+            "value" : 349.0303678571429
+          },
+          "buyPrice" : {
+            "value" : 410.5252621428571
+          },
+          "additionalValues" : { },
+          "count" : 1
+        },
+        {
+          "id" : "IP-43",
+          "productName" : "Mediocre Rubber Shirt",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 178.03361142857142
+          },
+          "buyPrice" : {
+            "value" : 190.2293535714286
           },
           "additionalValues" : { },
           "count" : 1
         },
         {
           "id" : "IP-2",
-          "productName" : "Synergistic Silk Computer",
-          "category" : "Pakaian",
+          "productName" : "Mediocre Granite Plate",
+          "category" : "Gadget",
           "sellPrice" : {
-            "value" : 2082253.25
+            "value" : 303.3071171428571
           },
           "buyPrice" : {
-            "value" : 2968418.98
+            "value" : 321.2178957142857
           },
           "additionalValues" : { },
           "count" : 1
         },
         {
-          "id" : "IP-3",
-          "productName" : "Mediocre Copper Shoes",
+          "id" : "IP-12",
+          "productName" : "Sleek Concrete Shoes",
           "category" : "Gadget",
           "sellPrice" : {
-            "value" : 1794684.85
+            "value" : 53.138850000000005
           },
           "buyPrice" : {
-            "value" : 1848610.84
+            "value" : 97.41558928571429
           },
           "additionalValues" : { },
           "count" : 1
         }
       ],
-      "discount" : 0.0,
-      "usedPoint" : 0.0,
-      "getPoint" : 0.0,
-      "additionalCosts" : { },
+      "discount" : {
+        "value" : 127.0219487857143
+      },
+      "usedPoint" : {
+        "value" : 100.0
+      },
+      "getPoint" : {
+        "value" : 13.480502161571431
+      },
+      "additionalCosts" : {
+        "Tax" : "+177.83",
+        "Service Charge" : "+127.02"
+      },
       "grandTotal" : {
-        "value" : 0.0
+        "value" : 1348.050216157143
+      }
+    },
+    {
+      "id" : "FI-3",
+      "customerId" : "CS-6",
+      "createdAt" : "2023-05-07T17:41:54",
+      "boughtProducts" : [
+        {
+          "id" : "IP-8",
+          "productName" : "Lightweight Paper Car",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 289.9015435714286
+          },
+          "buyPrice" : {
+            "value" : 339.66252000000003
+          },
+          "additionalValues" : { },
+          "count" : 24
+        },
+        {
+          "id" : "IP-43",
+          "productName" : "Mediocre Rubber Shirt",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 178.03361142857142
+          },
+          "buyPrice" : {
+            "value" : 190.2293535714286
+          },
+          "additionalValues" : { },
+          "count" : 24
+        }
+      ],
+      "discount" : {
+        "value" : 1123.044372
+      },
+      "usedPoint" : {
+        "value" : 13.480502161571437
+      },
+      "getPoint" : {
+        "value" : 127.89225338638427
+      },
+      "additionalCosts" : {
+        "Tax" : "+1,572.26",
+        "Service Charge" : "+1,123.04"
+      },
+      "grandTotal" : {
+        "value" : 12789.225338638427
       }
     }
   ]
