@@ -245,7 +245,6 @@ public class TransactionPage extends StackPane {
 
         for (TemporaryInvoice ti : temporaryInvoiceList){
             temporaryInvoiceListString.add(ti.getId());
-            System.out.println(ti.getId());
         }
 
         temporaryInvoiceDropdown.getDropdown().getItems().clear();

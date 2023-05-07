@@ -13,25 +13,27 @@ import java.util.List;
 @Setter
 public class DataList<T extends Identifiable> implements Serializable {
     private List<T> dataList;
-    public void add(T data){
+
+    public void add(T data) {
         this.dataList.add(data);
     }
-    public T getById(String id){
+
+    public T getById(String id) {
         return dataList.stream()
                 .filter(c -> c.getId().equals(id))
                 .findFirst()
                 .orElse(null);
     }
 
-    public DataList(){
+    public DataList() {
         this.dataList = new ArrayList<T>();
     }
 
-    public int generateId(){
+    public int generateId() {
         int maxId = Integer.MIN_VALUE;
         for (Identifiable t : this.dataList) {
             String idString = t.getId();
-            System.out.println(idString);
+            // system.out.println(idString);
             int id = Integer.parseInt(idString.substring(3));
             if (id > maxId) {
                 maxId = id;
