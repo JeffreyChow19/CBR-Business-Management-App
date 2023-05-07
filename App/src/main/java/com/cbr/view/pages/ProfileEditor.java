@@ -35,6 +35,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class ProfileEditor<T extends Customer> extends StackPane {
     private VBox container;
     private Label title;
@@ -106,8 +108,7 @@ public class ProfileEditor<T extends Customer> extends StackPane {
 
         // Category Dropdown
         List<String> membershipList = new ArrayList<>();
-        membershipList.add("Member");
-        membershipList.add("VIP");
+        
         BorderPane membershipContainer = new BorderPane();
         double membershipContainerWidth = formContainerWidth;
         double membershipContainerHeight = 0.2 * formContainerHeight;
@@ -117,6 +118,15 @@ public class ProfileEditor<T extends Customer> extends StackPane {
         membershipContainer.setMaxSize(membershipContainerWidth, membershipContainerHeight);
 
         Label membership = new FormLabel("Membership", membershipContainerWidth, membershipContainerHeight);
+        Label membershipContent;
+        membershipList.add("member");
+        if(customer instanceof Member){
+            membershipContent = new FormLabel("VIP", pointsContainerWidth, pointsContainerHeight);
+            membershipList.add("VIP"); 
+        } else if(customer instanceof VIP) {
+            membershipContent = new FormLabel("member", pointsContainerWidth, pointsContainerHeight);
+            membershipList.add("VIP");
+        }
 
         Dropdown membershipDropdown = new Dropdown(membershipList);
         membershipDropdown.setPrefWidth(0.5 * membershipContainerWidth);
@@ -150,20 +160,39 @@ public class ProfileEditor<T extends Customer> extends StackPane {
                     errMsg += "Phone can\'t be empty!\n";
                     error = true;
                 }
-                if (membershipDropdown.getValue() == null) {
-                    errMsg += "Membership can\'t be empty!\n";
-                    error = true;
-                }
+                // if (StringUtils.isNumeric(phoneForm.getContentTextField().getText())) {
+                //     errMsg += "Phone must be a number!";
+                //     error = true;
+                // }
+                // if (error) {
+                //     showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Upgrade Profile Error!",
+                //             errMsg);
+                //     return;
+                // }
+                // Customer newCustomer;
+                // if (membershipDropdown.getValue().equals("member")) {
+                //     newCustomer = new Member(customer.getId(), customer.getInvoiceList(),
+                //             nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText());
+                // } else {
+                //     newCustomer = new VIP(customer.getId(), customer.getInvoiceList(),
+                //             nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText(),
+                //             true, new BasePrice(0.0), 0.0);
+                // }
+                // App.getDataStore().updateCustomerInfo(newCustomer);
+                // showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(),
+                //         "Edit Profile Successful!",
+                //         "User " + nameForm.getContentTextField().getText() + "  profile successfully upgraded!");
+
 
                 try {
-                    Integer phoneNumber = Integer.parseInt(phoneForm.getContentTextField().getText());
+                    Long phoneNumber = Long.parseLong(phoneForm.getContentTextField().getText());
                     if (error) {
                         showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Upgrade Profile Error!",
                                 errMsg);
                         return;
                     }
                     Customer newCustomer;
-                    if (membershipDropdown.getValue() == "Member") {
+                    if (membershipDropdown.getValue().equals("member")) {
                         newCustomer = new Member(customer.getId(), customer.getInvoiceList(),
                                 nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText());
                     } else {
@@ -173,12 +202,12 @@ public class ProfileEditor<T extends Customer> extends StackPane {
                     }
                     App.getDataStore().updateCustomerInfo(newCustomer);
                     showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(),
-                            "Upgrade Profile Successful!",
-                            "User " + nameForm.getContentTextField().getText() + "  membership successfully upgraded!");
+                            "Edit Profile Successful!",
+                            "User " + nameForm.getContentTextField().getText() + "  profile successfully upgraded!");
 
                 } catch (NumberFormatException e) {
                     errMsg += "Phone must be a number!";
-                    showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Upgrade Profile Error!",
+                    showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Edit Profile Error!",
                             errMsg);
                 }
 
@@ -200,7 +229,6 @@ public class ProfileEditor<T extends Customer> extends StackPane {
             pointsContent.setText(temp.getPoint().toString());
             membershipDropdown.setPromptText(temp.getType());
             membershipDropdown.setValue(temp.getType());
-
             if (temp.getStatus()) {
                 Button deactivate = new DeleteButton(0.46 * buttonMembershipContainerWidth,
                         buttonMembershipContainerHeight,
