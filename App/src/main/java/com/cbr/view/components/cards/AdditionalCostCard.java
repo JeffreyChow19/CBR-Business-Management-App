@@ -11,15 +11,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class AdditionalCostCard extends HBox {
-    @Getter @Setter
+    @Getter
+    @Setter
     private Label cardNumber;
     @Getter
     private Label cardLabel;
+
     public AdditionalCostCard(Double width, String label) {
         this.setMinWidth(width);
         this.setPrefWidth(width);
         this.setMaxWidth(width);
-        this.setPadding(new Insets(5,15,5,15));
+        this.setPadding(new Insets(5, 15, 5, 15));
 
         cardLabel = new Label(label);
         cardLabel.setFont(Theme.getBodyMediumFont());
@@ -35,7 +37,7 @@ public class AdditionalCostCard extends HBox {
         this.getChildren().addAll(cardLabel, spacer, cardNumber);
     }
 
-    public void render(){
-        System.out.println("akjasjksajk");
+    public void render() {
+        // // system.out.println("akjasjksajk");
     }
 }

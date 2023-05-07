@@ -6,6 +6,7 @@ import com.cbr.models.Pricing.Price;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -13,12 +14,12 @@ import java.util.*;
 @Setter
 @Getter
 public class FixedInvoice extends Invoice {
-    private List<BoughtProduct> boughtProducts;
+    @NotNull private List<BoughtProduct> boughtProducts;
     private Price discount;
     private Price usedPoint;
     private static Integer invoiceCount = 0;
     private Price getPoint;
-    private Map<String, String> additionalCosts;
+    @NotNull private Map<String, String> additionalCosts;
     private Price grandTotal;
     public FixedInvoice(){
         FixedInvoice.invoiceCount += 1;
@@ -57,7 +58,7 @@ public class FixedInvoice extends Invoice {
     }
 
 
-    public Double getRevenue() {
+    public Double revenue() {
         double revenue = 0.0;
         for (BoughtProduct product: this.boughtProducts) {
             revenue += (product.getCount() * (product.getSellPrice().getValue() - product.getBuyPrice().getValue()));

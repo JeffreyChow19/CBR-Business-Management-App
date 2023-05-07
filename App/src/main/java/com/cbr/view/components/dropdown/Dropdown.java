@@ -42,7 +42,6 @@ public class Dropdown extends ComboBox<String> {
         // Add an event handler for when an option is selected
         this.setOnAction(event -> {
             String selectedOption = this.getValue();
-            System.out.println("Selected option: " + selectedOption);
         });
     }
 }

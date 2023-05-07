@@ -6,6 +6,7 @@ import com.cbr.models.Pricing.Price;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Currency;
 import java.util.HashMap;
@@ -15,7 +16,7 @@ import java.util.Map;
 @Setter
 @Getter
 public class BoughtProduct extends Product {
-    private Integer count;
+    @NotNull private Integer count;
     
     public BoughtProduct(InventoryProduct product, Integer count, Map<String,String> additionalValues){
         super(product.getProductName(), product.getCategory(), new BasePrice(product.getSellPrice().getValue()), new BasePrice(product.getBuyPrice().getValue()), additionalValues);

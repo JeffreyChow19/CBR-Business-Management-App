@@ -26,14 +26,12 @@ public class InventoryProduct extends Product implements Cloneable{
     }
     public InventoryProduct(String productName, BasePrice sellPrice, BasePrice buyPrice, String imagePath, Integer stock, String category, Boolean status){
         super(productName, category, sellPrice, buyPrice, new HashMap<>());
-        System.out.println(this.category);
         this.imagePath = imagePath;
         this.stock = stock;
         this.status = status;
         InventoryProduct.productCount++;
         this.id = "IP-" + InventoryProduct.productCount.toString();
         this.additionalValues = new HashMap<>();
-        System.out.println("from inventory product");
     }
     public InventoryProduct clone(){
         InventoryProduct newProduct = new InventoryProduct();

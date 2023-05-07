@@ -12,24 +12,16 @@ import java.util.Map;
 @Setter
 public class VIP extends Member {
     static private Double discount = 0.1;
-    private Double buyPrice;
 
     // needs to have all attributes, because it is from an already registered Customer/Member
     public VIP(){
         this.type = "VIP";
     }
     
-    public VIP(String id, List<String> invoiceList, String name, String phoneNumber, Boolean status, Price point, Double buyPrice, Map<String, String> additionalValue){
+    public VIP(String id, List<String> invoiceList, String name, String phoneNumber, Boolean status, Price point, Map<String, String> additionalValue){
         super(id, invoiceList, name, phoneNumber, additionalValue);
         this.type = "VIP";
         this.status = status;
         this.point = point;
-        this.buyPrice = buyPrice;
     }
-
-
-    public void buy(Product product){
-
-    }
-
 }
