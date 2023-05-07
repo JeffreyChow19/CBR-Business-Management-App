@@ -29,7 +29,7 @@ public class HistoryInvoiceCard extends GridPane {
 
         // Top row: Transaction ID, timestamp
         Label fixedInvoiceId = new Label(this.invoice.getId());
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm");
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
         Label fixedInvoiceDate = new Label(this.invoice.getCreatedAt().format(dateTimeFormatter));
         fixedInvoiceId.setFont(Theme.getBodyMediumFont());
         fixedInvoiceId.setTextFill(Color.WHITE);
