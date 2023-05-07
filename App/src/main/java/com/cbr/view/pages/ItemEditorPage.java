@@ -54,6 +54,7 @@ public class ItemEditorPage extends AddItemPage {
         buyPriceForm.getContentTextField().setText(product.getBuyPrice().getValue().toString());
         sellPriceForm.getContentTextField().setText(product.getSellPrice().getValue().toString());
         categoryDropdown.setPromptText(product.getCategory());
+        categoryDropdown.setValue(product.getCategory());
 
         String imagePath = product.getImagePath();
         String[] parts = imagePath.split("file:assets/images/products/");
@@ -69,6 +70,7 @@ public class ItemEditorPage extends AddItemPage {
             image_dir = Paths.get(currentDir, "App/assets/images/products").toString();
         }
         selectedFile = new File(image_dir, name);
+
         // Delete Button
         BorderPane deleteContainer = new BorderPane();
         double deleteContainerWidth = formContainerWidth;
@@ -81,7 +83,7 @@ public class ItemEditorPage extends AddItemPage {
         deleteItem.setOnAction(event -> {
             App.getDataStore().deactivateProduct(product.getId());
             product.setStatus(false);
-            showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Delete Item Successful!",
+            showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(), "Delete Item Successful!",
                     "Item " + nameForm.getContentTextField().getText() + " successfully deleted!");
         });
         deleteContainer.setRight(deleteItem);

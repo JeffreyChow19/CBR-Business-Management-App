@@ -8,10 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 @Getter
 @Setter
-public class Member extends Customer{
+public class Member extends Customer {
+    @Getter
     protected String name;
+    @Getter
     protected String phoneNumber;
+    @Getter
     protected Boolean status;
+    @Getter
     protected Double point;
 
     public Member(){
