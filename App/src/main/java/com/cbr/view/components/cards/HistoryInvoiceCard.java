@@ -25,9 +25,13 @@ public class HistoryInvoiceCard extends GridPane {
     public HistoryInvoiceCard(FixedInvoice invoice) {
         int currentRow = 0;
         this.invoice = invoice;
-        this.setMaxWidth(Theme.getScreenWidth() * 0.65);
-        this.setHeight(Theme.getScreenWidth() * 0.3);
-        this.setPadding(new Insets(10, 10, 10, 10));
+        this.setMinWidth(Theme.getScreenWidth() * 0.5);
+        this.setMaxWidth(Theme.getScreenWidth() * 0.5);
+        this.setPadding(new Insets(30));
+        this.setStyle("-fx-background-radius: 20; -fx-background-color: " + Theme.getPrimaryBase());
+        this.setHgap(15);
+        this.setVgap(7);
+
         ColumnConstraints col1 = new ColumnConstraints();
         ColumnConstraints col2 = new ColumnConstraints();
         col2.setHgrow(Priority.ALWAYS);
