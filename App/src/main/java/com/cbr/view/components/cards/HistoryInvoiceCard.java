@@ -58,8 +58,8 @@ public class HistoryInvoiceCard extends GridPane {
             currentRow++;
             Label productQty = new Label(String.valueOf(p.getCount()));
             Label productName = new Label(p.getProductName());
-            Label productPriceEach = new Label("@" + String.format("%.2f", p.getSellPrice().getValue()));
-            Label productSubtotal = new Label(String.format("%.2f", p.getSellPrice().getValue() * p.getCount()));
+            Label productPriceEach = new Label("@" + p.getSellPrice().toString());
+            Label productSubtotal = new Label(p.total().toString());
             productQty.setFont(Theme.getBodyMediumFont());
             productQty.setTextFill(Color.WHITE);
             productName.setFont(Theme.getBodyMediumFont());
@@ -83,7 +83,7 @@ public class HistoryInvoiceCard extends GridPane {
         Label discountLabel = new Label("Discount");
         discountLabel.setFont(Theme.getBodyMediumFont());
         discountLabel.setTextFill(Color.WHITE);
-        Label discountQty = new Label(String.format("%.2f", this.invoice.getDiscount()));
+        Label discountQty = new Label(this.invoice.getDiscount().toString());
         discountQty.setFont(Theme.getBodyMediumFont());
         discountQty.setTextFill(Color.WHITE);
         this.add(discountLabel, 0, currentRow, 2, 1);
