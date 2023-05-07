@@ -3,6 +3,7 @@ package com.cbr.view.pages;
 import com.cbr.App;
 import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.buttons.DeleteButton;
+import com.cbr.view.components.buttons.ActivateButton;
 
 import com.cbr.view.components.form.FormArea;
 import com.cbr.view.components.form.FormLabel;
@@ -24,6 +25,7 @@ import javafx.geometry.Insets;
 import com.cbr.models.*;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
+import javafx.stage.Window;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -32,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class ProfileEditor extends StackPane {
+public class ProfileEditor<T extends Customer> extends StackPane {
     private VBox container;
     private Label title;
     @Getter
@@ -42,9 +44,9 @@ public class ProfileEditor extends StackPane {
     @Getter
     private double formContainerWidth;
 
-    public ProfileEditor(String _title) {
+    public ProfileEditor(T customer) {
         super();
-        title = new Label(_title);
+        title = new Label("Edit Profile #" + customer.getId());
         title.setFont(Theme.getHeading1Font());
         title.setTextFill(Color.WHITE);
 
@@ -78,7 +80,7 @@ public class ProfileEditor extends StackPane {
         idContainer.setPrefSize(idContainerWidth, idContainerHeight);
         idContainer.setMaxSize(idContainerWidth, idContainerHeight);
         Label idLabel = new FormLabel("ID", idContainerWidth, idContainerHeight);
-        Label idContent = new FormLabel("00000000", idContainerWidth, idContainerHeight);
+        Label idContent = new FormLabel(customer.getId(), idContainerWidth, idContainerHeight);
         idContainer.setLeft(idLabel);
         idContainer.setRight(idContent);
         idContainer.setPadding(new Insets(10));
@@ -91,7 +93,7 @@ public class ProfileEditor extends StackPane {
         pointsContainer.setPrefSize(pointsContainerWidth, pointsContainerHeight);
         pointsContainer.setMaxSize(pointsContainerWidth, pointsContainerHeight);
         Label pointsLabel = new FormLabel("Points", pointsContainerWidth, pointsContainerHeight);
-        Label pointsContent = new FormLabel("1000", pointsContainerWidth, pointsContainerHeight);
+        Label pointsContent = new FormLabel("0", pointsContainerWidth, pointsContainerHeight);
         pointsContainer.setLeft(pointsLabel);
         pointsContainer.setRight(pointsContent);
         pointsContainer.setPadding(new Insets(10));
@@ -103,7 +105,6 @@ public class ProfileEditor extends StackPane {
 
         // Category Dropdown
         List<String> membershipList = new ArrayList<>();
-        membershipList.add("Customer");
         membershipList.add("Member");
         membershipList.add("VIP");
         BorderPane membershipContainer = new BorderPane();
@@ -132,27 +133,102 @@ public class ProfileEditor extends StackPane {
         saveContainer.setPrefSize(saveContainerWidth, saveContainerHeight);
         saveContainer.setMaxSize(saveContainerWidth, saveContainerHeight);
 
-        Button saveItem = new DefaultButton(0.46 * saveContainerWidth, saveContainerHeight, "Save Profile");
-        saveContainer.setRight(saveItem);
+        Button saveProfile = new DefaultButton(0.46 * saveContainerWidth, saveContainerHeight, "Save Profile");
+        saveContainer.setRight(saveProfile);
         saveContainer.setPadding(new Insets(10));
+        saveProfile.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                boolean error = false;
+                String errMsg = new String("");
+                if (nameForm.getContentTextField().getText().isEmpty()) {
+                    errMsg += "Name can\'t be empty!\n";
+                    error = true;
+                }
+                if (phoneForm.getContentTextField().getText().isEmpty()) {
+                    errMsg += "Phone can\'t be empty!\n";
+                    error = true;
+                }
+                if (membershipDropdown.getValue() == null) {
+                    errMsg += "Membership can\'t be empty!\n";
+                    error = true;
+                }
+
+                try {
+                    Integer phoneNumber = Integer.parseInt(phoneForm.getContentTextField().getText());
+                    if (error) {
+                        showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Upgrade Profile Error!",
+                                errMsg);
+                        return;
+                    }
+                    Customer newCustomer;
+                    if (membershipDropdown.getValue() == "Member") {
+                        newCustomer = new Member(customer.getId(), customer.getInvoiceList(),
+                                nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText());
+                    } else {
+                        newCustomer = new VIP(customer.getId(), customer.getInvoiceList(),
+                                nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText(),
+                                true, 0.0, 0.0);
+                    }
+                    App.getDataStore().updateCustomerInfo(newCustomer);
+                    showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(),
+                            "Upgrade Profile Successful!",
+                            "User " + nameForm.getContentTextField().getText() + "  membership successfully upgraded!");
+
+                } catch (NumberFormatException e) {
+                    errMsg += "Phone must be a number!";
+                    showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Upgrade Profile Error!",
+                            errMsg);
+                }
+
+            }
+        });
 
         // Delete Button
-        BorderPane deleteContainer = new BorderPane();
-        double deleteContainerWidth = formContainerWidth;
-        double deleteContainerHeight = 0.2 * formContainerHeight;
-        deleteContainer.setMinSize(deleteContainerWidth, deleteContainerHeight);
-        deleteContainer.setPrefSize(deleteContainerWidth, deleteContainerHeight);
-        deleteContainer.setMaxSize(deleteContainerWidth, deleteContainerHeight);
+        BorderPane buttonMembershipContainer = new BorderPane();
+        double buttonMembershipContainerWidth = formContainerWidth;
+        double buttonMembershipContainerHeight = 0.2 * formContainerHeight;
+        buttonMembershipContainer.setMinSize(buttonMembershipContainerWidth, buttonMembershipContainerHeight);
+        buttonMembershipContainer.setPrefSize(buttonMembershipContainerWidth, buttonMembershipContainerHeight);
+        buttonMembershipContainer.setMaxSize(buttonMembershipContainerWidth, buttonMembershipContainerHeight);
 
-        Button deleteItem = new DeleteButton(0.46 * deleteContainerWidth, deleteContainerHeight,
-                "Deactivate Membership");
+        if (customer instanceof Member || customer instanceof VIP) {
+            Member temp = (Member) customer;
+            nameForm.getContentTextField().setText(temp.getName());
+            phoneForm.getContentTextField().setText(temp.getPhoneNumber());
+            pointsContent.setText(temp.getPoint().toString());
+            membershipDropdown.setPromptText(temp.getType());
+            membershipDropdown.setValue(temp.getType());
 
-        deleteContainer.setRight(deleteItem);
-        deleteContainer.setPadding(new Insets(10));
+            if (temp.getStatus()) {
+                Button deactivate = new DeleteButton(0.46 * buttonMembershipContainerWidth,
+                        buttonMembershipContainerHeight,
+                        "Deactivate Membership");
+                buttonMembershipContainer.setRight(deactivate);
+                deactivate.setOnAction(event -> {
+                    App.getDataStore().deactivateMember(customer.getId());
+                    showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(),
+                            "Deactivate Membership Successful!",
+                            "User " + nameForm.getContentTextField().getText() + " successfully deactivated!");
+                });
+            } else {
+                Button activate = new ActivateButton(0.46 * buttonMembershipContainerWidth,
+                        buttonMembershipContainerHeight,
+                        "Activate Membership");
+                buttonMembershipContainer.setRight(activate);
+                activate.setOnAction(event -> {
+                    App.getDataStore().activateMember(customer.getId());
+                    showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(),
+                            "Activate Membership Successful!",
+                            "User " + nameForm.getContentTextField().getText() + " successfully activated!");
+                });
+            }
+        }
+        buttonMembershipContainer.setPadding(new Insets(10));
 
         // add all formContainer components
         formContainer.getChildren().addAll(idContainer, membershipContainer, nameForm, phoneForm, pointsContainer,
-                saveContainer, deleteContainer);
+                saveContainer, buttonMembershipContainer);
 
         // add all container components
         container.getChildren().addAll(title, formContainer);
@@ -160,6 +236,21 @@ public class ProfileEditor extends StackPane {
         // Set StackPane properties
         this.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
         this.getChildren().add(container);
+    }
+
+    protected void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.getDialogPane().setStyle("-fx-font: " + Theme.getBodyMediumFont().getSize() + "px "
+                + Theme.getBodyMediumFont().getFamily()
+                + "; -fx-border-color: white; -fx-background-color: transparent; -fx-border-radius: 10; -fx-prompt-text-fill: white;");
+        alert.initOwner(owner);
+        alert.setOnCloseRequest(e -> {
+            alert.close();
+        });
+        alert.show();
     }
 
 }
