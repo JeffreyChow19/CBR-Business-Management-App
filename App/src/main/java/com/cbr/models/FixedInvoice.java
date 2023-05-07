@@ -58,11 +58,11 @@ public class FixedInvoice extends Invoice {
 
 
     public Double getRevenue() {
-        double revenue = 0.0;
+        double modal = 0.0;
         for (BoughtProduct product: this.boughtProducts) {
-            revenue += (product.getCount() * (product.getSellPrice().getValue() - product.getBuyPrice().getValue()));
+            modal += (product.getCount() * product.getBuyPrice().getValue());
         }
-        return revenue;
+        return grandTotal.getValue() - modal;
     }
 
     public FixedInvoice clone(){
