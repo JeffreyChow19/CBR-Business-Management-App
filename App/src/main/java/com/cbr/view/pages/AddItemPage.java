@@ -125,19 +125,9 @@ public class AddItemPage extends ScrollPane {
         imageContent.setPrefHeight(uploadImageContainerHeight);
 
         Button uploadButton = new DefaultButton(0.5 * uploadImageContainerWidth, uploadImageContainerHeight, "Upload");
-        
+
         uploadButton.setOnAction(event -> {
-            FileChooser fileChooser = new FileChooser();
-            String currentDir = System.getProperty("user.dir");
-            File initialDirectory = new File(currentDir);
-            fileChooser.setInitialDirectory(initialDirectory);
-            fileChooser.setTitle("Select Image File");
-            fileChooser.getExtensionFilters().addAll(
-                    new ExtensionFilter("Image Files", "*.png", "*.jpg"));
-            selectedFile = fileChooser.showOpenDialog(container.getScene().getWindow());
-            if (selectedFile != null) {
-                imageContent.setText(selectedFile.getName());
-            }
+            uploadItemImage();
         });
         uploadImageContainer.getChildren().addAll(uploadButton, imageContent);
         uploadImageContainer.setSpacing(10);
@@ -154,7 +144,7 @@ public class AddItemPage extends ScrollPane {
             categorySet.add(product.getCategory());
         }
         List<String> categoryList = new ArrayList<>(categorySet);
-        
+
         BorderPane categoryContainer = new BorderPane();
         double categoryContainerWidth = formContainerWidth;
         double categoryContainerHeight = 0.2 * formContainerHeight;
@@ -191,7 +181,7 @@ public class AddItemPage extends ScrollPane {
             public void handle(ActionEvent event) {
                 boolean error = false;
                 String errMsg = new String("");
-                if(nameForm.getContentTextField().getText().isEmpty()) {
+                if (nameForm.getContentTextField().getText().isEmpty()) {
                     errMsg += "Name can\'t be empty!\n";
                     error = true;
                 }
@@ -211,14 +201,16 @@ public class AddItemPage extends ScrollPane {
                     errMsg += "Category can\'t be empty!\n";
                     error = true;
                 }
-                
+
                 if (imageContent.getText().equals("No File Selected")) {
                     errMsg += "Image can\'t be empty!\n";
                     error = true;
                 }
-                try{
-                    BasePrice productBuyPrice = new BasePrice(Double.parseDouble(buyPriceForm.getContentTextField().getText()));
-                    BasePrice productSellPrice = new BasePrice(Double.parseDouble(sellPriceForm.getContentTextField().getText()));
+                try {
+                    BasePrice productBuyPrice = new BasePrice(
+                            Double.parseDouble(buyPriceForm.getContentTextField().getText()));
+                    BasePrice productSellPrice = new BasePrice(
+                            Double.parseDouble(sellPriceForm.getContentTextField().getText()));
                     Integer productStock = Integer.parseInt(stockForm.getContentTextField().getText());
 
                     if (error) {
@@ -228,11 +220,11 @@ public class AddItemPage extends ScrollPane {
 
                     // Get the current working directory
                     String currentDir = System.getProperty("user.dir");
-                    
+
                     // Define the path to the assets directory
                     String dirName = new File(currentDir).getName();
                     String assetsDir;
-                    if(dirName.equals("App")){
+                    if (dirName.equals("App")) {
                         assetsDir = Paths.get(currentDir, "assets/images/products").toString();
                     } else {
                         assetsDir = Paths.get(currentDir, "App/assets/images/products").toString();
@@ -251,12 +243,13 @@ public class AddItemPage extends ScrollPane {
                     Path sourcePath = Paths.get(uploadedFilePath);
                     Path destinationPath = Paths.get(destinationFilePath);
                     try {
-                        Files.copy(sourcePath, destinationPath,StandardCopyOption.REPLACE_EXISTING);
+                        Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                     InventoryProduct newItem = new InventoryProduct(nameForm.getContentTextField().getText(),
-                            productBuyPrice, productSellPrice,"file:assets/images/products/"+ imageContent.getText(), productStock,
+                            productBuyPrice, productSellPrice, "file:assets/images/products/" + imageContent.getText(),
+                            productStock,
                             categoryDropdown.getValue(), true);
                     newItem.generateInventoryProductId();
                     App.getDataStore().addProduct(newItem);
@@ -266,7 +259,7 @@ public class AddItemPage extends ScrollPane {
                     errMsg += "Price/Stock must be a number!";
                     showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Add Item Error!", errMsg);
                 }
-                
+
             }
         });
 
@@ -281,17 +274,33 @@ public class AddItemPage extends ScrollPane {
         this.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
         this.setContent(container);
     }
-    
-    public void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+
+    protected void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
-        alert.getDialogPane().setStyle("-fx-font: " + Theme.getBodyMediumFont().getSize() + "px " + Theme.getBodyMediumFont().getFamily() + "; -fx-border-color: white; -fx-background-color: transparent; -fx-border-radius: 10; -fx-prompt-text-fill: white;");
+        alert.getDialogPane().setStyle("-fx-font: " + Theme.getBodyMediumFont().getSize() + "px "
+                + Theme.getBodyMediumFont().getFamily()
+                + "; -fx-border-color: white; -fx-background-color: transparent; -fx-border-radius: 10; -fx-prompt-text-fill: white;");
         alert.initOwner(owner);
         alert.setOnCloseRequest(e -> {
             alert.close();
         });
         alert.show();
+    }
+
+    protected void uploadItemImage() {
+        FileChooser fileChooser = new FileChooser();
+        String currentDir = System.getProperty("user.dir");
+        File initialDirectory = new File(currentDir);
+        fileChooser.setInitialDirectory(initialDirectory);
+        fileChooser.setTitle("Select Image File");
+        fileChooser.getExtensionFilters().addAll(
+                new ExtensionFilter("Image Files", "*.png", "*.jpg"));
+        selectedFile = fileChooser.showOpenDialog(container.getScene().getWindow());
+        if (selectedFile != null) {
+            imageContent.setText(selectedFile.getName());
+        }
     }
 }
