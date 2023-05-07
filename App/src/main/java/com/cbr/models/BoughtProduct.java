@@ -21,6 +21,18 @@ public class BoughtProduct extends Product {
         this.count = count;
     }
 
+    public BoughtProduct clone(){
+        BoughtProduct newProduct = new BoughtProduct();
+        newProduct.setSellPrice(new BasePrice( this.getSellPrice().getValue()));
+        newProduct.setCategory(this.category);
+        newProduct.setProductName(this.productName);
+        newProduct.setId(this.id);
+        newProduct.setAdditionalValues(this.additionalValues);
+        newProduct.setBuyPrice(new BasePrice(this.getBuyPrice().getValue()));
+        newProduct.setCount(this.count);
+        return newProduct;
+    }
+
     public Price total() {
         return new BasePrice(count * super.getSellPrice().getValue());
     }
