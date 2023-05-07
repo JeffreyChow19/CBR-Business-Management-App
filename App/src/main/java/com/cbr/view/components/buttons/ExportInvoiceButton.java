@@ -11,7 +11,7 @@ public class ExportInvoiceButton extends DefaultButton {
     private FixedInvoice invoice;
 
     public ExportInvoiceButton(FixedInvoice invoice) {
-        super(Theme.getScreenWidth() * 0.06, Theme.getScreenHeight() * 0.04, "Export as PDF");
+        super(Theme.getScreenWidth() * 0.2, Theme.getScreenHeight() * 0.01, "Export as PDF");
         this.invoice = invoice;
     }
 }
