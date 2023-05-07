@@ -84,11 +84,11 @@ public class InventoryProductCard extends VBox {
         // Price Number VBox
         VBox price_number = new VBox();
         Label hargaBeliNumber = new Label();
-        hargaBeliNumber.setText(String.format("%.2f",product.getBuyPrice().getValue()));
+        hargaBeliNumber.setText(product.getBuyPrice().toString());
         hargaBeliNumber.setFont(Theme.getBodyFont());
         hargaBeliNumber.setTextFill(Color.WHITE);
         Label hargaJualNumber = new Label();
-        hargaJualNumber.setText(String.format("%.2f",product.getSellPrice().getValue()));
+        hargaJualNumber.setText(product.getSellPrice().toString());
         hargaJualNumber.setFont(Theme.getBodyFont());
         hargaJualNumber.setTextFill(Color.WHITE);
         price_number.getChildren().addAll(hargaBeliNumber, hargaJualNumber);

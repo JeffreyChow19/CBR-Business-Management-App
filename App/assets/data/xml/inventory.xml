@@ -3,753 +3,753 @@
   <dataList>
     <dataList>
       <id>IP-1</id>
-      <productName>Intelligent Wooden Shoes</productName>
-      <category>Pakaian</category>
+      <productName>Aerodynamic Plastic Plate</productName>
+      <category>Gadget</category>
       <sellPrice>
-        <value>4997952.55</value>
+        <value>4469360.04</value>
       </sellPrice>
       <buyPrice>
-        <value>5098129.59</value>
+        <value>4185699.43</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/1.jpg</imagePath>
-      <stock>105</stock>
-      <status>false</status>
+      <stock>546</stock>
+      <status>true</status>
     </dataList>
     <dataList>
       <id>IP-2</id>
-      <productName>Small Marble Computer</productName>
-      <category>Pakaian</category>
+      <productName>Rustic Copper Shirt</productName>
+      <category>Gadget</category>
       <sellPrice>
-        <value>2653159.56</value>
+        <value>1761405.8</value>
       </sellPrice>
       <buyPrice>
-        <value>2837936.77</value>
+        <value>1024465.64</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/2.jpg</imagePath>
-      <stock>17</stock>
+      <stock>955</stock>
       <status>false</status>
     </dataList>
     <dataList>
       <id>IP-3</id>
-      <productName>Incredible Marble Coat</productName>
-      <category>Pakaian</category>
+      <productName>Durable Linen Clock</productName>
+      <category>Minuman</category>
       <sellPrice>
-        <value>3636806.12</value>
+        <value>491683.53</value>
       </sellPrice>
       <buyPrice>
-        <value>4151720.14</value>
+        <value>448665.7</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/3.jpg</imagePath>
-      <stock>190</stock>
+      <stock>126</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-4</id>
-      <productName>Ergonomic Copper Clock</productName>
+      <productName>Rustic Concrete Bottle</productName>
       <category>Minuman</category>
       <sellPrice>
-        <value>4031077.11</value>
+        <value>4455782.82</value>
       </sellPrice>
       <buyPrice>
-        <value>4503961.28</value>
+        <value>3901232.69</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/4.jpg</imagePath>
-      <stock>383</stock>
+      <stock>836</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-5</id>
-      <productName>Practical Cotton Plate</productName>
+      <productName>Mediocre Bronze Pants</productName>
       <category>Minuman</category>
       <sellPrice>
-        <value>1103469.01</value>
+        <value>4384415.1899999995</value>
       </sellPrice>
       <buyPrice>
-        <value>1577693.96</value>
+        <value>4191027.84</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/5.jpg</imagePath>
-      <stock>39</stock>
-      <status>false</status>
-    </dataList>
-    <dataList>
-      <id>IP-6</id>
-      <productName>Awesome Granite Table</productName>
-      <category>Pakaian</category>
-      <sellPrice>
-        <value>3265355.67</value>
-      </sellPrice>
-      <buyPrice>
-        <value>3935660.06</value>
-      </buyPrice>
-      <additionalValues/>
-      <imagePath>file:assets/images/products/6.jpg</imagePath>
-      <stock>478</stock>
-      <status>false</status>
-    </dataList>
-    <dataList>
-      <id>IP-7</id>
-      <productName>Rustic Steel Bench</productName>
-      <category>Makanan</category>
-      <sellPrice>
-        <value>3486678.17</value>
-      </sellPrice>
-      <buyPrice>
-        <value>4409538.93</value>
-      </buyPrice>
-      <additionalValues/>
-      <imagePath>file:assets/images/products/7.jpg</imagePath>
-      <stock>183</stock>
+      <stock>291</stock>
       <status>true</status>
     </dataList>
     <dataList>
-      <id>IP-8</id>
-      <productName>Ergonomic Marble Bag</productName>
-      <category>Gadget</category>
+      <id>IP-6</id>
+      <productName>Lightweight Leather Knife</productName>
+      <category>Minuman</category>
       <sellPrice>
-        <value>4456227.79</value>
+        <value>4560724.97</value>
       </sellPrice>
       <buyPrice>
-        <value>5408023.8</value>
+        <value>3845316.09</value>
+      </buyPrice>
+      <additionalValues/>
+      <imagePath>file:assets/images/products/6.jpg</imagePath>
+      <stock>736</stock>
+      <status>true</status>
+    </dataList>
+    <dataList>
+      <id>IP-7</id>
+      <productName>Sleek Plastic Pants</productName>
+      <category>Minuman</category>
+      <sellPrice>
+        <value>1738606.6099999999</value>
+      </sellPrice>
+      <buyPrice>
+        <value>774464.32</value>
+      </buyPrice>
+      <additionalValues/>
+      <imagePath>file:assets/images/products/7.jpg</imagePath>
+      <stock>272</stock>
+      <status>false</status>
+    </dataList>
+    <dataList>
+      <id>IP-8</id>
+      <productName>Lightweight Copper Knife</productName>
+      <category>Makanan</category>
+      <sellPrice>
+        <value>5050829.48</value>
+      </sellPrice>
+      <buyPrice>
+        <value>4904630.65</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/8.jpg</imagePath>
-      <stock>545</stock>
+      <stock>869</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-9</id>
-      <productName>Incredible Paper Gloves</productName>
-      <category>Gadget</category>
+      <productName>Practical Bronze Shoes</productName>
+      <category>Minuman</category>
       <sellPrice>
-        <value>3797473.99</value>
+        <value>1150193.6099999999</value>
       </sellPrice>
       <buyPrice>
-        <value>4399987.33</value>
+        <value>380089.91</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/9.jpg</imagePath>
-      <stock>700</stock>
+      <stock>205</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-10</id>
-      <productName>Durable Bronze Keyboard</productName>
-      <category>Makanan</category>
+      <productName>Incredible Bronze Clock</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>3071859.24</value>
+        <value>1614286.4600000002</value>
       </sellPrice>
       <buyPrice>
-        <value>4061116.58</value>
+        <value>1480128.62</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/10.jpg</imagePath>
-      <stock>568</stock>
-      <status>false</status>
+      <stock>367</stock>
+      <status>true</status>
     </dataList>
     <dataList>
       <id>IP-11</id>
-      <productName>Rustic Plastic Gloves</productName>
+      <productName>Enormous Marble Table</productName>
       <category>Gadget</category>
       <sellPrice>
-        <value>4677107.21</value>
+        <value>3285725.5300000003</value>
       </sellPrice>
       <buyPrice>
-        <value>5040073.76</value>
+        <value>2444044.29</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/11.jpg</imagePath>
-      <stock>3</stock>
+      <stock>35</stock>
       <status>false</status>
     </dataList>
     <dataList>
       <id>IP-12</id>
-      <productName>Gorgeous Wool Bench</productName>
-      <category>Gadget</category>
+      <productName>Durable Paper Shirt</productName>
+      <category>Makanan</category>
       <sellPrice>
-        <value>3809435.69</value>
+        <value>861802.2</value>
       </sellPrice>
       <buyPrice>
-        <value>4448563.4399999995</value>
+        <value>809041.62</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/12.jpg</imagePath>
-      <stock>876</stock>
-      <status>true</status>
+      <stock>805</stock>
+      <status>false</status>
     </dataList>
     <dataList>
       <id>IP-13</id>
-      <productName>Heavy Duty Marble Chair</productName>
-      <category>Makanan</category>
+      <productName>Intelligent Concrete Pants</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>4586740.26</value>
+        <value>2993369.37</value>
       </sellPrice>
       <buyPrice>
-        <value>4608141.81</value>
+        <value>2562888.21</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/13.jpg</imagePath>
-      <stock>198</stock>
-      <status>false</status>
+      <stock>690</stock>
+      <status>true</status>
     </dataList>
     <dataList>
       <id>IP-14</id>
-      <productName>Durable Aluminum Car</productName>
-      <category>Pakaian</category>
+      <productName>Rustic Granite Bag</productName>
+      <category>Gadget</category>
       <sellPrice>
-        <value>1958685.92</value>
+        <value>3646870.38</value>
       </sellPrice>
       <buyPrice>
-        <value>2920664.34</value>
+        <value>2665003.11</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/14.jpg</imagePath>
-      <stock>880</stock>
-      <status>false</status>
+      <stock>870</stock>
+      <status>true</status>
     </dataList>
     <dataList>
       <id>IP-15</id>
-      <productName>Incredible Iron Knife</productName>
-      <category>Makanan</category>
+      <productName>Aerodynamic Aluminum Shoes</productName>
+      <category>Gadget</category>
       <sellPrice>
-        <value>3080157.53</value>
+        <value>3997723.19</value>
       </sellPrice>
       <buyPrice>
-        <value>3940566.07</value>
+        <value>3464235.54</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/15.jpg</imagePath>
-      <stock>448</stock>
+      <stock>355</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-16</id>
-      <productName>Ergonomic Leather Coat</productName>
-      <category>Minuman</category>
+      <productName>Aerodynamic Plastic Gloves</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>2409117.26</value>
+        <value>3215586.38</value>
       </sellPrice>
       <buyPrice>
-        <value>2735348.76</value>
+        <value>2746347.57</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/16.jpg</imagePath>
-      <stock>246</stock>
+      <stock>24</stock>
       <status>false</status>
     </dataList>
     <dataList>
       <id>IP-17</id>
-      <productName>Mediocre Linen Plate</productName>
-      <category>Minuman</category>
+      <productName>Mediocre Copper Car</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>1173224.79</value>
+        <value>743604.6599999999</value>
       </sellPrice>
       <buyPrice>
-        <value>1678229.9</value>
+        <value>568878.32</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/17.jpg</imagePath>
-      <stock>379</stock>
+      <stock>873</stock>
       <status>false</status>
     </dataList>
     <dataList>
       <id>IP-18</id>
-      <productName>Durable Leather Wallet</productName>
-      <category>Minuman</category>
+      <productName>Ergonomic Paper Car</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>1592863.41</value>
+        <value>5334925.58</value>
       </sellPrice>
       <buyPrice>
-        <value>2490285.6399999997</value>
+        <value>4786418.84</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/18.jpg</imagePath>
-      <stock>376</stock>
-      <status>false</status>
+      <stock>818</stock>
+      <status>true</status>
     </dataList>
     <dataList>
       <id>IP-19</id>
-      <productName>Sleek Concrete Hat</productName>
-      <category>Minuman</category>
+      <productName>Fantastic Wooden Wallet</productName>
+      <category>Gadget</category>
       <sellPrice>
-        <value>4769068.51</value>
+        <value>1534603.9100000001</value>
       </sellPrice>
       <buyPrice>
-        <value>5724559.58</value>
+        <value>626603.89</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/19.jpg</imagePath>
-      <stock>759</stock>
-      <status>false</status>
+      <stock>702</stock>
+      <status>true</status>
     </dataList>
     <dataList>
       <id>IP-20</id>
-      <productName>Awesome Aluminum Pants</productName>
-      <category>Makanan</category>
+      <productName>Intelligent Concrete Chair</productName>
+      <category>Gadget</category>
       <sellPrice>
-        <value>4774936.97</value>
+        <value>3412900.85</value>
       </sellPrice>
       <buyPrice>
-        <value>5197840.08</value>
+        <value>3371844.72</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/20.jpg</imagePath>
-      <stock>42</stock>
+      <stock>50</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-21</id>
-      <productName>Mediocre Marble Pants</productName>
-      <category>Minuman</category>
+      <productName>Aerodynamic Leather Plate</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>4945671.26</value>
+        <value>3033259.85</value>
       </sellPrice>
       <buyPrice>
-        <value>5695540.149999999</value>
+        <value>2685373.74</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/21.jpg</imagePath>
-      <stock>941</stock>
+      <stock>237</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-22</id>
-      <productName>Intelligent Copper Pants</productName>
+      <productName>Lightweight Cotton Watch</productName>
       <category>Gadget</category>
       <sellPrice>
-        <value>4467042.21</value>
+        <value>2521053.3</value>
       </sellPrice>
       <buyPrice>
-        <value>4698764.51</value>
+        <value>2027599.89</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/22.jpg</imagePath>
-      <stock>910</stock>
-      <status>false</status>
-    </dataList>
-    <dataList>
-      <id>IP-23</id>
-      <productName>Small Bronze Plate</productName>
-      <category>Makanan</category>
-      <sellPrice>
-        <value>1514694.94</value>
-      </sellPrice>
-      <buyPrice>
-        <value>2000768.2</value>
-      </buyPrice>
-      <additionalValues/>
-      <imagePath>file:assets/images/products/23.jpg</imagePath>
-      <stock>471</stock>
+      <stock>836</stock>
       <status>true</status>
     </dataList>
     <dataList>
-      <id>IP-24</id>
-      <productName>Intelligent Granite Bottle</productName>
-      <category>Makanan</category>
+      <id>IP-23</id>
+      <productName>Synergistic Cotton Bottle</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>327900.32</value>
+        <value>3767818.85</value>
       </sellPrice>
       <buyPrice>
-        <value>883638.9299999999</value>
+        <value>3480083.02</value>
+      </buyPrice>
+      <additionalValues/>
+      <imagePath>file:assets/images/products/23.jpg</imagePath>
+      <stock>377</stock>
+      <status>false</status>
+    </dataList>
+    <dataList>
+      <id>IP-24</id>
+      <productName>Awesome Plastic Clock</productName>
+      <category>Makanan</category>
+      <sellPrice>
+        <value>3881582.48</value>
+      </sellPrice>
+      <buyPrice>
+        <value>3152609.89</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/24.jpg</imagePath>
-      <stock>71</stock>
+      <stock>27</stock>
       <status>false</status>
     </dataList>
     <dataList>
       <id>IP-25</id>
-      <productName>Aerodynamic Rubber Computer</productName>
+      <productName>Lightweight Wooden Pants</productName>
       <category>Minuman</category>
       <sellPrice>
-        <value>1188812.81</value>
+        <value>5518248.06</value>
       </sellPrice>
       <buyPrice>
-        <value>2060272.8900000001</value>
+        <value>4593595.92</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/25.jpg</imagePath>
-      <stock>963</stock>
-      <status>false</status>
+      <stock>320</stock>
+      <status>true</status>
     </dataList>
     <dataList>
       <id>IP-26</id>
-      <productName>Enormous Plastic Chair</productName>
-      <category>Makanan</category>
+      <productName>Synergistic Copper Lamp</productName>
+      <category>Minuman</category>
       <sellPrice>
-        <value>4261542.49</value>
+        <value>1415333.5699999998</value>
       </sellPrice>
       <buyPrice>
-        <value>4600531.24</value>
+        <value>1093922.7</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/26.jpg</imagePath>
-      <stock>239</stock>
+      <stock>867</stock>
       <status>false</status>
     </dataList>
     <dataList>
       <id>IP-27</id>
-      <productName>Intelligent Plastic Car</productName>
-      <category>Minuman</category>
+      <productName>Awesome Linen Shirt</productName>
+      <category>Gadget</category>
       <sellPrice>
-        <value>3491581.48</value>
+        <value>5305759.75</value>
       </sellPrice>
       <buyPrice>
-        <value>4127676.52</value>
+        <value>4852849.07</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/27.jpg</imagePath>
-      <stock>168</stock>
-      <status>true</status>
+      <stock>904</stock>
+      <status>false</status>
     </dataList>
     <dataList>
       <id>IP-28</id>
-      <productName>Ergonomic Silk Chair</productName>
-      <category>Gadget</category>
+      <productName>Aerodynamic Rubber Bench</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>4129738.75</value>
+        <value>1322457.53</value>
       </sellPrice>
       <buyPrice>
-        <value>4688465.49</value>
+        <value>401991.52</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/28.jpg</imagePath>
-      <stock>253</stock>
+      <stock>967</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-29</id>
-      <productName>Synergistic Silk Pants</productName>
-      <category>Makanan</category>
+      <productName>Fantastic Wool Computer</productName>
+      <category>Gadget</category>
       <sellPrice>
-        <value>3167254.82</value>
+        <value>107206.79</value>
       </sellPrice>
       <buyPrice>
-        <value>3488312.88</value>
+        <value>91830.28</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/29.jpg</imagePath>
-      <stock>118</stock>
+      <stock>514</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-30</id>
-      <productName>Heavy Duty Silk Bottle</productName>
-      <category>Minuman</category>
+      <productName>Practical Granite Pants</productName>
+      <category>Gadget</category>
       <sellPrice>
-        <value>3483699.84</value>
+        <value>5345409.77</value>
       </sellPrice>
       <buyPrice>
-        <value>4441220.279999999</value>
+        <value>4368805.71</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/30.jpg</imagePath>
-      <stock>597</stock>
-      <status>false</status>
+      <stock>710</stock>
+      <status>true</status>
     </dataList>
     <dataList>
       <id>IP-31</id>
-      <productName>Durable Copper Hat</productName>
-      <category>Gadget</category>
+      <productName>Sleek Iron Bag</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>1756414.81</value>
+        <value>1705949.54</value>
       </sellPrice>
       <buyPrice>
-        <value>2459298.17</value>
+        <value>1511916.17</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/31.jpg</imagePath>
-      <stock>665</stock>
+      <stock>321</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-32</id>
-      <productName>Rustic Aluminum Clock</productName>
-      <category>Minuman</category>
+      <productName>Synergistic Linen Table</productName>
+      <category>Makanan</category>
       <sellPrice>
-        <value>3949573.41</value>
+        <value>4329501.75</value>
       </sellPrice>
       <buyPrice>
-        <value>4104260.29</value>
+        <value>3454276.4</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/32.jpg</imagePath>
-      <stock>718</stock>
-      <status>false</status>
+      <stock>420</stock>
+      <status>true</status>
     </dataList>
     <dataList>
       <id>IP-33</id>
-      <productName>Small Leather Hat</productName>
-      <category>Minuman</category>
+      <productName>Intelligent Aluminum Bag</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>3413891.19</value>
+        <value>3488447.1</value>
       </sellPrice>
       <buyPrice>
-        <value>3887255.16</value>
+        <value>2738316.71</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/33.jpg</imagePath>
-      <stock>339</stock>
+      <stock>382</stock>
       <status>false</status>
     </dataList>
     <dataList>
       <id>IP-34</id>
-      <productName>Awesome Concrete Knife</productName>
-      <category>Makanan</category>
+      <productName>Heavy Duty Iron Table</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>1213371.25</value>
+        <value>5223608.98</value>
       </sellPrice>
       <buyPrice>
-        <value>1816551.6800000002</value>
+        <value>4529378.37</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/34.jpg</imagePath>
-      <stock>877</stock>
-      <status>true</status>
-    </dataList>
-    <dataList>
-      <id>IP-35</id>
-      <productName>Intelligent Rubber Computer</productName>
-      <category>Pakaian</category>
-      <sellPrice>
-        <value>1651470.33</value>
-      </sellPrice>
-      <buyPrice>
-        <value>2323919.16</value>
-      </buyPrice>
-      <additionalValues/>
-      <imagePath>file:assets/images/products/35.jpg</imagePath>
-      <stock>361</stock>
+      <stock>971</stock>
       <status>false</status>
     </dataList>
     <dataList>
-      <id>IP-36</id>
-      <productName>Intelligent Wool Plate</productName>
-      <category>Gadget</category>
+      <id>IP-35</id>
+      <productName>Sleek Cotton Chair</productName>
+      <category>Minuman</category>
       <sellPrice>
-        <value>2352297.07</value>
+        <value>1277534.92</value>
       </sellPrice>
       <buyPrice>
-        <value>3109570.9099999997</value>
+        <value>389356.99</value>
+      </buyPrice>
+      <additionalValues/>
+      <imagePath>file:assets/images/products/35.jpg</imagePath>
+      <stock>108</stock>
+      <status>true</status>
+    </dataList>
+    <dataList>
+      <id>IP-36</id>
+      <productName>Gorgeous Iron Hat</productName>
+      <category>Pakaian</category>
+      <sellPrice>
+        <value>3439832.22</value>
+      </sellPrice>
+      <buyPrice>
+        <value>3409926.6</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/36.jpg</imagePath>
-      <stock>635</stock>
+      <stock>248</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-37</id>
-      <productName>Rustic Plastic Pants</productName>
-      <category>Minuman</category>
+      <productName>Incredible Linen Hat</productName>
+      <category>Gadget</category>
       <sellPrice>
-        <value>462287.57</value>
+        <value>2051234.9200000002</value>
       </sellPrice>
       <buyPrice>
-        <value>1312707.01</value>
+        <value>1919385.84</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/37.jpg</imagePath>
-      <stock>323</stock>
-      <status>false</status>
+      <stock>216</stock>
+      <status>true</status>
     </dataList>
     <dataList>
       <id>IP-38</id>
-      <productName>Durable Aluminum Shoes</productName>
+      <productName>Fantastic Concrete Shoes</productName>
       <category>Minuman</category>
       <sellPrice>
-        <value>993574.04</value>
+        <value>4206175.0</value>
       </sellPrice>
       <buyPrice>
-        <value>1979428.76</value>
+        <value>3824024.36</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/38.jpg</imagePath>
-      <stock>602</stock>
+      <stock>702</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-39</id>
-      <productName>Lightweight Cotton Shoes</productName>
-      <category>Minuman</category>
+      <productName>Intelligent Linen Pants</productName>
+      <category>Makanan</category>
       <sellPrice>
-        <value>463464.6</value>
+        <value>4650914.61</value>
       </sellPrice>
       <buyPrice>
-        <value>1080505.85</value>
+        <value>4508294.53</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/39.jpg</imagePath>
-      <stock>66</stock>
+      <stock>544</stock>
       <status>false</status>
     </dataList>
     <dataList>
       <id>IP-40</id>
-      <productName>Heavy Duty Paper Coat</productName>
-      <category>Gadget</category>
+      <productName>Durable Paper Shirt</productName>
+      <category>Minuman</category>
       <sellPrice>
-        <value>2837055.25</value>
+        <value>476685.2</value>
       </sellPrice>
       <buyPrice>
-        <value>2979211.75</value>
+        <value>245418.53</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/40.jpg</imagePath>
-      <stock>825</stock>
+      <stock>75</stock>
       <status>false</status>
     </dataList>
     <dataList>
       <id>IP-41</id>
-      <productName>Intelligent Concrete Shoes</productName>
-      <category>Makanan</category>
+      <productName>Durable Leather Bottle</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>4917318.17</value>
+        <value>1392138.26</value>
       </sellPrice>
       <buyPrice>
-        <value>5485781.28</value>
+        <value>1241558.51</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/41.jpg</imagePath>
-      <stock>620</stock>
-      <status>true</status>
+      <stock>363</stock>
+      <status>false</status>
     </dataList>
     <dataList>
       <id>IP-42</id>
-      <productName>Synergistic Wooden Chair</productName>
-      <category>Minuman</category>
+      <productName>Durable Wool Bench</productName>
+      <category>Makanan</category>
       <sellPrice>
-        <value>3669599.07</value>
+        <value>1640479.7</value>
       </sellPrice>
       <buyPrice>
-        <value>3789716.5</value>
+        <value>1021418.51</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/42.jpg</imagePath>
-      <stock>818</stock>
+      <stock>395</stock>
       <status>false</status>
     </dataList>
     <dataList>
       <id>IP-43</id>
-      <productName>Sleek Paper Pants</productName>
-      <category>Minuman</category>
+      <productName>Aerodynamic Aluminum Shoes</productName>
+      <category>Pakaian</category>
       <sellPrice>
-        <value>3136061.5</value>
+        <value>5100242.95</value>
       </sellPrice>
       <buyPrice>
-        <value>3645915.08</value>
+        <value>4401398.21</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/43.jpg</imagePath>
-      <stock>622</stock>
-      <status>true</status>
-    </dataList>
-    <dataList>
-      <id>IP-44</id>
-      <productName>Intelligent Leather Bottle</productName>
-      <category>Pakaian</category>
-      <sellPrice>
-        <value>3271357.44</value>
-      </sellPrice>
-      <buyPrice>
-        <value>3293794.7199999997</value>
-      </buyPrice>
-      <additionalValues/>
-      <imagePath>file:assets/images/products/44.jpg</imagePath>
-      <stock>486</stock>
+      <stock>23</stock>
       <status>false</status>
     </dataList>
     <dataList>
-      <id>IP-45</id>
-      <productName>Mediocre Wooden Car</productName>
-      <category>Pakaian</category>
+      <id>IP-44</id>
+      <productName>Synergistic Bronze Car</productName>
+      <category>Minuman</category>
       <sellPrice>
-        <value>4351268.23</value>
+        <value>1369253.95</value>
       </sellPrice>
       <buyPrice>
-        <value>5294469.470000001</value>
+        <value>803357.11</value>
+      </buyPrice>
+      <additionalValues/>
+      <imagePath>file:assets/images/products/44.jpg</imagePath>
+      <stock>176</stock>
+      <status>true</status>
+    </dataList>
+    <dataList>
+      <id>IP-45</id>
+      <productName>Gorgeous Copper Keyboard</productName>
+      <category>Pakaian</category>
+      <sellPrice>
+        <value>4328423.8100000005</value>
+      </sellPrice>
+      <buyPrice>
+        <value>3964076.91</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/45.jpg</imagePath>
-      <stock>239</stock>
+      <stock>282</stock>
       <status>false</status>
     </dataList>
     <dataList>
       <id>IP-46</id>
-      <productName>Gorgeous Wool Pants</productName>
-      <category>Pakaian</category>
+      <productName>Gorgeous Linen Gloves</productName>
+      <category>Minuman</category>
       <sellPrice>
-        <value>4877086.6</value>
+        <value>3850643.2</value>
       </sellPrice>
       <buyPrice>
-        <value>5131579.25</value>
+        <value>3722157.5</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/46.jpg</imagePath>
-      <stock>144</stock>
+      <stock>808</stock>
       <status>true</status>
     </dataList>
     <dataList>
       <id>IP-47</id>
-      <productName>Small Granite Gloves</productName>
-      <category>Pakaian</category>
+      <productName>Intelligent Copper Shirt</productName>
+      <category>Gadget</category>
       <sellPrice>
-        <value>3431207.32</value>
+        <value>2307645.48</value>
       </sellPrice>
       <buyPrice>
-        <value>4011460.19</value>
+        <value>1800980.46</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/47.jpg</imagePath>
-      <stock>727</stock>
+      <stock>959</stock>
       <status>false</status>
     </dataList>
     <dataList>
       <id>IP-48</id>
-      <productName>Practical Bronze Chair</productName>
-      <category>Gadget</category>
+      <productName>Intelligent Copper Bench</productName>
+      <category>Makanan</category>
       <sellPrice>
-        <value>4567515.2</value>
+        <value>3271775.94</value>
       </sellPrice>
       <buyPrice>
-        <value>5536590.28</value>
+        <value>2701806.35</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/48.jpg</imagePath>
-      <stock>834</stock>
-      <status>true</status>
+      <stock>892</stock>
+      <status>false</status>
     </dataList>
     <dataList>
       <id>IP-49</id>
-      <productName>Intelligent Cotton Knife</productName>
+      <productName>Enormous Iron Hat</productName>
       <category>Minuman</category>
       <sellPrice>
-        <value>3027984.28</value>
+        <value>2166495.67</value>
       </sellPrice>
       <buyPrice>
-        <value>3317634.94</value>
+        <value>1777149.14</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/49.jpg</imagePath>
-      <stock>653</stock>
-      <status>true</status>
+      <stock>798</stock>
+      <status>false</status>
     </dataList>
     <dataList>
       <id>IP-50</id>
-      <productName>Mediocre Linen Gloves</productName>
-      <category>Makanan</category>
+      <productName>Practical Iron Knife</productName>
+      <category>Gadget</category>
       <sellPrice>
-        <value>2226924.52</value>
+        <value>2157940.92</value>
       </sellPrice>
       <buyPrice>
-        <value>2460316.14</value>
+        <value>1539993.99</value>
       </buyPrice>
       <additionalValues/>
       <imagePath>file:assets/images/products/50.jpg</imagePath>
-      <stock>674</stock>
-      <status>true</status>
+      <stock>566</stock>
+      <status>false</status>
     </dataList>
   </dataList>
 </DataList>

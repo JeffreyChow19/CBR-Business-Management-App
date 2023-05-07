@@ -1,8 +1,7 @@
 package com.cbr.view.pages;
 
 import com.cbr.App;
-import com.cbr.models.InventoryProduct;
-import com.cbr.models.TemporaryInvoice;
+import com.cbr.models.*;
 import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.buttons.PlusButton;
 import com.cbr.view.components.cardslist.InventoryProductCardList;
@@ -10,6 +9,7 @@ import com.cbr.view.components.dropdown.Dropdown;
 import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.theme.Theme;
+import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -26,9 +26,14 @@ import java.util.stream.Collectors;
 
 public class InventoryPage extends StackPane {
     private InventoryProductCardList productCardList;
+    private String searchQuery;
+    private String categoryFilter;
 
     public InventoryPage() {
         super();
+        searchQuery = "";
+        categoryFilter = "";
+
         ScrollPane scroll_area = new ScrollPane();
         VBox container = new VBox();
 
@@ -46,7 +51,7 @@ public class InventoryPage extends StackPane {
         // Searchbar
         TextField searchBar = new TextField();
         searchBar.textProperty().addListener((observable, oldValue, newValue) -> {
-            updateList(newValue.toLowerCase());
+            searchQuery = newValue;
         });
         searchBar.setStyle("-fx-background-radius: 20;");
         searchBar.setPromptText("Search product by name");
@@ -65,7 +70,7 @@ public class InventoryPage extends StackPane {
         filterDropdown.setPromptText("Select a category");
 
         filterDropdown.valueProperty().addListener((observable, oldValue, newValue) -> {
-                    updateFilter(newValue.toLowerCase());
+                    categoryFilter = newValue;
                 });
 
         AddItemPage addItemPage = new AddItemPage();
@@ -91,6 +96,23 @@ public class InventoryPage extends StackPane {
         scroll_area.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
         scroll_area.setContent(container);
         this.getChildren().add(scroll_area);
+
+        Thread task = new Thread(() -> {
+            while (true) {
+                List<InventoryProduct> filteredProduct = App.getDataStore().getInventory().getDataList().stream()
+                        .filter(prod -> prod.getProductName().toLowerCase().contains(searchQuery) && prod.getCategory().toLowerCase().contains(categoryFilter)).collect(Collectors.toList());
+
+                Platform.runLater(() -> {
+                    this.productCardList.updateList(filteredProduct);
+                });
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        task.start();
     }
 
     public void updateList(String search) {

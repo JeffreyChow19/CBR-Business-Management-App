@@ -53,8 +53,8 @@ public class Seeder {
             String category = categories.get(rand.nextInt(categories.size()));
             Boolean status = faker.bool().bool();
             // system.out.println(category);
-            InventoryProduct product = new InventoryProduct(productName, new BasePrice(buyPrice),
-                    new BasePrice(sellPrice), imagePath, stock, category, status);
+            InventoryProduct product = new InventoryProduct(productName,
+                    new BasePrice(sellPrice), new BasePrice(buyPrice), imagePath, stock, category, status);
             // system.out.println(product.getCategory());
             productList.add(product);
         }

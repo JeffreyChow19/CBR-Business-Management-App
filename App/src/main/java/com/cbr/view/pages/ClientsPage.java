@@ -125,7 +125,7 @@ public class ClientsPage extends ScrollPane {
                     this.memberCardList.update(memberList);
                 });
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
