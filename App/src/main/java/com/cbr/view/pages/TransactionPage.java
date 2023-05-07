@@ -4,7 +4,9 @@ import com.cbr.App;
 import com.cbr.models.Pricing.BasePrice;
 import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.cards.AdditionalCostCard;
-import com.cbr.view.components.cards.CustomerHistoryCard;
+import com.cbr.view.components.cards.HistoryInvoiceCard;
+import com.cbr.view.components.cards.TransactionInvoiceCard;
+import com.cbr.view.components.cards.TransactionProductCard;
 import com.cbr.view.components.cardslist.TransactionInvoiceCardList;
 import com.cbr.view.components.cardslist.TransactionProductCardList;
 import com.cbr.view.components.form.dropdown.TitleDropdown;
@@ -317,7 +319,7 @@ public class TransactionPage extends StackPane {
         // IF USER IS MEMBERS OR VIP, SHOW POP UP "WANT TO USE POINTS?"
         Customer customer = App.getDataStore().getCustomerById(customerId);
         Double usePoint = new Double((customer instanceof Member || customer instanceof VIP) ? ((Member)customer).getPoint().getValue() : 0.0);
-        YesNoPopUp popUpUsePoint = new YesNoPopUp("Do you want you use your " + usePoint.toString() + " points?");
+        YesNoPopUp popUpUsePoint = new YesNoPopUp("Do you want you use your " + String.format("%.2f", usePoint) + " points?");
         if (customer != null && usePoint > 0){
             popUpUsePoint.getYesButton().setOnAction(e -> {
                 popUpUsePoint.setValue(new Boolean(true));
@@ -353,8 +355,8 @@ public class TransactionPage extends StackPane {
 
         App.getDataStore().deleteTemporaryInvoices(this.temporaryInvoice);
 
-        OkPopUp successMakeBill = new OkPopUp("Successfully Make Bill with id " + invoice.getId() + ", used " + usePoint + " points, get " + getPoint + "points");
-        successMakeBill.setBox(new CustomerHistoryCard(invoice));
+        OkPopUp successMakeBill = new OkPopUp("SUCCESS");
+        successMakeBill.setBox(new HistoryInvoiceCard(invoice));
         successMakeBill.show();
 
         if (!temporaryInvoice.getCustomerId().equals("")){
@@ -427,11 +429,7 @@ public class TransactionPage extends StackPane {
     }
 
     public void updateTemporaryInvoice(){
-//        temporaryInvoice = invoice;
-
         resetInfo();
-
-//        for ()
         for (Map.Entry<String, Integer> entry : temporaryInvoice.getProductFrequencies().entrySet()) {
             String productId = entry.getKey();
 

@@ -13,14 +13,18 @@
     {
       "id" : "CS-3",
       "type" : "member",
-      "invoiceList" : [ ],
+      "invoiceList" : [
+        "FI-8"
+      ],
       "name" : "rachel",
       "phoneNumber" : "08123456789",
       "status" : true,
       "point" : {
-        "value" : 0.0
+        "value" : 5148.835316363637
       },
-      "additionalValue" : { }
+      "additionalValue" : {
+        "currency" : "KRW"
+      }
     },
     {
       "id" : "CS-4",
@@ -32,7 +36,9 @@
       "point" : {
         "value" : 0.0
       },
-      "additionalValue" : { }
+      "additionalValue" : {
+        "currency" : "KRW"
+      }
     },
     {
       "id" : "CS-5",
@@ -49,14 +55,24 @@
     {
       "id" : "CS-6",
       "type" : "VIP",
-      "invoiceList" : [ ],
+      "invoiceList" : [
+        "FI-16",
+        "FI-23",
+        "FI-27",
+        "FI-38",
+        "FI-25",
+        "FI-39",
+        "FI-31"
+      ],
       "name" : "Chow",
       "phoneNumber" : "08123456789",
       "status" : true,
       "point" : {
-        "value" : 100.0
+        "value" : 16427.949827493772
       },
-      "additionalValue" : { }
+      "additionalValue" : {
+        "currency" : "KRW"
+      }
     },
     {
       "id" : "CS-7",
@@ -68,7 +84,75 @@
       "point" : {
         "value" : 0.0
       },
-      "additionalValue" : { }
+      "additionalValue" : {
+        "currency" : "KRW"
+      }
+    },
+    {
+      "id" : "CS-10",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-1"
+      ]
+    },
+    {
+      "id" : "CS-11",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-2"
+      ]
+    },
+    {
+      "id" : "CS-12",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-5"
+      ]
+    },
+    {
+      "id" : "CS-13",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-4"
+      ]
+    },
+    {
+      "id" : "CS-14",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-5"
+      ]
+    },
+    {
+      "id" : "CS-15",
+      "type" : "customer",
+      "invoiceList" : [ ]
+    },
+    {
+      "id" : "CS-16",
+      "type" : "customer",
+      "invoiceList" : [ ]
+    },
+    {
+      "id" : "CS-17",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-17"
+      ]
+    },
+    {
+      "id" : "CS-18",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-12"
+      ]
+    },
+    {
+      "id" : "CS-19",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-15"
+      ]
     }
   ]
 }

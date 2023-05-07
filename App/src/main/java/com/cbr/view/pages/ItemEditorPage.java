@@ -160,6 +160,7 @@ public class ItemEditorPage extends AddItemPage {
                     App.getDataStore().updateProductInfo(savedItem);
                     showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(), "Edit Item Successful!",
                             "Item " + nameForm.getContentTextField().getText() + " successfully updated!");
+                    TabMenuBar.getInstance().closeTab(title.getText(), "Inventory Management");
                 } catch (NumberFormatException e) {
                     errMsg += "Price/Stock must be a number!";
                     showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(), "Add Item Error!",
