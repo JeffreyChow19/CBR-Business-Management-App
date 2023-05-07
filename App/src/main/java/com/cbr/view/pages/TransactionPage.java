@@ -18,6 +18,7 @@ import com.cbr.view.components.spinner.NumberSpinner;
 import com.cbr.view.theme.Theme;
 import com.cbr.App;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -283,8 +284,6 @@ public class TransactionPage extends StackPane {
         updateDatastore();
         resetInfo();
         updateTemporaryInvoiceDropdown();
-
-
     }
     public void makeBill() {
         // Check customerId
@@ -354,7 +353,7 @@ public class TransactionPage extends StackPane {
             additionalCosts.put(((AdditionalCostCard)n).getCardLabel().getText(), ((AdditionalCostCard)n).getCardNumber().getText());
         }
 
-        FixedInvoice invoice = new FixedInvoice(products, customerId, discount, usePoint, getPoint, additionalCosts, new BasePrice(grandTotal - usePoint));
+        FixedInvoice invoice = new FixedInvoice(products, customerId, new BasePrice(discount), new BasePrice(usePoint), new BasePrice(getPoint), additionalCosts, new BasePrice(grandTotal - usePoint));
         App.getDataStore().addInvoice(invoice);
 
         if (customer instanceof VIP || customer instanceof Member) {
@@ -424,12 +423,12 @@ public class TransactionPage extends StackPane {
             discount = new Double(0.0);
         }
 
-        discountContainer.getCardNumber().setText(String.format((discount == 0 ? "" : "- ") + "%.2f", discount));
+        discountContainer.getCardNumber().setText(String.format((discount == 0 ? "" : "- ") + (new BasePrice(discount)).toString()));
     }
 
     public void updateGrandTotal() {
         grandTotal = temporaryInvoice.grandTotal(discount);
-        grandTotalNumber.setText(String.format("%.2f", grandTotal));
+        grandTotalNumber.setText((new BasePrice(grandTotal)).toString());
     }
 
     public void renderAdditionalCostsContainer() {

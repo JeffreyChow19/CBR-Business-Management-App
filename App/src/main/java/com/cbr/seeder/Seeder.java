@@ -95,15 +95,15 @@ public class Seeder {
         boughtProducts.add(new BoughtProduct(productList.get(1), 1, new HashMap<>()));
         boughtProducts.add(new BoughtProduct(productList.get(2), 1, new HashMap<>()));
 
-        Map<String,String> additionalCost = new HashMap<>();
-        FixedInvoice invoice1 = new FixedInvoice(boughtProducts, cust1.getId(), 0.0, 0.0, 0.0, additionalCost, new BasePrice(0.0));
-        List<FixedInvoice> invoices = new ArrayList<>();
-        invoices.add(invoice1);
+//        Map<String,String> additionalCost = new HashMap<>();
+//        FixedInvoice invoice1 = new FixedInvoice(boughtProducts, cust1.getId(), new BasePrice(0.0), new BasePrice(0.0), new BasePrice(0.0), additionalCost, new BasePrice(0.0));
+//        List<FixedInvoice> invoices = new ArrayList<>();
+//        invoices.add(invoice1);
 
-        jsonDataStore.setInvoices(new DataList<>(invoices));
-        xmlDataStore.setInvoices(new DataList<>(invoices));
-
-        cust1.getInvoiceList().add(invoice1.getId());
+//        jsonDataStore.setInvoices(new DataList<>(invoices));
+//        xmlDataStore.setInvoices(new DataList<>(invoices));
+//
+//        cust1.getInvoiceList().add(invoice1.getId());
 
         customerList.add(cust1);
 

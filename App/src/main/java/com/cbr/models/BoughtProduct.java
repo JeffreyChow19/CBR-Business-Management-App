@@ -1,6 +1,8 @@
 package com.cbr.models;
 
 import com.cbr.models.Pricing.BasePrice;
+import com.cbr.models.Pricing.Price;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,7 +21,7 @@ public class BoughtProduct extends Product {
         this.count = count;
     }
 
-    public Double total() {
-        return count * super.getSellPrice().getValue();
+    public Price total() {
+        return new BasePrice(count * super.getSellPrice().getValue());
     }
 }
