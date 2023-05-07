@@ -45,6 +45,28 @@ This project is a Java implementation of Object Oriented Programming principles 
 
 This project is built to meet the following [guidelines](https://docs.google.com/document/d/1SA2q8LrSiYntjCQ9Sx6xIGIAVYe6kcZg5iBjgibcEfk/edit#).
 
+## Preview
+1. Main Page
+<img src="doc/mainPage.jpg"> 
+2. Inventory
+<img src="doc/inventory.jpg"> 
+3. Clients
+<img src="doc/clients.jpg"> 
+4. Transaction
+<img src="doc/transaction.jpg"> 
+5. Plugin 
+![image](https://user-images.githubusercontent.com/91037907/236701536-7f645166-08ba-467e-9045-e841a7af6bba.png)
+6. Settings (w/ plugins loaded)
+![image](https://user-images.githubusercontent.com/91037907/236701557-7f674f96-7fe6-4d8d-984b-4536277fb927.png)
+7. Plugin-Chart-1
+![image](https://user-images.githubusercontent.com/91037907/236701578-a2c4c08e-3908-4ebb-bbf6-bfa8469d7d4b.png)
+8. Plugin-Chart-2
+![image](https://user-images.githubusercontent.com/91037907/236701591-ed40de51-29f0-4c82-97d7-78840ec8ea24.png)
+9. Plugin-System-1
+![image](https://user-images.githubusercontent.com/91037907/236701995-7a67eb6e-018a-4874-bc2e-755ebadc5a2e.png)
+10. Plugin-System-2 (used with Plugin-System-1)
+![image](https://user-images.githubusercontent.com/91037907/236702022-40bc48db-0a36-4f05-922d-f016937fbfd1.png)
+
 ## Prerequisites
 - Java
 - Maven, to install refer to : `https://phoenixnap.com/kb/install-maven-windows`
@@ -65,13 +87,12 @@ or
 ```
  $ cd App
 ```
-(Without Jar)
-3. run this command
+3. <br/>
+(Without Jar) run this command
 ```bash
  $ mvn clean javafx:run
 ```
-(With jar)
-3. run this command
+(With jar) run this command
 ```
  $ java -jar target/app-1.0-jar-with-dependencies.jar
 ```
@@ -85,6 +106,7 @@ Please refer to `src/main/java/com/Person.java`
 ## Directory Structure
 ```
 ├───.idea
+├───doc
 ├───App
 │   ├───assets
 │   │   ├───data
