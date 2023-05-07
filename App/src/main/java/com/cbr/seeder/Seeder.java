@@ -3,6 +3,7 @@ package com.cbr.seeder;
 import com.cbr.datastore.DataStore;
 import com.cbr.models.*;
 import com.cbr.models.Pricing.BasePrice;
+import com.fasterxml.jackson.databind.ser.Serializers;
 import com.github.javafaker.Faker;
 
 import java.util.*;
@@ -16,9 +17,9 @@ public class Seeder {
         DataStore objDataStore = new DataStore("OBJ", "App/assets/data/obj");// TEMPORARY INVOICES //
         List<TemporaryInvoice> temporaryInvoices = new ArrayList<>();
         for (int i = 0; i < 3;i++){
-            Integer customerId = faker.number().numberBetween(1,7);
+            Integer customerId = faker.number().numberBetween(3,7);
             Integer productId = faker.number().numberBetween(1, 50);
-            TemporaryInvoice temp = new TemporaryInvoice(customerId.toString());
+            TemporaryInvoice temp = new TemporaryInvoice("CS-" + customerId.toString());
             temp.addProduct("IP-"+productId.toString());
             temporaryInvoices.add(temp);
         }
@@ -90,11 +91,12 @@ public class Seeder {
 
         List<BoughtProduct> boughtProducts = new ArrayList<>();
 
-        boughtProducts.add(new BoughtProduct(productList.get(0), 1));
-        boughtProducts.add(new BoughtProduct(productList.get(1), 1));
-        boughtProducts.add(new BoughtProduct(productList.get(2), 1));
+        boughtProducts.add(new BoughtProduct(productList.get(0), 1, new HashMap<>()));
+        boughtProducts.add(new BoughtProduct(productList.get(1), 1, new HashMap<>()));
+        boughtProducts.add(new BoughtProduct(productList.get(2), 1, new HashMap<>()));
 
-        FixedInvoice invoice1 = new FixedInvoice(boughtProducts, cust1.getId(), 0.0, 0.0, 0.0);
+        Map<String,String> additionalCost = new HashMap<>();
+        FixedInvoice invoice1 = new FixedInvoice(boughtProducts, cust1.getId(), 0.0, 0.0, 0.0, additionalCost, new BasePrice(0.0));
         List<FixedInvoice> invoices = new ArrayList<>();
         invoices.add(invoice1);
 

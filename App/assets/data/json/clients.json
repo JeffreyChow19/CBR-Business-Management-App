@@ -1,14 +1,14 @@
 {
   "dataList" : [
     {
-      "id" : "CS-15",
+      "id" : "CS-16",
       "type" : "customer",
       "invoiceList" : [
-        "FI-3"
+        "FI-7"
       ]
     },
     {
-      "id" : "CS-16",
+      "id" : "CS-17",
       "type" : "customer",
       "invoiceList" : [ ]
     },
@@ -43,15 +43,11 @@
     {
       "id" : "CS-6",
       "type" : "VIP",
-      "invoiceList" : [
-        "FI-3",
-        "FI-4",
-        "FI-5"
-      ],
+      "invoiceList" : [ ],
       "name" : "Chow",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 358104.3728068,
+      "point" : 100.0,
       "buyPrice" : 100000.0
     },
     {
@@ -64,56 +60,9 @@
       "point" : 0.0
     },
     {
-      "id" : "CS-17",
-      "type" : "customer",
-      "invoiceList" : [
-        "FI-2"
-      ]
-    },
-    {
       "id" : "CS-18",
       "type" : "customer",
-      "invoiceList" : [
-        "FI-6"
-      ]
-    },
-    {
-      "id" : "CS-19",
-      "type" : "customer",
       "invoiceList" : [ ]
-    },
-    {
-      "id" : "CS-20",
-      "type" : "customer",
-      "invoiceList" : [ ]
-    },
-    {
-      "id" : "CS-21",
-      "type" : "customer",
-      "invoiceList" : [
-        "FI-7"
-      ]
-    },
-    {
-      "id" : "CS-22",
-      "type" : "customer",
-      "invoiceList" : [
-        "FI-8"
-      ]
-    },
-    {
-      "id" : "CS-23",
-      "type" : "customer",
-      "invoiceList" : [
-        "FI-9"
-      ]
-    },
-    {
-      "id" : "CS-24",
-      "type" : "customer",
-      "invoiceList" : [
-        "FI-10"
-      ]
     }
   ]
 }

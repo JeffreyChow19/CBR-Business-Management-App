@@ -4,7 +4,8 @@
   "plugins" : [
     "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\Plugin-System-1\\target\\Plugin-System-1-1.0.jar",
     "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\Plugin-Base\\target\\Plugin-Base-1.0.jar",
-    "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\Plugin-System-2\\target\\Plugin-System-2-1.0.jar"
+    "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\Plugin-System-2\\target\\Plugin-System-2-1.0.jar",
+    "C:\\Users\\Jeffrey Chow\\Documents\\ITB\\4th Semester\\IF2210 Object Oriented Programming\\Tubes 2\\CBR-Business-Management-App\\Plugin-System-2\\target\\Plugin-System-2-1.0.jar"
   ],
   "additionalSettings" : {
     "tax" : "10.0",

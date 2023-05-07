@@ -1,6 +1,7 @@
 package com.cbr.view.pages;
 
 import com.cbr.App;
+import com.cbr.models.Pricing.BasePrice;
 import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.cards.AdditionalCostCard;
 import com.cbr.view.components.cards.CustomerHistoryCard;
@@ -36,10 +37,7 @@ import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class TransactionPage extends StackPane {
     private HBox container;
@@ -319,7 +317,7 @@ public class TransactionPage extends StackPane {
                 }
 
                 if (entry.getValue() > 0){
-                    BoughtProduct boughtProduct = new BoughtProduct(product, entry.getValue());
+                    BoughtProduct boughtProduct = new BoughtProduct(product, entry.getValue(), new HashMap<>());
                     products.add(boughtProduct);
 
                     // DELETE FROM INVENTORY PRODUCT DATASTORE
@@ -351,7 +349,12 @@ public class TransactionPage extends StackPane {
         Double getPoint = new Double (0.01 * (grandTotal-usePoint));
         Double deltaPoint = new Double(getPoint - usePoint);
 
-        FixedInvoice invoice = new FixedInvoice(products, customerId, discount, usePoint, getPoint);
+        Map<String, String> additionalCosts = new HashMap<>();
+        for (Node n : additionalCostsContainer.getChildren()){
+            additionalCosts.put(((AdditionalCostCard)n).getCardLabel().getText(), ((AdditionalCostCard)n).getCardNumber().getText());
+        }
+
+        FixedInvoice invoice = new FixedInvoice(products, customerId, discount, usePoint, getPoint, additionalCosts, new BasePrice(grandTotal - usePoint));
         App.getDataStore().addInvoice(invoice);
 
         if (customer instanceof VIP || customer instanceof Member) {
@@ -425,11 +428,9 @@ public class TransactionPage extends StackPane {
     }
 
     public void updateGrandTotal() {
-        grandTotal = temporaryInvoice.grandTotal() - discount;
+        grandTotal = temporaryInvoice.grandTotal(discount);
         grandTotalNumber.setText(String.format("%.2f", grandTotal));
     }
-
-
 
     public void renderAdditionalCostsContainer() {
         for (Node c : this.getAdditionalCostsContainer().getChildren()) {

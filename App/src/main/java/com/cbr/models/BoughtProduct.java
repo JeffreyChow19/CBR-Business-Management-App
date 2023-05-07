@@ -13,8 +13,8 @@ import java.util.Map;
 @Getter
 public class BoughtProduct extends Product {
     private Integer count;
-    public BoughtProduct(InventoryProduct product, Integer count){
-        super(product.getProductName(), product.getCategory(), new BasePrice(product.getSellPrice().getValue()), new BasePrice(product.getBuyPrice().getValue()));
+    public BoughtProduct(InventoryProduct product, Integer count, Map<String,String> additionalValues){
+        super(product.getProductName(), product.getCategory(), new BasePrice(product.getSellPrice().getValue()), new BasePrice(product.getBuyPrice().getValue()), additionalValues);
         this.id = product.getId();
         this.count = count;
     }
