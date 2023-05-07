@@ -81,11 +81,11 @@ public class Seeder {
         // CUSTOMERS //
         Customer cust1 = new Customer();
         Customer cust2 = new Customer();
-        Member mem1 = new Member("CS-3", new ArrayList<>(), "rachel", "08123456789");
-        Member mem2 = new Member("CS-4", new ArrayList<>(), "Livia", "08123456789");
-        VIP vip1 = new VIP("CS-5", new ArrayList<>(), "Jason", "08123456789", false, 100.0, 100000.0);
-        VIP vip2 = new VIP("CS-6", new ArrayList<>(), "Chow", "08123456789", true, 100.0, 100000.0);
-        Member mem3 = new Member("CS-7", new ArrayList<>(), "Eugene", "08123456789");
+        Member mem1 = new Member("CS-3", new ArrayList<>(), "rachel", "08123456789", new HashMap<>());
+        Member mem2 = new Member("CS-4", new ArrayList<>(), "Livia", "08123456789", new HashMap<>());
+        VIP vip1 = new VIP("CS-5", new ArrayList<>(), "Jason", "08123456789", false, new BasePrice(100.0), 100000.0, new HashMap<>());
+        VIP vip2 = new VIP("CS-6", new ArrayList<>(), "Chow", "08123456789", true, new BasePrice(100.0), 100000.0, new HashMap<>());
+        Member mem3 = new Member("CS-7", new ArrayList<>(), "Eugene", "08123456789", new HashMap<>());
 
         List<Customer> customerList = new ArrayList<Customer>();
 
