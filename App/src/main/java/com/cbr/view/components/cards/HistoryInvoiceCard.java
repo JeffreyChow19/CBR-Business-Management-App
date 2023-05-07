@@ -31,9 +31,9 @@ public class HistoryInvoiceCard extends GridPane {
         Label fixedInvoiceId = new Label(this.invoice.getId());
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
         Label fixedInvoiceDate = new Label(this.invoice.getCreatedAt().format(dateTimeFormatter));
-        fixedInvoiceId.setFont(Theme.getBodyMediumFont());
+        fixedInvoiceId.setFont(Theme.getHeading2Font());
         fixedInvoiceId.setTextFill(Color.WHITE);
-        fixedInvoiceDate.setFont(Theme.getBodyFont());
+        fixedInvoiceDate.setFont(Theme.getBodyMediumFont());
         fixedInvoiceDate.setTextFill(Color.WHITE);
         this.add(fixedInvoiceId, 0, currentRow, 1, 1);
         this.add(fixedInvoiceDate, 3, currentRow, 1, 1);
@@ -48,13 +48,13 @@ public class HistoryInvoiceCard extends GridPane {
             Label productName = new Label(p.getProductName());
             Label productPriceEach = new Label("@" + String.valueOf(p.getSellPrice().getValue()));
             Label productSubtotal = new Label(String.valueOf(p.getSellPrice().getValue() * p.getCount()));
-            productQty.setFont(Theme.getBodyFont());
+            productQty.setFont(Theme.getBodyMediumFont());
             productQty.setTextFill(Color.WHITE);
-            productName.setFont(Theme.getBodyFont());
+            productName.setFont(Theme.getBodyMediumFont());
             productName.setTextFill(Color.WHITE);
-            productPriceEach.setFont(Theme.getBodyFont());
+            productPriceEach.setFont(Theme.getBodyMediumFont());
             productPriceEach.setTextFill(Color.WHITE);
-            productSubtotal.setFont(Theme.getBodyFont());
+            productSubtotal.setFont(Theme.getBodyMediumFont());
             productSubtotal.setTextFill(Color.WHITE);
             this.add(productQty, 0, currentRow, 1, 1);
             this.add(productName, 1, currentRow, 1, 1);
@@ -72,7 +72,7 @@ public class HistoryInvoiceCard extends GridPane {
         discountLabel.setFont(Theme.getBodyMediumFont());
         discountLabel.setTextFill(Color.WHITE);
         Label discountQty = new Label(String.valueOf(this.invoice.getDiscount()));
-        discountQty.setFont(Theme.getBodyFont());
+        discountQty.setFont(Theme.getBodyMediumFont());
         discountQty.setTextFill(Color.WHITE);
         this.add(discountLabel, 0, currentRow, 1, 1);
         this.add(discountQty, 3, currentRow, 1, 1);
@@ -82,7 +82,7 @@ public class HistoryInvoiceCard extends GridPane {
         // "Points used" line
         currentRow++;
         Label pointsUsedLabel = new Label("Points used");
-        pointsUsedLabel.setFont(Theme.getBodyFont());
+        pointsUsedLabel.setFont(Theme.getBodyMediumFont());
         pointsUsedLabel.setTextFill(Color.WHITE);
         this.add(pointsUsedLabel, 0, currentRow, 1, 1);
         GridPane.setHalignment(pointsUsedLabel, HPos.LEFT);
@@ -91,7 +91,7 @@ public class HistoryInvoiceCard extends GridPane {
         // Grand total line
         currentRow++;
         Label grandTotalLabel = new Label("Grand total");
-        grandTotalLabel.setFont(Theme.getBodyMediumFont());
+        grandTotalLabel.setFont(Theme.getHeading2Font());
         grandTotalLabel.setTextFill(Color.WHITE);
         this.add(grandTotalLabel, 0, currentRow, 1, 1);
         GridPane.setHalignment(grandTotalLabel, HPos.LEFT);
@@ -100,7 +100,7 @@ public class HistoryInvoiceCard extends GridPane {
         // Points line
         currentRow++;
         Label pointsLabel = new Label("Points");
-        pointsLabel.setFont(Theme.getBodyMediumFont());
+        pointsLabel.setFont(Theme.getHeading2Font());
         pointsLabel.setTextFill(Color.WHITE);
         this.add(pointsLabel, 0, currentRow, 1, 1);
         GridPane.setHalignment(pointsLabel, HPos.LEFT);
