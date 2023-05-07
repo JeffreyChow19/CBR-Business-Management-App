@@ -44,6 +44,11 @@ public class InventoryProductCard extends VBox {
         edit_container.setHgrow(edit_region, Priority.ALWAYS);
         Button editButton = new EditButton(hpadding);
         editButton.setOnAction(event -> TabMenuBar.getInstance().addTab("Edit Item #" + product.getId(), editorPage));
+        if (!product.getStatus()) {
+            editButton.setDisable(true);
+        } else {
+            editButton.setDisable(false);
+        }
         edit_container.getChildren().addAll(edit_region, editButton);
         this.getChildren().add(edit_container);
 
@@ -105,7 +110,7 @@ public class InventoryProductCard extends VBox {
         // Status Label
         Label statusLabel;
         if (product.getStatus()) {
-        statusLabel = new DefaultLabel(0.4 * width,"Active", Theme.getAccentGreen());
+            statusLabel = new DefaultLabel(0.4 * width,"Active", Theme.getAccentGreen());
         }
         else {
             statusLabel = new DefaultLabel(0.4 * width,"Inactive", Theme.getAccentRed());

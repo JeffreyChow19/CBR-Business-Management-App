@@ -26,6 +26,7 @@ import java.util.stream.Collectors;
 
 public class InventoryPage extends StackPane {
     private InventoryProductCardList productCardList;
+    private List<InventoryProduct> productList;
 
     public InventoryPage() {
         super();
@@ -33,7 +34,7 @@ public class InventoryPage extends StackPane {
         VBox container = new VBox();
 
         // Get datastore
-        List<InventoryProduct> productList = App.getDataStore().getInventory().getDataList();
+        productList = App.getDataStore().getInventory().getDataList();
         productCardList = new InventoryProductCardList(productList);
 
         // Title
@@ -45,9 +46,6 @@ public class InventoryPage extends StackPane {
 
         // Searchbar
         TextField searchBar = new TextField();
-        searchBar.textProperty().addListener((observable, oldValue, newValue) -> {
-            updateList(newValue.toLowerCase());
-        });
         searchBar.setStyle("-fx-background-radius: 20;");
         searchBar.setPromptText("Search product by name");
         searchBar.setPadding(new Insets(12));
@@ -60,13 +58,18 @@ public class InventoryPage extends StackPane {
             categorySet.add(product.getCategory());
         }
         List<String> categoryList = new ArrayList<>(categorySet);
+        categoryList.add("All");
 
         Dropdown filterDropdown = new Dropdown(categoryList);
         filterDropdown.setPromptText("Select a category");
 
+        searchBar.textProperty().addListener((observable, oldValue, newValue) -> {
+            updateList(newValue.toLowerCase(),filterDropdown.getValue().toLowerCase());
+        });
+
         filterDropdown.valueProperty().addListener((observable, oldValue, newValue) -> {
-                    updateFilter(newValue.toLowerCase());
-                });
+            updateList(searchBar.textProperty().getValue().toLowerCase(), newValue.toLowerCase());
+        });
 
         AddItemPage addItemPage = new AddItemPage();
 
@@ -93,18 +96,20 @@ public class InventoryPage extends StackPane {
         this.getChildren().add(scroll_area);
     }
 
-    public void updateList(String search) {
-        List<InventoryProduct> filteredProduct = App.getDataStore().getInventory().getDataList().stream()
-                .filter(prod -> prod.getProductName().toLowerCase().contains(search)).collect(Collectors.toList());
-        this.productCardList.updateList(filteredProduct);
+    public void updateList(String search, String category) {
+        System.out.println(search + category);
+        productList = App.getDataStore().getInventory().getDataList();
+        if (!search.isEmpty()) {
+            List<InventoryProduct> filteredProduct = productList.stream()
+                    .filter(prod -> prod.getProductName().toLowerCase().contains(search)).collect(Collectors.toList());
+            productList = filteredProduct;
+        }
+        if (!category.equals("all")) {
+            List<InventoryProduct> filteredProduct = productList.stream()
+                    .filter(prod -> prod.getCategory().toLowerCase().contains(category)).collect(Collectors.toList());
+            productList = filteredProduct;
+        }
+        this.productCardList.updateList(productList);
     }
-
-    public void updateFilter(String category) {
-        List<InventoryProduct> filteredProduct = App.getDataStore().getInventory().getDataList().stream()
-                .filter(prod -> prod.getCategory().toLowerCase().contains(category)).collect(Collectors.toList());
-        this.productCardList.updateList(filteredProduct);
-    }
-
-
 
 }
