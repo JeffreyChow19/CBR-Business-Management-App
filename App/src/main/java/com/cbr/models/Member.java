@@ -1,5 +1,7 @@
 package com.cbr.models;
 
+import com.cbr.models.Pricing.BasePrice;
+import com.cbr.models.Pricing.Price;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,7 +18,7 @@ public class Member extends Customer {
     @Getter
     protected Boolean status;
     @Getter
-    protected Double point;
+    protected Price point;
 
     public Member(){
         this.type = "member";
@@ -28,16 +30,13 @@ public class Member extends Customer {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.status = true;
-        this.point = 0.0;
+        this.point = new BasePrice(0.0);
     }
 
     public void addPoint(Double point){
-        this.point+=point;
+        this.point = new BasePrice(this.point.getValue() + point);
     }
 
-    public void subtractPoint(Integer point){
-        this.point-=point;
-    }
     public void buy(Product product){
 
     }

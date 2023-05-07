@@ -1,6 +1,7 @@
 package com.cbr.view.pages;
 
 import com.cbr.App;
+import com.cbr.models.Pricing.BasePrice;
 import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.buttons.DeleteButton;
 import com.cbr.view.components.buttons.ActivateButton;
@@ -168,7 +169,7 @@ public class ProfileEditor<T extends Customer> extends StackPane {
                     } else {
                         newCustomer = new VIP(customer.getId(), customer.getInvoiceList(),
                                 nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText(),
-                                true, 0.0, 0.0);
+                                true, new BasePrice(0.0), 0.0);
                     }
                     App.getDataStore().updateCustomerInfo(newCustomer);
                     showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(),

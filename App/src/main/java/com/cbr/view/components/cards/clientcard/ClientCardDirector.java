@@ -23,7 +23,7 @@ public class ClientCardDirector {
     public void createMembersCard(ClientCardBuilder builder, Member member){
         builder.setCustomerId(member.getId());
         builder.setName(member.getName());
-        builder.setPoints(member.getPoint());
+        builder.setPoints(member.getPoint().getValue());
         builder.setStatus(member.getStatus());
         builder.setPhoneNumber(member.getPhoneNumber());
         List<Button> buttons = new ArrayList<>();

@@ -327,7 +327,7 @@ public class TransactionPage extends StackPane {
 
         // IF USER IS MEMBERS OR VIP, SHOW POP UP "WANT TO USE POINTS?"
         Customer customer = App.getDataStore().getCustomerById(customerId);
-        Double usePoint = new Double((customer instanceof Member || customer instanceof VIP) ? ((Member)customer).getPoint() : 0.0);
+        Double usePoint = new Double((customer instanceof Member || customer instanceof VIP) ? ((Member)customer).getPoint().getValue() : 0.0);
         YesNoPopUp popUpUsePoint = new YesNoPopUp("Do you want you use your " + usePoint.toString() + " points?");
         if (customer != null && usePoint > 0){
             popUpUsePoint.getYesButton().setOnAction(e -> {

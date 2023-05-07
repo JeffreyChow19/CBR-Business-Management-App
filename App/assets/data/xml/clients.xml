@@ -2,14 +2,12 @@
 <DataList>
   <dataList>
     <dataList>
-      <id>CS-15</id>
+      <id>CS-17</id>
       <type>customer</type>
-      <invoiceList>
-        <invoiceList>FI-3</invoiceList>
-      </invoiceList>
+      <invoiceList/>
     </dataList>
     <dataList>
-      <id>CS-16</id>
+      <id>CS-18</id>
       <type>customer</type>
       <invoiceList/>
     </dataList>
@@ -20,7 +18,9 @@
       <name>rachel</name>
       <phoneNumber>08123456789</phoneNumber>
       <status>true</status>
-      <point>0.0</point>
+      <point>
+        <value>0.0</value>
+      </point>
     </dataList>
     <dataList>
       <id>CS-4</id>
@@ -29,7 +29,9 @@
       <name>Livia</name>
       <phoneNumber>08123456789</phoneNumber>
       <status>true</status>
-      <point>0.0</point>
+      <point>
+        <value>0.0</value>
+      </point>
     </dataList>
     <dataList>
       <id>CS-5</id>
@@ -38,7 +40,9 @@
       <name>Jason</name>
       <phoneNumber>08123456789</phoneNumber>
       <status>false</status>
-      <point>100.0</point>
+      <point>
+        <value>100.0</value>
+      </point>
       <buyPrice>100000.0</buyPrice>
     </dataList>
     <dataList>
@@ -48,7 +52,9 @@
       <name>Chow</name>
       <phoneNumber>08123456789</phoneNumber>
       <status>true</status>
-      <point>100.0</point>
+      <point>
+        <value>100.0</value>
+      </point>
       <buyPrice>100000.0</buyPrice>
     </dataList>
     <dataList>
@@ -58,7 +64,9 @@
       <name>Eugene</name>
       <phoneNumber>08123456789</phoneNumber>
       <status>true</status>
-      <point>0.0</point>
+      <point>
+        <value>0.0</value>
+      </point>
     </dataList>
   </dataList>
 </DataList>
