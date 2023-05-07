@@ -30,7 +30,7 @@ public class ClientCardList<T extends Customer> extends VBox {
         ClientCardDirector dir = new ClientCardDirector();
         ClientCardBuilder builder = new ClientCardBuilder();
         for (Customer c : this.customerList) {
-            if (c.getType() == "customer"){
+            if (c.getType().equals("customer")){
                 dir.createCustomersCard(builder, c);
             }
             else {

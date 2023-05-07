@@ -2,23 +2,17 @@ package com.cbr.view.pages;
 
 import com.cbr.App;
 import com.cbr.view.components.buttons.DefaultButton;
-import com.cbr.view.components.buttons.DeleteButton;
 
 import com.cbr.view.components.form.FormArea;
 import com.cbr.view.components.form.FormLabel;
-import com.cbr.view.components.dropdown.Dropdown;
+import com.cbr.view.components.form.dropdown.Dropdown;
 import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.components.labels.ToolTipLabel;
-import com.cbr.view.components.spinner.NumberSpinner;
 import com.cbr.view.theme.Theme;
-import com.cbr.App;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 
 import javafx.geometry.Pos;
@@ -32,7 +26,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Window;
 import javafx.stage.FileChooser.ExtensionFilter;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.io.File;
 import java.io.IOException;
@@ -43,8 +36,6 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
 
 public class AddItemPage extends ScrollPane {

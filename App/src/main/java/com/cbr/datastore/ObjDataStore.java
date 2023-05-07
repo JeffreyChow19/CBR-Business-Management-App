@@ -33,13 +33,12 @@ public class ObjDataStore implements DataStorer {
                 return ret;
             }
         } catch (JsonProcessingException e) {
-            // system.out.println(e.getMessage());
-            // system.out.println("Failed to read data in the folder!");
+//            System.out.println(e.getMessage());
+            e.printStackTrace();
         } catch (IOException e) {
-            // system.out.println(e.getMessage());
-            // system.out.println("Failed to read data in the folder!");
+            e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            // system.out.println("Failed to read data in the folder!");
+            e.printStackTrace();
         }
         return null;
     };

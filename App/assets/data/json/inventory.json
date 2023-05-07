@@ -2,753 +2,853 @@
   "dataList" : [
     {
       "id" : "IP-1",
-      "productName" : "Aerodynamic Plastic Plate",
+      "productName" : "Mediocre Bronze Bottle",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 4469360.04
+        "value" : 318.84220500000004
       },
       "buyPrice" : {
-        "value" : 4185699.43
+        "value" : 260.364595
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/1.jpg",
-      "stock" : 546,
-      "status" : true
+      "stock" : 925,
+      "status" : false
     },
     {
       "id" : "IP-2",
-      "productName" : "Rustic Copper Shirt",
-      "category" : "Gadget",
+      "productName" : "Awesome Wool Pants",
+      "category" : "Makanan",
       "sellPrice" : {
-        "value" : 1761405.8
+        "value" : 343.0742
       },
       "buyPrice" : {
-        "value" : 1024465.64
+        "value" : 294.24200099999996
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/2.jpg",
-      "stock" : 955,
+      "stock" : 719,
       "status" : false
     },
     {
       "id" : "IP-3",
-      "productName" : "Durable Linen Clock",
-      "category" : "Minuman",
+      "productName" : "Ergonomic Aluminum Pants",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 491683.53
+        "value" : 121.71217999999998
       },
       "buyPrice" : {
-        "value" : 448665.7
+        "value" : 114.99588899999999
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/3.jpg",
-      "stock" : 126,
+      "stock" : 443,
       "status" : true
     },
     {
       "id" : "IP-4",
-      "productName" : "Rustic Concrete Bottle",
-      "category" : "Minuman",
+      "productName" : "Fantastic Bronze Car",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 4455782.82
+        "value" : 223.759681
       },
       "buyPrice" : {
-        "value" : 3901232.69
+        "value" : 145.644013
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/4.jpg",
-      "stock" : 836,
+      "stock" : 274,
       "status" : true
     },
     {
       "id" : "IP-5",
-      "productName" : "Mediocre Bronze Pants",
-      "category" : "Minuman",
+      "productName" : "Aerodynamic Cotton Bottle",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 4384415.1899999995
+        "value" : 500.01415699999995
       },
       "buyPrice" : {
-        "value" : 4191027.84
+        "value" : 426.71107699999993
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/5.jpg",
-      "stock" : 291,
-      "status" : true
+      "stock" : 449,
+      "status" : false
     },
     {
       "id" : "IP-6",
-      "productName" : "Lightweight Leather Knife",
-      "category" : "Minuman",
+      "productName" : "Fantastic Copper Lamp",
+      "category" : "Makanan",
       "sellPrice" : {
-        "value" : 4560724.97
+        "value" : 318.101794
       },
       "buyPrice" : {
-        "value" : 3845316.09
+        "value" : 261.535623
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/6.jpg",
-      "stock" : 736,
+      "stock" : 820,
       "status" : true
     },
     {
       "id" : "IP-7",
-      "productName" : "Sleek Plastic Pants",
+      "productName" : "Durable Silk Computer",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 1738606.6099999999
+        "value" : 548.0021310000001
       },
       "buyPrice" : {
-        "value" : 774464.32
+        "value" : 458.82689400000004
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/7.jpg",
-      "stock" : 272,
-      "status" : false
+      "stock" : 540,
+      "status" : true
     },
     {
       "id" : "IP-8",
-      "productName" : "Lightweight Copper Knife",
-      "category" : "Makanan",
+      "productName" : "Heavy Duty Copper Clock",
+      "category" : "Minuman",
       "sellPrice" : {
-        "value" : 5050829.48
+        "value" : 224.74777999999998
       },
       "buyPrice" : {
-        "value" : 4904630.65
+        "value" : 182.249231
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/8.jpg",
-      "stock" : 869,
-      "status" : true
+      "stock" : 458,
+      "status" : false
     },
     {
       "id" : "IP-9",
-      "productName" : "Practical Bronze Shoes",
-      "category" : "Minuman",
+      "productName" : "Rustic Copper Keyboard",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 1150193.6099999999
+        "value" : 516.1199529999999
       },
       "buyPrice" : {
-        "value" : 380089.91
+        "value" : 477.311555
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/9.jpg",
-      "stock" : 205,
-      "status" : true
+      "stock" : 67,
+      "status" : false
     },
     {
       "id" : "IP-10",
-      "productName" : "Incredible Bronze Clock",
-      "category" : "Pakaian",
+      "productName" : "Fantastic Concrete Watch",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 1614286.4600000002
+        "value" : 335.870222
       },
       "buyPrice" : {
-        "value" : 1480128.62
+        "value" : 326.705216
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/10.jpg",
-      "stock" : 367,
+      "stock" : 972,
       "status" : true
     },
     {
       "id" : "IP-11",
-      "productName" : "Enormous Marble Table",
-      "category" : "Gadget",
+      "productName" : "Practical Aluminum Shoes",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 3285725.5300000003
+        "value" : 171.11001299999998
       },
       "buyPrice" : {
-        "value" : 2444044.29
+        "value" : 126.772939
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/11.jpg",
-      "stock" : 35,
-      "status" : false
+      "stock" : 794,
+      "status" : true
     },
     {
       "id" : "IP-12",
-      "productName" : "Durable Paper Shirt",
-      "category" : "Makanan",
+      "productName" : "Rustic Steel Bottle",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 861802.2
+        "value" : 562.66974
       },
       "buyPrice" : {
-        "value" : 809041.62
+        "value" : 474.476121
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/12.jpg",
-      "stock" : 805,
+      "stock" : 446,
       "status" : false
     },
     {
       "id" : "IP-13",
-      "productName" : "Intelligent Concrete Pants",
+      "productName" : "Practical Marble Pants",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 2993369.37
+        "value" : 86.69462299999999
       },
       "buyPrice" : {
-        "value" : 2562888.21
+        "value" : 27.146555
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/13.jpg",
-      "stock" : 690,
+      "stock" : 123,
       "status" : true
     },
     {
       "id" : "IP-14",
-      "productName" : "Rustic Granite Bag",
-      "category" : "Gadget",
+      "productName" : "Sleek Copper Shoes",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 3646870.38
+        "value" : 314.710243
       },
       "buyPrice" : {
-        "value" : 2665003.11
+        "value" : 220.92367000000002
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/14.jpg",
-      "stock" : 870,
+      "stock" : 341,
       "status" : true
     },
     {
       "id" : "IP-15",
-      "productName" : "Aerodynamic Aluminum Shoes",
+      "productName" : "Synergistic Wool Wallet",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 3997723.19
+        "value" : 437.25163399999997
       },
       "buyPrice" : {
-        "value" : 3464235.54
+        "value" : 420.398425
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/15.jpg",
-      "stock" : 355,
-      "status" : true
+      "stock" : 87,
+      "status" : false
     },
     {
       "id" : "IP-16",
-      "productName" : "Aerodynamic Plastic Gloves",
+      "productName" : "Gorgeous Wool Clock",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 3215586.38
+        "value" : 412.13892999999996
       },
       "buyPrice" : {
-        "value" : 2746347.57
+        "value" : 358.903842
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/16.jpg",
-      "stock" : 24,
-      "status" : false
+      "stock" : 105,
+      "status" : true
     },
     {
       "id" : "IP-17",
-      "productName" : "Mediocre Copper Car",
-      "category" : "Pakaian",
+      "productName" : "Aerodynamic Concrete Knife",
+      "category" : "Minuman",
       "sellPrice" : {
-        "value" : 743604.6599999999
+        "value" : 147.722846
       },
       "buyPrice" : {
-        "value" : 568878.32
+        "value" : 82.408142
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/17.jpg",
-      "stock" : 873,
-      "status" : false
+      "stock" : 497,
+      "status" : true
     },
     {
       "id" : "IP-18",
-      "productName" : "Ergonomic Paper Car",
-      "category" : "Pakaian",
+      "productName" : "Rustic Steel Knife",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 5334925.58
+        "value" : 376.978453
       },
       "buyPrice" : {
-        "value" : 4786418.84
+        "value" : 311.124477
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/18.jpg",
-      "stock" : 818,
+      "stock" : 892,
       "status" : true
     },
     {
       "id" : "IP-19",
-      "productName" : "Fantastic Wooden Wallet",
-      "category" : "Gadget",
+      "productName" : "Synergistic Bronze Knife",
+      "category" : "Minuman",
       "sellPrice" : {
-        "value" : 1534603.9100000001
+        "value" : 320.50147999999996
       },
       "buyPrice" : {
-        "value" : 626603.89
+        "value" : 222.19100699999998
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/19.jpg",
-      "stock" : 702,
-      "status" : true
+      "stock" : 825,
+      "status" : false
     },
     {
       "id" : "IP-20",
-      "productName" : "Intelligent Concrete Chair",
-      "category" : "Gadget",
+      "productName" : "Sleek Cotton Knife",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 3412900.85
+        "value" : 173.512669
       },
       "buyPrice" : {
-        "value" : 3371844.72
+        "value" : 90.41308199999999
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/20.jpg",
-      "stock" : 50,
-      "status" : true
+      "stock" : 762,
+      "status" : false
     },
     {
       "id" : "IP-21",
-      "productName" : "Aerodynamic Leather Plate",
+      "productName" : "Gorgeous Wool Keyboard",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 3033259.85
+        "value" : 82.356664
       },
       "buyPrice" : {
-        "value" : 2685373.74
+        "value" : 52.218852000000005
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/21.jpg",
-      "stock" : 237,
+      "stock" : 39,
       "status" : true
     },
     {
       "id" : "IP-22",
-      "productName" : "Lightweight Cotton Watch",
-      "category" : "Gadget",
+      "productName" : "Aerodynamic Linen Pants",
+      "category" : "Makanan",
       "sellPrice" : {
-        "value" : 2521053.3
+        "value" : 119.42088500000001
       },
       "buyPrice" : {
-        "value" : 2027599.89
+        "value" : 49.716299
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/22.jpg",
-      "stock" : 836,
+      "stock" : 871,
       "status" : true
     },
     {
       "id" : "IP-23",
-      "productName" : "Synergistic Cotton Bottle",
+      "productName" : "Intelligent Concrete Pants",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 3767818.85
+        "value" : 261.088934
       },
       "buyPrice" : {
-        "value" : 3480083.02
+        "value" : 195.37578200000002
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/23.jpg",
-      "stock" : 377,
-      "status" : false
+      "stock" : 552,
+      "status" : true
     },
     {
       "id" : "IP-24",
-      "productName" : "Awesome Plastic Clock",
-      "category" : "Makanan",
+      "productName" : "Heavy Duty Rubber Car",
+      "category" : "Minuman",
       "sellPrice" : {
-        "value" : 3881582.48
+        "value" : 424.64622700000007
       },
       "buyPrice" : {
-        "value" : 3152609.89
+        "value" : 402.926287
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/24.jpg",
-      "stock" : 27,
-      "status" : false
+      "stock" : 662,
+      "status" : true
     },
     {
       "id" : "IP-25",
-      "productName" : "Lightweight Wooden Pants",
-      "category" : "Minuman",
+      "productName" : "Ergonomic Wool Computer",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 5518248.06
+        "value" : 441.957521
       },
       "buyPrice" : {
-        "value" : 4593595.92
+        "value" : 372.63554500000004
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/25.jpg",
-      "stock" : 320,
+      "stock" : 472,
       "status" : true
     },
     {
       "id" : "IP-26",
-      "productName" : "Synergistic Copper Lamp",
+      "productName" : "Fantastic Cotton Watch",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 1415333.5699999998
+        "value" : 472.88229
       },
       "buyPrice" : {
-        "value" : 1093922.7
+        "value" : 438.53986900000007
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/26.jpg",
-      "stock" : 867,
+      "stock" : 412,
       "status" : false
     },
     {
       "id" : "IP-27",
-      "productName" : "Awesome Linen Shirt",
-      "category" : "Gadget",
+      "productName" : "Sleek Bronze Plate",
+      "category" : "Minuman",
       "sellPrice" : {
-        "value" : 5305759.75
+        "value" : 382.365096
       },
       "buyPrice" : {
-        "value" : 4852849.07
+        "value" : 376.935884
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/27.jpg",
-      "stock" : 904,
-      "status" : false
+      "stock" : 166,
+      "status" : true
     },
     {
       "id" : "IP-28",
-      "productName" : "Aerodynamic Rubber Bench",
-      "category" : "Pakaian",
+      "productName" : "Enormous Aluminum Clock",
+      "category" : "Minuman",
       "sellPrice" : {
-        "value" : 1322457.53
+        "value" : 490.734213
       },
       "buyPrice" : {
-        "value" : 401991.52
+        "value" : 487.55908200000005
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/28.jpg",
-      "stock" : 967,
-      "status" : true
+      "stock" : 976,
+      "status" : false
     },
     {
       "id" : "IP-29",
-      "productName" : "Fantastic Wool Computer",
-      "category" : "Gadget",
+      "productName" : "Mediocre Linen Shirt",
+      "category" : "Makanan",
       "sellPrice" : {
-        "value" : 107206.79
+        "value" : 291.543044
       },
       "buyPrice" : {
-        "value" : 91830.28
+        "value" : 275.212552
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/29.jpg",
-      "stock" : 514,
-      "status" : true
+      "stock" : 872,
+      "status" : false
     },
     {
       "id" : "IP-30",
-      "productName" : "Practical Granite Pants",
-      "category" : "Gadget",
+      "productName" : "Practical Wooden Knife",
+      "category" : "Minuman",
       "sellPrice" : {
-        "value" : 5345409.77
+        "value" : 101.415071
       },
       "buyPrice" : {
-        "value" : 4368805.71
+        "value" : 51.838536
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/30.jpg",
-      "stock" : 710,
-      "status" : true
+      "stock" : 757,
+      "status" : false
     },
     {
       "id" : "IP-31",
-      "productName" : "Sleek Iron Bag",
-      "category" : "Pakaian",
+      "productName" : "Durable Linen Car",
+      "category" : "Makanan",
       "sellPrice" : {
-        "value" : 1705949.54
+        "value" : 141.104498
       },
       "buyPrice" : {
-        "value" : 1511916.17
+        "value" : 44.01099
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/31.jpg",
-      "stock" : 321,
-      "status" : true
+      "stock" : 423,
+      "status" : false
     },
     {
       "id" : "IP-32",
-      "productName" : "Synergistic Linen Table",
+      "productName" : "Heavy Duty Copper Gloves",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 4329501.75
+        "value" : 486.03738100000004
       },
       "buyPrice" : {
-        "value" : 3454276.4
+        "value" : 386.477306
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/32.jpg",
-      "stock" : 420,
+      "stock" : 862,
       "status" : true
     },
     {
       "id" : "IP-33",
-      "productName" : "Intelligent Aluminum Bag",
+      "productName" : "Aerodynamic Plastic Bag",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 3488447.1
+        "value" : 126.655831
       },
       "buyPrice" : {
-        "value" : 2738316.71
+        "value" : 29.291813
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/33.jpg",
-      "stock" : 382,
-      "status" : false
+      "stock" : 922,
+      "status" : true
     },
     {
       "id" : "IP-34",
-      "productName" : "Heavy Duty Iron Table",
-      "category" : "Pakaian",
+      "productName" : "Durable Wooden Computer",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 5223608.98
+        "value" : 363.870197
       },
       "buyPrice" : {
-        "value" : 4529378.37
+        "value" : 311.908704
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/34.jpg",
-      "stock" : 971,
+      "stock" : 859,
       "status" : false
     },
     {
       "id" : "IP-35",
-      "productName" : "Sleek Cotton Chair",
-      "category" : "Minuman",
+      "productName" : "Incredible Silk Lamp",
+      "category" : "Makanan",
       "sellPrice" : {
-        "value" : 1277534.92
+        "value" : 245.19814100000002
       },
       "buyPrice" : {
-        "value" : 389356.99
+        "value" : 154.715404
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/35.jpg",
-      "stock" : 108,
+      "stock" : 712,
       "status" : true
     },
     {
       "id" : "IP-36",
-      "productName" : "Gorgeous Iron Hat",
-      "category" : "Pakaian",
+      "productName" : "Lightweight Linen Coat",
+      "category" : "Minuman",
       "sellPrice" : {
-        "value" : 3439832.22
+        "value" : 149.97705200000001
       },
       "buyPrice" : {
-        "value" : 3409926.6
+        "value" : 121.099046
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/36.jpg",
-      "stock" : 248,
+      "stock" : 768,
       "status" : true
     },
     {
       "id" : "IP-37",
-      "productName" : "Incredible Linen Hat",
+      "productName" : "Practical Plastic Chair",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 2051234.9200000002
+        "value" : 376.21640999999994
       },
       "buyPrice" : {
-        "value" : 1919385.84
+        "value" : 291.090615
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/37.jpg",
-      "stock" : 216,
-      "status" : true
+      "stock" : 2,
+      "status" : false
     },
     {
       "id" : "IP-38",
-      "productName" : "Fantastic Concrete Shoes",
+      "productName" : "Intelligent Aluminum Shirt",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 4206175.0
+        "value" : 263.63800200000003
       },
       "buyPrice" : {
-        "value" : 3824024.36
+        "value" : 198.66728
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/38.jpg",
-      "stock" : 702,
-      "status" : true
+      "stock" : 610,
+      "status" : false
     },
     {
       "id" : "IP-39",
-      "productName" : "Intelligent Linen Pants",
-      "category" : "Makanan",
+      "productName" : "Small Iron Coat",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 4650914.61
+        "value" : 455.9982
       },
       "buyPrice" : {
-        "value" : 4508294.53
+        "value" : 382.089232
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/39.jpg",
-      "stock" : 544,
+      "stock" : 474,
       "status" : false
     },
     {
       "id" : "IP-40",
-      "productName" : "Durable Paper Shirt",
-      "category" : "Minuman",
+      "productName" : "Enormous Wooden Bench",
+      "category" : "Makanan",
       "sellPrice" : {
-        "value" : 476685.2
+        "value" : 513.639846
       },
       "buyPrice" : {
-        "value" : 245418.53
+        "value" : 474.407966
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/40.jpg",
-      "stock" : 75,
+      "stock" : 678,
       "status" : false
     },
     {
       "id" : "IP-41",
-      "productName" : "Durable Leather Bottle",
-      "category" : "Pakaian",
+      "productName" : "Durable Silk Coat",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 1392138.26
+        "value" : 103.18879799999999
       },
       "buyPrice" : {
-        "value" : 1241558.51
+        "value" : 3.87284
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/41.jpg",
-      "stock" : 363,
+      "stock" : 610,
       "status" : false
     },
     {
       "id" : "IP-42",
-      "productName" : "Durable Wool Bench",
-      "category" : "Makanan",
+      "productName" : "Intelligent Bronze Bag",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 1640479.7
+        "value" : 344.689
       },
       "buyPrice" : {
-        "value" : 1021418.51
+        "value" : 328.164926
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/42.jpg",
-      "stock" : 395,
+      "stock" : 523,
       "status" : false
     },
     {
       "id" : "IP-43",
-      "productName" : "Aerodynamic Aluminum Shoes",
-      "category" : "Pakaian",
+      "productName" : "Small Granite Clock",
+      "category" : "Gadget",
       "sellPrice" : {
-        "value" : 5100242.95
+        "value" : 121.07713799999999
       },
       "buyPrice" : {
-        "value" : 4401398.21
+        "value" : 83.070385
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/43.jpg",
-      "stock" : 23,
+      "stock" : 210,
       "status" : false
     },
     {
       "id" : "IP-44",
-      "productName" : "Synergistic Bronze Car",
-      "category" : "Minuman",
+      "productName" : "Rustic Bronze Hat",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 1369253.95
+        "value" : 358.040792
       },
       "buyPrice" : {
-        "value" : 803357.11
+        "value" : 320.15797000000003
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/44.jpg",
-      "stock" : 176,
-      "status" : true
+      "stock" : 38,
+      "status" : false
     },
     {
       "id" : "IP-45",
-      "productName" : "Gorgeous Copper Keyboard",
-      "category" : "Pakaian",
+      "productName" : "Fantastic Concrete Wallet",
+      "category" : "Makanan",
       "sellPrice" : {
-        "value" : 4328423.8100000005
+        "value" : 461.890962
       },
       "buyPrice" : {
-        "value" : 3964076.91
+        "value" : 439.96175
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/45.jpg",
-      "stock" : 282,
+      "stock" : 319,
       "status" : false
     },
     {
       "id" : "IP-46",
-      "productName" : "Gorgeous Linen Gloves",
-      "category" : "Minuman",
+      "productName" : "Gorgeous Plastic Hat",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 3850643.2
+        "value" : 160.68910699999998
       },
       "buyPrice" : {
-        "value" : 3722157.5
+        "value" : 97.600738
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/46.jpg",
-      "stock" : 808,
-      "status" : true
+      "stock" : 805,
+      "status" : false
     },
     {
       "id" : "IP-47",
-      "productName" : "Intelligent Copper Shirt",
-      "category" : "Gadget",
+      "productName" : "Gorgeous Aluminum Keyboard",
+      "category" : "Makanan",
       "sellPrice" : {
-        "value" : 2307645.48
+        "value" : 473.018512
       },
       "buyPrice" : {
-        "value" : 1800980.46
+        "value" : 451.604749
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/47.jpg",
-      "stock" : 959,
+      "stock" : 226,
       "status" : false
     },
     {
       "id" : "IP-48",
-      "productName" : "Intelligent Copper Bench",
-      "category" : "Makanan",
+      "productName" : "Intelligent Leather Shoes",
+      "category" : "Minuman",
       "sellPrice" : {
-        "value" : 3271775.94
+        "value" : 233.16081
       },
       "buyPrice" : {
-        "value" : 2701806.35
+        "value" : 185.414629
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/48.jpg",
-      "stock" : 892,
-      "status" : false
+      "stock" : 479,
+      "status" : true
     },
     {
       "id" : "IP-49",
-      "productName" : "Enormous Iron Hat",
-      "category" : "Minuman",
+      "productName" : "Practical Bronze Watch",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 2166495.67
+        "value" : 301.167086
       },
       "buyPrice" : {
-        "value" : 1777149.14
+        "value" : 247.040627
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/49.jpg",
-      "stock" : 798,
+      "stock" : 819,
       "status" : false
     },
     {
       "id" : "IP-50",
-      "productName" : "Practical Iron Knife",
-      "category" : "Gadget",
+      "productName" : "Heavy Duty Iron Chair",
+      "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 2157940.92
+        "value" : 76.093319
       },
       "buyPrice" : {
-        "value" : 1539993.99
+        "value" : 32.009027
       },
-      "additionalValues" : { },
+      "additionalValues" : {
+        "currency" : "AUD"
+      },
       "imagePath" : "file:assets/images/products/50.jpg",
-      "stock" : 566,
-      "status" : false
+      "stock" : 515,
+      "status" : true
     }
   ]
 }

@@ -1,4 +1,4 @@
-package com.cbr.view.components.dropdown;
+package com.cbr.view.components.form.dropdown;
 
 import com.cbr.view.theme.Theme;
 import javafx.scene.Scene;

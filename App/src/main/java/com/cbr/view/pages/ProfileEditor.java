@@ -9,13 +9,11 @@ import com.cbr.view.components.buttons.ActivateButton;
 import com.cbr.view.components.form.FormArea;
 import com.cbr.view.components.form.FormLabel;
 import com.cbr.view.components.header.tabmenu.TabMenuBar;
-import com.cbr.view.components.dropdown.Dropdown;
+import com.cbr.view.components.form.dropdown.Dropdown;
 import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.theme.Theme;
-import com.cbr.App;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
@@ -23,10 +21,8 @@ import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 import com.cbr.models.*;
 import javafx.scene.control.*;
-import javafx.scene.paint.Color;
 import javafx.stage.Window;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.*;
 

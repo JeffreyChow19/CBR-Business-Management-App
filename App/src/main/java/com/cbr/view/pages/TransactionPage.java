@@ -5,29 +5,17 @@ import com.cbr.models.Pricing.BasePrice;
 import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.cards.AdditionalCostCard;
 import com.cbr.view.components.cards.CustomerHistoryCard;
-import com.cbr.view.components.cards.TransactionInvoiceCard;
-import com.cbr.view.components.cards.TransactionProductCard;
 import com.cbr.view.components.cardslist.TransactionInvoiceCardList;
 import com.cbr.view.components.cardslist.TransactionProductCardList;
-import com.cbr.view.components.dropdown.Dropdown;
-import com.cbr.view.components.dropdown.TitleDropdown;
-import com.cbr.view.components.labels.PageTitle;
+import com.cbr.view.components.form.dropdown.TitleDropdown;
 import com.cbr.view.components.popup.OkPopUp;
 import com.cbr.view.components.popup.YesNoPopUp;
-import com.cbr.view.components.spinner.NumberSpinner;
 import com.cbr.view.theme.Theme;
-import com.cbr.App;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
-import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.chart.PieChart;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -38,12 +26,10 @@ import com.cbr.models.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class TransactionPage extends StackPane {
     private HBox container;

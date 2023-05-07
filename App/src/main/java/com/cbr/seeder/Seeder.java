@@ -129,8 +129,8 @@ public class Seeder {
             // system.out.println(c.getId());
         }
         for (Customer c : objDataStore.getClients().getDataList()) {
-            // system.out.println(c.getClass().getName());
-            // system.out.println(c.getId());
+             System.out.println(c.getClass().getName());
+             System.out.println(c.getId());
         }
 
     }

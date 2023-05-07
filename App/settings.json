@@ -1,6 +1,6 @@
 {
-  "dataStorePath" : "assets/data/json",
-  "dataStoreMode" : "JSON",
+  "dataStorePath" : "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\App\\assets\\data\\obj",
+  "dataStoreMode" : "OBJ",
   "plugins" : [
     "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\Plugin-System-1\\target\\Plugin-System-1-1.0.jar",
     "D:\\lessons\\SEM 4\\OOP\\TUBES\\CBR-Business-Management-App\\Plugin-Base\\target\\Plugin-Base-1.0.jar",

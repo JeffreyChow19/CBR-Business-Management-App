@@ -27,7 +27,7 @@ public class App extends Application {
         Image appIcon = new Image("file:assets/icons/capybucks.png");
         // chore: update icons
         stage.getIcons().add(appIcon);
-        // PluginManager pluginManager = new PluginManager();
+//         PluginManager pluginManager = new PluginManager();
         // pluginManager.loadPlugin("Plugin-Base/target/Plugin-Base-1.0.jar",
         // "com.cbr.BasePlugin.class");
         //// for (Plugin p : pluginManager.getPlugins()){

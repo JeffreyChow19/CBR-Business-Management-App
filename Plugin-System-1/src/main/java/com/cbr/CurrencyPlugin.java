@@ -9,7 +9,7 @@ import com.cbr.models.Pricing.Price;
 import com.cbr.plugin.Plugin;
 import com.cbr.utils.AppSettings;
 import com.cbr.view.MainView;
-import com.cbr.view.components.dropdown.Dropdown;
+import com.cbr.view.components.form.dropdown.Dropdown;
 import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.pages.TransactionPage;
 import com.cbr.view.theme.Theme;
@@ -73,6 +73,9 @@ public class CurrencyPlugin implements Plugin {
 
         Thread task = new Thread(() -> {
             while (true) {
+                if (App.getDataStore().<Currency>getAdditionalData("currency", Currency.class).isEmpty()) {
+                    App.getDataStore().setAdditionalData(curs, "currency");
+                }
                 List<Currency> currencyList = App.getDataStore().<Currency>getAdditionalData("currency",
                         Currency.class);
                 String currencySymbol = AppSettings.getInstance().getAdditionalSettings().get("currency");

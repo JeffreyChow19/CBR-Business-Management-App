@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ArrayList>
+  <item>
+    <symbol>IDR</symbol>
+    <name>Indonesian Rupiah (Default)</name>
+    <exchangeRate>1.0</exchangeRate>
+  </item>
+  <item>
+    <symbol>USD</symbol>
+    <name>US Dollar</name>
+    <exchangeRate>14000.0</exchangeRate>
+  </item>
+  <item>
+    <symbol>AUD</symbol>
+    <name>Australian Dollar</name>
+    <exchangeRate>10000.0</exchangeRate>
+  </item>
+  <item>
+    <symbol>KRW</symbol>
+    <name>Korean Won</name>
+    <exchangeRate>11.0</exchangeRate>
+  </item>
+</ArrayList>

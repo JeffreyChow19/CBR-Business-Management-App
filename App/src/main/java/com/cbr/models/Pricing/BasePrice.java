@@ -5,12 +5,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 
 @NoArgsConstructor
 @Getter
 @Setter
-public class BasePrice implements Price {
+public class BasePrice implements Serializable, Price {
     protected Double value;
     public BasePrice(Double value){
         this.value = value;
