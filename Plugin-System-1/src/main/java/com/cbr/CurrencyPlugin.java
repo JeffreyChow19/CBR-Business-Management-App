@@ -1,7 +1,8 @@
 package com.cbr;
 
-import com.cbr.models.*;
 import com.cbr.models.BoughtProduct;
+import com.cbr.models.FixedInvoice;
+import com.cbr.models.InventoryProduct;
 import com.cbr.models.Pricing.BasePrice;
 import com.cbr.models.Pricing.Price;
 import com.cbr.plugin.Plugin;
