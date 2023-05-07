@@ -54,7 +54,12 @@ public class FixedInvoice extends Invoice {
         return total;
     }
 
-    public void print(){
-        // to implement
+
+    public Double getRevenue() {
+        double revenue = 0.0;
+        for (BoughtProduct product: this.boughtProducts) {
+            revenue += (product.getCount() * (product.getSellPrice().getValue() - product.getBuyPrice().getValue()));
+        }
+        return revenue;
     }
 }
