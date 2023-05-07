@@ -8,6 +8,7 @@ import java.sql.Date;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
+import com.cbr.utils.ExportPDF;
 import javafx.scene.paint.Color;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
@@ -156,9 +157,13 @@ public class HistoryInvoiceCard extends VBox {
         GridPane.setHalignment(pointsLabel, HPos.LEFT);
         GridPane.setHalignment(pointsQty, HPos.RIGHT);
 
+        // Export PDF
+        ExportPDF exportInvoice = new ExportPDF();
+
         // Button to export to PDF
         currentRow++;
         ExportInvoiceButton exportButton = new ExportInvoiceButton(this.invoice);
+        exportButton.setOnAction(event -> exportInvoice.init(exportButton, invoice));
         gp.add(exportButton, 2, currentRow, 2, 1);
         GridPane.setHalignment(exportButton, HPos.RIGHT);
 

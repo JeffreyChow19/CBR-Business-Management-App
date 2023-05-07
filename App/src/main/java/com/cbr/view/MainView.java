@@ -49,6 +49,8 @@ public class MainView extends VBox {
         PluginsPage pluginsPage = new PluginsPage();
         inventoryPage = new InventoryPage();
         // chore: pages
+        /* Export Statement */
+        ExportPDF exportStatement = new ExportPDF();
 
         /* Body Setup */
         TabMenuBar.getInstance().addTab("Home", homePage);
@@ -60,7 +62,7 @@ public class MainView extends VBox {
         /* Header Setup */
         HeaderMenuBar.getInstance().addNewNavigationMenu("Clients", clientsPage);
         HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", inventoryPage);
-        HeaderMenuBar.getInstance().addNewNavigationMenu("Export Statements", new Label("export"));
+        HeaderMenuBar.getInstance().addNewNavigationMenu("Export Statements", exportStatement);
         HeaderMenuBar.getInstance().addNewNavigationMenu("Transaction", transactionPage);
         HeaderMenuBar.getInstance().addNewPreferencesMenu("Settings", settingsPage);
         HeaderMenuBar.getInstance().addNewPreferencesMenu("Plugins", pluginsPage);

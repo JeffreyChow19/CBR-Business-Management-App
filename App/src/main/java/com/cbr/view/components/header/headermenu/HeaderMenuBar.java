@@ -1,5 +1,6 @@
 package com.cbr.view.components.header.headermenu;
 
+import com.cbr.utils.ExportPDF;
 import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.theme.Theme;
 import javafx.scene.Node;
@@ -55,6 +56,16 @@ public class HeaderMenuBar extends MenuBar {
                 ";-fx-font-family: Ubuntu"
         );
         newMenu.setOnAction(event -> TabMenuBar.getInstance().addTab(menuName, menuContent));
+        this.getNavigationMenu().getItems().add(newMenu);
+    }
+
+    public void addNewNavigationMenu(String menuName, ExportPDF exportStatement){
+        MenuItem newMenu = new MenuItem(menuName);
+        newMenu.setStyle(
+                "-fx-font-size: " + 24.0 / 1920 * Theme.getScreenWidth() +
+                        ";-fx-font-family: Ubuntu"
+        );
+        newMenu.setOnAction(event -> exportStatement.init(newMenu));
         this.getNavigationMenu().getItems().add(newMenu);
     }
 
