@@ -15,29 +15,31 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 
 import com.cbr.view.components.buttons.ExportInvoiceButton;
 import com.cbr.view.theme.Theme;
 
-public class HistoryInvoiceCard extends GridPane {
+public class HistoryInvoiceCard extends VBox {
     private FixedInvoice invoice;
 
     public HistoryInvoiceCard(FixedInvoice invoice) {
         int currentRow = 0;
+        GridPane gp = new GridPane();
         this.invoice = invoice;
-        this.setMinWidth(Theme.getScreenWidth() * 0.5);
-        this.setMaxWidth(Theme.getScreenWidth() * 0.5);
-        this.setPadding(new Insets(30));
-        this.setStyle("-fx-background-radius: 20; -fx-background-color: " + Theme.getPrimaryBase());
-        this.setHgap(15);
-        this.setVgap(7);
+        gp.setMinWidth(Theme.getScreenWidth() * 0.5);
+        gp.setMaxWidth(Theme.getScreenWidth() * 0.5);
+        gp.setPadding(new Insets(30));
+        gp.setStyle("-fx-background-radius: 20; -fx-background-color: " + Theme.getPrimaryBase());
+        gp.setHgap(15);
+        gp.setVgap(7);
 
         ColumnConstraints col1 = new ColumnConstraints();
         ColumnConstraints col2 = new ColumnConstraints();
         col2.setHgrow(Priority.ALWAYS);
         ColumnConstraints col3 = new ColumnConstraints();
         ColumnConstraints col4 = new ColumnConstraints();
-        this.getColumnConstraints().addAll(col1, col2, col3, col4);
+        gp.getColumnConstraints().addAll(col1, col2, col3, col4);
 
         // Top row: Transaction ID, timestamp
         Label fixedInvoiceId = new Label(this.invoice.getId());
@@ -47,8 +49,8 @@ public class HistoryInvoiceCard extends GridPane {
         fixedInvoiceId.setTextFill(Color.WHITE);
         fixedInvoiceDate.setFont(Theme.getBodyMediumFont());
         fixedInvoiceDate.setTextFill(Color.WHITE);
-        this.add(fixedInvoiceId, 0, currentRow, 2, 1);
-        this.add(fixedInvoiceDate, 2, currentRow, 2, 1);
+        gp.add(fixedInvoiceId, 0, currentRow, 2, 1);
+        gp.add(fixedInvoiceDate, 2, currentRow, 2, 1);
         GridPane.setHalignment(fixedInvoiceId, HPos.LEFT);
         GridPane.setHalignment(fixedInvoiceDate, HPos.RIGHT);
 
@@ -68,10 +70,10 @@ public class HistoryInvoiceCard extends GridPane {
             productPriceEach.setTextFill(Color.WHITE);
             productSubtotal.setFont(Theme.getBodyMediumFont());
             productSubtotal.setTextFill(Color.WHITE);
-            this.add(productQty, 0, currentRow, 1, 1);
-            this.add(productName, 1, currentRow, 1, 1);
-            this.add(productPriceEach, 2, currentRow, 1, 1);
-            this.add(productSubtotal, 3, currentRow, 1, 1);
+            gp.add(productQty, 0, currentRow, 1, 1);
+            gp.add(productName, 1, currentRow, 1, 1);
+            gp.add(productPriceEach, 2, currentRow, 1, 1);
+            gp.add(productSubtotal, 3, currentRow, 1, 1);
             GridPane.setHalignment(productQty, HPos.LEFT);
             GridPane.setHalignment(productName, HPos.LEFT);
             GridPane.setHalignment(productPriceEach, HPos.LEFT);
@@ -86,8 +88,8 @@ public class HistoryInvoiceCard extends GridPane {
         Label discountQty = new Label(this.invoice.getDiscount().toString());
         discountQty.setFont(Theme.getBodyMediumFont());
         discountQty.setTextFill(Color.WHITE);
-        this.add(discountLabel, 0, currentRow, 2, 1);
-        this.add(discountQty, 2, currentRow, 2, 1);
+        gp.add(discountLabel, 0, currentRow, 2, 1);
+        gp.add(discountQty, 2, currentRow, 2, 1);
         GridPane.setHalignment(discountLabel, HPos.LEFT);
         GridPane.setHalignment(discountQty, HPos.RIGHT);
 
@@ -99,8 +101,8 @@ public class HistoryInvoiceCard extends GridPane {
         Label pointsUsedQty = new Label(this.invoice.getUsedPoint().toString());
         pointsUsedQty.setFont(Theme.getBodyMediumFont());
         pointsUsedQty.setTextFill(Color.WHITE);
-        this.add(pointsUsedLabel, 0, currentRow, 2, 1);
-        this.add(pointsUsedQty, 2, currentRow, 2, 1);
+        gp.add(pointsUsedLabel, 0, currentRow, 2, 1);
+        gp.add(pointsUsedQty, 2, currentRow, 2, 1);
         GridPane.setHalignment(pointsUsedLabel, HPos.LEFT);
         GridPane.setHalignment(pointsUsedQty, HPos.RIGHT);
 
@@ -112,8 +114,8 @@ public class HistoryInvoiceCard extends GridPane {
         Label grandTotalQty = new Label(this.invoice.getGrandTotal().toString());
         grandTotalQty.setFont(Theme.getHeading2Font());
         grandTotalQty.setTextFill(Color.WHITE);
-        this.add(grandTotalLabel, 0, currentRow, 2, 1);
-        this.add(grandTotalQty, 2, currentRow, 2, 1);
+        gp.add(grandTotalLabel, 0, currentRow, 2, 1);
+        gp.add(grandTotalQty, 2, currentRow, 2, 1);
         GridPane.setHalignment(grandTotalLabel, HPos.LEFT);
         GridPane.setHalignment(grandTotalQty, HPos.RIGHT);
 
@@ -125,15 +127,18 @@ public class HistoryInvoiceCard extends GridPane {
         Label pointsQty = new Label(this.invoice.getGetPoint().toString());
         pointsQty.setFont(Theme.getHeading2Font());
         pointsQty.setTextFill(Color.WHITE);
-        this.add(pointsLabel, 0, currentRow, 2, 1);
-        this.add(pointsQty, 2, currentRow, 2, 1);
+        gp.add(pointsLabel, 0, currentRow, 2, 1);
+        gp.add(pointsQty, 2, currentRow, 2, 1);
         GridPane.setHalignment(pointsLabel, HPos.LEFT);
         GridPane.setHalignment(pointsQty, HPos.RIGHT);
 
         // Button to export to PDF
         currentRow++;
         ExportInvoiceButton exportButton = new ExportInvoiceButton(this.invoice);
-        this.add(exportButton, 2, currentRow, 2, 1);
+        gp.add(exportButton, 2, currentRow, 2, 1);
         GridPane.setHalignment(exportButton, HPos.RIGHT);
+
+        this.getChildren().add(gp);
+        this.setAlignment(Pos.TOP_CENTER);
     }
 }
