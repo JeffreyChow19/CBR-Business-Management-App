@@ -5,6 +5,7 @@ import com.cbr.models.Pricing.Price;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,6 +16,7 @@ import java.util.Map;
 @Setter
 public class Member extends Customer {
     @Getter
+    @NotNull
     protected String name;
     @Getter
     protected String phoneNumber;

@@ -12,11 +12,11 @@
     },
     {
       "id" : "CS-3",
-      "type" : "member",
+      "type" : "VIP",
       "invoiceList" : [ ],
-      "name" : "rachel",
+      "name" : "rachelll",
       "phoneNumber" : "08123456789",
-      "status" : true,
+      "status" : false,
       "point" : {
         "value" : 0.0
       },

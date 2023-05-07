@@ -5,6 +5,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -15,7 +16,7 @@ import java.util.Map;
 @Getter
 @Setter
 public abstract class Invoice extends Identifiable {
-    protected String customerId;
+    @NotNull protected String customerId;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     protected LocalDateTime createdAt;
 

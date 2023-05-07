@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -24,8 +25,8 @@ import java.util.List;
         @JsonSubTypes.Type(value = VIP.class, name="VIP")
 })
 public class Customer extends Identifiable implements Serializable {
-    protected String type;
-    protected List<String> invoiceList; // list of Fixed Invoice ID
+    @NotNull protected String type;
+    @NotNull protected List<String> invoiceList; // list of Fixed Invoice ID
     public static Integer customerCount = 0;
 
     public Customer(){
