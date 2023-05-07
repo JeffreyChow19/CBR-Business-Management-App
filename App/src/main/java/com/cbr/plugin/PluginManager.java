@@ -33,7 +33,8 @@ public class PluginManager {
     }
 
     public void loadNewPlugin(String jarFile) throws PluginException, MalformedURLException {
-        URLClassLoader classLoader = new URLClassLoader(new URL[]{new File(jarFile).toURI().toURL()}, ClassLoader.getSystemClassLoader());
+        URLClassLoader classLoader = new URLClassLoader(new URL[] { new File(jarFile).toURI().toURL() },
+                ClassLoader.getSystemClassLoader());
         pluginServiceLoader = ServiceLoader.load(Plugin.class, classLoader);
         for (Plugin p : pluginServiceLoader) {
             boolean exists = plugins.stream()
@@ -41,22 +42,22 @@ public class PluginManager {
                     .anyMatch(c -> c.getName().equals(p.getClass().getName()));
             // If an object of the same class already exists, don't add the new object
             if (!exists) {
-                System.out.println(p.getClass().getName());
+                // system.out.println(p.getClass().getName());
                 plugins.add(p);
                 p.load();
-            }
-            else{
-                System.out.println(p.getClass().getName());
+            } else {
+                // system.out.println(p.getClass().getName());
                 throw new PluginException();
             }
         }
     }
 
     public void loadNewPlugin() throws MalformedURLException, PluginException {
-        System.out.println("this is load new plugin");
+        // system.out.println("this is load new plugin");
         int i = 0;
         for (String jarFile : AppSettings.getInstance().getPlugins()) {
-            URLClassLoader classLoader = new URLClassLoader(new URL[]{new File(jarFile).toURI().toURL()}, ClassLoader.getSystemClassLoader());
+            URLClassLoader classLoader = new URLClassLoader(new URL[] { new File(jarFile).toURI().toURL() },
+                    ClassLoader.getSystemClassLoader());
             pluginServiceLoader = ServiceLoader.load(Plugin.class, classLoader);
             for (Plugin p : pluginServiceLoader) {
                 boolean exists = plugins.stream()
@@ -64,12 +65,11 @@ public class PluginManager {
                         .anyMatch(c -> c.getName().equals(p.getClass().getName()));
                 // If an object of the same class already exists, don't add the new object
                 if (!exists) {
-                    System.out.println(p.getClass().getName());
+                    // system.out.println(p.getClass().getName());
                     plugins.add(p);
                     p.load();
-                }
-                else{
-                    System.out.println(p.getClass().getName());
+                } else {
+                    // system.out.println(p.getClass().getName());
                     throw new PluginException();
                 }
             }
@@ -77,12 +77,10 @@ public class PluginManager {
         }
     }
 
-    public void loadPlugin(){
-        for (Plugin p : plugins){
-            System.out.println("loading pluginnn!!!");
+    public void loadPlugin() {
+        for (Plugin p : plugins) {
+            // system.out.println("loading pluginnn!!!");
             p.load();
         }
     }
 }
-
-

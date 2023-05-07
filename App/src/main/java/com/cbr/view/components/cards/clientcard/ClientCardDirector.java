@@ -29,6 +29,7 @@ public class ClientCardDirector {
         List<Button> buttons = new ArrayList<>();
         buttons.add(new HistoryButton(member.getId()));
         buttons.add(new UpgradeButton(member.getId()));
+        buttons.get(1).setText("Edit");
         builder.setButtons(buttons);
     }
 }

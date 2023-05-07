@@ -3,6 +3,8 @@ package com.cbr.models;
 import com.cbr.App;
 import lombok.Getter;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +13,7 @@ import java.util.Map;
 @Getter
 @Setter
 public class TemporaryInvoice extends Invoice implements Serializable {
-    protected Map<String, Integer> productFrequencies;  // <ProductId, Count>
+    @NotNull protected Map<String, Integer> productFrequencies;  // <ProductId, Count>
     private static Integer invoiceCount = 0;
     public static Map<String, Double> additionalCosts = new HashMap<>(); // in percentage
 

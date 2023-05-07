@@ -27,17 +27,17 @@ public class AppSettings {
 
     private static volatile AppSettings instance;
 
-    private AppSettings(){
+    private AppSettings() {
     }
 
-    public void toDefault(){
+    public void toDefault() {
         this.dataStorePath = "/assets/data/json";
         this.dataStoreMode = "JSON";
         this.plugins = new ArrayList<>();
         this.additionalSettings = new HashMap<>();
     }
 
-    public void updateSettings(){
+    public void updateSettings() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
         DefaultPrettyPrinter prettyPrinter = new DefaultPrettyPrinter();
@@ -46,7 +46,7 @@ public class AppSettings {
         mapper.setDefaultPrettyPrinter(prettyPrinter);
         ObjectWriter writer = mapper.writer(prettyPrinter);
 
-        try{
+        try {
             String jsonDataString = writer.writeValueAsString(getInstance());
             Files.write(Paths.get("", "settings.json"), jsonDataString.getBytes());
         } catch (IOException e) {
@@ -63,11 +63,12 @@ public class AppSettings {
                         try {
                             ObjectMapper mapper = new ObjectMapper();
                             String invoicesJson = new String(Files.readAllBytes(invoicesPath));
-                            instance = mapper.readValue(invoicesJson, new TypeReference<AppSettings>() {});
+                            instance = mapper.readValue(invoicesJson, new TypeReference<AppSettings>() {
+                            });
                             return instance;
                         } catch (IOException e) {
                             e.printStackTrace();
-                            System.out.println("failed to read file");
+                            // system.out.println("failed to read file");
                         }
 
                     }
@@ -79,7 +80,7 @@ public class AppSettings {
         return instance;
     }
 
-    public void addPlugin(String pluginPath){
+    public void addPlugin(String pluginPath) {
         this.getPlugins().add(pluginPath);
     }
 

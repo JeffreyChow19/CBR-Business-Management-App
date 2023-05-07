@@ -11,14 +11,13 @@ import javafx.scene.Scene;
 import lombok.Getter;
 import lombok.Setter;
 
-
-public class App extends Application{
+public class App extends Application {
     @Getter
     @Setter
     private static DataStore dataStore = new DataStore("JSON", "assets/data/json");
 
-    public static void main (String[] args) {
-        System.out.println("Starting App...");
+    public static void main(String[] args) {
+        // system.out.println("Starting App...");
         launch(args);
     }
 
@@ -26,13 +25,14 @@ public class App extends Application{
     public void start(Stage stage) throws Exception {
         stage.setTitle("Business Management Application");
         Image appIcon = new Image("file:assets/icons/capybucks.png");
-        //chore: update icons
+        // chore: update icons
         stage.getIcons().add(appIcon);
-//        PluginManager pluginManager = new PluginManager();
-//        pluginManager.loadPlugin("Plugin-Base/target/Plugin-Base-1.0.jar", "com.cbr.BasePlugin.class");
-////        for (Plugin p : pluginManager.getPlugins()){
-////            p.load(this);
-////        }
+        // PluginManager pluginManager = new PluginManager();
+        // pluginManager.loadPlugin("Plugin-Base/target/Plugin-Base-1.0.jar",
+        // "com.cbr.BasePlugin.class");
+        //// for (Plugin p : pluginManager.getPlugins()){
+        //// p.load(this);
+        //// }
         Scene scene = new Scene(MainView.getInstance(), Theme.getScreenWidth(), Theme.getScreenHeight() * 0.98);
         scene.getStylesheets().add("file:assets/styles/stylesheet.css");
 
@@ -50,4 +50,3 @@ public class App extends Application{
         stage.show();
     }
 }
-

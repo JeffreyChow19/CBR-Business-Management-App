@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-public class JsonDataStore implements DataStorer{
+public class JsonDataStore implements DataStorer {
 
     private ObjectMapper mapper;
     private String folder;
@@ -33,7 +33,8 @@ public class JsonDataStore implements DataStorer{
         this.writer = mapper.writer(prettyPrinter);
         this.folder = folder;
     }
-    public<T extends  Serializable> List<T> loadAdditionalData(String dataName, Class<T> clazz){
+
+    public <T extends Serializable> List<T> loadAdditionalData(String dataName, Class<T> clazz) {
         try {
             Path path = Paths.get(this.folder, dataName + ".json");
             if (!Files.exists(path)) {
@@ -44,41 +45,41 @@ public class JsonDataStore implements DataStorer{
                 String json = new String(Files.readAllBytes(path));
                 return mapper.readValue(json, TypeFactory.defaultInstance().constructCollectionType(List.class, clazz));
             }
-        } catch (JsonProcessingException e){
-            System.out.println(e.getMessage());
-            System.out.println("Failed to read data in the folder!");
-        } catch (IOException e){
-            System.out.println(e.getMessage());
-            System.out.println("Failed to read data in the folder!");
+        } catch (JsonProcessingException e) {
+            // system.out.println(e.getMessage());
+            // system.out.println("Failed to read data in the folder!");
+        } catch (IOException e) {
+            // system.out.println(e.getMessage());
+            // system.out.println("Failed to read data in the folder!");
         }
         return null;
     };
 
-
-    public DataList<Customer> loadClients(){
+    public DataList<Customer> loadClients() {
         try {
             Path customerPath = Paths.get(this.folder, "clients.json");
             String cwd = System.getProperty("user.dir");
-            System.out.println("Current working directory: " + cwd);
+            // system.out.println("Current working directory: " + cwd);
             if (!Files.exists(customerPath)) {
                 Files.createFile(customerPath);
                 this.storeClients(new DataList<Customer>());
                 return new DataList<Customer>();
             } else {
                 String customerJson = new String(Files.readAllBytes(customerPath));
-                return mapper.readValue(customerJson, new TypeReference<DataList<Customer>>() {});
+                return mapper.readValue(customerJson, new TypeReference<DataList<Customer>>() {
+                });
             }
-        } catch (JsonProcessingException e){
-            System.out.println(e.getMessage());
-            System.out.println("Failed to read the clients.json file in the folder!");
-        } catch (IOException e){
-            System.out.println(e.getMessage());
-            System.out.println("Failed to read the clients.json file in the folder!");
+        } catch (JsonProcessingException e) {
+            // system.out.println(e.getMessage());
+            // system.out.println("Failed to read the clients.json file in the folder!");
+        } catch (IOException e) {
+            // system.out.println(e.getMessage());
+            // system.out.println("Failed to read the clients.json file in the folder!");
         }
         return null;
     }
 
-    public DataList<InventoryProduct> loadInventory(){
+    public DataList<InventoryProduct> loadInventory() {
         try {
             Path inventoryPath = Paths.get(this.folder, "inventory.json");
             if (!Files.exists(inventoryPath)) {
@@ -87,17 +88,19 @@ public class JsonDataStore implements DataStorer{
                 return new DataList<InventoryProduct>();
             } else {
                 String inventoryJson = new String(Files.readAllBytes(inventoryPath));
-                return mapper.readValue(inventoryJson, new TypeReference<DataList<InventoryProduct>>() {});
+                return mapper.readValue(inventoryJson, new TypeReference<DataList<InventoryProduct>>() {
+                });
             }
-        } catch (JsonProcessingException e){
-            System.out.println(e.getMessage());
-            System.out.println("Failed to read the inventory.json file in the folder!");
-        } catch (IOException e){
-            System.out.println("Failed to read the inventory.json file in the folder!");
+        } catch (JsonProcessingException e) {
+            // system.out.println(e.getMessage());
+            // system.out.println("Failed to read the inventory.json file in the folder!");
+        } catch (IOException e) {
+            // system.out.println("Failed to read the inventory.json file in the folder!");
         }
         return null;
     }
-    public DataList<FixedInvoice> loadInvoices(){
+
+    public DataList<FixedInvoice> loadInvoices() {
         try {
             Path invoicesPath = Paths.get(this.folder, "invoices.json");
             if (!Files.exists(invoicesPath)) {
@@ -106,17 +109,19 @@ public class JsonDataStore implements DataStorer{
                 return new DataList<FixedInvoice>();
             } else {
                 String invoicesJson = new String(Files.readAllBytes(invoicesPath));
-                return mapper.readValue(invoicesJson, new TypeReference<DataList<FixedInvoice>>() {});
+                return mapper.readValue(invoicesJson, new TypeReference<DataList<FixedInvoice>>() {
+                });
             }
-        } catch (JsonProcessingException e){
-            System.out.println(e.getMessage());
-            System.out.println("Failed to read the invoices.json file in the folder!");
-        } catch (IOException e){
-            System.out.println("Failed to read the invoices.json file in the folder!");
+        } catch (JsonProcessingException e) {
+            // system.out.println(e.getMessage());
+            // system.out.println("Failed to read the invoices.json file in the folder!");
+        } catch (IOException e) {
+            // system.out.println("Failed to read the invoices.json file in the folder!");
         }
         return null;
     }
-    public DataList<TemporaryInvoice> loadTemporaryInvoices(){
+
+    public DataList<TemporaryInvoice> loadTemporaryInvoices() {
         try {
             Path invoicesPath = Paths.get(this.folder, "temporary-invoices.json");
             if (!Files.exists(invoicesPath)) {
@@ -125,84 +130,78 @@ public class JsonDataStore implements DataStorer{
                 return new DataList<TemporaryInvoice>();
             } else {
                 String invoicesJson = new String(Files.readAllBytes(invoicesPath));
-                return mapper.readValue(invoicesJson, new TypeReference<DataList<TemporaryInvoice>>() {});
+                return mapper.readValue(invoicesJson, new TypeReference<DataList<TemporaryInvoice>>() {
+                });
             }
-        } catch (JsonProcessingException e){
-            System.out.println("Failed to read the temporary-invoices.json file in the folder!");
-            System.out.println(e.getMessage());
-        } catch (IOException e){
-            System.out.println("Failed to read the temporary-invoices.json file in the folder!");
+        } catch (JsonProcessingException e) {
+            // system.out.println("Failed to read the temporary-invoices.json file in the
+            // folder!");
+            // system.out.println(e.getMessage());
+        } catch (IOException e) {
+            // system.out.println("Failed to read the temporary-invoices.json file in the
+            // folder!");
         }
         return null;
     }
 
-    public void storeClients(DataList<Customer> records){
+    public void storeClients(DataList<Customer> records) {
         try {
             String jsonDataString = this.writer.writeValueAsString(records);
             Files.write(Paths.get(this.folder, "clients.json"), jsonDataString.getBytes());
-        }
-        catch (JsonProcessingException e) {
-            System.out.println("Failed to store customer");
-            System.out.println(e.getMessage());
-        }
-        catch (IOException e) {
-            System.out.println("Failed to write to clients.json file in the folder!");
+        } catch (JsonProcessingException e) {
+            // system.out.println("Failed to store customer");
+            // system.out.println(e.getMessage());
+        } catch (IOException e) {
+            // system.out.println("Failed to write to clients.json file in the folder!");
         }
     }
 
-    public void storeInventory(DataList<InventoryProduct> records){
+    public void storeInventory(DataList<InventoryProduct> records) {
         try {
             String jsonDataString = writer.writeValueAsString(records);
             Files.write(Paths.get(this.folder, "inventory.json"), jsonDataString.getBytes());
-        }
-        catch (JsonProcessingException e) {
-            System.out.println("Failed to store inventory");
-            System.out.println(e.getMessage());
-        }
-        catch (IOException e) {
-            System.out.println("Failed to write to inventory.json file in the folder!");
+        } catch (JsonProcessingException e) {
+            // system.out.println("Failed to store inventory");
+            // system.out.println(e.getMessage());
+        } catch (IOException e) {
+            // system.out.println("Failed to write to inventory.json file in the folder!");
         }
     }
 
-    public void storeInvoices(DataList<FixedInvoice> records){
+    public void storeInvoices(DataList<FixedInvoice> records) {
         try {
             String jsonDataString = writer.writeValueAsString(records);
-            System.out.println(jsonDataString);
+            // system.out.println(jsonDataString);
             Files.write(Paths.get(this.folder, "invoices.json"), jsonDataString.getBytes());
-        }
-        catch (JsonProcessingException e) {
-            System.out.println("Failed to store invoices");
-            System.out.println(e.getMessage());
-        }
-        catch (IOException e) {
-            System.out.println("Failed to write to invoices.json file in the folder!");
+        } catch (JsonProcessingException e) {
+            // system.out.println("Failed to store invoices");
+            // system.out.println(e.getMessage());
+        } catch (IOException e) {
+            // system.out.println("Failed to write to invoices.json file in the folder!");
         }
     }
-    public void storeTemporaryInvoices(DataList<TemporaryInvoice> records){
+
+    public void storeTemporaryInvoices(DataList<TemporaryInvoice> records) {
         try {
             String jsonDataString = writer.writeValueAsString(records);
             Files.write(Paths.get(this.folder, "temporary-invoices.json"), jsonDataString.getBytes());
-        }
-        catch (JsonProcessingException e) {
-            System.out.println("Failed to store temporary invoices");
-            System.out.println(e.getMessage());
-        }
-        catch (IOException e) {
-            System.out.println("Failed to write to inventory.json file in the folder!");
+        } catch (JsonProcessingException e) {
+            // system.out.println("Failed to store temporary invoices");
+            // system.out.println(e.getMessage());
+        } catch (IOException e) {
+            // system.out.println("Failed to write to inventory.json file in the folder!");
         }
     }
 
-    public<T extends Serializable> void storeAdditionalData(List<T> records, String dataName){
+    public <T extends Serializable> void storeAdditionalData(List<T> records, String dataName) {
         try {
             String jsonDataString = writer.writeValueAsString(records);
             Files.write(Paths.get(this.folder, dataName + ".json"), jsonDataString.getBytes());
-        }
-        catch (JsonProcessingException e) {
-            System.out.println("Failed to store ");
-            System.out.println(e.getMessage());
-        }
-        catch (IOException e) {
-            System.out.println("Failed to write in the folder!");
+        } catch (JsonProcessingException e) {
+            // system.out.println("Failed to store ");
+            // system.out.println(e.getMessage());
+        } catch (IOException e) {
+            // system.out.println("Failed to write in the folder!");
         }
     }
 }

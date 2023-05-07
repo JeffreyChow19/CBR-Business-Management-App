@@ -30,12 +30,12 @@ public class OkPopUp extends VBox {
         this.setMinSize(Theme.getScreenWidth() * 0.4, Theme.getScreenHeight() * 0.2);
 
         Label label = new Label(question);
-        label.setMaxWidth(Theme.getScreenWidth() * 0.28);
         label.setMinWidth(Theme.getScreenWidth() * 0.28);
         label.setWrapText(true);
         label.setFont(Theme.getBodyMediumFont());
         label.setTextAlignment(TextAlignment.CENTER);
         label.setStyle("-fx-font-size: 25; -fx-text-fill: white;");
+        label.setAlignment(Pos.CENTER);
 
         okButton = new DefaultButton(200.0, 40.0, "OK");
         okButton.setOnAction(e -> {

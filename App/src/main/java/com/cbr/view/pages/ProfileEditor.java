@@ -8,6 +8,7 @@ import com.cbr.view.components.buttons.ActivateButton;
 
 import com.cbr.view.components.form.FormArea;
 import com.cbr.view.components.form.FormLabel;
+import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.components.dropdown.Dropdown;
 import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.theme.Theme;
@@ -163,15 +164,16 @@ public class ProfileEditor<T extends Customer> extends StackPane {
                         newCustomer = new Member(customer.getId(), customer.getInvoiceList(),
                                 nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText(), new HashMap<>());
                     } else {
+                        Member temp = (Member) customer;
                         newCustomer = new VIP(customer.getId(), customer.getInvoiceList(),
                                 nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText(),
-                                true, new BasePrice(0.0), 0.0, new HashMap<>());
+                                true, new BasePrice(0.0), temp.getAdditionalValue());
                     }
                     App.getDataStore().updateCustomerInfo(newCustomer);
                     showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(),
                             "Edit Profile Successful!",
                             "User " + nameForm.getContentTextField().getText() + "  profile successfully upgraded!");
-
+                    TabMenuBar.getInstance().closeTab(title.getText(), "Clients");
                 } catch (NumberFormatException e) {
                     errMsg += "Phone must be a number!";
                     showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Edit Profile Error!",
