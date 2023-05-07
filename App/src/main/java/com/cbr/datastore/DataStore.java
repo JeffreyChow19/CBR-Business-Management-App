@@ -126,7 +126,7 @@ public class DataStore {
 
     public void addProduct(InventoryProduct record) {
         this.inventory.add(record);
-        this.dataStorer.storeInventory(this.inventory);
+        this.saveInventory();
     }
 
     public void addTemporaryInvoice(TemporaryInvoice invoice) {
@@ -168,7 +168,7 @@ public class DataStore {
     public void decreaseProductStock(String productId, Integer toDecrease) {
         InventoryProduct product = this.getProductById(productId);
         product.setStock(product.getStock() - toDecrease);
-        this.dataStorer.storeInventory(this.inventory);
+        this.saveInventory();
     }
 
     public void deactivateProduct(String id) {
@@ -191,6 +191,10 @@ public class DataStore {
 
     public void setInventory(DataList<InventoryProduct> inventory) {
         this.inventory = inventory;
+        this.saveInventory();
+    }
+
+    public void saveInventory(){
         List<InventoryProduct> newInventory = new ArrayList<InventoryProduct>();
         for (InventoryProduct p : inventory.getDataList()) {
             InventoryProduct newProduct = p.clone();
