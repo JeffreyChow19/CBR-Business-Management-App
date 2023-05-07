@@ -1,8 +1,11 @@
 package com.cbr;
 
+giimport com.cbr.models.BoughtProduct;
+import com.cbr.models.FixedInvoice;
 import com.cbr.models.InventoryProduct;
 import com.cbr.models.Pricing.BasePrice;
 import com.cbr.models.Pricing.Price;
+import com.cbr.models.Pricing.PriceDecorator;
 import com.cbr.plugin.Plugin;
 import com.cbr.utils.AppSettings;
 import com.cbr.view.MainView;
@@ -81,13 +84,31 @@ public class CurrencyPlugin implements Plugin {
                                 .findFirst().get();
                         exchange = exchange / oldCurrencyTemp.getExchangeRate();
                     }
-                    Price newPrice = new CurrencyPrice(new BasePrice(p.getSellPrice().getValue() / exchange));
+                    Price newPrice = new CurrencyPrice(new BasePrice(p.getSellPrice().getValue() / exchange), baseCurrency.getSymbol());
                     p.setSellPrice(newPrice);
-                    newPrice = new CurrencyPrice(new BasePrice(p.getBuyPrice().getValue() / exchange));
+                    newPrice = new CurrencyPrice(new BasePrice(p.getBuyPrice().getValue() / exchange), baseCurrency.getSymbol());
                     p.setBuyPrice(newPrice);
                     p.getAdditionalValues().put("currency", baseCurrency.getSymbol());
                 }
                 App.getDataStore().setInventory(App.getDataStore().getInventory());
+
+                for(FixedInvoice invoice : App.getDataStore().getInvoices().getDataList()){
+                    String temp = invoice.getBoughtProducts().get(0).getAdditionalValues().get("currency");
+                    if (temp!=null){
+                        for (BoughtProduct product : invoice.getBoughtProducts()){
+                            if(!(product.getSellPrice() instanceof CurrencyPrice)){
+                                product.setBuyPrice(new CurrencyPrice(product.getBuyPrice(), temp));
+                                product.setSellPrice(new CurrencyPrice(product.getSellPrice(), temp));
+                            } else {
+                                break;
+                            }
+                        }
+                        if (!(invoice.getGrandTotal() instanceof  CurrencyPrice)){
+                            invoice.setGrandTotal(new CurrencyPrice(invoice.getGrandTotal(), temp));
+                            invoice.setGetPoint(new CurrencyPrice(invoice.getGetPoint(), temp));
+                        }
+                    }
+                }
 
                 List<TransactionPage> transactionPages = TabMenuBar.getInstance().getTabs()
                         .stream()
@@ -110,7 +131,7 @@ public class CurrencyPlugin implements Plugin {
                     });
                 });
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(10000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

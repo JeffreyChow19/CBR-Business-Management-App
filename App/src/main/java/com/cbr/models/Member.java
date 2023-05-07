@@ -7,7 +7,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 @Getter
 @Setter
 public class Member extends Customer {
@@ -19,11 +22,14 @@ public class Member extends Customer {
     protected Boolean status;
     @Getter
     protected Price point;
+    @Getter
+    protected Map<String, String> additionalValue;
 
     public Member(){
         this.type = "member";
+        this.additionalValue = new HashMap<>();
     }
-    public Member(String id, List<String> invoiceList, String name, String phoneNumber){
+    public Member(String id, List<String> invoiceList, String name, String phoneNumber, Map<String, String> additionalValue){
         this.id = id;
         this.invoiceList = invoiceList;
         this.type = "member";
@@ -31,6 +37,7 @@ public class Member extends Customer {
         this.phoneNumber = phoneNumber;
         this.status = true;
         this.point = new BasePrice(0.0);
+        this.additionalValue = additionalValue;
     }
 
     public void addPoint(Double point){

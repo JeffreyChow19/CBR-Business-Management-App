@@ -53,7 +53,7 @@ public class ClientCardBuilder implements IClientCardBuilder {
         this.phoneNumber.setTextFill(Color.WHITE);
         this.phoneNumber.setMinWidth(Theme.getScreenWidth()*0.12);
     }
-    public void setPoints(Double points){
+    public void setPoints(String points){
         this.points = new Label(points + " Pts");
         this.points.setFont(Theme.getHeading2Font());
         this.points.setTextFill(Color.WHITE);

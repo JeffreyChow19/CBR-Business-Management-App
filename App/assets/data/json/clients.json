@@ -1,12 +1,12 @@
 {
   "dataList" : [
     {
-      "id" : "CS-17",
+      "id" : "CS-27",
       "type" : "customer",
       "invoiceList" : [ ]
     },
     {
-      "id" : "CS-18",
+      "id" : "CS-28",
       "type" : "customer",
       "invoiceList" : [ ]
     },
@@ -19,7 +19,8 @@
       "status" : true,
       "point" : {
         "value" : 0.0
-      }
+      },
+      "additionalValue" : { }
     },
     {
       "id" : "CS-4",
@@ -30,7 +31,8 @@
       "status" : true,
       "point" : {
         "value" : 0.0
-      }
+      },
+      "additionalValue" : { }
     },
     {
       "id" : "CS-5",
@@ -42,6 +44,7 @@
       "point" : {
         "value" : 100.0
       },
+      "additionalValue" : { },
       "buyPrice" : 100000.0
     },
     {
@@ -54,6 +57,7 @@
       "point" : {
         "value" : 100.0
       },
+      "additionalValue" : { },
       "buyPrice" : 100000.0
     },
     {
@@ -65,7 +69,8 @@
       "status" : true,
       "point" : {
         "value" : 0.0
-      }
+      },
+      "additionalValue" : { }
     }
   ]
 }

@@ -1,5 +1,6 @@
 package com.cbr.datastore;
 
+import com.cbr.App;
 import com.cbr.models.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -145,7 +146,11 @@ public class DataStore {
 
     public void addInvoice(FixedInvoice invoice) {
         this.invoices.add(invoice);
-        this.dataStorer.storeInvoices(this.invoices);
+        List<FixedInvoice> newFixedInvoice = new ArrayList<>();
+        for(FixedInvoice in : this.invoices.getDataList()){
+            newFixedInvoice.add(in.clone());
+        }
+        this.dataStorer.storeInvoices(new DataList<>(newFixedInvoice));
     }
 
     public void deleteTemporaryInvoices(TemporaryInvoice invoice) {
