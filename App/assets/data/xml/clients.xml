@@ -2,14 +2,12 @@
 <DataList>
   <dataList>
     <dataList>
-      <id>CS-15</id>
+      <id>CS-27</id>
       <type>customer</type>
-      <invoiceList>
-        <invoiceList>FI-3</invoiceList>
-      </invoiceList>
+      <invoiceList/>
     </dataList>
     <dataList>
-      <id>CS-16</id>
+      <id>CS-28</id>
       <type>customer</type>
       <invoiceList/>
     </dataList>
