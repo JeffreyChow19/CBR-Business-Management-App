@@ -113,12 +113,6 @@ public class DataStore {
         if (customerOptional.isPresent()) {
             Customer customer = customerOptional.get();
             int index = clients.getDataList().indexOf(customer);
-
-            // if (updatedCustomer instanceof Member) {
-            //     clients.getDataList().set(index, (Member) updatedCustomer);
-            // } else if (updatedCustomer instanceof VIP) {
-            //     clients.getDataList().set(index, (VIP) updatedCustomer);
-            // } else {
             clients.getDataList().set(index, updatedCustomer);
             
         }

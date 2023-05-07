@@ -10,15 +10,12 @@ import com.cbr.view.components.form.FormArea;
 import com.cbr.view.components.form.FormLabel;
 import com.cbr.view.components.dropdown.Dropdown;
 import com.cbr.view.components.labels.PageTitle;
-import com.cbr.view.components.spinner.NumberSpinner;
 import com.cbr.view.theme.Theme;
 import com.cbr.App;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 
 import javafx.geometry.Pos;
@@ -32,14 +29,10 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-import org.apache.commons.lang3.StringUtils;
 
 public class ProfileEditor<T extends Customer> extends StackPane {
     private VBox container;
-    private Label title;
+    private PageTitle title;
     @Getter
     private FormArea nameForm;
     @Getter
@@ -49,9 +42,7 @@ public class ProfileEditor<T extends Customer> extends StackPane {
 
     public ProfileEditor(T customer) {
         super();
-        title = new Label("Edit Profile #" + customer.getId());
-        title.setFont(Theme.getHeading1Font());
-        title.setTextFill(Color.WHITE);
+        title = new PageTitle("Edit Profile #" + customer.getId());
 
         // Setup Container
         container = new VBox();
@@ -160,29 +151,6 @@ public class ProfileEditor<T extends Customer> extends StackPane {
                     errMsg += "Phone can\'t be empty!\n";
                     error = true;
                 }
-                // if (StringUtils.isNumeric(phoneForm.getContentTextField().getText())) {
-                //     errMsg += "Phone must be a number!";
-                //     error = true;
-                // }
-                // if (error) {
-                //     showAlert(Alert.AlertType.ERROR, container.getScene().getWindow(), "Upgrade Profile Error!",
-                //             errMsg);
-                //     return;
-                // }
-                // Customer newCustomer;
-                // if (membershipDropdown.getValue().equals("member")) {
-                //     newCustomer = new Member(customer.getId(), customer.getInvoiceList(),
-                //             nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText());
-                // } else {
-                //     newCustomer = new VIP(customer.getId(), customer.getInvoiceList(),
-                //             nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText(),
-                //             true, new BasePrice(0.0), 0.0);
-                // }
-                // App.getDataStore().updateCustomerInfo(newCustomer);
-                // showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(),
-                //         "Edit Profile Successful!",
-                //         "User " + nameForm.getContentTextField().getText() + "  profile successfully upgraded!");
-
 
                 try {
                     Long phoneNumber = Long.parseLong(phoneForm.getContentTextField().getText());
