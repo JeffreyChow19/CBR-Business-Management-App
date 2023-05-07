@@ -37,14 +37,11 @@ public class Customer extends Identifiable implements Serializable {
     }
 
     public void generateCustomerId() {
-        System.out.println("heelo");
         if (App.getDataStore().getClients() != null){
-            System.out.println("yiwww");
             this.id = "CS-" + App.getDataStore().getClients().generateId();
         } else {
             this.id = "CS-1";
         }
-        System.out.println(this.id);
     }
 
     public Customer clone(){

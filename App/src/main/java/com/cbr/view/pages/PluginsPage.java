@@ -22,16 +22,16 @@ import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 
-
 public class PluginsPage extends VBox {
     private HBox pluginsList;
 
-    public PluginsPage(){
+    public PluginsPage() {
         PageTitle pageTitle = new PageTitle("Plugins");
         pluginsList = new HBox();
         pluginsList.setSpacing(10.0);
         pluginsList.setAlignment(Pos.CENTER);
-        DefaultButton addPluginButton = new DefaultButton(Theme.getScreenWidth()*0.2, Theme.getScreenHeight() * 0.06,"+ Plugin");
+        DefaultButton addPluginButton = new DefaultButton(Theme.getScreenWidth() * 0.2, Theme.getScreenHeight() * 0.06,
+                "+ Plugin");
         // add an event handler to the button
         addPluginButton.setOnAction(event -> {
             // create a new file chooser
@@ -62,23 +62,24 @@ public class PluginsPage extends VBox {
                     AppSettings.getInstance().getPlugins().remove(selectedFile.getAbsolutePath());
                 }
                 this.setPluginList();
-//                System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+                // // system.out.println("Selected file: " + selectedFile.getAbsolutePath());
             }
         });
         this.setPluginList();
         this.setAlignment(Pos.TOP_CENTER);
         this.setSpacing(50);
-        this.setPadding(new Insets( 50, Theme.getScreenWidth()*0.12, Theme.getScreenWidth()*0.12, Theme.getScreenWidth()*0.12));
-        this.setStyle("-fx-background-color:" +Theme.getPrimaryDark());
+        this.setPadding(new Insets(50, Theme.getScreenWidth() * 0.12, Theme.getScreenWidth() * 0.12,
+                Theme.getScreenWidth() * 0.12));
+        this.setStyle("-fx-background-color:" + Theme.getPrimaryDark());
         this.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
         this.getChildren().addAll(pageTitle, pluginsList, addPluginButton);
     }
 
-    public void setPluginList(){
+    public void setPluginList() {
         pluginsList.getChildren().clear();
-        for (String p : AppSettings.getInstance().getPlugins()){
+        for (String p : AppSettings.getInstance().getPlugins()) {
             VBox nameContainer = new VBox();
-            nameContainer.setStyle("-fx-background-color:" +Theme.getPrimaryLight()+";-fx-background-radius: 12;");
+            nameContainer.setStyle("-fx-background-color:" + Theme.getPrimaryLight() + ";-fx-background-radius: 12;");
             Label pluginPath = new Label(p);
             pluginPath.setWrapText(true);
             pluginPath.setPrefWidth(Theme.getScreenWidth() * 0.1);

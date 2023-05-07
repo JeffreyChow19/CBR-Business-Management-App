@@ -21,15 +21,15 @@ public class XmlDataStore implements DataStorer {
 
         this.xmlMapper = new XmlMapper();
         xmlMapper.registerModule(new JavaTimeModule());
-//        DefaultPrettyPrinter prettyPrinter = new DefaultPrettyPrinter();
-//        prettyPrinter.indentArraysWith(DefaultIndenter.SYSTEM_LINEFEED_INSTANCE);
-//        prettyPrinter.indentObjectsWith(DefaultIndenter.SYSTEM_LINEFEED_INSTANCE);
-//        this.xmlMapper.setDefaultPrettyPrinter(prettyPrinter);
-        xmlMapper.configure( ToXmlGenerator.Feature.WRITE_XML_DECLARATION, true );
+        // DefaultPrettyPrinter prettyPrinter = new DefaultPrettyPrinter();
+        // prettyPrinter.indentArraysWith(DefaultIndenter.SYSTEM_LINEFEED_INSTANCE);
+        // prettyPrinter.indentObjectsWith(DefaultIndenter.SYSTEM_LINEFEED_INSTANCE);
+        // this.xmlMapper.setDefaultPrettyPrinter(prettyPrinter);
+        xmlMapper.configure(ToXmlGenerator.Feature.WRITE_XML_DECLARATION, true);
         this.folder = folder;
     }
 
-    public<T extends  Serializable> List<T> loadAdditionalData(String dataName, Class<T> clazz){
+    public <T extends Serializable> List<T> loadAdditionalData(String dataName, Class<T> clazz) {
         try {
             Path path = Paths.get(this.folder, dataName + ".xml");
             if (!Files.exists(path)) {
@@ -38,19 +38,20 @@ public class XmlDataStore implements DataStorer {
                 return new ArrayList<T>();
             } else {
                 String xml = new String(Files.readAllBytes(path));
-                return xmlMapper.readValue(xml, TypeFactory.defaultInstance().constructCollectionType(List.class, clazz));
+                return xmlMapper.readValue(xml,
+                        TypeFactory.defaultInstance().constructCollectionType(List.class, clazz));
             }
-        } catch (JsonProcessingException e){
-            System.out.println(e.getMessage());
-            System.out.println("Failed to read data in the folder!");
-        } catch (IOException e){
-            System.out.println(e.getMessage());
-            System.out.println("Failed to read data in the folder!");
+        } catch (JsonProcessingException e) {
+            // system.out.println(e.getMessage());
+            // system.out.println("Failed to read data in the folder!");
+        } catch (IOException e) {
+            // system.out.println(e.getMessage());
+            // system.out.println("Failed to read data in the folder!");
         }
         return null;
     };
 
-    public DataList<Customer> loadClients(){
+    public DataList<Customer> loadClients() {
         try {
             Path customerPath = Paths.get(this.folder, "clients.xml");
             if (!Files.exists(customerPath)) {
@@ -59,15 +60,17 @@ public class XmlDataStore implements DataStorer {
                 return new DataList<Customer>();
             } else {
                 String customerXml = new String(Files.readAllBytes(customerPath));
-                return xmlMapper.readValue(customerXml, new TypeReference<DataList<Customer>>() {});
+                return xmlMapper.readValue(customerXml, new TypeReference<DataList<Customer>>() {
+                });
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Failed to read the clients.xml file in the folder!");
+            // system.out.println("Failed to read the clients.xml file in the folder!");
         }
         return null;
     }
-    public DataList<InventoryProduct> loadInventory(){
+
+    public DataList<InventoryProduct> loadInventory() {
         try {
             Path inventoryPath = Paths.get(this.folder, "inventory.xml");
             if (!Files.exists(inventoryPath)) {
@@ -76,15 +79,17 @@ public class XmlDataStore implements DataStorer {
                 return new DataList<InventoryProduct>();
             } else {
                 String inventoryXml = new String(Files.readAllBytes(inventoryPath));
-                return xmlMapper.readValue(inventoryXml, new TypeReference<DataList<InventoryProduct>>() {});
+                return xmlMapper.readValue(inventoryXml, new TypeReference<DataList<InventoryProduct>>() {
+                });
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Failed to read the inventory.xml file in the folder!");
+            // system.out.println("Failed to read the inventory.xml file in the folder!");
         }
         return null;
     }
-    public DataList<FixedInvoice> loadInvoices(){
+
+    public DataList<FixedInvoice> loadInvoices() {
         try {
             Path invoicesPath = Paths.get(this.folder, "invoices.xml");
             if (!Files.exists(invoicesPath)) {
@@ -93,15 +98,17 @@ public class XmlDataStore implements DataStorer {
                 return new DataList<FixedInvoice>();
             } else {
                 String invoicesXml = new String(Files.readAllBytes(invoicesPath));
-                return xmlMapper.readValue(invoicesXml, new TypeReference<DataList<FixedInvoice>>() {});
+                return xmlMapper.readValue(invoicesXml, new TypeReference<DataList<FixedInvoice>>() {
+                });
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Failed to read the invoices.xml file in the folder!");
+            // system.out.println("Failed to read the invoices.xml file in the folder!");
         }
         return null;
     }
-    public DataList<TemporaryInvoice> loadTemporaryInvoices(){
+
+    public DataList<TemporaryInvoice> loadTemporaryInvoices() {
         try {
             Path invoicesPath = Paths.get(this.folder, "temporary-invoices.xml");
             if (!Files.exists(invoicesPath)) {
@@ -110,59 +117,63 @@ public class XmlDataStore implements DataStorer {
                 return new DataList<TemporaryInvoice>();
             } else {
                 String inventoryXml = new String(Files.readAllBytes(invoicesPath));
-                return xmlMapper.readValue(inventoryXml, new TypeReference<DataList<TemporaryInvoice>>() {});
+                return xmlMapper.readValue(inventoryXml, new TypeReference<DataList<TemporaryInvoice>>() {
+                });
             }
-        } catch (IOException e){
-            System.out.println(e.getMessage());
-            System.out.println("Failed to read the temporary-invoices.xml file in the folder!");
+        } catch (IOException e) {
+            // system.out.println(e.getMessage());
+            // system.out.println("Failed to read the temporary-invoices.xml file in the
+            // folder!");
         }
         return null;
     }
-    public void storeClients(DataList<Customer> records){
+
+    public void storeClients(DataList<Customer> records) {
         try {
             String xmlDataString = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(records);
             Files.write(Paths.get(this.folder, "clients.xml"), xmlDataString.getBytes());
         } catch (IOException e) {
-            System.out.println("Failed to write to clients.xml file in the folder!");
+            // system.out.println("Failed to write to clients.xml file in the folder!");
         }
     }
-    public void storeInventory(DataList<InventoryProduct> records){
+
+    public void storeInventory(DataList<InventoryProduct> records) {
         try {
             String xmlDataString = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(records);
             Files.write(Paths.get(this.folder, "inventory.xml"), xmlDataString.getBytes());
         } catch (IOException e) {
-            System.out.println("Failed to write to inventory.xml file in the folder!");
+            // system.out.println("Failed to write to inventory.xml file in the folder!");
         }
     }
-    public void storeInvoices(DataList<FixedInvoice> records){
+
+    public void storeInvoices(DataList<FixedInvoice> records) {
         try {
             String xmlDataString = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(records);
             Files.write(Paths.get(this.folder, "invoices.xml"), xmlDataString.getBytes());
         } catch (IOException e) {
-            System.out.println("Failed to write to invoices.xml file in the folder!");
+            // system.out.println("Failed to write to invoices.xml file in the folder!");
         }
     }
-    public void storeTemporaryInvoices(DataList<TemporaryInvoice> records){
+
+    public void storeTemporaryInvoices(DataList<TemporaryInvoice> records) {
         try {
             String xmlDataString = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(records);
             Files.write(Paths.get(this.folder, "temporary-invoices.xml"), xmlDataString.getBytes());
         } catch (IOException e) {
-            System.out.println("Failed to write to temporary-invoices.xml file in the folder!");
+            // system.out.println("Failed to write to temporary-invoices.xml file in the
+            // folder!");
         }
     }
 
-
-    public<T extends Serializable> void storeAdditionalData(List<T> records, String dataName){
+    public <T extends Serializable> void storeAdditionalData(List<T> records, String dataName) {
         try {
             String xmlDataString = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(records);
             Files.write(Paths.get(this.folder, dataName + ".xml"), xmlDataString.getBytes());
-        }
-        catch (JsonProcessingException e) {
-            System.out.println("Failed to store ");
-            System.out.println(e.getMessage());
-        }
-        catch (IOException e) {
-            System.out.println("Failed to write in the folder!");
+        } catch (JsonProcessingException e) {
+            // system.out.println("Failed to store ");
+            // system.out.println(e.getMessage());
+        } catch (IOException e) {
+            // system.out.println("Failed to write in the folder!");
         }
     }
 }
