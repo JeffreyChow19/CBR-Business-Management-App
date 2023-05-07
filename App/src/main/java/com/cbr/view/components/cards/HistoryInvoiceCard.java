@@ -111,9 +111,5 @@ public class HistoryInvoiceCard extends GridPane {
         ExportInvoiceButton exportButton = new ExportInvoiceButton(this.invoice);
         this.add(exportButton, 3, currentRow, 1, 1);
         GridPane.setHalignment(exportButton, HPos.RIGHT);
-
-        // Set background color and radius of card
-        this.setStyle("-fx-background-color:" + Theme.getPrimaryBase() + ";");
-        this.setStyle("-fx-background-radius: 10;");
     }
 }
