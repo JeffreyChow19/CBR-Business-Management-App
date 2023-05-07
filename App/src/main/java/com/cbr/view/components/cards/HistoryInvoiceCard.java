@@ -6,6 +6,8 @@ import com.cbr.models.FixedInvoice;
 import java.util.List;
 import java.sql.Date;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
+
 import javafx.scene.paint.Color;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
@@ -19,6 +21,7 @@ import javafx.geometry.Pos;
 
 import com.cbr.view.components.buttons.ExportInvoiceButton;
 import com.cbr.view.theme.Theme;
+import javafx.scene.shape.Rectangle;
 
 public class HistoryInvoiceCard extends VBox {
     private FixedInvoice invoice;
@@ -78,6 +81,27 @@ public class HistoryInvoiceCard extends VBox {
             GridPane.setHalignment(productName, HPos.LEFT);
             GridPane.setHalignment(productPriceEach, HPos.LEFT);
             GridPane.setHalignment(productSubtotal, HPos.RIGHT);
+        }
+
+        currentRow++;
+        Rectangle rectangle = new Rectangle();
+        rectangle.setWidth(Theme.getScreenWidth() * 0.46);
+        rectangle.setHeight(1);
+        rectangle.setFill(Color.WHITE);
+        gp.add(rectangle, 0, currentRow, 4, 1);
+
+        for (Map.Entry<String, String> entry : invoice.getAdditionalCosts().entrySet()) {
+            currentRow++;
+            Label entryLabel = new Label(entry.getKey());
+            entryLabel.setFont(Theme.getBodyMediumFont());
+            entryLabel.setTextFill(Color.WHITE);
+            Label entryQty = new Label(entry.getValue());
+            entryQty.setFont(Theme.getBodyMediumFont());
+            entryQty.setTextFill(Color.WHITE);
+            gp.add(entryLabel, 0, currentRow, 2, 1);
+            gp.add(entryQty, 2, currentRow, 2, 1);
+            GridPane.setHalignment(entryLabel, HPos.LEFT);
+            GridPane.setHalignment(entryQty, HPos.RIGHT);
         }
 
         // "Discount" line
