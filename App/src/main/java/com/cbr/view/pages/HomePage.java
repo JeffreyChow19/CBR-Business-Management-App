@@ -5,12 +5,17 @@ import com.cbr.view.components.buttons.SettingsButton;
 import com.cbr.view.components.buttons.TransparentButton;
 import com.cbr.view.components.clockwidget.ClockWidget;
 import com.cbr.view.components.header.tabmenu.TabMenuBar;
+import com.cbr.view.components.labels.ToolTipLabel;
 import com.cbr.view.components.logo.Logo;
 import com.cbr.view.theme.Theme;
+
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
@@ -28,19 +33,23 @@ public class HomePage extends StackPane {
         this.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
 
         /* First Layer Setup (Clock, NIM, Three Navigation Button)*/
+        Image logoIcon = new Image("file:assets/icons/capybucks_logo.png");
+        ImageView logoContainer = new ImageView(logoIcon);
+        logoContainer.setFitHeight(200);
+        logoContainer.setFitWidth(200);
+        
         VBox firstLayer = new VBox();
         firstLayer.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
         ClockWidget clockWidget = new ClockWidget();
         clockWidget.setAlignment(Pos.CENTER);
-
-        Label nim = new Label("13516055 - Nathaniel Evan Gunawan\n" +
+        ToolTipLabel nim = new ToolTipLabel("COPYRIGHT 2023 - CBR","13516055 - Nathaniel Evan Gunawan\n" +
                 "13521044 - Rachel Gabriela Chen\n" +
                 "13521046 - Jeffrey Chow\n" +
                 "13521074 - Eugene Yap Jin Quan\n" +
                 "13521094 - Angela Livia Arumsari\n" +
                 "13521100 - Alexander Jason");
         nim.setWrapText(true);
-        nim.setFont(Theme.getBodyMediumFont());
+        nim.setFont(Theme.getBodyBoldFont());
         nim.setTextFill(Color.WHITE);
 
         HBox navButtonsContainer = new HBox();
@@ -54,7 +63,7 @@ public class HomePage extends StackPane {
         navButtonsContainer.setSpacing(Theme.getScreenWidth() * 0.04);
 
         firstLayer.setAlignment(Pos.CENTER);
-        firstLayer.getChildren().addAll(clockWidget, nim, navButtonsContainer);
+        firstLayer.getChildren().addAll(logoContainer, clockWidget, navButtonsContainer);
         firstLayer.setSpacing(Theme.getScreenHeight() * 0.05);
 
 
@@ -62,17 +71,18 @@ public class HomePage extends StackPane {
         BorderPane secondLayer = new BorderPane();
 
         Logo capybucks = new Logo();
-        secondLayer.setLeft(capybucks);
+        secondLayer.setLeft(nim);
 
         VBox prefButtonsContainer = new VBox();
-        settings = new SettingsButton(50);
-        plugins = new PluginsButton(50);
+        settings = new SettingsButton(25);
+        plugins = new PluginsButton(25);
         prefButtonsContainer.getChildren().addAll(settings, plugins);
         secondLayer.setRight(prefButtonsContainer);
+        secondLayer.setPadding(new Insets(10));
 
         firstLayer.setPickOnBounds(false);
         secondLayer.setPickOnBounds(false);
-        this.getChildren().addAll(firstLayer, secondLayer);
+        this.getChildren().addAll(firstLayer,secondLayer);
 
         // chore: fix styling
     }

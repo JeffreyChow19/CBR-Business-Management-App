@@ -1,6 +1,8 @@
 package com.cbr.view.components.logo;
 
 import com.cbr.view.components.labels.PageTitle;
+import com.cbr.view.theme.Theme;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
@@ -14,7 +16,8 @@ public class Logo extends HBox {
         ImageView logoContainer = new ImageView(logoIcon);
         logoContainer.setFitHeight(50);
         logoContainer.setFitWidth(50);
-        PageTitle pageTitle = new PageTitle("CAPYBUCKS");
+        PageTitle pageTitle = new PageTitle("COPYRIGHT 2023 - CBR");
+        pageTitle.setFont(Theme.getBodyBoldFont());
         this.getChildren().addAll(logoContainer, pageTitle);
         this.setPadding(new Insets(20));
         this.setSpacing(10);
