@@ -32,14 +32,18 @@ public class HomePage extends StackPane {
         this.setStyle("-fx-background-color:" + Theme.getPrimaryDark());
         this.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
 
+        VBox left = new VBox();
+        left.setMinWidth(Theme.getScreenWidth()*0.15);
+        left.setPrefWidth(Theme.getScreenWidth()*0.15);
+        left.setMaxWidth(Theme.getScreenWidth()*0.15);
+
         /* First Layer Setup (Clock, NIM, Three Navigation Button)*/
         Image logoIcon = new Image("file:assets/icons/capybucks_logo.png");
         ImageView logoContainer = new ImageView(logoIcon);
-        logoContainer.setFitHeight(200);
-        logoContainer.setFitWidth(200);
-        
+        logoContainer.setFitHeight(Theme.getScreenWidth() * 0.2);
+        logoContainer.setFitWidth(Theme.getScreenWidth() * 0.2);
+        HBox container = new HBox();
         VBox firstLayer = new VBox();
-        firstLayer.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
         ClockWidget clockWidget = new ClockWidget();
         clockWidget.setAlignment(Pos.CENTER);
         ToolTipLabel nim = new ToolTipLabel("COPYRIGHT 2023 - CBR","13516055 - Nathaniel Evan Gunawan\n" +
@@ -51,6 +55,7 @@ public class HomePage extends StackPane {
         nim.setWrapText(true);
         nim.setFont(Theme.getBodyBoldFont());
         nim.setTextFill(Color.WHITE);
+        nim.setPrefWidth(Theme.getScreenWidth()*0.15);
 
         HBox navButtonsContainer = new HBox();
         navButtonsContainer.setSpacing(10.0);
@@ -62,29 +67,27 @@ public class HomePage extends StackPane {
         navButtonsContainer.getChildren().addAll(clients, transaction, inventoryManagement);
         navButtonsContainer.setSpacing(Theme.getScreenWidth() * 0.04);
 
-        firstLayer.setAlignment(Pos.CENTER);
-        firstLayer.getChildren().addAll(logoContainer, clockWidget, navButtonsContainer);
-        firstLayer.setSpacing(Theme.getScreenHeight() * 0.05);
+        firstLayer.setAlignment(Pos.TOP_CENTER);
+        firstLayer.setPadding(new Insets(0.07 * Theme.getScreenHeight(), 0, 0, 0));
+        firstLayer.getChildren().addAll(logoContainer, clockWidget, navButtonsContainer, nim);
+        firstLayer.setSpacing(50);
 
-
-        /* Second Layer Setup: "Capybucks", Settings and Plugins icons  */
-        BorderPane secondLayer = new BorderPane();
-
-        Logo capybucks = new Logo();
-        secondLayer.setLeft(nim);
+        HBox.setHgrow(firstLayer, Priority.ALWAYS);
+        container.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
 
         VBox prefButtonsContainer = new VBox();
         settings = new SettingsButton(25);
         plugins = new PluginsButton(25);
         prefButtonsContainer.getChildren().addAll(settings, plugins);
-        secondLayer.setRight(prefButtonsContainer);
-        secondLayer.setPadding(new Insets(10));
+        prefButtonsContainer.setAlignment(Pos.TOP_RIGHT);
+        prefButtonsContainer.setMinWidth(Theme.getScreenWidth()*0.15);
+        prefButtonsContainer.setPrefWidth(Theme.getScreenWidth()*0.15);
+        prefButtonsContainer.setMaxWidth(Theme.getScreenWidth()*0.15);
 
         firstLayer.setPickOnBounds(false);
-        secondLayer.setPickOnBounds(false);
-        this.getChildren().addAll(firstLayer,secondLayer);
-
-        // chore: fix styling
+        container.getChildren().addAll(left, firstLayer, prefButtonsContainer);
+        container.setSpacing(0);
+        this.getChildren().addAll(container);
     }
 
     public void setButtonActions(Node clientsTarget,
