@@ -43,7 +43,7 @@ public class InventoryPage extends StackPane {
 
         // Search and Filter
         HBox search_filter = new HBox();
-        search_filter.setMaxWidth(0.75*Theme.getScreenWidth());
+        search_filter.setMaxWidth(0.75 * Theme.getScreenWidth());
 
         // Searchbar
         TextField searchBar = new TextField();
@@ -53,8 +53,8 @@ public class InventoryPage extends StackPane {
         searchBar.setStyle("-fx-background-radius: 20;");
         searchBar.setPromptText("Search product by name");
         searchBar.setPadding(new Insets(12));
-        searchBar.setMaxSize(Theme.getScreenWidth()*0.3, Theme.getScreenWidth()*0.025);
-        searchBar.setMinSize(Theme.getScreenWidth()*0.3, Theme.getScreenWidth()*0.025);
+        searchBar.setMaxSize(Theme.getScreenWidth() * 0.3, Theme.getScreenWidth() * 0.025);
+        searchBar.setMinSize(Theme.getScreenWidth() * 0.3, Theme.getScreenWidth() * 0.025);
 
         // Filter
         Set<String> categorySet = new HashSet<>();
@@ -67,25 +67,27 @@ public class InventoryPage extends StackPane {
         filterDropdown.setPromptText("Select a category");
 
         filterDropdown.valueProperty().addListener((observable, oldValue, newValue) -> {
-                    categoryFilter = newValue;
-                });
+            categoryFilter = newValue;
+        });
 
         AddItemPage addItemPage = new AddItemPage();
 
-        Button addItem = new DefaultButton(0.1*Theme.getScreenWidth(), 24.0, "Add New Item");
+        Button addItem = new DefaultButton(0.1 * Theme.getScreenWidth(), 24.0, "Add New Item");
         addItem.setOnAction(event -> TabMenuBar.getInstance().addTab("Add Item", addItemPage));
         Region region = new Region();
-        search_filter.setHgrow(region, Priority.ALWAYS);
+        HBox.setHgrow(region, Priority.ALWAYS);
 
-        search_filter.setSpacing(Theme.getScreenWidth()*0.025);
+        search_filter.setSpacing(Theme.getScreenWidth() * 0.025);
         search_filter.getChildren().addAll(searchBar, filterDropdown, region, addItem);
         search_filter.setAlignment(Pos.CENTER);
 
         // Add and set content
         container.getChildren().addAll(pageTitle, search_filter, productCardList);
         container.setAlignment(Pos.TOP_CENTER);
-        container.prefWidthProperty().bind(scroll_area.widthProperty()); // bind the width of the VBox to the width of the ScrollPane
-        container.prefHeightProperty().bind(scroll_area.heightProperty()); // bind the height of the VBox to the height of the ScrollPane
+        container.prefWidthProperty().bind(scroll_area.widthProperty()); // bind the width of the VBox to the width of
+                                                                         // the ScrollPane
+        container.prefHeightProperty().bind(scroll_area.heightProperty()); // bind the height of the VBox to the height
+                                                                           // of the ScrollPane
         container.setSpacing(50);
         container.setPadding(new Insets(50));
         container.setStyle("-fx-background-color:" + Theme.getPrimaryDark());
@@ -97,7 +99,9 @@ public class InventoryPage extends StackPane {
         Thread task = new Thread(() -> {
             while (true) {
                 List<InventoryProduct> filteredProduct = App.getDataStore().getInventory().getDataList().stream()
-                        .filter(prod -> prod.getProductName().toLowerCase().contains(searchQuery) && prod.getCategory().toLowerCase().contains(categoryFilter)).collect(Collectors.toList());
+                        .filter(prod -> prod.getProductName().toLowerCase().contains(searchQuery)
+                                && prod.getCategory().toLowerCase().contains(categoryFilter))
+                        .collect(Collectors.toList());
 
                 Platform.runLater(() -> {
                     this.productCardList.updateList(filteredProduct);
@@ -123,7 +127,5 @@ public class InventoryPage extends StackPane {
                 .filter(prod -> prod.getCategory().toLowerCase().contains(category)).collect(Collectors.toList());
         this.productCardList.updateList(filteredProduct);
     }
-
-
 
 }
