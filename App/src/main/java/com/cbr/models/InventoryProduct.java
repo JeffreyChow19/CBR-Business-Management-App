@@ -25,7 +25,7 @@ public class InventoryProduct extends Product implements Cloneable{
         this.additionalValues = new HashMap<>();
     }
     public InventoryProduct(String productName, BasePrice sellPrice, BasePrice buyPrice, String imagePath, Integer stock, String category, Boolean status){
-        super(productName, category, sellPrice, buyPrice);
+        super(productName, category, sellPrice, buyPrice, new HashMap<>());
         System.out.println(this.category);
         this.imagePath = imagePath;
         this.stock = stock;
