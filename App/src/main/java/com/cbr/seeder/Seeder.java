@@ -19,7 +19,7 @@ public class Seeder {
         for (int i = 0; i < 3;i++){
             Integer customerId = faker.number().numberBetween(3,7);
             Integer productId = faker.number().numberBetween(1, 50);
-            TemporaryInvoice temp = new TemporaryInvoice("CS-" + customerId.toString());
+            TemporaryInvoice temp = new TemporaryInvoice("CS-" + customerId);
             temp.addProduct("IP-"+productId.toString());
             temporaryInvoices.add(temp);
         }

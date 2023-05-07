@@ -5,6 +5,7 @@ import com.cbr.models.*;
 import com.cbr.view.components.cardslist.ClientCardList;
 import com.cbr.view.components.labels.PageTitle;
 import com.cbr.view.theme.Theme;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
@@ -12,10 +13,12 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ClientsPage extends ScrollPane {
+    private String searchQuery;
     private ClientCardList<Customer> customerCardList;
     private ClientCardList<Member> memberCardList;
     private ClientCardList<VIP> vipCardList;
@@ -25,32 +28,17 @@ public class ClientsPage extends ScrollPane {
         super();
         container = new VBox();
 
-        List<Member> memberList = App.getDataStore().getMembers();
-        List<Customer> customerList = App.getDataStore().getCustomers();
-        List<VIP> vipList = App.getDataStore().getVips();
+        this.memberCardList = new ClientCardList(new ArrayList<>());
+        this.customerCardList = new ClientCardList(new ArrayList<>());
+        this.vipCardList = new ClientCardList(new ArrayList<>());
 
-        this.memberCardList = new ClientCardList(memberList);
-        this.customerCardList = new ClientCardList(customerList);
-        this.vipCardList = new ClientCardList(vipList);
+        searchQuery = "";
 
         PageTitle pageTitle = new PageTitle("Clients");
 
-//        Circle searchButtonShape = new Circle();
-//        Button searchButton = new Button();
-//        searchButtonShape.setRadius(10);
-//        searchButton.setShape(searchButtonShape);
-//        searchButton.setCursor(Cursor.HAND);
-//        searchButton.setStyle("-fx-background-color:"+ Theme.getPrimaryLight()+";");
-//        searchButton.setOnMouseClicked(event -> {
-//            searchButton.setStyle("-fx-background-color:"+ Theme.getPrimaryBase()+";");
-//        });
-//        searchButton.setOnMouseExited(event -> {
-//            searchButton.setStyle("-fx-background-color:"+ Theme.getPrimaryLight()+";");
-//        });
-
         TextField searchBar = new TextField();
         searchBar.textProperty().addListener((observable, oldValue, newValue) -> {
-            updateList(newValue.toLowerCase());
+            this.searchQuery = newValue.toLowerCase();
         });
         searchBar.setStyle("-fx-background-radius: 20;");
         searchBar.setPromptText("Search client by name or ID");
@@ -119,6 +107,31 @@ public class ClientsPage extends ScrollPane {
 
         this.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());
         this.setContent(container);
+
+        Thread task = new Thread(() -> {
+            while (true) {
+                List<Member> memberList = App.getDataStore().getMembers().stream()
+                        .filter(c -> c.getName().toLowerCase().contains(searchQuery) || c.getId().toLowerCase().contains(searchQuery))
+                        .collect(Collectors.toList());
+                List<Customer> customerList = App.getDataStore().getCustomers().stream()
+                        .filter(c -> c.getId().toLowerCase().contains(searchQuery))
+                        .collect(Collectors.toList());
+                List<VIP> vipList = App.getDataStore().getVips().stream()
+                        .filter(c -> c.getName().toLowerCase().contains(searchQuery) || c.getId().toLowerCase().contains(searchQuery))
+                        .collect(Collectors.toList());
+                Platform.runLater(() -> {
+                    this.customerCardList.update(customerList);
+                    this.vipCardList.update(vipList);
+                    this.memberCardList.update(memberList);
+                });
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        task.start();
     }
 
     public void updateContent(String choice){
@@ -136,18 +149,4 @@ public class ClientsPage extends ScrollPane {
         }
     }
 
-    public void updateList(String query){
-        List<Member> memberList = App.getDataStore().getMembers().stream()
-                .filter(c -> c.getName().toLowerCase().contains(query) || c.getId().toLowerCase().contains(query))
-                .collect(Collectors.toList());
-        List<Customer> customerList = App.getDataStore().getCustomers().stream()
-                .filter(c -> c.getId().toLowerCase().contains(query))
-                .collect(Collectors.toList());
-        List<VIP> vipList = App.getDataStore().getVips().stream()
-                .filter(c -> c.getName().toLowerCase().contains(query) || c.getId().toLowerCase().contains(query))
-                .collect(Collectors.toList());
-        this.customerCardList.update(customerList);
-        this.vipCardList.update(vipList);
-        this.memberCardList.update(memberList);
-    }
 }

@@ -86,8 +86,8 @@ public class BillingPlugin implements Plugin {
                             transactionPage.getAdditionalCostsContainer().getChildren().add(taxCard);
                         }
                         else {
-                            ((ServiceCard)(transactionPage.getAdditionalCostsContainer().getChildren().get(0))).setTemporaryInvoice(transactionPage.getTemporaryInvoice());
-                            ((TaxCard)(transactionPage.getAdditionalCostsContainer().getChildren().get(1))).setTemporaryInvoice(transactionPage.getTemporaryInvoice());
+                            ((TaxCard)(transactionPage.getAdditionalCostsContainer().getChildren().get(0))).setTemporaryInvoice(transactionPage.getTemporaryInvoice());
+                            ((ServiceCard)(transactionPage.getAdditionalCostsContainer().getChildren().get(1))).setTemporaryInvoice(transactionPage.getTemporaryInvoice());
                         }
                     });
                 });

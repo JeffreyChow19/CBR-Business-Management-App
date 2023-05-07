@@ -2,8 +2,8 @@
   "dataList" : [
     {
       "id" : "FI-1",
-      "customerId" : "CS-18",
-      "createdAt" : "2023-05-07T17:17:22",
+      "customerId" : null,
+      "createdAt" : null,
       "boughtProducts" : [
         {
           "id" : "IP-35",
@@ -38,8 +38,8 @@
     },
     {
       "id" : "FI-2",
-      "customerId" : "CS-6",
-      "createdAt" : "2023-05-07T17:28:02",
+      "customerId" : null,
+      "createdAt" : null,
       "boughtProducts" : [
         {
           "id" : "IP-8",
@@ -139,8 +139,8 @@
     },
     {
       "id" : "FI-3",
-      "customerId" : "CS-6",
-      "createdAt" : "2023-05-07T17:41:54",
+      "customerId" : null,
+      "createdAt" : null,
       "boughtProducts" : [
         {
           "id" : "IP-8",
@@ -184,6 +184,155 @@
       },
       "grandTotal" : {
         "value" : 12789.225338638427
+      }
+    },
+    {
+      "id" : "FI-4",
+      "customerId" : null,
+      "createdAt" : null,
+      "boughtProducts" : [
+        {
+          "id" : "IP-12",
+          "productName" : "Sleek Concrete Shoes",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 53.138850000000005
+          },
+          "buyPrice" : {
+            "value" : 97.41558928571429
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 3
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 1.5941655000000003
+      },
+      "additionalCosts" : { },
+      "grandTotal" : {
+        "value" : 159.41655000000003
+      }
+    },
+    {
+      "id" : "FI-5",
+      "customerId" : null,
+      "createdAt" : null,
+      "boughtProducts" : [
+        {
+          "id" : "IP-12",
+          "productName" : "Sleek Concrete Shoes",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 53.138850000000005
+          },
+          "buyPrice" : {
+            "value" : 97.41558928571429
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 2
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 1.3178434800000003
+      },
+      "additionalCosts" : {
+        "Tax" : "+14.88",
+        "Service Charge" : "+10.63"
+      },
+      "grandTotal" : {
+        "value" : 131.78434800000002
+      }
+    },
+    {
+      "id" : "FI-6",
+      "customerId" : null,
+      "createdAt" : null,
+      "boughtProducts" : [
+        {
+          "id" : "IP-43",
+          "productName" : "Mediocre Rubber Shirt",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 178.03361142857142
+          },
+          "buyPrice" : {
+            "value" : 190.2293535714286
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 2
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 4.415233563428571
+      },
+      "additionalCosts" : {
+        "Tax" : "+49.85",
+        "Service Charge" : "+35.61"
+      },
+      "grandTotal" : {
+        "value" : 441.52335634285714
+      }
+    },
+    {
+      "id" : "FI-7",
+      "customerId" : null,
+      "createdAt" : null,
+      "boughtProducts" : [
+        {
+          "id" : "IP-43",
+          "productName" : "Mediocre Rubber Shirt",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 178.03361142857142
+          },
+          "buyPrice" : {
+            "value" : 190.2293535714286
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 2
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 4.415233563428571
+      },
+      "additionalCosts" : {
+        "Tax" : "+49.85",
+        "Service Charge" : "+35.61"
+      },
+      "grandTotal" : {
+        "value" : 441.52335634285714
       }
     }
   ]
