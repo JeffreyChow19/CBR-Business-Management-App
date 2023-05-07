@@ -1,3 +1,194 @@
 {
-  "dataList" : [ ]
+  "dataList" : [
+    {
+      "id" : "FI-1",
+      "customerId" : "CS-10",
+      "createdAt" : "2023-05-07T22:13:29",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Ergonomic Silk Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 4129738.75
+          },
+          "buyPrice" : {
+            "value" : 4688465.49
+          },
+          "additionalValues" : {
+            "currency" : "IDR"
+          },
+          "count" : 6
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 307252.563
+      },
+      "additionalCosts" : {
+        "Tax" : "+3,468,980.55",
+        "Service Charge" : "+2,477,843.25"
+      },
+      "grandTotal" : {
+        "value" : 3.07252563E7
+      }
+    },
+    {
+      "id" : "FI-2",
+      "customerId" : "CS-11",
+      "createdAt" : "2023-05-07T22:15:58",
+      "boughtProducts" : [
+        {
+          "id" : "IP-48",
+          "productName" : "Practical Bronze Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 4567515.2
+          },
+          "buyPrice" : {
+            "value" : 5536590.28
+          },
+          "additionalValues" : {
+            "currency" : "IDR"
+          },
+          "count" : 4
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 226548.75392000005
+      },
+      "additionalCosts" : {
+        "Tax" : "+2,557,808.51",
+        "Service Charge" : "+1,827,006.08"
+      },
+      "grandTotal" : {
+        "value" : 2.2654875392000005E7
+      }
+    },
+    {
+      "id" : "FI-5",
+      "customerId" : "CS-12",
+      "createdAt" : "2023-05-07T22:16:47",
+      "boughtProducts" : [
+        {
+          "id" : "IP-12",
+          "productName" : "Gorgeous Wool Bench",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 3809435.69
+          },
+          "buyPrice" : {
+            "value" : 4448563.4399999995
+          },
+          "additionalValues" : {
+            "currency" : "IDR"
+          },
+          "count" : 4
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 188948.010224
+      },
+      "additionalCosts" : {
+        "Tax" : "+2,133,283.99",
+        "Service Charge" : "+1,523,774.28"
+      },
+      "grandTotal" : {
+        "value" : 1.88948010224E7
+      }
+    },
+    {
+      "id" : "FI-4",
+      "customerId" : "CS-13",
+      "createdAt" : "2023-05-07T22:17:41",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Ergonomic Silk Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 4129738.75
+          },
+          "buyPrice" : {
+            "value" : 4688465.49
+          },
+          "additionalValues" : {
+            "currency" : "IDR"
+          },
+          "count" : 5
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 256043.80250000002
+      },
+      "additionalCosts" : {
+        "Tax" : "+2,890,817.13",
+        "Service Charge" : "+2,064,869.38"
+      },
+      "grandTotal" : {
+        "value" : 2.560438025E7
+      }
+    },
+    {
+      "id" : "FI-5",
+      "customerId" : "CS-14",
+      "createdAt" : "2023-05-07T22:18:37",
+      "boughtProducts" : [
+        {
+          "id" : "IP-48",
+          "productName" : "Practical Bronze Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 4567515.2
+          },
+          "buyPrice" : {
+            "value" : 5536590.28
+          },
+          "additionalValues" : {
+            "currency" : "IDR"
+          },
+          "count" : 3
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 169911.56544000003
+      },
+      "additionalCosts" : {
+        "Tax" : "+1,918,356.38",
+        "Service Charge" : "+1,370,254.56"
+      },
+      "grandTotal" : {
+        "value" : 1.6991156544000003E7
+      }
+    }
+  ]
 }

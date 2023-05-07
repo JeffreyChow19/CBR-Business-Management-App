@@ -367,7 +367,7 @@ public class TransactionPage extends StackPane {
 
         App.getDataStore().deleteTemporaryInvoices(this.temporaryInvoice);
 
-        OkPopUp successMakeBill = new OkPopUp("Successfully Make Bill with id " + invoice.getId() + ", used " + usePoint + " points, get " + getPoint + "points");
+        OkPopUp successMakeBill = new OkPopUp("SUCCESS");
         successMakeBill.setBox(new HistoryInvoiceCard(invoice));
         successMakeBill.show();
 
