@@ -2,21 +2,53 @@
   "dataList" : [
     {
       "id" : "FI-1",
-      "customerId" : null,
-      "createdAt" : null,
+      "customerId" : "CS-8",
+      "createdAt" : "2023-05-07T21:37:01",
       "boughtProducts" : [
         {
-          "id" : "IP-35",
-          "productName" : "Mediocre Iron Bench",
-          "category" : "Pakaian",
+          "id" : "IP-26",
+          "productName" : "Synergistic Wooden Shirt",
+          "category" : "Gadget",
           "sellPrice" : {
-            "value" : 95.65814714285715
+            "value" : 267.93908785714285
           },
           "buyPrice" : {
-            "value" : 149.5381757142857
+            "value" : 320.53967
           },
-          "additionalValues" : { },
-          "count" : 3
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 1
+        },
+        {
+          "id" : "IP-40",
+          "productName" : "Gorgeous Wooden Lamp",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 268.9284957142857
+          },
+          "buyPrice" : {
+            "value" : 297.68600714285714
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 1
+        },
+        {
+          "id" : "IP-21",
+          "productName" : "Intelligent Cotton Lamp",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 43.88095142857142
+          },
+          "buyPrice" : {
+            "value" : 46.90497499999999
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 1
         }
       ],
       "discount" : {
@@ -26,180 +58,31 @@
         "value" : 0.0
       },
       "getPoint" : {
-        "value" : 3.5584830737142856
+        "value" : 7.201281834
       },
       "additionalCosts" : {
-        "Tax" : "+40.18",
-        "Service Charge" : "+28.70"
+        "Tax" : "+81.30",
+        "Service Charge" : "+58.07"
       },
       "grandTotal" : {
-        "value" : 355.8483073714286
-      }
-    },
-    {
-      "id" : "FI-2",
-      "customerId" : null,
-      "createdAt" : null,
-      "boughtProducts" : [
-        {
-          "id" : "IP-8",
-          "productName" : "Lightweight Paper Car",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 289.9015435714286
-          },
-          "buyPrice" : {
-            "value" : 339.66252000000003
-          },
-          "additionalValues" : { },
-          "count" : 1
-        },
-        {
-          "id" : "IP-47",
-          "productName" : "Small Wool Table",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 96.80799785714285
-          },
-          "buyPrice" : {
-            "value" : 99.83403142857142
-          },
-          "additionalValues" : { },
-          "count" : 1
-        },
-        {
-          "id" : "IP-13",
-          "productName" : "Rustic Iron Shirt",
-          "category" : "Pakaian",
-          "sellPrice" : {
-            "value" : 349.0303678571429
-          },
-          "buyPrice" : {
-            "value" : 410.5252621428571
-          },
-          "additionalValues" : { },
-          "count" : 1
-        },
-        {
-          "id" : "IP-43",
-          "productName" : "Mediocre Rubber Shirt",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 178.03361142857142
-          },
-          "buyPrice" : {
-            "value" : 190.2293535714286
-          },
-          "additionalValues" : { },
-          "count" : 1
-        },
-        {
-          "id" : "IP-2",
-          "productName" : "Mediocre Granite Plate",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 303.3071171428571
-          },
-          "buyPrice" : {
-            "value" : 321.2178957142857
-          },
-          "additionalValues" : { },
-          "count" : 1
-        },
-        {
-          "id" : "IP-12",
-          "productName" : "Sleek Concrete Shoes",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 53.138850000000005
-          },
-          "buyPrice" : {
-            "value" : 97.41558928571429
-          },
-          "additionalValues" : { },
-          "count" : 1
-        }
-      ],
-      "discount" : {
-        "value" : 127.0219487857143
+        "value" : 720.1281834
       },
-      "usedPoint" : {
-        "value" : 100.0
-      },
-      "getPoint" : {
-        "value" : 13.480502161571431
-      },
-      "additionalCosts" : {
-        "Tax" : "+177.83",
-        "Service Charge" : "+127.02"
-      },
-      "grandTotal" : {
-        "value" : 1348.050216157143
-      }
+      "revenue" : -84.38211714285715
     },
     {
       "id" : "FI-3",
-      "customerId" : null,
-      "createdAt" : null,
+      "customerId" : "CS-9",
+      "createdAt" : "2023-05-07T21:37:51",
       "boughtProducts" : [
         {
           "id" : "IP-8",
-          "productName" : "Lightweight Paper Car",
-          "category" : "Gadget",
+          "productName" : "Awesome Copper Bottle",
+          "category" : "Pakaian",
           "sellPrice" : {
-            "value" : 289.9015435714286
+            "value" : 122.75171857142857
           },
           "buyPrice" : {
-            "value" : 339.66252000000003
-          },
-          "additionalValues" : { },
-          "count" : 24
-        },
-        {
-          "id" : "IP-43",
-          "productName" : "Mediocre Rubber Shirt",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 178.03361142857142
-          },
-          "buyPrice" : {
-            "value" : 190.2293535714286
-          },
-          "additionalValues" : { },
-          "count" : 24
-        }
-      ],
-      "discount" : {
-        "value" : 1123.044372
-      },
-      "usedPoint" : {
-        "value" : 13.480502161571437
-      },
-      "getPoint" : {
-        "value" : 127.89225338638427
-      },
-      "additionalCosts" : {
-        "Tax" : "+1,572.26",
-        "Service Charge" : "+1,123.04"
-      },
-      "grandTotal" : {
-        "value" : 12789.225338638427
-      }
-    },
-    {
-      "id" : "FI-4",
-      "customerId" : null,
-      "createdAt" : null,
-      "boughtProducts" : [
-        {
-          "id" : "IP-12",
-          "productName" : "Sleek Concrete Shoes",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 53.138850000000005
-          },
-          "buyPrice" : {
-            "value" : 97.41558928571429
+            "value" : 159.18702428571427
           },
           "additionalValues" : {
             "currency" : "USD"
@@ -214,376 +97,16 @@
         "value" : 0.0
       },
       "getPoint" : {
-        "value" : 1.5941655000000003
-      },
-      "additionalCosts" : { },
-      "grandTotal" : {
-        "value" : 159.41655000000003
-      }
-    },
-    {
-      "id" : "FI-5",
-      "customerId" : null,
-      "createdAt" : null,
-      "boughtProducts" : [
-        {
-          "id" : "IP-12",
-          "productName" : "Sleek Concrete Shoes",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 53.138850000000005
-          },
-          "buyPrice" : {
-            "value" : 97.41558928571429
-          },
-          "additionalValues" : {
-            "currency" : "USD"
-          },
-          "count" : 2
-        }
-      ],
-      "discount" : {
-        "value" : 0.0
-      },
-      "usedPoint" : {
-        "value" : 0.0
-      },
-      "getPoint" : {
-        "value" : 1.3178434800000003
+        "value" : 4.566363930857143
       },
       "additionalCosts" : {
-        "Tax" : "+14.88",
-        "Service Charge" : "+10.63"
+        "Tax" : "+51.56",
+        "Service Charge" : "+36.83"
       },
       "grandTotal" : {
-        "value" : 131.78434800000002
-      }
-    },
-    {
-      "id" : "FI-6",
-      "customerId" : null,
-      "createdAt" : null,
-      "boughtProducts" : [
-        {
-          "id" : "IP-43",
-          "productName" : "Mediocre Rubber Shirt",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 178.03361142857142
-          },
-          "buyPrice" : {
-            "value" : 190.2293535714286
-          },
-          "additionalValues" : {
-            "currency" : "USD"
-          },
-          "count" : 2
-        }
-      ],
-      "discount" : {
-        "value" : 0.0
+        "value" : 456.6363930857143
       },
-      "usedPoint" : {
-        "value" : 0.0
-      },
-      "getPoint" : {
-        "value" : 4.415233563428571
-      },
-      "additionalCosts" : {
-        "Tax" : "+49.85",
-        "Service Charge" : "+35.61"
-      },
-      "grandTotal" : {
-        "value" : 441.52335634285714
-      }
-    },
-    {
-      "id" : "FI-7",
-      "customerId" : null,
-      "createdAt" : null,
-      "boughtProducts" : [
-        {
-          "id" : "IP-43",
-          "productName" : "Mediocre Rubber Shirt",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 178.03361142857142
-          },
-          "buyPrice" : {
-            "value" : 190.2293535714286
-          },
-          "additionalValues" : {
-            "currency" : "USD"
-          },
-          "count" : 2
-        }
-      ],
-      "discount" : {
-        "value" : 0.0
-      },
-      "usedPoint" : {
-        "value" : 0.0
-      },
-      "getPoint" : {
-        "value" : 4.415233563428571
-      },
-      "additionalCosts" : {
-        "Tax" : "+49.85",
-        "Service Charge" : "+35.61"
-      },
-      "grandTotal" : {
-        "value" : 441.52335634285714
-      }
-    },
-    {
-      "id" : "FI-15",
-      "customerId" : "CS-17",
-      "createdAt" : "2023-05-07T20:53:43",
-      "boughtProducts" : [
-        {
-          "id" : "IP-22",
-          "productName" : "Rustic Linen Knife",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 542470.4699999999
-          },
-          "buyPrice" : {
-            "value" : 1064144.41
-          },
-          "additionalValues" : {
-            "currency" : "USD"
-          },
-          "count" : 2
-        }
-      ],
-      "discount" : {
-        "value" : 0.0
-      },
-      "usedPoint" : {
-        "value" : 0.0
-      },
-      "getPoint" : {
-        "value" : 13453.267655999998
-      },
-      "additionalCosts" : {
-        "Tax" : "+151,891.73",
-        "Service Charge" : "+108,494.09"
-      },
-      "grandTotal" : {
-        "value" : 1345326.7655999998
-      }
-    },
-    {
-      "id" : "FI-24",
-      "customerId" : "CS-5",
-      "createdAt" : "2023-05-07T20:54:34",
-      "boughtProducts" : [
-        {
-          "id" : "IP-28",
-          "productName" : "Sleek Marble Lamp",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 2032165.32
-          },
-          "buyPrice" : {
-            "value" : 2863066.2800000003
-          },
-          "additionalValues" : {
-            "currency" : "USD"
-          },
-          "count" : 1
-        },
-        {
-          "id" : "IP-22",
-          "productName" : "Rustic Linen Knife",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 542470.4699999999
-          },
-          "buyPrice" : {
-            "value" : 1064144.41
-          },
-          "additionalValues" : {
-            "currency" : "USD"
-          },
-          "count" : 1
-        }
-      ],
-      "discount" : {
-        "value" : 257463.57900000003
-      },
-      "usedPoint" : {
-        "value" : 100.0
-      },
-      "getPoint" : {
-        "value" : 29349.848006000004
-      },
-      "additionalCosts" : {
-        "Tax" : "+360,449.01",
-        "Service Charge" : "+257,463.58"
-      },
-      "grandTotal" : {
-        "value" : 2934984.8006
-      }
-    },
-    {
-      "id" : "FI-34",
-      "customerId" : "CS-18",
-      "createdAt" : "2023-05-07T20:55:50",
-      "boughtProducts" : [
-        {
-          "id" : "IP-28",
-          "productName" : "Sleek Marble Lamp",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 145.15466571428573
-          },
-          "buyPrice" : {
-            "value" : 204.5047342857143
-          },
-          "additionalValues" : {
-            "currency" : "USD"
-          },
-          "count" : 2
-        },
-        {
-          "id" : "IP-22",
-          "productName" : "Rustic Linen Knife",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 38.7478907142857
-          },
-          "buyPrice" : {
-            "value" : 76.01031499999999
-          },
-          "additionalValues" : {
-            "currency" : "USD"
-          },
-          "count" : 1
-        }
-      ],
-      "discount" : {
-        "value" : 0.0
-      },
-      "usedPoint" : {
-        "value" : 0.0
-      },
-      "getPoint" : {
-        "value" : 4.080309554571429
-      },
-      "additionalCosts" : {
-        "Tax" : "+46.07",
-        "Service Charge" : "+32.91"
-      },
-      "grandTotal" : {
-        "value" : 408.0309554571429
-      }
-    },
-    {
-      "id" : "FI-45",
-      "customerId" : "CS-3",
-      "createdAt" : "2023-05-07T20:56:01",
-      "boughtProducts" : [
-        {
-          "id" : "IP-28",
-          "productName" : "Sleek Marble Lamp",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 145.15466571428573
-          },
-          "buyPrice" : {
-            "value" : 204.5047342857143
-          },
-          "additionalValues" : {
-            "currency" : "USD"
-          },
-          "count" : 1
-        },
-        {
-          "id" : "IP-22",
-          "productName" : "Rustic Linen Knife",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 38.7478907142857
-          },
-          "buyPrice" : {
-            "value" : 76.01031499999999
-          },
-          "additionalValues" : {
-            "currency" : "USD"
-          },
-          "count" : 1
-        }
-      ],
-      "discount" : {
-        "value" : 0.0
-      },
-      "usedPoint" : {
-        "value" : 0.0
-      },
-      "getPoint" : {
-        "value" : 2.2803916997142855
-      },
-      "additionalCosts" : {
-        "Tax" : "+25.75",
-        "Service Charge" : "+18.39"
-      },
-      "grandTotal" : {
-        "value" : 228.03916997142855
-      }
-    },
-    {
-      "id" : "FI-57",
-      "customerId" : "CS-6",
-      "createdAt" : "2023-05-07T20:56:34",
-      "boughtProducts" : [
-        {
-          "id" : "IP-28",
-          "productName" : "Sleek Marble Lamp",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 145.15466571428573
-          },
-          "buyPrice" : {
-            "value" : 204.5047342857143
-          },
-          "additionalValues" : {
-            "currency" : "USD"
-          },
-          "count" : 1
-        },
-        {
-          "id" : "IP-22",
-          "productName" : "Rustic Linen Knife",
-          "category" : "Gadget",
-          "sellPrice" : {
-            "value" : 38.7478907142857
-          },
-          "buyPrice" : {
-            "value" : 76.01031499999999
-          },
-          "additionalValues" : {
-            "currency" : "USD"
-          },
-          "count" : 1
-        }
-      ],
-      "discount" : {
-        "value" : 18.39025564285714
-      },
-      "usedPoint" : {
-        "value" : 0.007142857142857143
-      },
-      "getPoint" : {
-        "value" : 2.0964177147142853
-      },
-      "additionalCosts" : {
-        "Tax" : "+25.75",
-        "Service Charge" : "+18.39"
-      },
-      "grandTotal" : {
-        "value" : 209.64177147142854
-      }
+      "revenue" : -109.30591714285711
     }
   ]
 }
