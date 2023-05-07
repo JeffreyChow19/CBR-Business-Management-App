@@ -104,6 +104,15 @@ public class ExportPDF
             table.addCell(cell4);
         }
 
+        // Add aditional costs
+        Map<String, String> additionalCosts = invoice.getAdditionalCosts();
+        for (Map.Entry<String, String> entry : additionalCosts.entrySet()) {;
+            Cell key = new Cell(1, 3).add(new Paragraph(entry.getKey())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY);
+            table.addCell(key);
+            Cell value = new Cell().add(new Paragraph(entry.getValue())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setTextAlignment(TextAlignment.RIGHT);
+            table.addCell(value);
+        }
+
         // Add discount and points used
         Cell discountLabel = new Cell(1, 3).add(new Paragraph("Discount")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY);
         table.addCell(discountLabel);
@@ -114,14 +123,6 @@ public class ExportPDF
         Cell points = new Cell().add(new Paragraph(invoice.getUsedPoint().getValue().toString())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setHorizontalAlignment(HorizontalAlignment.RIGHT);
         table.addCell(points);
 
-        // Add aditional costs
-        Map<String, String> additionalCosts = invoice.getAdditionalCosts();
-        for (Map.Entry<String, String> entry : additionalCosts.entrySet()) {;
-            Cell key = new Cell(1, 3).add(new Paragraph(entry.getKey())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY);
-            table.addCell(key);
-            Cell value = new Cell().add(new Paragraph(entry.getValue())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setTextAlignment(TextAlignment.RIGHT);
-            table.addCell(value);
-        }
 
         // Grand total and get points
         Cell totalLabel = new Cell(1, 3).add(new Paragraph("Grand Total")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setFont(bold);
@@ -179,21 +180,25 @@ public class ExportPDF
 
             Cell dateLabel = new Cell(rowSpan.get(date), 1).add(new Paragraph(date.format(formatter))).setFont(bold).setBorder(Border.NO_BORDER);
             table.addCell(dateLabel);
+            Double income = 0.0;
+            Double revenue = 0.0;
 
             for (FixedInvoice invoice : invoicesPerDate) {
                 Cell totalLabel = new Cell(1, 4).add(new Paragraph("Transaction " + invoice.getId())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE);
                 table.addCell(totalLabel);
+                income += invoice.getGrandTotal().getValue();
+                revenue += invoice.getRevenue();
                 ExportPDF.exportInvoice(invoice, table);
             }
 
             // Total income and revenue
             Cell totalLabel = new Cell(1, 3).add(new Paragraph("Total Income")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE);
             table.addCell(totalLabel);
-            Cell total = new Cell().add(new Paragraph("INCOME HEREE")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE).setTextAlignment(TextAlignment.RIGHT);
+            Cell total = new Cell().add(new Paragraph(income.toString())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE).setTextAlignment(TextAlignment.RIGHT);
             table.addCell(total);
             Cell getPointLabel = new Cell(1, 3).add(new Paragraph("Total Revenue")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE);
             table.addCell(getPointLabel);
-            Cell getPoint = new Cell().add(new Paragraph("REVENUE HEREE")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE).setTextAlignment(TextAlignment.RIGHT);
+            Cell getPoint = new Cell().add(new Paragraph(revenue.toString())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE).setTextAlignment(TextAlignment.RIGHT);
             table.addCell(getPoint);
         }
 
