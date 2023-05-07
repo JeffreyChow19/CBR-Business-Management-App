@@ -8,18 +8,17 @@ import com.cbr.view.theme.Theme;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.chart.PieChart;
 import javafx.scene.layout.VBox;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import static java.lang.String.format;
 
 public class PieChartPlugin extends BasePlugin implements Plugin{
     @Setter
@@ -37,12 +36,22 @@ public class PieChartPlugin extends BasePlugin implements Plugin{
     public void load() {
         if (!this.status){
             PieChart chart = new PieChart();
+            VBox chartContainer = new VBox();
+            PageTitle chartTitle = new PageTitle("Product Count by Category");
+            chartContainer.setStyle("-fx-background-color: " + Theme.getPrimaryLight() + ";-fx-background-radius: 12");
+            chartContainer.setMaxWidth(Theme.getScreenWidth() * 0.5);
+            chartContainer.getChildren().addAll(chartTitle, chart);
+            chartContainer.setAlignment(Pos.CENTER);
+            chartContainer.setPadding(new Insets(20));
+
             PageTitle title = new PageTitle("Analyze Products");
 
             chart.setLabelsVisible(true);
             chart.setLabelLineLength(10);
-            this.getPageContent().getChildren().addAll(title, chart);
+            chart.setStyle("-fx-text-fill: white");
+            this.getPageContent().getChildren().addAll(title, chartContainer);
             chart.setMinSize(Theme.getScreenWidth() * 0.3, Theme.getScreenWidth() * 0.3);
+            chart.setMaxWidth(Theme.getScreenWidth() * 0.4);
             super.load();
             this.status = true;
             Thread task = new Thread(() -> {

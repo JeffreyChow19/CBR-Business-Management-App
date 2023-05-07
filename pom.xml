@@ -13,6 +13,7 @@
         <module>Plugin-Base</module>
         <module>Plugin-System-1</module>
         <module>Plugin-System-2</module>
+        <module>Plugin-Chart-1</module>
         <module>Plugin-Chart-2</module>
     </modules>
     <name>CBR</name>
