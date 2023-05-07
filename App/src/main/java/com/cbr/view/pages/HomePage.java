@@ -70,7 +70,7 @@ public class HomePage extends StackPane {
         firstLayer.setAlignment(Pos.TOP_CENTER);
         firstLayer.setPadding(new Insets(0.07 * Theme.getScreenHeight(), 0, 0, 0));
         firstLayer.getChildren().addAll(logoContainer, clockWidget, navButtonsContainer, nim);
-        firstLayer.setSpacing(50);
+        firstLayer.setSpacing(Theme.getScreenHeight()*0.05);
 
         HBox.setHgrow(firstLayer, Priority.ALWAYS);
         container.setMinSize(Theme.getScreenWidth(), Theme.getScreenHeight());

@@ -57,22 +57,24 @@ This project is built to meet the following [guidelines](https://docs.google.com
 ```
  $ git clone https://github.com/JeffreyChow19/CBR-Business-Management-App.git
  ```
-
 or
-
 ```
  $ git clone git@github.com:JeffreyChow19/CBR-Business-Management-App.git
 ```
-
 2. Open terminal and navigate to the root directory of this repository, then navigate to App directory.
 ```
-$ cd App
+ $ cd App
 ```
+(Without Jar)
 3. run this command
 ```bash
-mvn clean javafx:run
+ $ mvn clean javafx:run
 ```
-
+(With jar)
+3. run this command
+```
+ $ java -jar target/app-1.0-jar-with-dependencies.jar
+```
 ## Adding Dependencies
 1. Go to `pom.xml`
 2. Add new dependecy under `<!-- Add Another Dependencies Here -->` tag
@@ -82,7 +84,183 @@ Please refer to `src/main/java/com/Person.java`
 
 ## Directory Structure
 ```
-aa
+├───.idea
+├───App
+│   ├───assets
+│   │   ├───data
+│   │   │   ├───json
+│   │   │   ├───obj
+│   │   │   └───xml
+│   │   ├───icons
+│   │   ├───images
+│   │   │   └───products
+│   │   └───styles
+│   ├───src
+│   │   └───main
+│   │       └───java
+│   │           └───com
+│   │               └───cbr
+│   │                   ├───datastore
+│   │                   ├───exception
+│   │                   ├───models
+│   │                   │   └───Pricing
+│   │                   ├───plugin
+│   │                   ├───seeder
+│   │                   ├───utils
+│   │                   └───view
+│   │                       ├───components
+│   │                       │   ├───buttons
+│   │                       │   ├───cards
+│   │                       │   │   └───clientcard
+│   │                       │   ├───cardslist
+│   │                       │   ├───clockwidget
+│   │                       │   ├───form
+│   │                       │   │   └───dropdown
+│   │                       │   ├───header
+│   │                       │   │   ├───headermenu
+│   │                       │   │   └───tabmenu
+│   │                       │   ├───labels
+│   │                       │   ├───logo
+│   │                       │   ├───popup
+│   │                       │   └───spinner
+│   │                       ├───pages
+│   │                       └───theme
+│   └───target
+│       ├───classes
+│       │   ├───com
+│       │   │   └───cbr
+│       │   │       ├───datastore
+│       │   │       ├───exception
+│       │   │       ├───models
+│       │   │       │   └───Pricing
+│       │   │       ├───plugin
+│       │   │       ├───seeder
+│       │   │       ├───utils
+│       │   │       └───view
+│       │   │           ├───components
+│       │   │           │   ├───buttons
+│       │   │           │   ├───cards
+│       │   │           │   │   └───clientcard
+│       │   │           │   ├───cardslist
+│       │   │           │   ├───clockwidget
+│       │   │           │   ├───form
+│       │   │           │   │   └───dropdown
+│       │   │           │   ├───header
+│       │   │           │   │   ├───headermenu
+│       │   │           │   │   └───tabmenu
+│       │   │           │   ├───labels
+│       │   │           │   ├───logo
+│       │   │           │   ├───popup
+│       │   │           │   └───spinner
+│       │   │           ├───pages
+│       │   │           └───theme
+│       │   └───styles
+│       ├───generated-sources
+│       │   └───annotations
+│       └───maven-status
+│           └───maven-compiler-plugin
+│               └───compile
+│                   └───default-compile
+├───Plugin-Base
+│   ├───src
+│   │   └───main
+│   │       └───java
+│   │           └───com
+│   │               └───cbr
+│   └───target
+│       ├───archive-tmp
+│       ├───classes
+│       │   └───com
+│       │       └───cbr
+│       ├───generated-sources
+│       │   └───annotations
+│       ├───generated-test-sources
+│       │   └───test-annotations
+│       ├───maven-archiver
+│       ├───maven-status
+│       │   └───maven-compiler-plugin
+│       │       └───compile
+│       │           └───default-compile
+│       └───test-classes
+├───Plugin-Chart-1
+│   └───src
+│       └───main
+│           ├───java
+│           │   └───com
+│           │       └───cbr
+│           └───resources
+│               └───META-INF
+│                   └───services
+├───Plugin-Chart-2
+│   ├───src
+│   │   └───main
+│   │       ├───java
+│   │       │   └───com
+│   │       │       └───cbr
+│   │       └───resources
+│   │           └───META-INF
+│   │               └───services
+│   └───target
+│       ├───classes
+│       │   ├───com
+│       │   │   └───cbr
+│       │   └───META-INF
+│       │       └───services
+│       ├───generated-sources
+│       │   └───annotations
+│       ├───generated-test-sources
+│       │   └───test-annotations
+│       └───test-classes
+├───Plugin-System-1
+│   ├───src
+│   │   └───main
+│   │       ├───java
+│   │       │   └───com
+│   │       │       └───cbr
+│   │       └───resources
+│   │           └───META-INF
+│   │               └───services
+│   └───target
+│       ├───archive-tmp
+│       ├───classes
+│       │   ├───com
+│       │   │   └───cbr
+│       │   └───META-INF
+│       │       └───services
+│       ├───generated-sources
+│       │   └───annotations
+│       ├───generated-test-sources
+│       │   └───test-annotations
+│       ├───maven-archiver
+│       ├───maven-status
+│       │   └───maven-compiler-plugin
+│       │       └───compile
+│       │           └───default-compile
+│       └───test-classes
+└───Plugin-System-2
+    ├───src
+    │   └───main
+    │       ├───java
+    │       │   └───com
+    │       │       └───cbr
+    │       └───resources
+    │           └───META-INF
+    │               └───services
+    └───target
+        ├───archive-tmp
+        ├───classes
+        │   └───com
+        │       └───cbr
+        ├───generated-sources
+        │   └───annotations
+        ├───generated-test-sources
+        │   └───test-annotations
+        ├───maven-archiver
+        ├───maven-status
+        │   └───maven-compiler-plugin
+        │       └───compile
+        │           └───default-compile
+        └───test-classes
 ```
 
 ## Authors
