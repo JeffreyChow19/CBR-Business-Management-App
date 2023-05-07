@@ -187,7 +187,7 @@ public class ExportPDF
                 Cell totalLabel = new Cell(1, 4).add(new Paragraph("Transaction " + invoice.getId())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.BLUE).setFont(bold).setFontColor(ColorConstants.WHITE);
                 table.addCell(totalLabel);
                 income += invoice.getGrandTotal().getValue();
-                revenue += invoice.getRevenue();
+                revenue += invoice.revenue();
                 ExportPDF.exportInvoice(invoice, table);
             }
 
