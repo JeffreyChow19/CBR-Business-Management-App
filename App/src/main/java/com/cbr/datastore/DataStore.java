@@ -1,5 +1,6 @@
 package com.cbr.datastore;
 
+import com.cbr.App;
 import com.cbr.models.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -113,14 +114,8 @@ public class DataStore {
         if (customerOptional.isPresent()) {
             Customer customer = customerOptional.get();
             int index = clients.getDataList().indexOf(customer);
-
-            if (updatedCustomer instanceof Member) {
-                clients.getDataList().set(index, (Member) updatedCustomer);
-            } else if (updatedCustomer instanceof VIP) {
-                clients.getDataList().set(index, (VIP) updatedCustomer);
-            } else {
-                clients.getDataList().set(index, updatedCustomer);
-            }
+            clients.getDataList().set(index, updatedCustomer);
+            
         }
         this.dataStorer.storeClients(this.clients);
     }
@@ -151,7 +146,11 @@ public class DataStore {
 
     public void addInvoice(FixedInvoice invoice) {
         this.invoices.add(invoice);
-        this.dataStorer.storeInvoices(this.invoices);
+        List<FixedInvoice> newFixedInvoice = new ArrayList<>();
+        for(FixedInvoice in : this.invoices.getDataList()){
+            newFixedInvoice.add(in.clone());
+        }
+        this.dataStorer.storeInvoices(new DataList<>(newFixedInvoice));
     }
 
     public void deleteTemporaryInvoices(TemporaryInvoice invoice) {

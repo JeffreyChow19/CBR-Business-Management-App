@@ -2,53 +2,59 @@
 <DataList>
   <dataList>
     <dataList>
-      <id>FI-7</id>
-      <customerId>CS-16</customerId>
-      <createdAt>2023-05-07T14:03:47</createdAt>
+      <id>FI-3</id>
+      <customerId>CS-15</customerId>
+      <createdAt>2023-05-07T17:05:26</createdAt>
       <boughtProducts>
         <boughtProducts>
           <id>IP-1</id>
-          <productName>Mediocre Rubber Clock</productName>
-          <category>Pakaian</category>
+          <productName>Aerodynamic Linen Wallet</productName>
+          <category>Gadget</category>
           <sellPrice>
-            <value>2114582.32</value>
+            <value>1950470.26</value>
           </sellPrice>
           <buyPrice>
-            <value>3015824.86</value>
+            <value>2271930.81</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>IP-2</id>
-          <productName>Synergistic Silk Computer</productName>
-          <category>Pakaian</category>
+          <productName>Mediocre Granite Plate</productName>
+          <category>Gadget</category>
           <sellPrice>
-            <value>2082253.25</value>
+            <value>4246299.64</value>
           </sellPrice>
           <buyPrice>
-            <value>2968418.98</value>
+            <value>4497050.54</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>IP-3</id>
-          <productName>Mediocre Copper Shoes</productName>
-          <category>Gadget</category>
+          <productName>Durable Concrete Coat</productName>
+          <category>Minuman</category>
           <sellPrice>
-            <value>1794684.85</value>
+            <value>1196187.6</value>
           </sellPrice>
           <buyPrice>
-            <value>1848610.84</value>
+            <value>1611137.05</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
         </boughtProducts>
       </boughtProducts>
-      <discount>0.0</discount>
-      <usedPoint>0.0</usedPoint>
-      <getPoint>0.0</getPoint>
+      <discount>
+        <value>0.0</value>
+      </discount>
+      <usedPoint>
+        <value>0.0</value>
+      </usedPoint>
+      <getPoint>
+        <value>0.0</value>
+      </getPoint>
       <additionalCosts/>
       <grandTotal>
         <value>0.0</value>
