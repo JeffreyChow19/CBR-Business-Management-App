@@ -55,19 +55,33 @@ This project is built to meet the following [guidelines](https://docs.google.com
 4. Transaction
 <img src="doc/transaction.jpg"> 
 5. Plugin 
+
 ![image](https://user-images.githubusercontent.com/91037907/236701536-7f645166-08ba-467e-9045-e841a7af6bba.png)
+
 6. Settings (with Plugin-Systems loaded)
+
 ![image](https://user-images.githubusercontent.com/91037907/236701557-7f674f96-7fe6-4d8d-984b-4536277fb927.png)
+
 7. Plugin-Chart-1
+
 ![image](https://user-images.githubusercontent.com/91037907/236701578-a2c4c08e-3908-4ebb-bbf6-bfa8469d7d4b.png)
+
 8. Plugin-Chart-2
+
 ![image](https://user-images.githubusercontent.com/91037907/236701591-ed40de51-29f0-4c82-97d7-78840ec8ea24.png)
+
 9. Plugin-System-1
+
 ![image](https://user-images.githubusercontent.com/91037907/236701995-7a67eb6e-018a-4874-bc2e-755ebadc5a2e.png)
+
 10. Plugin-System-2 (with Plugin-System-1 loaded)
+
 ![image](https://user-images.githubusercontent.com/91037907/236702022-40bc48db-0a36-4f05-922d-f016937fbfd1.png)
+
 11. Exported PDF (with Plugin-System-1 loaded)
+
 ![image](https://user-images.githubusercontent.com/91037907/236702988-5b6923a3-bfaf-4d7b-a6a2-46bfb1d6c30b.png)
+
 
 
 ## Prerequisites
