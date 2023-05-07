@@ -11,7 +11,6 @@ import com.cbr.models.FixedInvoice;
 import com.cbr.models.InventoryProduct;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.ColorConstants;
-import com.itextpdf.kernel.colors.DeviceRgb;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.geom.PageSize;
@@ -19,8 +18,6 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.borders.Border;
-import com.itextpdf.layout.borders.SolidBorder;
-import com.itextpdf.layout.element.AreaBreak;
 import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
@@ -33,6 +30,7 @@ import javax.swing.text.StyleConstants;
 
 public class ExportPDF
 {
+    private String dest;
 //    public static void main(String[] args) {
 //        try {
 //            List<FixedInvoice> invoices = App.getDataStore().getInvoices().getDataList();
@@ -41,17 +39,17 @@ public class ExportPDF
 //            System.out.println("Error: " + e.getMessage());
 //        }
 //    }
-    public ExportPDF(Stage stage) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save PDF file");
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
-        File selectedFile = fileChooser.showSaveDialog(stage);
-
-        if (selectedFile != null) {
-            String filePath = selectedFile.getAbsolutePath();
-            System.out.println(filePath);
-        }
-    }
+//    public void initStatement(Stage stage) {
+//        FileChooser fileChooser = new FileChooser();
+//        fileChooser.setTitle("Export Statement");
+//        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+//        File selectedFile = fileChooser.showSaveDialog(stage);
+//
+//        if (selectedFile != null) {
+//            String filePath = selectedFile.getAbsolutePath();
+//            System.out.println(filePath);
+//        }
+//    }
 
     public static void exportPDF(String dest, FixedInvoice invoice) throws Exception {
         PdfDocument pdfDoc = new PdfDocument(new PdfWriter(dest));
@@ -82,11 +80,11 @@ public class ExportPDF
         List<BoughtProduct> productList = invoice.getBoughtProducts();
         boolean isEvenRow = false;
         for (BoughtProduct product : productList) {
-            Cell cell1 = new Cell().add(new Paragraph(product.getCount().toString())).setBorder(Border.NO_BORDER);
+            Cell cell1 = new Cell().add(new Paragraph(product.getCount().toString())).setBorder(Border.NO_BORDER).setTextAlignment(TextAlignment.RIGHT);
             Cell cell2 = new Cell().add(new Paragraph(product.getProductName())).setBorder(Border.NO_BORDER);
-            Cell cell3 = new Cell().add(new Paragraph("@" +product.getSellPrice().getValue().toString())).setBorder(Border.NO_BORDER);
+            Cell cell3 = new Cell().add(new Paragraph("@" +product.getSellPrice().getValue().toString())).setBorder(Border.NO_BORDER).setTextAlignment(TextAlignment.RIGHT);
             Double totalPriceProduct = product.getSellPrice().getValue() * product.getCount();
-            Cell cell4 = new Cell().add(new Paragraph(totalPriceProduct.toString())).setBorder(Border.NO_BORDER);
+            Cell cell4 = new Cell().add(new Paragraph(totalPriceProduct.toString())).setBorder(Border.NO_BORDER).setTextAlignment(TextAlignment.RIGHT);
             if (isEvenRow) {
                 cell1.setBackgroundColor(ColorConstants.LIGHT_GRAY);
                 cell2.setBackgroundColor(ColorConstants.LIGHT_GRAY);
@@ -109,11 +107,11 @@ public class ExportPDF
         // Add discount and points used
         Cell discountLabel = new Cell(1, 3).add(new Paragraph("Discount")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY);
         table.addCell(discountLabel);
-        Cell discount = new Cell().add(new Paragraph(invoice.getDiscount().toString())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setHorizontalAlignment(HorizontalAlignment.RIGHT);
+        Cell discount = new Cell().add(new Paragraph(invoice.getDiscount().getValue().toString())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setHorizontalAlignment(HorizontalAlignment.RIGHT);
         table.addCell(discount);
         Cell pointLabel = new Cell(1, 3).add(new Paragraph("Points Used")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY);
         table.addCell(pointLabel);
-        Cell points = new Cell().add(new Paragraph(invoice.getUsedPoint().toString())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setHorizontalAlignment(HorizontalAlignment.RIGHT);
+        Cell points = new Cell().add(new Paragraph(invoice.getUsedPoint().getValue().toString())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setHorizontalAlignment(HorizontalAlignment.RIGHT);
         table.addCell(points);
 
         // Add aditional costs
@@ -130,9 +128,9 @@ public class ExportPDF
         table.addCell(totalLabel);
         Cell total = new Cell().add(new Paragraph(invoice.getGrandTotal().getValue().toString())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setTextAlignment(TextAlignment.RIGHT).setFont(bold);
         table.addCell(total);
-        Cell getPointLabel = new Cell(1, 3).add(new Paragraph("Get Points")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setFont(bold);
+        Cell getPointLabel = new Cell(1, 3).add(new Paragraph("Points")).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setFont(bold);
         table.addCell(getPointLabel);
-        Cell getPoint = new Cell().add(new Paragraph(invoice.getGetPoint().toString())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setTextAlignment(TextAlignment.RIGHT).setFont(bold);
+        Cell getPoint = new Cell().add(new Paragraph(invoice.getGetPoint().getValue().toString())).setBorder(Border.NO_BORDER).setBackgroundColor(ColorConstants.LIGHT_GRAY).setTextAlignment(TextAlignment.RIGHT).setFont(bold);
         table.addCell(getPoint);
     }
     public static void exportPDF(String dest, List<FixedInvoice> invoices) throws Exception{
