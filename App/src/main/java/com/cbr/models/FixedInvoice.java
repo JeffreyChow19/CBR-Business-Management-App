@@ -53,7 +53,7 @@ public class FixedInvoice extends Invoice {
     public Double total() {
         double total = 0.0;
         for (BoughtProduct bp : this.boughtProducts){
-            total += bp.total();
+            total += bp.total().getValue();
         }
         return total;
     }
