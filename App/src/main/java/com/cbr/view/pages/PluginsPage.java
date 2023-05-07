@@ -50,6 +50,7 @@ public class PluginsPage extends VBox {
                 AppSettings.getInstance().addPlugin(selectedFile.getAbsolutePath());
                 try {
                     PluginManager.getInstance().loadNewPlugin(selectedFile.getAbsolutePath());
+                    AppSettings.getInstance().updateSettings();
                 } catch (MalformedURLException | PluginException e) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error");

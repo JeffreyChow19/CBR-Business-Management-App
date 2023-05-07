@@ -33,6 +33,7 @@ public class CustomerHistoryCardList extends ScrollPane {
         customerHistoryContainer.setMaxWidth(Theme.getScreenWidth());
         customerHistoryContainer.setStyle("-fx-background-color:" + Theme.getPrimaryDark() + ";");
         customerHistoryContainer.setAlignment(Pos.TOP_CENTER);
+        customerHistoryContainer.setSpacing(30);
 
         searchHistoryData(customerId);
         renderHistoryDataList();

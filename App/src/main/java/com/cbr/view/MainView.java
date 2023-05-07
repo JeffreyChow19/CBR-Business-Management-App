@@ -24,12 +24,8 @@ public class MainView extends VBox {
     @Getter
     private TransactionPage transactionPage;
     private InventoryPage inventoryPage;
-    @Getter
-    private ItemEditor editItem;
-    @Getter
-    private ProfileEditor editProfile;
-    @Getter
-    private ItemEditor addItem;
+//    @Getter
+//    private ProfileEditor editProfile;
     private static volatile MainView instance;
 
     public static MainView getInstance() {
@@ -46,20 +42,14 @@ public class MainView extends VBox {
     public void init() {
         /* Pages */
         homePage = new HomePage();
-        editItem = new ItemEditor("Edit Item");
-        addItem = new ItemEditor("Add Item");
-        editProfile = new ProfileEditor("Edit Profile");
+//        editProfile = new ProfileEditor("Edit Profile");
         clientsPage = new ClientsPage();
         transactionPage = new TransactionPage();
         settingsPage = new SettingsPage();
         PluginsPage pluginsPage = new PluginsPage();
         inventoryPage = new InventoryPage();
         // chore: pages
-        try {
-            PluginManager.getInstance().loadNewPlugin();
-        } catch (MalformedURLException e) {
-        } catch (PluginException e) {
-        }
+
         /* Body Setup */
         TabMenuBar.getInstance().addTab("Home", homePage);
         BorderPane bodyContainer = new BorderPane();
@@ -74,6 +64,12 @@ public class MainView extends VBox {
         HeaderMenuBar.getInstance().addNewNavigationMenu("Transaction", transactionPage);
         HeaderMenuBar.getInstance().addNewPreferencesMenu("Settings", settingsPage);
         HeaderMenuBar.getInstance().addNewPreferencesMenu("Plugins", pluginsPage);
+
+        try {
+            PluginManager.getInstance().loadNewPlugin();
+        } catch (MalformedURLException e) {
+        } catch (PluginException e) {
+        }
         // HeaderMenuBar.getInstance().setOpenedTab(tabs,
         // clientsPage,
         // new Label("inventory"),
@@ -94,18 +90,20 @@ public class MainView extends VBox {
 
     public void refresh() {
         // to do: close all opened tabs except home
-        transactionPage = new TransactionPage();
+//        transactionPage = new TransactionPage();
         PluginManager.getInstance().loadPlugin();
-        TabMenuBar.getInstance().addTab("Home", homePage);
-        PluginsPage pluginsPage = new PluginsPage();
-
-        HeaderMenuBar.getInstance().getNavigationMenu().getItems().clear();
-        HeaderMenuBar.getInstance().addNewNavigationMenu("Clients", clientsPage);
-        HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", inventoryPage);
-        HeaderMenuBar.getInstance().addNewNavigationMenu("Export Statements", new Label("export"));
-        HeaderMenuBar.getInstance().addNewNavigationMenu("Transaction", transactionPage);
-        HeaderMenuBar.getInstance().addNewPreferencesMenu("Settings", settingsPage);
-        HeaderMenuBar.getInstance().addNewPreferencesMenu("Plugins", pluginsPage);
+//        TabMenuBar.getInstance().addTab("Home", homePage);
+//        PluginsPage pluginsPage = new PluginsPage();
+//        System.out.println("from refresh");
+//        System.out.println(MainView.getInstance().getTransactionPage());
+//        System.out.println(transactionPage);
+//        HeaderMenuBar.getInstance().getNavigationMenu().getItems().clear();
+//        HeaderMenuBar.getInstance().addNewNavigationMenu("Clients", clientsPage);
+//        HeaderMenuBar.getInstance().addNewNavigationMenu("Inventory Management", new Label("inventory"));
+//        HeaderMenuBar.getInstance().addNewNavigationMenu("Export Statements", new Label("export"));
+//        HeaderMenuBar.getInstance().addNewNavigationMenu("Transaction", transactionPage);
+//        HeaderMenuBar.getInstance().addNewPreferencesMenu("Settings", settingsPage);
+//        HeaderMenuBar.getInstance().addNewPreferencesMenu("Plugins", pluginsPage);
         clientsPage.updateList("");
     }
 }

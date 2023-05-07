@@ -58,7 +58,7 @@ public class TemporaryInvoice extends Invoice implements Serializable {
 
         return total;
     }
-    public Double grandTotal(){
+    public Double grandTotal(Double discount){
         Double total = total();
         Double grandTotal = total();
 
@@ -66,7 +66,7 @@ public class TemporaryInvoice extends Invoice implements Serializable {
             grandTotal += (cost * total);
         }
 
-        return grandTotal;
+        return grandTotal - discount;
     }
 
     public static void addAdditionalCosts(String costName, Double cost){

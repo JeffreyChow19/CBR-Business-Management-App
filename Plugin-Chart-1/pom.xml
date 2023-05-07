@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Plugin-Chart-2</artifactId>
+    <artifactId>Plugin-Chart-1</artifactId>
 
     <dependencies>
         <dependency>
