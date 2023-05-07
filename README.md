@@ -123,7 +123,6 @@ Please refer to `src/main/java/com/Person.java`
 ## Directory Structure
 ```
 ├───.idea
-├───doc
 ├───App
 │   ├───assets
 │   │   ├───data
@@ -196,10 +195,14 @@ Please refer to `src/main/java/com/Person.java`
 │       │   └───styles
 │       ├───generated-sources
 │       │   └───annotations
-│       └───maven-status
-│           └───maven-compiler-plugin
-│               └───compile
-│                   └───default-compile
+│       ├───generated-test-sources
+│       │   └───test-annotations
+│       ├───maven-status
+│       │   └───maven-compiler-plugin
+│       │       └───compile
+│       │           └───default-compile
+│       └───test-classes
+├───doc
 ├───Plugin-Base
 │   ├───src
 │   │   └───main
@@ -222,14 +225,25 @@ Please refer to `src/main/java/com/Person.java`
 │       │           └───default-compile
 │       └───test-classes
 ├───Plugin-Chart-1
-│   └───src
-│       └───main
-│           ├───java
-│           │   └───com
-│           │       └───cbr
-│           └───resources
-│               └───META-INF
-│                   └───services
+│   ├───src
+│   │   └───main
+│   │       ├───java
+│   │       │   └───com
+│   │       │       └───cbr
+│   │       └───resources
+│   │           └───META-INF
+│   │               └───services
+│   └───target
+│       ├───classes
+│       │   ├───com
+│       │   │   └───cbr
+│       │   └───META-INF
+│       │       └───services
+│       ├───generated-sources
+│       │   └───annotations
+│       ├───generated-test-sources
+│       │   └───test-annotations
+│       └───test-classes
 ├───Plugin-Chart-2
 │   ├───src
 │   │   └───main
