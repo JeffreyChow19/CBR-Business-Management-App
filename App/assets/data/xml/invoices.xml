@@ -2,45 +2,45 @@
 <DataList>
   <dataList>
     <dataList>
-      <id>FI-3</id>
-      <customerId>CS-15</customerId>
-      <createdAt>2023-05-06T18:38:27</createdAt>
+      <id>FI-7</id>
+      <customerId>CS-16</customerId>
+      <createdAt>2023-05-07T14:03:47</createdAt>
       <boughtProducts>
         <boughtProducts>
           <id>IP-1</id>
-          <productName>Lightweight Marble Knife</productName>
-          <category>Gadget</category>
+          <productName>Mediocre Rubber Clock</productName>
+          <category>Pakaian</category>
           <sellPrice>
-            <value>2727525.46</value>
+            <value>2114582.32</value>
           </sellPrice>
           <buyPrice>
-            <value>3096138.01</value>
+            <value>3015824.86</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>IP-2</id>
-          <productName>Practical Linen Watch</productName>
-          <category>Makanan</category>
+          <productName>Synergistic Silk Computer</productName>
+          <category>Pakaian</category>
           <sellPrice>
-            <value>1802692.23</value>
+            <value>2082253.25</value>
           </sellPrice>
           <buyPrice>
-            <value>2621341.42</value>
+            <value>2968418.98</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
         </boughtProducts>
         <boughtProducts>
           <id>IP-3</id>
-          <productName>Fantastic Concrete Coat</productName>
-          <category>Minuman</category>
+          <productName>Mediocre Copper Shoes</productName>
+          <category>Gadget</category>
           <sellPrice>
-            <value>4532785.82</value>
+            <value>1794684.85</value>
           </sellPrice>
           <buyPrice>
-            <value>4698358.57</value>
+            <value>1848610.84</value>
           </buyPrice>
           <additionalValues/>
           <count>1</count>
@@ -49,6 +49,10 @@
       <discount>0.0</discount>
       <usedPoint>0.0</usedPoint>
       <getPoint>0.0</getPoint>
+      <additionalCosts/>
+      <grandTotal>
+        <value>0.0</value>
+      </grandTotal>
     </dataList>
   </dataList>
 </DataList>

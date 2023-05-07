@@ -33,13 +33,11 @@ public abstract class Product extends Identifiable implements Serializable {
         this.additionalValues = new HashMap<>();
     }
 
-    public Product(String productName, String category, BasePrice sellPrice, BasePrice buyPrice){
+    public Product(String productName, String category, BasePrice sellPrice, BasePrice buyPrice, Map<String, String> additionalValues){
         this.productName = productName;
         this.category = category;
         this.sellPrice = sellPrice;
         this.buyPrice = buyPrice;
+        this.additionalValues = additionalValues;
     }
-
-
-//    public abstract Double getGrandTotal();
 }

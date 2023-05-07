@@ -28,7 +28,7 @@ public class TabMenuBar extends TabPane {
         Tab homeTab = new Tab("Home", new Label("This is Home"));
         homeTab.setClosable(false);
         this.getTabs().add(homeTab);
-        this.setStyle("-fx-background-color: " + Theme.getSecondaryBase() + ";-fx-font-family: Ubuntu");
+        this.setStyle("-fx-background-color: " + Theme.getPrimaryBase() + ";-fx-font-family: Ubuntu");
         this.getStyleClass().add("tab-menu-bar");
 //        this.getStylesheets().add("file:assets/styles/stylesheet.css");
     }
@@ -72,5 +72,13 @@ public class TabMenuBar extends TabPane {
             }
         }
         return foundTab;
+    }
+
+    public void closeTab(String tabName, String redirectTarget) {
+        this.getTabs().remove(this.getTab(tabName));
+        System.out.println("Close " + tabName);
+        if (!redirectTarget.equals("")) {
+            this.switchToTab(redirectTarget);
+        }
     }
 }
