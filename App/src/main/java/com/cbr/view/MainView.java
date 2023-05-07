@@ -1,7 +1,10 @@
 package com.cbr.view;
 
+import com.cbr.App;
 import com.cbr.exception.PluginException;
+import com.cbr.models.FixedInvoice;
 import com.cbr.plugin.PluginManager;
+import com.cbr.utils.ExportPDF;
 import com.cbr.view.components.header.headermenu.HeaderMenuBar;
 import com.cbr.view.components.header.tabmenu.TabMenuBar;
 import com.cbr.view.pages.*;
@@ -11,6 +14,7 @@ import javafx.scene.layout.VBox;
 import lombok.Getter;
 
 import java.net.MalformedURLException;
+import java.util.List;
 
 public class MainView extends VBox {
     private HomePage homePage;
