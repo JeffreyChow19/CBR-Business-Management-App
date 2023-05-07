@@ -189,6 +189,348 @@
       "grandTotal" : {
         "value" : 1.6991156544000003E7
       }
+    },
+    {
+      "id" : "FI-16",
+      "customerId" : "CS-6",
+      "createdAt" : "2023-05-07T22:26:33",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Ergonomic Silk Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 375430.79545454547
+          },
+          "buyPrice" : {
+            "value" : 426224.1354545455
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 2
+        }
+      ],
+      "discount" : {
+        "value" : 75086.1590909091
+      },
+      "usedPoint" : {
+        "value" : 9.090909090909092
+      },
+      "getPoint" : {
+        "value" : 8559.731227272729
+      },
+      "additionalCosts" : {
+        "Tax" : "+105,120.62",
+        "Service Charge" : "+75,086.16"
+      },
+      "grandTotal" : {
+        "value" : 855973.1227272728
+      }
+    },
+    {
+      "id" : "FI-23",
+      "customerId" : "CS-6",
+      "createdAt" : "2023-05-07T22:29:00",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Ergonomic Silk Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 375430.79545454547
+          },
+          "buyPrice" : {
+            "value" : 426224.1354545455
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 9
+        }
+      ],
+      "discount" : {
+        "value" : 337887.71590909094
+      },
+      "usedPoint" : {
+        "value" : 8559.731227272729
+      },
+      "getPoint" : {
+        "value" : 38433.60230136364
+      },
+      "additionalCosts" : {
+        "Tax" : "+473,042.80",
+        "Service Charge" : "+337,887.72"
+      },
+      "grandTotal" : {
+        "value" : 3843360.2301363638
+      }
+    },
+    {
+      "id" : "FI-8",
+      "customerId" : "CS-3",
+      "createdAt" : "2023-05-07T22:32:01",
+      "boughtProducts" : [
+        {
+          "id" : "IP-48",
+          "productName" : "Practical Bronze Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 415228.65454545454
+          },
+          "buyPrice" : {
+            "value" : 503326.3890909091
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 1
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 5148.835316363637
+      },
+      "additionalCosts" : {
+        "Tax" : "+0.00",
+        "Service Charge" : "+0.00"
+      },
+      "grandTotal" : {
+        "value" : 514883.53163636365
+      }
+    },
+    {
+      "id" : "FI-17",
+      "customerId" : "CS-17",
+      "createdAt" : "2023-05-07T22:32:12",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Ergonomic Silk Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 375430.79545454547
+          },
+          "buyPrice" : {
+            "value" : 426224.1354545455
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 5
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 23276.709318181816
+      },
+      "additionalCosts" : {
+        "Tax" : "+262,801.56",
+        "Service Charge" : "+187,715.40"
+      },
+      "grandTotal" : {
+        "value" : 2327670.9318181816
+      }
+    },
+    {
+      "id" : "FI-27",
+      "customerId" : "CS-6",
+      "createdAt" : "2023-05-07T22:32:28",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Ergonomic Silk Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 375430.79545454547
+          },
+          "buyPrice" : {
+            "value" : 426224.1354545455
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 6
+        }
+      ],
+      "discount" : {
+        "value" : 225258.4772727273
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 25679.466409090906
+      },
+      "additionalCosts" : {
+        "Tax" : "+315,361.87",
+        "Service Charge" : "+225,258.48"
+      },
+      "grandTotal" : {
+        "value" : 2567946.6409090906
+      }
+    },
+    {
+      "id" : "FI-38",
+      "customerId" : "CS-6",
+      "createdAt" : "2023-05-07T22:33:43",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Ergonomic Silk Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 375430.79545454547
+          },
+          "buyPrice" : {
+            "value" : 426224.1354545455
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 2
+        }
+      ],
+      "discount" : {
+        "value" : 75086.1590909091
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 8559.822136363637
+      },
+      "additionalCosts" : {
+        "Tax" : "+105,120.62",
+        "Service Charge" : "+75,086.16"
+      },
+      "grandTotal" : {
+        "value" : 855982.2136363637
+      }
+    },
+    {
+      "id" : "FI-12",
+      "customerId" : "CS-18",
+      "createdAt" : "2023-05-07T22:34:07",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Ergonomic Silk Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 375430.79545454547
+          },
+          "buyPrice" : {
+            "value" : 426224.1354545455
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 5
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 23276.709318181816
+      },
+      "additionalCosts" : {
+        "Tax" : "+262,801.56",
+        "Service Charge" : "+187,715.40"
+      },
+      "grandTotal" : {
+        "value" : 2327670.9318181816
+      }
+    },
+    {
+      "id" : "FI-25",
+      "customerId" : "CS-6",
+      "createdAt" : "2023-05-07T22:34:17",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Ergonomic Silk Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 375430.79545454547
+          },
+          "buyPrice" : {
+            "value" : 426224.1354545455
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 4
+        }
+      ],
+      "discount" : {
+        "value" : 150172.3181818182
+      },
+      "usedPoint" : {
+        "value" : 72672.89084681818
+      },
+      "getPoint" : {
+        "value" : 16392.915364259094
+      },
+      "additionalCosts" : {
+        "Tax" : "+210,241.25",
+        "Service Charge" : "+150,172.32"
+      },
+      "grandTotal" : {
+        "value" : 1639291.5364259093
+      }
+    },
+    {
+      "id" : "FI-39",
+      "customerId" : "CS-6",
+      "createdAt" : "2023-05-07T22:34:33",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Ergonomic Silk Chair",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 375430.79545454547
+          },
+          "buyPrice" : {
+            "value" : 426224.1354545455
+          },
+          "additionalValues" : {
+            "currency" : "KRW"
+          },
+          "count" : 5
+        }
+      ],
+      "discount" : {
+        "value" : 187715.39772727274
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 21399.555340909086
+      },
+      "additionalCosts" : {
+        "Tax" : "+0.00",
+        "Service Charge" : "+0.00"
+      },
+      "grandTotal" : {
+        "value" : 2139955.5340909087
+      }
     }
   ]
 }

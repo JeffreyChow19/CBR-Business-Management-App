@@ -331,7 +331,7 @@ public class TransactionPage extends StackPane {
         // IF USER IS MEMBERS OR VIP, SHOW POP UP "WANT TO USE POINTS?"
         Customer customer = App.getDataStore().getCustomerById(customerId);
         Double usePoint = new Double((customer instanceof Member || customer instanceof VIP) ? ((Member)customer).getPoint().getValue() : 0.0);
-        YesNoPopUp popUpUsePoint = new YesNoPopUp("Do you want you use your " + usePoint.toString() + " points?");
+        YesNoPopUp popUpUsePoint = new YesNoPopUp("Do you want you use your " + String.format("%.2f", usePoint) + " points?");
         if (customer != null && usePoint > 0){
             popUpUsePoint.getYesButton().setOnAction(e -> {
                 popUpUsePoint.setValue(new Boolean(true));
@@ -441,11 +441,7 @@ public class TransactionPage extends StackPane {
     }
 
     public void updateTemporaryInvoice(){
-//        temporaryInvoice = invoice;
-
         resetInfo();
-
-//        for ()
         for (Map.Entry<String, Integer> entry : temporaryInvoice.getProductFrequencies().entrySet()) {
             String productId = entry.getKey();
 
