@@ -26,7 +26,7 @@ public class HistoryInvoicePage extends VBox {
         this.getChildren().addAll(title, historyInvoiceCardList);
         this.setAlignment(Pos.TOP_CENTER);
         this.setStyle("-fx-background-color:" + Theme.getPrimaryDark());
-        this.setPadding(new Insets(100));
+        this.setPadding(new Insets(30, 0, 120, 0));
         this.setSpacing(30);
         VBox.setVgrow(historyInvoiceCardList, Priority.ALWAYS);
     }
