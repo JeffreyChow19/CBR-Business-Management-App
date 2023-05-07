@@ -17,7 +17,10 @@
       "name" : "rachel",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 0.0
+      "point" : {
+        "value" : 0.0
+      },
+      "additionalValue" : { }
     },
     {
       "id" : "CS-4",
@@ -26,7 +29,10 @@
       "name" : "Livia",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 0.0
+      "point" : {
+        "value" : 0.0
+      },
+      "additionalValue" : { }
     },
     {
       "id" : "CS-5",
@@ -35,7 +41,10 @@
       "name" : "Jason",
       "phoneNumber" : "08123456789",
       "status" : false,
-      "point" : 100.0,
+      "point" : {
+        "value" : 100.0
+      },
+      "additionalValue" : { },
       "buyPrice" : 100000.0
     },
     {
@@ -45,7 +54,10 @@
       "name" : "Chow",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 100.0,
+      "point" : {
+        "value" : 100.0
+      },
+      "additionalValue" : { },
       "buyPrice" : 100000.0
     },
     {
@@ -55,7 +67,10 @@
       "name" : "Eugene",
       "phoneNumber" : "08123456789",
       "status" : true,
-      "point" : 0.0
+      "point" : {
+        "value" : 0.0
+      },
+      "additionalValue" : { }
     }
   ]
 }

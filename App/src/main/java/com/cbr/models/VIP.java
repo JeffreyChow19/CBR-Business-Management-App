@@ -1,10 +1,13 @@
 package com.cbr.models;
 
+import com.cbr.models.Pricing.Price;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Map;
+
 @Getter
 @Setter
 public class VIP extends Member {
@@ -15,8 +18,9 @@ public class VIP extends Member {
     public VIP(){
         this.type = "VIP";
     }
-    public VIP(String id, List<String> invoiceList, String name, String phoneNumber, Boolean status, Double point, Double buyPrice){
-        super(id, invoiceList, name, phoneNumber);
+    
+    public VIP(String id, List<String> invoiceList, String name, String phoneNumber, Boolean status, Price point, Double buyPrice, Map<String, String> additionalValue){
+        super(id, invoiceList, name, phoneNumber, additionalValue);
         this.type = "VIP";
         this.status = status;
         this.point = point;

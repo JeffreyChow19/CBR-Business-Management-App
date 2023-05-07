@@ -1,27 +1,27 @@
 {
   "dataList" : [
     {
-      "id" : "TI-10",
-      "customerId" : "CS-3",
-      "createdAt" : "2023-05-07T20:10:06",
+      "id" : "TI-7",
+      "customerId" : "CS-5",
+      "createdAt" : "2023-05-07T19:05:50",
       "productFrequencies" : {
-        "IP-18" : 1
+        "IP-10" : 1
       }
     },
     {
-      "id" : "TI-11",
-      "customerId" : "CS-6",
-      "createdAt" : "2023-05-07T20:10:06",
+      "id" : "TI-8",
+      "customerId" : "CS-3",
+      "createdAt" : "2023-05-07T19:05:50",
       "productFrequencies" : {
-        "IP-13" : 1
+        "IP-29" : 1
       }
     },
     {
-      "id" : "TI-12",
+      "id" : "TI-9",
       "customerId" : "CS-3",
-      "createdAt" : "2023-05-07T20:10:06",
+      "createdAt" : "2023-05-07T19:05:50",
       "productFrequencies" : {
-        "IP-42" : 1
+        "IP-45" : 1
       }
     }
   ]
