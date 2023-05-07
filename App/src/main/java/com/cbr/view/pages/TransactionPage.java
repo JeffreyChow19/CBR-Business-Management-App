@@ -469,6 +469,8 @@ public class TransactionPage extends StackPane {
                 // SHOW POP UP
                 OkPopUp removeItem = new OkPopUp(inventoryProduct.getProductName() + "is currently not for sale, it will be remove from the bill");
                 removeItem.show();
+
+                temporaryInvoice.getProductFrequencies().remove(entry.getKey());
             }
         }
 

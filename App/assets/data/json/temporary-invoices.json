@@ -3,25 +3,23 @@
     {
       "id" : "TI-7",
       "customerId" : "CS-5",
-      "createdAt" : "2023-05-07T20:38:02",
-      "productFrequencies" : {
-        "IP-10" : 1
-      }
+      "createdAt" : "2023-05-07T21:07:37",
+      "productFrequencies" : { }
     },
     {
       "id" : "TI-8",
       "customerId" : "CS-5",
-      "createdAt" : "2023-05-07T20:38:02",
+      "createdAt" : "2023-05-07T21:07:37",
       "productFrequencies" : {
-        "IP-14" : 1
+        "IP-28" : 5
       }
     },
     {
       "id" : "TI-9",
-      "customerId" : "CS-5",
-      "createdAt" : "2023-05-07T20:38:02",
+      "customerId" : "CS-3",
+      "createdAt" : "2023-05-07T21:07:37",
       "productFrequencies" : {
-        "IP-19" : 1
+        "IP-47" : 1
       }
     }
   ]

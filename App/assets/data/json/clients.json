@@ -71,6 +71,11 @@
         "value" : 0.0
       },
       "additionalValue" : { }
+    },
+    {
+      "id" : "CS-17",
+      "type" : "customer",
+      "invoiceList" : [ ]
     }
   ]
 }
