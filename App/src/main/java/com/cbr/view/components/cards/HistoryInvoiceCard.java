@@ -9,7 +9,9 @@ import java.time.format.DateTimeFormatter;
 import javafx.scene.paint.Color;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -26,6 +28,12 @@ public class HistoryInvoiceCard extends GridPane {
         this.setMaxWidth(Theme.getScreenWidth() * 0.65);
         this.setHeight(Theme.getScreenWidth() * 0.3);
         this.setPadding(new Insets(10, 10, 10, 10));
+        ColumnConstraints col1 = new ColumnConstraints();
+        ColumnConstraints col2 = new ColumnConstraints();
+        col2.setHgrow(Priority.ALWAYS);
+        ColumnConstraints col3 = new ColumnConstraints();
+        ColumnConstraints col4 = new ColumnConstraints();
+        this.getColumnConstraints().addAll(col1, col2, col3, col4);
 
         // Top row: Transaction ID, timestamp
         Label fixedInvoiceId = new Label(this.invoice.getId());
@@ -35,8 +43,8 @@ public class HistoryInvoiceCard extends GridPane {
         fixedInvoiceId.setTextFill(Color.WHITE);
         fixedInvoiceDate.setFont(Theme.getBodyMediumFont());
         fixedInvoiceDate.setTextFill(Color.WHITE);
-        this.add(fixedInvoiceId, 0, currentRow, 1, 1);
-        this.add(fixedInvoiceDate, 3, currentRow, 1, 1);
+        this.add(fixedInvoiceId, 0, currentRow, 2, 1);
+        this.add(fixedInvoiceDate, 2, currentRow, 2, 1);
         GridPane.setHalignment(fixedInvoiceId, HPos.LEFT);
         GridPane.setHalignment(fixedInvoiceDate, HPos.RIGHT);
 
@@ -74,7 +82,7 @@ public class HistoryInvoiceCard extends GridPane {
         Label discountQty = new Label(String.format("%.2f", this.invoice.getDiscount()));
         discountQty.setFont(Theme.getBodyMediumFont());
         discountQty.setTextFill(Color.WHITE);
-        this.add(discountLabel, 0, currentRow, 1, 1);
+        this.add(discountLabel, 0, currentRow, 2, 1);
         this.add(discountQty, 3, currentRow, 1, 1);
         GridPane.setHalignment(discountLabel, HPos.LEFT);
         GridPane.setHalignment(discountQty, HPos.RIGHT);
@@ -84,7 +92,7 @@ public class HistoryInvoiceCard extends GridPane {
         Label pointsUsedLabel = new Label("Points used");
         pointsUsedLabel.setFont(Theme.getBodyMediumFont());
         pointsUsedLabel.setTextFill(Color.WHITE);
-        this.add(pointsUsedLabel, 0, currentRow, 1, 1);
+        this.add(pointsUsedLabel, 0, currentRow, 2, 1);
         GridPane.setHalignment(pointsUsedLabel, HPos.LEFT);
         // Where to get points used in the transaction? TBD
 
@@ -93,7 +101,7 @@ public class HistoryInvoiceCard extends GridPane {
         Label grandTotalLabel = new Label("Grand total");
         grandTotalLabel.setFont(Theme.getHeading2Font());
         grandTotalLabel.setTextFill(Color.WHITE);
-        this.add(grandTotalLabel, 0, currentRow, 1, 1);
+        this.add(grandTotalLabel, 0, currentRow, 2, 1);
         GridPane.setHalignment(grandTotalLabel, HPos.LEFT);
         // Where to get grand total value? TBD
 
@@ -102,14 +110,14 @@ public class HistoryInvoiceCard extends GridPane {
         Label pointsLabel = new Label("Points");
         pointsLabel.setFont(Theme.getHeading2Font());
         pointsLabel.setTextFill(Color.WHITE);
-        this.add(pointsLabel, 0, currentRow, 1, 1);
+        this.add(pointsLabel, 0, currentRow, 2, 1);
         GridPane.setHalignment(pointsLabel, HPos.LEFT);
         // Where to get points? TBD
 
         // Button to export to PDF
         currentRow++;
         ExportInvoiceButton exportButton = new ExportInvoiceButton(this.invoice);
-        this.add(exportButton, 3, currentRow, 1, 1);
+        this.add(exportButton, 2, currentRow, 2, 1);
         GridPane.setHalignment(exportButton, HPos.RIGHT);
     }
 }
