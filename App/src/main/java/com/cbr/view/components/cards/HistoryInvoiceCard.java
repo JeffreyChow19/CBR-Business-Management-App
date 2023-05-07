@@ -87,7 +87,7 @@ public class HistoryInvoiceCard extends GridPane {
         discountQty.setFont(Theme.getBodyMediumFont());
         discountQty.setTextFill(Color.WHITE);
         this.add(discountLabel, 0, currentRow, 2, 1);
-        this.add(discountQty, 3, currentRow, 1, 1);
+        this.add(discountQty, 2, currentRow, 2, 1);
         GridPane.setHalignment(discountLabel, HPos.LEFT);
         GridPane.setHalignment(discountQty, HPos.RIGHT);
 
