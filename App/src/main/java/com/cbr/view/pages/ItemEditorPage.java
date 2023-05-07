@@ -4,13 +4,7 @@ import com.cbr.App;
 import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.buttons.DeleteButton;
 
-import com.cbr.view.components.form.FormArea;
-import com.cbr.view.components.form.FormLabel;
-import com.cbr.view.components.dropdown.Dropdown;
 import com.cbr.view.components.header.tabmenu.TabMenuBar;
-import com.cbr.view.components.labels.PageTitle;
-import com.cbr.view.components.labels.ToolTipLabel;
-import com.cbr.view.components.spinner.NumberSpinner;
 import com.cbr.view.theme.Theme;
 import com.cbr.App;
 
@@ -30,11 +24,6 @@ import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 import java.io.File;
 import java.io.IOException;
