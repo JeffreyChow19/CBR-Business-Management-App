@@ -164,9 +164,10 @@ public class ProfileEditor<T extends Customer> extends StackPane {
                         newCustomer = new Member(customer.getId(), customer.getInvoiceList(),
                                 nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText(), new HashMap<>());
                     } else {
+                        Member temp = (Member) customer;
                         newCustomer = new VIP(customer.getId(), customer.getInvoiceList(),
                                 nameForm.getContentTextField().getText(), phoneForm.getContentTextField().getText(),
-                                true, new BasePrice(0.0), 0.0, new HashMap<>());
+                                true, new BasePrice(0.0), temp.getAdditionalValue());
                     }
                     App.getDataStore().updateCustomerInfo(newCustomer);
                     showAlert(Alert.AlertType.CONFIRMATION, container.getScene().getWindow(),

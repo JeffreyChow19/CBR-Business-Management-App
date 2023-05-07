@@ -2,12 +2,12 @@
 <DataList>
   <dataList>
     <dataList>
-      <id>CS-27</id>
+      <id>CS-15</id>
       <type>customer</type>
       <invoiceList/>
     </dataList>
     <dataList>
-      <id>CS-28</id>
+      <id>CS-16</id>
       <type>customer</type>
       <invoiceList/>
     </dataList>
@@ -46,7 +46,6 @@
         <value>100.0</value>
       </point>
       <additionalValue/>
-      <buyPrice>100000.0</buyPrice>
     </dataList>
     <dataList>
       <id>CS-6</id>
@@ -59,7 +58,6 @@
         <value>100.0</value>
       </point>
       <additionalValue/>
-      <buyPrice>100000.0</buyPrice>
     </dataList>
     <dataList>
       <id>CS-7</id>

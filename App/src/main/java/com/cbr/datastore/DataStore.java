@@ -21,10 +21,6 @@ public class DataStore {
     @Getter
     private DataList<Customer> clients;
     @Getter
-    private DataList<Member> members;
-    @Getter
-    private DataList<VIP> vipMembers;
-    @Getter
     private DataList<InventoryProduct> inventory;
     @Getter
     private DataList<FixedInvoice> invoices;
@@ -70,7 +66,7 @@ public class DataStore {
 
     public void addClient(Customer record) {
         this.clients.add(record);
-        this.dataStorer.storeClients(this.clients);
+        this.saveClients();
     }
 
     public void updateClient(Customer client, String bill_id, Double deltaPoint) {
@@ -84,7 +80,15 @@ public class DataStore {
             ((Member) toUpdate).addPoint(deltaPoint);
         }
 
-        this.dataStorer.storeClients(this.clients);
+        this.saveClients();
+    }
+
+    public void saveClients(){
+        List<Customer> newClients = new ArrayList<>();
+        for (Customer c:this.clients.getDataList()){
+            newClients.add(c.clone());
+        }
+        this.dataStorer.storeClients(new DataList<>(newClients));
     }
 
     public void deactivateMember(String id) {
@@ -244,16 +248,4 @@ public class DataStore {
                 .map(c -> (Member) c)
                 .collect(Collectors.toList());
     }
-
-    // public void commit(){
-    // for (InventoryProduct p : this.inventory.getDataList()){
-    // if (p.getSellPrice().getClass().equals(PriceDecorator.class)){
-    // p.setSellPrice(((PriceDecorator) p.getSellPrice()).getPrice());
-    // }
-    // if (p.getBuyPrice().getClass().equals(PriceDecorator.class)){
-    // p.setBuyPrice(((PriceDecorator) p.getBuyPrice()).getPrice());
-    // }
-    // }
-    // this.dataStorer.storeInventory(this.inventory);
-    // }
 }

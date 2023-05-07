@@ -334,6 +334,256 @@
       "grandTotal" : {
         "value" : 441.52335634285714
       }
+    },
+    {
+      "id" : "FI-15",
+      "customerId" : "CS-17",
+      "createdAt" : "2023-05-07T20:53:43",
+      "boughtProducts" : [
+        {
+          "id" : "IP-22",
+          "productName" : "Rustic Linen Knife",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 542470.4699999999
+          },
+          "buyPrice" : {
+            "value" : 1064144.41
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 2
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 13453.267655999998
+      },
+      "additionalCosts" : {
+        "Tax" : "+151,891.73",
+        "Service Charge" : "+108,494.09"
+      },
+      "grandTotal" : {
+        "value" : 1345326.7655999998
+      }
+    },
+    {
+      "id" : "FI-24",
+      "customerId" : "CS-5",
+      "createdAt" : "2023-05-07T20:54:34",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Sleek Marble Lamp",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 2032165.32
+          },
+          "buyPrice" : {
+            "value" : 2863066.2800000003
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 1
+        },
+        {
+          "id" : "IP-22",
+          "productName" : "Rustic Linen Knife",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 542470.4699999999
+          },
+          "buyPrice" : {
+            "value" : 1064144.41
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 1
+        }
+      ],
+      "discount" : {
+        "value" : 257463.57900000003
+      },
+      "usedPoint" : {
+        "value" : 100.0
+      },
+      "getPoint" : {
+        "value" : 29349.848006000004
+      },
+      "additionalCosts" : {
+        "Tax" : "+360,449.01",
+        "Service Charge" : "+257,463.58"
+      },
+      "grandTotal" : {
+        "value" : 2934984.8006
+      }
+    },
+    {
+      "id" : "FI-34",
+      "customerId" : "CS-18",
+      "createdAt" : "2023-05-07T20:55:50",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Sleek Marble Lamp",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 145.15466571428573
+          },
+          "buyPrice" : {
+            "value" : 204.5047342857143
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 2
+        },
+        {
+          "id" : "IP-22",
+          "productName" : "Rustic Linen Knife",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 38.7478907142857
+          },
+          "buyPrice" : {
+            "value" : 76.01031499999999
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 1
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 4.080309554571429
+      },
+      "additionalCosts" : {
+        "Tax" : "+46.07",
+        "Service Charge" : "+32.91"
+      },
+      "grandTotal" : {
+        "value" : 408.0309554571429
+      }
+    },
+    {
+      "id" : "FI-45",
+      "customerId" : "CS-3",
+      "createdAt" : "2023-05-07T20:56:01",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Sleek Marble Lamp",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 145.15466571428573
+          },
+          "buyPrice" : {
+            "value" : 204.5047342857143
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 1
+        },
+        {
+          "id" : "IP-22",
+          "productName" : "Rustic Linen Knife",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 38.7478907142857
+          },
+          "buyPrice" : {
+            "value" : 76.01031499999999
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 1
+        }
+      ],
+      "discount" : {
+        "value" : 0.0
+      },
+      "usedPoint" : {
+        "value" : 0.0
+      },
+      "getPoint" : {
+        "value" : 2.2803916997142855
+      },
+      "additionalCosts" : {
+        "Tax" : "+25.75",
+        "Service Charge" : "+18.39"
+      },
+      "grandTotal" : {
+        "value" : 228.03916997142855
+      }
+    },
+    {
+      "id" : "FI-57",
+      "customerId" : "CS-6",
+      "createdAt" : "2023-05-07T20:56:34",
+      "boughtProducts" : [
+        {
+          "id" : "IP-28",
+          "productName" : "Sleek Marble Lamp",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 145.15466571428573
+          },
+          "buyPrice" : {
+            "value" : 204.5047342857143
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 1
+        },
+        {
+          "id" : "IP-22",
+          "productName" : "Rustic Linen Knife",
+          "category" : "Gadget",
+          "sellPrice" : {
+            "value" : 38.7478907142857
+          },
+          "buyPrice" : {
+            "value" : 76.01031499999999
+          },
+          "additionalValues" : {
+            "currency" : "USD"
+          },
+          "count" : 1
+        }
+      ],
+      "discount" : {
+        "value" : 18.39025564285714
+      },
+      "usedPoint" : {
+        "value" : 0.007142857142857143
+      },
+      "getPoint" : {
+        "value" : 2.0964177147142853
+      },
+      "additionalCosts" : {
+        "Tax" : "+25.75",
+        "Service Charge" : "+18.39"
+      },
+      "grandTotal" : {
+        "value" : 209.64177147142854
+      }
     }
   ]
 }

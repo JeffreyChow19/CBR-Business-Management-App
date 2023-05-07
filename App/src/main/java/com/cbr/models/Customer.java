@@ -46,8 +46,12 @@ public class Customer extends Identifiable implements Serializable {
         System.out.println(this.id);
     }
 
-    public void buy(Product product){
-
+    public Customer clone(){
+        Customer newCustomer = new Customer();
+        newCustomer.setType(this.type);
+        newCustomer.setId(this.id);
+        newCustomer.setInvoiceList(this.invoiceList);
+        return newCustomer;
     }
 
 }

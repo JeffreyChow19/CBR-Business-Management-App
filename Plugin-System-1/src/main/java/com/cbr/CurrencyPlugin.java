@@ -1,11 +1,9 @@
 package com.cbr;
 
-giimport com.cbr.models.BoughtProduct;
-import com.cbr.models.FixedInvoice;
-import com.cbr.models.InventoryProduct;
+import com.cbr.models.*;
+import com.cbr.models.BoughtProduct;
 import com.cbr.models.Pricing.BasePrice;
 import com.cbr.models.Pricing.Price;
-import com.cbr.models.Pricing.PriceDecorator;
 import com.cbr.plugin.Plugin;
 import com.cbr.utils.AppSettings;
 import com.cbr.view.MainView;
@@ -19,6 +17,7 @@ import javafx.scene.control.Label;
 
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,6 +25,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CurrencyPlugin implements Plugin {
+    @NotNull
     private Dropdown currencySelector;
     public String getName(){
         return "com.cbr.CurrencyPlugin";
@@ -115,6 +115,20 @@ public class CurrencyPlugin implements Plugin {
                         .filter(tab -> tab.getContent() instanceof TransactionPage)
                         .map(tab -> (TransactionPage) tab.getContent())
                         .collect(Collectors.toList());
+
+                for(Member member : App.getDataStore().getMembersVips()){
+                    Double exchange = baseCurrency.getExchangeRate();
+                    if (member.getAdditionalValue().get("currency")!=null){ // old currency in datastore
+                        Currency oldCurrencyTemp = currencyList.stream()
+                                .filter(obj -> obj.getSymbol().equals(member.getAdditionalValue().get("currency")))
+                                .findFirst().get();
+                        exchange = exchange / oldCurrencyTemp.getExchangeRate();
+                    }
+                    Price newPoint = new CurrencyPrice((new BasePrice(member.getPoint().getValue()/exchange)), baseCurrency.getSymbol());
+                    member.setPoint(newPoint);
+                    member.getAdditionalValue().put("currency", baseCurrency.getSymbol());
+                }
+
 
                 Platform.runLater(() -> {
                     transactionPages.stream().forEach(transactionPage -> {
