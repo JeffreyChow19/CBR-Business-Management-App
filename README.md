@@ -45,6 +45,16 @@ This project is a Java implementation of Object Oriented Programming principles 
 
 This project is built to meet the following [guidelines](https://docs.google.com/document/d/1SA2q8LrSiYntjCQ9Sx6xIGIAVYe6kcZg5iBjgibcEfk/edit#).
 
+## Preview
+1. Main Page
+<img src="doc/mainPage.jpg"> 
+2. Inventory
+<img src="doc/inventory.jpg"> 
+3. Clients
+<img src="doc/clients.jpg"> 
+4. Transaction
+<img src="doc/transaction.jpg"> 
+
 ## Prerequisites
 - Java
 - Maven, to install refer to : `https://phoenixnap.com/kb/install-maven-windows`
@@ -65,13 +75,12 @@ or
 ```
  $ cd App
 ```
-(Without Jar)
-3. run this command
+3. <br/>
+(Without Jar) run this command
 ```bash
  $ mvn clean javafx:run
 ```
-(With jar)
-3. run this command
+(With jar) run this command
 ```
  $ java -jar target/app-1.0-jar-with-dependencies.jar
 ```
@@ -85,6 +94,7 @@ Please refer to `src/main/java/com/Person.java`
 ## Directory Structure
 ```
 ├───.idea
+├───doc
 ├───App
 │   ├───assets
 │   │   ├───data
