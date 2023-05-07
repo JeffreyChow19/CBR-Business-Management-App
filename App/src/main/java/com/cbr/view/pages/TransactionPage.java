@@ -4,7 +4,7 @@ import com.cbr.App;
 import com.cbr.models.Pricing.BasePrice;
 import com.cbr.view.components.buttons.DefaultButton;
 import com.cbr.view.components.cards.AdditionalCostCard;
-import com.cbr.view.components.cards.CustomerHistoryCard;
+import com.cbr.view.components.cards.HistoryInvoiceCard;
 import com.cbr.view.components.cards.TransactionInvoiceCard;
 import com.cbr.view.components.cards.TransactionProductCard;
 import com.cbr.view.components.cardslist.TransactionInvoiceCardList;
@@ -367,8 +367,8 @@ public class TransactionPage extends StackPane {
 
         App.getDataStore().deleteTemporaryInvoices(this.temporaryInvoice);
 
-        OkPopUp successMakeBill = new OkPopUp("Successfully Make Bill with id " + invoice.getId() + ", used " + usePoint + " points, get " + getPoint + "points");
-        successMakeBill.setBox(new CustomerHistoryCard(invoice));
+        OkPopUp successMakeBill = new OkPopUp("SUCCESS");
+        successMakeBill.setBox(new HistoryInvoiceCard(invoice));
         successMakeBill.show();
 
         if (!temporaryInvoice.getCustomerId().equals("")){

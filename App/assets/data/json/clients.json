@@ -20,7 +20,9 @@
       "point" : {
         "value" : 0.0
       },
-      "additionalValue" : { }
+      "additionalValue" : {
+        "currency" : "IDR"
+      }
     },
     {
       "id" : "CS-4",
@@ -32,7 +34,9 @@
       "point" : {
         "value" : 0.0
       },
-      "additionalValue" : { }
+      "additionalValue" : {
+        "currency" : "IDR"
+      }
     },
     {
       "id" : "CS-5",
@@ -56,7 +60,9 @@
       "point" : {
         "value" : 100.0
       },
-      "additionalValue" : { }
+      "additionalValue" : {
+        "currency" : "IDR"
+      }
     },
     {
       "id" : "CS-7",
@@ -68,7 +74,44 @@
       "point" : {
         "value" : 0.0
       },
-      "additionalValue" : { }
+      "additionalValue" : {
+        "currency" : "IDR"
+      }
+    },
+    {
+      "id" : "CS-10",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-1"
+      ]
+    },
+    {
+      "id" : "CS-11",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-2"
+      ]
+    },
+    {
+      "id" : "CS-12",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-5"
+      ]
+    },
+    {
+      "id" : "CS-13",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-4"
+      ]
+    },
+    {
+      "id" : "CS-14",
+      "type" : "customer",
+      "invoiceList" : [
+        "FI-5"
+      ]
     }
   ]
 }

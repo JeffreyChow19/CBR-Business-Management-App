@@ -201,7 +201,7 @@
         "currency" : "IDR"
       },
       "imagePath" : "file:assets/images/products/12.jpg",
-      "stock" : 876,
+      "stock" : 872,
       "status" : true
     },
     {
@@ -473,7 +473,7 @@
         "currency" : "IDR"
       },
       "imagePath" : "file:assets/images/products/28.jpg",
-      "stock" : 253,
+      "stock" : 242,
       "status" : true
     },
     {
@@ -813,7 +813,7 @@
         "currency" : "IDR"
       },
       "imagePath" : "file:assets/images/products/48.jpg",
-      "stock" : 834,
+      "stock" : 827,
       "status" : true
     },
     {
