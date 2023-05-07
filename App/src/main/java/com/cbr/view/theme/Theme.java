@@ -25,6 +25,8 @@ public class Theme {
     @Getter
     private static String darkRed = "#88201F";
     @Getter
+    private static String darkGreen = "#1B893C";
+    @Getter
     private static String accentBlue = "#498CDA";
     @Getter
     private static String secondaryBase = "#332E59";
