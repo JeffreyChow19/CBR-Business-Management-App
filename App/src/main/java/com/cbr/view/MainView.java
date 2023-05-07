@@ -38,7 +38,7 @@ public class MainView extends VBox {
     public void init() {
         /* Pages */
         homePage = new HomePage();
-        editProfile = new ProfileEditor("Edit Profile");
+//        editProfile = new ProfileEditor("Edit Profile");
         clientsPage = new ClientsPage();
         transactionPage = new TransactionPage();
         settingsPage = new SettingsPage();
