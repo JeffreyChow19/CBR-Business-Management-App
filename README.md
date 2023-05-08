@@ -113,9 +113,6 @@ or
 ```
  $ java -jar bin/app-1.0-jar-with-dependencies.jar
 ```
-## Adding Dependencies
-1. Go to `pom.xml`
-2. Add new dependecy under `<!-- Add Another Dependencies Here -->` tag
 
 ## Using Lombok and JetBrains Annotation
 Please refer to `src/main/java/com/Person.java`
