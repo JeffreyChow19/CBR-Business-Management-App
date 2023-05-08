@@ -94,7 +94,7 @@ or
 ```
 (With jar) run this command
 ```
- $ java -jar target/app-1.0-jar-with-dependencies.jar
+ $ java -jar bin/app-1.0-jar-with-dependencies.jar
 ```
 ## Adding Dependencies
 1. Go to `pom.xml`

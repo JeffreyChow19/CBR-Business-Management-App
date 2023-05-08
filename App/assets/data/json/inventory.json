@@ -8,7 +8,7 @@
         "value" : 227.74443214285716
       },
       "buyPrice" : {
-        "value" : 185.97471071428572
+        "value" : 185.9747107142857
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -22,7 +22,7 @@
       "productName" : "Awesome Wool Pants",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 245.053
+        "value" : 245.05299999999997
       },
       "buyPrice" : {
         "value" : 210.17285785714282
@@ -39,7 +39,7 @@
       "productName" : "Ergonomic Aluminum Pants",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 86.93727142857139
+        "value" : 86.93727142857136
       },
       "buyPrice" : {
         "value" : 82.13992071428571
@@ -59,7 +59,7 @@
         "value" : 159.82834357142858
       },
       "buyPrice" : {
-        "value" : 104.03143785714285
+        "value" : 104.03143785714283
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -73,10 +73,10 @@
       "productName" : "Aerodynamic Cotton Bottle",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 357.1529692857142
+        "value" : 357.1529692857141
       },
       "buyPrice" : {
-        "value" : 304.7936264285714
+        "value" : 304.79362642857126
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -93,7 +93,7 @@
         "value" : 227.2155671428571
       },
       "buyPrice" : {
-        "value" : 186.81115928571424
+        "value" : 186.81115928571418
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -107,7 +107,7 @@
       "productName" : "Durable Silk Computer",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 391.4300935714286
+        "value" : 391.4300935714285
       },
       "buyPrice" : {
         "value" : 327.73349571428577
@@ -127,7 +127,7 @@
         "value" : 160.53412857142857
       },
       "buyPrice" : {
-        "value" : 130.17802214285715
+        "value" : 130.17802214285712
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -158,10 +158,10 @@
       "productName" : "Fantastic Concrete Watch",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 239.9073014285714
+        "value" : 239.90730142857134
       },
       "buyPrice" : {
-        "value" : 233.36086857142854
+        "value" : 233.36086857142848
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -175,7 +175,7 @@
       "productName" : "Practical Aluminum Shoes",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 122.22143785714283
+        "value" : 122.22143785714282
       },
       "buyPrice" : {
         "value" : 90.55209928571428
@@ -192,7 +192,7 @@
       "productName" : "Rustic Steel Bottle",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 401.90695714285715
+        "value" : 401.90695714285704
       },
       "buyPrice" : {
         "value" : 338.911515
@@ -218,7 +218,7 @@
         "currency" : "USD"
       },
       "imagePath" : "file:assets/images/products/13.jpg",
-      "stock" : 120,
+      "stock" : 119,
       "status" : true
     },
     {
@@ -226,7 +226,7 @@
       "productName" : "Sleek Copper Shoes",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 224.7930307142857
+        "value" : 224.79303071428566
       },
       "buyPrice" : {
         "value" : 157.80262142857146
@@ -235,7 +235,7 @@
         "currency" : "USD"
       },
       "imagePath" : "file:assets/images/products/14.jpg",
-      "stock" : 340,
+      "stock" : 339,
       "status" : true
     },
     {
@@ -243,7 +243,7 @@
       "productName" : "Synergistic Wool Wallet",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 312.3225957142857
+        "value" : 312.32259571428557
       },
       "buyPrice" : {
         "value" : 300.2845892857143
@@ -263,7 +263,7 @@
         "value" : 294.38494999999995
       },
       "buyPrice" : {
-        "value" : 256.35988714285713
+        "value" : 256.3598871428571
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -280,7 +280,7 @@
         "value" : 105.51631857142857
       },
       "buyPrice" : {
-        "value" : 58.862958571428564
+        "value" : 58.86295857142855
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -297,13 +297,13 @@
         "value" : 269.27032357142855
       },
       "buyPrice" : {
-        "value" : 222.23176928571428
+        "value" : 222.23176928571422
       },
       "additionalValues" : {
         "currency" : "USD"
       },
       "imagePath" : "file:assets/images/products/18.jpg",
-      "stock" : 889,
+      "stock" : 888,
       "status" : true
     },
     {
@@ -314,7 +314,7 @@
         "value" : 228.92962857142854
       },
       "buyPrice" : {
-        "value" : 158.70786214285712
+        "value" : 158.7078621428571
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -396,10 +396,10 @@
       "productName" : "Heavy Duty Rubber Car",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 303.3187335714286
+        "value" : 303.31873357142854
       },
       "buyPrice" : {
-        "value" : 287.8044907142857
+        "value" : 287.80449071428563
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -481,10 +481,10 @@
       "productName" : "Mediocre Linen Shirt",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 208.24503142857142
+        "value" : 208.2450314285714
       },
       "buyPrice" : {
-        "value" : 196.58039428571428
+        "value" : 196.58039428571422
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -501,7 +501,7 @@
         "value" : 72.43933642857142
       },
       "buyPrice" : {
-        "value" : 37.02752571428571
+        "value" : 37.027525714285694
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -518,7 +518,7 @@
         "value" : 100.78892714285715
       },
       "buyPrice" : {
-        "value" : 31.436421428571425
+        "value" : 31.436421428571418
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -532,7 +532,7 @@
       "productName" : "Heavy Duty Copper Gloves",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 347.1695578571429
+        "value" : 347.16955785714276
       },
       "buyPrice" : {
         "value" : 276.05521857142855
@@ -583,10 +583,10 @@
       "productName" : "Incredible Silk Lamp",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 175.14152928571428
+        "value" : 175.14152928571423
       },
       "buyPrice" : {
-        "value" : 110.51100285714286
+        "value" : 110.51100285714283
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -600,7 +600,7 @@
       "productName" : "Lightweight Linen Coat",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 107.12646571428571
+        "value" : 107.1264657142857
       },
       "buyPrice" : {
         "value" : 86.49931857142857
@@ -620,7 +620,7 @@
         "value" : 268.7260071428571
       },
       "buyPrice" : {
-        "value" : 207.92186785714284
+        "value" : 207.9218678571428
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -634,7 +634,7 @@
       "productName" : "Intelligent Aluminum Shirt",
       "category" : "Minuman",
       "sellPrice" : {
-        "value" : 188.31285857142856
+        "value" : 188.3128585714285
       },
       "buyPrice" : {
         "value" : 141.9052
@@ -671,7 +671,7 @@
         "value" : 366.8856042857143
       },
       "buyPrice" : {
-        "value" : 338.8628328571428
+        "value" : 338.86283285714273
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -685,7 +685,7 @@
       "productName" : "Durable Silk Coat",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 73.70628428571428
+        "value" : 73.70628428571426
       },
       "buyPrice" : {
         "value" : 2.766314285714286
@@ -705,7 +705,7 @@
         "value" : 246.20642857142857
       },
       "buyPrice" : {
-        "value" : 234.40351857142855
+        "value" : 234.4035185714285
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -719,10 +719,10 @@
       "productName" : "Small Granite Clock",
       "category" : "Gadget",
       "sellPrice" : {
-        "value" : 86.48366999999999
+        "value" : 86.48366999999998
       },
       "buyPrice" : {
-        "value" : 59.335989285714284
+        "value" : 59.33598928571428
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -756,7 +756,7 @@
         "value" : 329.9221157142857
       },
       "buyPrice" : {
-        "value" : 314.25839285714284
+        "value" : 314.2583928571427
       },
       "additionalValues" : {
         "currency" : "USD"
@@ -787,7 +787,7 @@
       "productName" : "Gorgeous Aluminum Keyboard",
       "category" : "Makanan",
       "sellPrice" : {
-        "value" : 337.87036571428564
+        "value" : 337.8703657142856
       },
       "buyPrice" : {
         "value" : 322.57482071428575
@@ -821,7 +821,7 @@
       "productName" : "Practical Bronze Watch",
       "category" : "Pakaian",
       "sellPrice" : {
-        "value" : 215.11934714285712
+        "value" : 215.11934714285707
       },
       "buyPrice" : {
         "value" : 176.45759071428571

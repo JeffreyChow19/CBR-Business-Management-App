@@ -1,4 +1,3 @@
 #!/bin/bash
-mvn clean install
-java -jar target/CBR-1.0.jar
+java -jar bin/app-1.0-jar-with-dependencies.jar
 #chore: fix not loaded javafx in jar
